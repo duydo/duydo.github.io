@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Design Pattern on Duy Do </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://duydo.me/tags/design-pattern/</link>
+    <language>en-us</language>
+    <author>Duy Do</author>
+    
+    <updated>Sun, 28 Sep 2008 21:35:23 ICT</updated>
+    
+    <item>
+      <title>Singleton Pattern: Why and how to use it effectively</title>
+      <link>http://duydo.me/post/singleton-pattern-why-and-how-to-use-effectively/</link>
+      <pubDate>Sun, 28 Sep 2008 21:35:23 ICT</pubDate>
+      <author>Duy Do</author>
+      <guid>http://duydo.me/post/singleton-pattern-why-and-how-to-use-effectively/</guid>
+      <description>&lt;p&gt;With this post I will show you what it Singleton Pattern and how to use it  effectively.&lt;/p&gt;
+
+&lt;p&gt;First, consider definition for Singleton Patten:&lt;/p&gt;
+
+&lt;p&gt;The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.&lt;/p&gt;
+
+&lt;p&gt;From this definition we can see the purpose of using this pattern:&lt;/p&gt;
+
+&lt;p&gt;It ensures we have at most one instance of a class in our application.
+It also provides global access point to that instance. We can access to that instance  everywhere in our application.
+And now, wen implement it, I use Java:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * This private constructor prevents create an instance of Singleton class directly.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;pritvate&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(){}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Use this method to create an instance of Singleton class.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getInstance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;){&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;// other useful methods&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;doSomething&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It is simple, isn’t it? This is an traditional implementation for this pattern.&lt;/p&gt;
+
+&lt;p&gt;When we implement the Singleton Pattern, we &lt;strong&gt;MUST NOT&lt;/strong&gt; provide &lt;strong&gt;PUBLIC CONSTRUCTOR&lt;/strong&gt; to our singleton class. If we provide public constructor, we let our client has another chance to create an instance of your Singleton class directly, this does not ensure you have only one instance in our application.&lt;/p&gt;
+
+&lt;p&gt;We have problem with multi-threading environment?&lt;/p&gt;
+
+&lt;p&gt;The traditional implementation only works fine with single thread environment, but with multi-threading environment we have a problem.&lt;/p&gt;
+
+&lt;p&gt;Imaging we have two threads want to create an instance of Singleton at same time. What happens?&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Thread #1&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Thread #2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;if(instance == null) {&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;instance = new Singleton();&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;instance = new Singleton();&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;}&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;return instance;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Problem? Yes, we have two instances of Singleton class. How do we fix this problem?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Synchronize method getInstance()&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Synchronize method getInstance() with synchronized keyword. This ensures only one thread can execute getInstance() method at one time. Another thread wants to execute this method must wait another thread finish execute the method.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * This private constructor prevents create an instance of Singleton class directly.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;pritvate&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(){}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Use this method to create an instance of Singleton class.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;synchronized&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getInstance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;){&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;// other useful methods&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;doSomething&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But, this can cause performance problem because of using synchronized fairly expensive (by factor of 100)
+So, use this fix if performance is not critical in your application. Otherwise, you can consider use “double-checked locking” technique:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Use “double-checked locking” technique&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With &amp;ldquo;double-checking locked&amp;rdquo; technique, we only synchronize the first time instance of Singleton class created. This can reduce overhead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;volatile&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * This private constructor prevents create an instance of Singleton class directly.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;pritvate&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(){}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Use this method to create an instance of Singleton class.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getInstance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #75715e&#34;&gt;/* If instance  is null, create it*/&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;){&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;synchronized&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;){&lt;/span&gt;
+					&lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+			&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;// other useful methods here&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;doSomething&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But this technique does not work with JVM 1.4 and earlier because of volatile keyword not implemented. You can move to following way:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Eagerly to create instance of Singleton class&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If in our application always use instance of Singleton class, we can eagerly create instance of Singleton class rather than a lazy created one, like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * This private constructor prevents create an instance of Singleton class directly.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(){}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Use this method to create an instance of Singleton class.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getInstance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;instance&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #75715e&#34;&gt;// other useful methods&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;doSomething&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This solution works fine in JVM version greater than 1.2. In pre-Java 1.2 JVM has a bug in garbage collector, it allows Singleton to be prematurely collected.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Using ENUM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This way was provided by Joshua Bloch in his 2nd Effective Java book.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;INSTANCE&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;foo&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;FOO&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This approach is functionally equivalent to the public field approach, except that it is more concise, provides the serialization machinery for free, and provides an ironclad guarantee against multiple instantiation, even in the face of sophisticated serialization or reflection attacks. While this approach has yet to be widely adopted, a single-element enum type is the best way to implement a singleton.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

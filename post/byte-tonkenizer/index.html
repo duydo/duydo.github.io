@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Byte Tonkenizer - Duy Do</title>
+	<meta name="author" content="map[name:Duy Do bio:Software Engineer in Vietnam email:]">
+
+	
+	
+	<meta name="description" content="">
+	
+
+	
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link href='/index.xml' rel="alternate" title="Duy Do" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://duydo.me/post/byte-tonkenizer/">
+	<link href="http://duydo.me/favicon.png" rel="shortcut icon">
+	<link href="http://duydo.me/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="http://duydo.me/css/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<link href="http://duydo.me/css/style.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-68329720-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><section class="author">
+    
+<div class="author-avatar">
+    <a href="http://duydo.me/">
+        <img src='http://www.gravatar.com/avatar/6ac96bcb854145bb47eac6fa80b50d44?s=120'
+             alt="Duy Do"
+             style="width: 120px;"/>
+    </a>
+
+    <h1>
+        <a class="author-name" href="http://duydo.me/">
+            Duy Do
+        </a>
+
+        <p class="bio">
+            Software Engineer in Vietnam
+        </p>
+    </h1>
+
+</div>
+
+
+<nav id="sub-nav" class="author-social">
+    <div class="social">
+        
+        
+        
+        
+        <a class="twitter" href='http://twitter.com/duydo' title="Twitter">Twitter</a>
+        
+        
+        <a class="github" href='https://github.com/duydo' title="GitHub">GitHub</a>
+        
+        
+        <a class="linkedin" href='http://www.linkedin.com/in/duydo' title="LinkedIn">LinkedIn</a>
+        
+        
+        <a class="rss" href='/index.xml' title="RSS">RSS</a>
+        
+    </div>
+</nav>
+
+</section>
+<nav id="main-nav">
+    <ul>
+    <li><a href="http://duydo.me/">Blog</a></li>
+    <li><a href="http://duydo.me/post/">Archives</a></li>
+    
+</ul>
+
+</nav>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+			<div class="mid-col-container">
+
+				<div id="content" class="inner">
+
+					<div itemscope itemtype="http://schema.org/Blog">
+						<div class="entry-meta clearfix">
+      <div class="meta-left">
+        <a class="author-avatar" href="http://duydo.me/about">
+            <img src='http://www.gravatar.com/avatar/6ac96bcb854145bb47eac6fa80b50d44?s=32'
+                 alt="Duy Do"
+                 style="width: 32px;"/>
+
+        </a>
+</div>
+<div class="meta-right">
+    <span class="entry-author-name">
+                <a href="http://duydo.me/about">
+
+Duy Do
+                    </a>
+        </span>
+
+in <span class="entry-tags">
+
+
+	
+	
+		<a href="http://duydo.me/tags/java">java</a>,
+	
+
+	
+	
+	    <a href="http://duydo.me/tags/byte-tokenizer">byte-tokenizer</a>
+	
+
+
+</span>
+
+<br/>
+<span class="entry-date">
+        <time datetime='Thursday, September 25, 2008' data-updated="true" itemprop="datePublished">Thursday, September 25, 2008</time>
+
+    </span>
+</div>
+	</div>
+					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="title" itemprop="name">Byte Tonkenizer</h1>
+	<div class="entry-content" itemprop="articleBody"><p>To decode Yahoo Messenger packet, I implemented the ByteTokenizer class similar to java.util.StringTokenizer class. This class allows an application to break a byte array into tokens.</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">/**</span>
+<span style="color: #75715e"> * @(#)ByteTokenizer.java Sep 23, 2008</span>
+<span style="color: #75715e"> * Copyright (C) 2008 Duy Do. All Rights Reserved.</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #f92672">package</span> <span style="color: #f8f8f2">com.duydo.util</span><span style="color: #f92672">;</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Enumeration</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.NoSuchElementException</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">/**</span>
+<span style="color: #75715e"> * The byte tokenizer class allows an application to break a byte array into</span>
+<span style="color: #75715e"> * tokens.</span>
+<span style="color: #75715e"> *</span>
+<span style="color: #75715e"> * @author &lt;a href = &quot;mailto:doquocduy@gmail.com&quot;&gt;Duy Do&lt;/a&gt;</span>
+<span style="color: #75715e"> * @version Sep 23, 2008 12:49:06 PM</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ByteTokenizer</span> <span style="color: #66d9ef">implements</span> <span style="color: #f8f8f2">Enumeration</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Object</span><span style="color: #f92672">&gt;</span> <span style="color: #f92672">{</span>
+
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">;</span>
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">newPosition</span><span style="color: #f92672">;</span>
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">;</span>
+
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">;</span>
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">;</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Constructs a bytes array tokenizer for the specified bytes. The bytes in</span>
+<span style="color: #75715e">	 * the &lt;code&gt;delimiters&lt;/code&gt; argument are the delimiters for separating</span>
+<span style="color: #75715e">	 * tokens. Delimiter bytes themselves will not be treated as tokens.</span>
+<span style="color: #75715e">	 * &lt;p&gt;</span>
+<span style="color: #75715e">	 * Note that if &lt;tt&gt;delimiters&lt;/tt&gt; is &lt;tt&gt;null&lt;/tt&gt;, this constructor does</span>
+<span style="color: #75715e">	 * not throw an exception. However, trying to invoke other methods on the</span>
+<span style="color: #75715e">	 * resulting &lt;tt&gt;ByteTokenizer&lt;/tt&gt; may result in a</span>
+<span style="color: #75715e">	 * &lt;tt&gt;NullPointerException&lt;/tt&gt;.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @param bytes a bytes array to be parsed</span>
+<span style="color: #75715e">	 * @param delimiters a bytes array delimiters</span>
+<span style="color: #75715e">	 * @exception NullPointerException if bytes is &lt;CODE&gt;null&lt;/CODE&gt;</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #a6e22e">ByteTokenizer</span><span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">this</span><span style="color: #f92672">.</span><span style="color: #a6e22e">bytes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">this</span><span style="color: #f92672">.</span><span style="color: #a6e22e">delimiters</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">;</span>
+		<span style="color: #f8f8f2">currentPosition</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+		<span style="color: #f8f8f2">newPosition</span> <span style="color: #f92672">=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span>
+		<span style="color: #f8f8f2">maxPosition</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Constructs a bytes array tokenizer for the specified bytes. The byte</span>
+<span style="color: #75715e">	 * &lt;code&gt;delimiter&lt;/code&gt; argument is the delimiter for separating tokens.</span>
+<span style="color: #75715e">	 * Delimiter byte itself will not be treated as tokens.</span>
+<span style="color: #75715e">	 * &lt;p&gt;</span>
+<span style="color: #75715e">	 * Note that if &lt;tt&gt;delimiter&lt;/tt&gt; is &lt;tt&gt;null&lt;/tt&gt;, this constructor does</span>
+<span style="color: #75715e">	 * not throw an exception. However, trying to invoke other methods on the</span>
+<span style="color: #75715e">	 * resulting &lt;tt&gt;ByteTokenizer&lt;/tt&gt; may result in a</span>
+<span style="color: #75715e">	 * &lt;tt&gt;NullPointerException&lt;/tt&gt;.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @param bytes a bytes array to be parsed</span>
+<span style="color: #75715e">	 * @param delimiter a byte delimiter</span>
+<span style="color: #75715e">	 * @exception NullPointerException if bytes is &lt;CODE&gt;null&lt;/CODE&gt;</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #a6e22e">ByteTokenizer</span><span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">byte</span> <span style="color: #f8f8f2">delimiter</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">this</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">bytes</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f92672">{</span> <span style="color: #f8f8f2">delimiter</span> <span style="color: #f92672">});</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Tests if there are more tokens available from this tokenizer&#39;s bytes</span>
+<span style="color: #75715e">	 * array. If this method returns &lt;tt&gt;true&lt;/tt&gt;, then a subsequent call to</span>
+<span style="color: #75715e">	 * &lt;tt&gt;nextToken&lt;/tt&gt; with no argument will successfully return a token.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @return &lt;code&gt;true&lt;/code&gt; if there are more tokens; &lt;code&gt;false&lt;/code&gt;</span>
+<span style="color: #75715e">	 *         otherwise.</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">boolean</span> <span style="color: #a6e22e">hasMoreTokens</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">newPosition</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">skipDelimiters</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">);</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">newPosition</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Returns the same value as the &lt;code&gt;hasMoreTokens&lt;/code&gt; method. It</span>
+<span style="color: #75715e">	 * exists so that this class can implement the &lt;code&gt;Enumeration&lt;/code&gt;</span>
+<span style="color: #75715e">	 * interface.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @return &lt;code&gt;true&lt;/code&gt; if there are more tokens; &lt;code&gt;false&lt;/code&gt;</span>
+<span style="color: #75715e">	 *         otherwise.</span>
+<span style="color: #75715e">	 * @see java.util.Enumeration</span>
+<span style="color: #75715e">	 * @see com.duydo.util.ByteTokenizer#hasMoreTokens()</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">boolean</span> <span style="color: #a6e22e">hasMoreElements</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">hasMoreTokens</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Returns the next token from this bytes array tokenizer.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @return the next token from this bytes array tokenizer.</span>
+<span style="color: #75715e">	 * @exception NoSuchElementException if there are no more tokens in this</span>
+<span style="color: #75715e">	 *                tokenizer&#39;s bytes array.</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">Object</span> <span style="color: #a6e22e">nexToken</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">currentPosition</span> <span style="color: #f92672">=</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">newPosition</span> <span style="color: #f92672">&gt;=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">)</span> <span style="color: #f92672">?</span> <span style="color: #f8f8f2">newPosition</span>
+				<span style="color: #f92672">:</span> <span style="color: #f8f8f2">skipDelimiters</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Reset</span>
+		<span style="color: #f8f8f2">newPosition</span> <span style="color: #f92672">=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span>
+
+		<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">currentPosition</span> <span style="color: #f92672">&gt;=</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #66d9ef">throw</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">NoSuchElementException</span><span style="color: #f92672">(</span>
+					<span style="color: #e6db74">&quot;current token position is out of bound.&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">startPosition</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #f8f8f2">currentPosition</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanToken</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">);</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">length</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">currentPosition</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">token</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">length</span><span style="color: #f92672">];</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">arraycopy</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">bytes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">token</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">length</span><span style="color: #f92672">);</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">token</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Returns the same value as the &lt;code&gt;nextToken&lt;/code&gt; method, except that</span>
+<span style="color: #75715e">	 * its declared return value is &lt;code&gt;Object&lt;/code&gt; rather than</span>
+<span style="color: #75715e">	 * &lt;code&gt;String&lt;/code&gt;. It exists so that this class can implement the</span>
+<span style="color: #75715e">	 * &lt;code&gt;Enumeration&lt;/code&gt; interface.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @return the next token in the bytes array.</span>
+<span style="color: #75715e">	 * @exception NoSuchElementException if there are no more tokens in this</span>
+<span style="color: #75715e">	 *                tokenizer&#39;s bytes array.</span>
+<span style="color: #75715e">	 * @see java.util.Enumeration</span>
+<span style="color: #75715e">	 * @see com.duydo.util.ByteTokenizer#nextToken()</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">Object</span> <span style="color: #a6e22e">nextElement</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">nexToken</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Calculates the number of times that this tokenizer&#39;s</span>
+<span style="color: #75715e">	 * &lt;code&gt;nextToken&lt;/code&gt; method can be called before it generates an</span>
+<span style="color: #75715e">	 * exception. The current position is not advanced.</span>
+<span style="color: #75715e">	 *</span>
+<span style="color: #75715e">	 * @return the number of tokens remaining in the bytes array using the</span>
+<span style="color: #75715e">	 *         current delimiter set.</span>
+<span style="color: #75715e">	 * @see com.duydo.util.ByteTokenizer#nextToken()</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">countTokens</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">tokenNums</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">currentPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">skipDelimiters</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span><span style="color: #f92672">);</span>
+			<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span> <span style="color: #f92672">&gt;=</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+				<span style="color: #66d9ef">break</span><span style="color: #f92672">;</span>
+			<span style="color: #f92672">}</span>
+			<span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanToken</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span><span style="color: #f92672">);</span>
+			<span style="color: #f8f8f2">tokenNums</span><span style="color: #f92672">++;</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">tokenNums</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Skips delimiters starting from the specified position. Returns the index</span>
+<span style="color: #75715e">	 * of the first non-delimiter byte at or after startPosition.</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">skipDelimiters</span><span style="color: #f92672">(</span><span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">delimiters</span> <span style="color: #f92672">==</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #66d9ef">throw</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">NullPointerException</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;delimiters&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">isDelimiter</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span><span style="color: #f92672">))</span> <span style="color: #f92672">{</span>
+				<span style="color: #f8f8f2">position</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span><span style="color: #f92672">;</span>
+			<span style="color: #f92672">}</span>
+			<span style="color: #66d9ef">break</span><span style="color: #f92672">;</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">position</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * Skips ahead from startPosition and returns the index of the next</span>
+<span style="color: #75715e">	 * delimiter byte encountered, or maxPosition if no such delimiter is found.</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">scanToken</span><span style="color: #f92672">(</span><span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">isDelimiter</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">position</span><span style="color: #f92672">))</span> <span style="color: #f92672">{</span>
+				<span style="color: #66d9ef">break</span><span style="color: #f92672">;</span>
+			<span style="color: #f92672">}</span>
+			<span style="color: #f8f8f2">position</span><span style="color: #f92672">++;</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">position</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">boolean</span> <span style="color: #a6e22e">isDelimiter</span><span style="color: #f92672">(</span><span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">position</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">startPosition</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">boolean</span> <span style="color: #f8f8f2">isDelimiter</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">position</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">maxPosition</span><span style="color: #f92672">)</span> <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">isDelimiter</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+			<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">nDelimiter</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+			<span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nDelimiter</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+				<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">bytes</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">startPosition</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">nDelimiter</span><span style="color: #f92672">]</span> <span style="color: #f92672">!=</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">nDelimiter</span><span style="color: #f92672">])</span> <span style="color: #f92672">{</span>
+					<span style="color: #f8f8f2">isDelimiter</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">false</span><span style="color: #f92672">;</span>
+					<span style="color: #66d9ef">break</span><span style="color: #f92672">;</span>
+				<span style="color: #f92672">}</span>
+				<span style="color: #f8f8f2">nDelimiter</span><span style="color: #f92672">++;</span>
+			<span style="color: #f92672">}</span>
+			<span style="color: #f8f8f2">position</span><span style="color: #f92672">++;</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">isDelimiter</span><span style="color: #f92672">;</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
+</pre></div>
+
+<p><strong>Usage</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">/**</span>
+<span style="color: #75715e"> * @(#)ByteTokenizerTest.java Sep 24, 2008</span>
+<span style="color: #75715e"> * Copyright (C) 2008 Duy Do. All Rights Reserved.</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #f92672">package</span> <span style="color: #f8f8f2">com.duydo.util</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">/**</span>
+<span style="color: #75715e"> * The class description here.</span>
+<span style="color: #75715e"> *</span>
+<span style="color: #75715e"> * @author &lt;a href = &quot;mailto:doquocduy@gmail.com&quot;&gt;Duy Do&lt;/a&gt;</span>
+<span style="color: #75715e"> * @version Sep 24, 2008 2:21:54 PM</span>
+<span style="color: #75715e"> */</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ByteTokenizerTest</span> <span style="color: #f92672">{</span>
+
+	<span style="color: #75715e">/**</span>
+<span style="color: #75715e">	 * @param args</span>
+<span style="color: #75715e">	 */</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// bytes array to parse</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">bytes</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f92672">{</span>
+				<span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x31</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0xC0</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x80</span><span style="color: #f92672">,</span>
+				<span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x64</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x75</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x79</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x64</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0xC0</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x80</span><span style="color: #f92672">,</span>
+				<span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x39</span>
+		<span style="color: #f92672">};</span>
+		<span style="color: #75715e">// delimiters</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">delimiters</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">byte</span><span style="color: #f92672">[]{(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0xC0</span><span style="color: #f92672">,</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">)</span> <span style="color: #ae81ff">0x80</span><span style="color: #f92672">};</span>
+
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Byte array to parse: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">getHexDump</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">bytes</span><span style="color: #f92672">));</span>
+
+		<span style="color: #75715e">// Create an instance of ByteTokenizer</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">ByteTokenizer</span> <span style="color: #f8f8f2">tokenizer</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ByteTokenizer</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">bytes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">delimiters</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Count tokens</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">tonkenNums</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tokenizer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">countTokens</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Token numbers: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">tonkenNums</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Print all tokens</span>
+		<span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">token</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">tokenizer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">hasMoreTokens</span><span style="color: #f92672">())</span> <span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">token</span> <span style="color: #f92672">=</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">[])</span> <span style="color: #f8f8f2">tokenizer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">nexToken</span><span style="color: #f92672">();</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Byte token: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">getHexDump</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">token</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">String</span> <span style="color: #a6e22e">getHexDump</span><span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">StringBuffer</span> <span style="color: #f8f8f2">sb</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">StringBuffer</span><span style="color: #f92672">();</span>
+		<span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">byte</span> <span style="color: #f8f8f2">b</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">bytes</span><span style="color: #f92672">){</span>
+			<span style="color: #f8f8f2">sb</span><span style="color: #f92672">.</span><span style="color: #a6e22e">append</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">toHexString</span><span style="color: #f92672">(((</span><span style="color: #66d9ef">int</span><span style="color: #f92672">)</span><span style="color: #f8f8f2">b</span> <span style="color: #f92672">&amp;</span> <span style="color: #ae81ff">0xff</span><span style="color: #f92672">))).</span><span style="color: #a6e22e">append</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">sb</span><span style="color: #f92672">.</span><span style="color: #a6e22e">toString</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
+</pre></div>
+
+<p><strong>Output</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">Byte array to parse: 31 c0 80 64 75 79 64 c0 80 39
+Token numbers: 3
+Byte token: 31
+Byte token: 64 75 79 64
+Byte token: 39
+</pre></div>
+</div></article>
+					
+						<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size=''></a>
+	
+	
+	</div>
+	
+  	<script type="text/javascript" src='http://s7.addthis.com/js/250/addthis_widget.js#pubid='></script>
+  	
+</div>
+
+					
+					
+					<section id="comment">
+					    <h1 class="title">Comments</h1>
+					    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+					</section>
+					
+					
+
+<script type="text/javascript">
+    
+    var disqus_shortname = 'duydo';
+
+    
+    
+
+    
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+    
+</script>
+
+
+				    </div>
+				</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016 Duy Do. Powered by <a target="_blank" href="http://gohugo.io">Hugo</a>.
+
+<script src="http://duydo.me/js/slash.js"></script>
+<script src="http://duydo.me/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script></footer>
+		</div>
+	</div>
+	
+</body>
+</html>

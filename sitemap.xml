@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://duydo.me/</loc>
+    <lastmod>2010-01-24T18:11:13+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/post/effective-jpa/</loc>
+    <lastmod>2010-01-24T18:11:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/post/java-quiz-object/</loc>
+    <lastmod>2008-10-10T21:07:03+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/post/singleton-pattern-why-and-how-to-use-effectively/</loc>
+    <lastmod>2008-09-28T21:35:23+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/post/byte-tonkenizer/</loc>
+    <lastmod>2008-09-25T21:22:34+07:00</lastmod>
+  </url>
+  
+</urlset>

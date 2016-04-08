@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Java on Duy Do </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://duydo.me/tags/java/</link>
+    <language>en-us</language>
+    <author>Duy Do</author>
+    
+    <updated>Sun, 24 Jan 2010 18:11:13 ICT</updated>
+    
+    <item>
+      <title>Effective JPA: Use Enumeration Effectively</title>
+      <link>http://duydo.me/post/effective-jpa/</link>
+      <pubDate>Sun, 24 Jan 2010 18:11:13 ICT</pubDate>
+      <author>Duy Do</author>
+      <guid>http://duydo.me/post/effective-jpa/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? This is my experience on this subject.&lt;/p&gt;
+
+&lt;p&gt;I use WordPress for example. We all know that every post in Wordpress blog system has a status with possible values: draft, pending-review, published.&lt;/p&gt;
+
+&lt;p&gt;There are some ways to model the post entity, we can save status as an integer value in database: draft -&amp;gt; 0, pending-review -&amp;gt; 1, published -&amp;gt; 2&lt;/p&gt;
+
+&lt;p&gt;Version 1&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;@Entity&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Well that’s ok. A client can use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;//Draft post&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But this is not safe, the client can set any integer value for status. For more safety, we can define constants for status values like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;DRAFT&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PENDING_REVIEW&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PUBLISHED&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The client can use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;//Draft post&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;DRAFT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;But it is still not safe, because the client maybe do not use PostStatus class. Well, we can force the client use PostStatus by declaring PostStatus as an Enum and make it as as dependency of Post class:&lt;/p&gt;
+
+&lt;p&gt;Version 2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;DRAFT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PENDING_REVIEW&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PUBLISHED&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #a6e22e&#34;&gt;@Entity&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #a6e22e&#34;&gt;@Enumerated&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And now client can use it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;//Draft post&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;DRAFT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Well, it is better. But wait&amp;hellip;we know that JPA persists all enum constants in order we declare them in PostStatus with value started from 0. This is limitation, we can not change order of constants, we only can append a new constant. How does we solve this limitation?&lt;/p&gt;
+
+&lt;p&gt;Version 3
+Enum type in Java 5 is wonderful, we can add constructor and do some business logic in it. Apply it we can re-write PostStatus like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;enum&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;DRAFT&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;),&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;PENDING_REVIEW&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;),&lt;/span&gt;
+	&lt;span style=&#34;color: #f8f8f2&#34;&gt;PUBLISHED&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And Post class is re-wrote like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;@Entity&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Post&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #75715e&#34;&gt;//TODO we need a helper to convert status value to PostStatus enum&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;setStatus&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;PostStatus&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;status&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;status&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Great!!! Now the client can use code safety, we can also add many constants into PostStatus without worry about the order of them.&lt;/p&gt;
+
+&lt;p&gt;It reminds me of the sentence the guy talked in Java4Ever trailer: “Look how beautiful, robust, secure, portable and scalable it is” ;-)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I copy this post from my old blog.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Java Quiz: Object</title>
+      <link>http://duydo.me/post/java-quiz-object/</link>
+      <pubDate>Fri, 10 Oct 2008 21:07:03 ICT</pubDate>
+      <author>Duy Do</author>
+      <guid>http://duydo.me/post/java-quiz-object/</guid>
+      <description>&lt;p&gt;Do you think the following Java code can be compiled? Instead of using a compiler, use your brain to compile it ;-)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Quiz&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Duy Do&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Byte Tonkenizer</title>
+      <link>http://duydo.me/post/byte-tonkenizer/</link>
+      <pubDate>Thu, 25 Sep 2008 21:22:34 ICT</pubDate>
+      <author>Duy Do</author>
+      <guid>http://duydo.me/post/byte-tonkenizer/</guid>
+      <description>&lt;p&gt;To decode Yahoo Messenger packet, I implemented the ByteTokenizer class similar to java.util.StringTokenizer class. This class allows an application to break a byte array into tokens.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @(#)ByteTokenizer.java Sep 23, 2008&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * Copyright (C) 2008 Duy Do. All Rights Reserved.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;com.duydo.util&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;java.util.Enumeration&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;java.util.NoSuchElementException&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * The byte tokenizer class allows an application to break a byte array into&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * tokens.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @author &amp;lt;a href = &amp;quot;mailto:doquocduy@gmail.com&amp;quot;&amp;gt;Duy Do&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @version Sep 23, 2008 12:49:06 PM&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;ByteTokenizer&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;implements&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Enumeration&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Constructs a bytes array tokenizer for the specified bytes. The bytes in&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * the &amp;lt;code&amp;gt;delimiters&amp;lt;/code&amp;gt; argument are the delimiters for separating&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * tokens. Delimiter bytes themselves will not be treated as tokens.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Note that if &amp;lt;tt&amp;gt;delimiters&amp;lt;/tt&amp;gt; is &amp;lt;tt&amp;gt;null&amp;lt;/tt&amp;gt;, this constructor does&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * not throw an exception. However, trying to invoke other methods on the&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * resulting &amp;lt;tt&amp;gt;ByteTokenizer&amp;lt;/tt&amp;gt; may result in a&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;tt&amp;gt;NullPointerException&amp;lt;/tt&amp;gt;.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @param bytes a bytes array to be parsed&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @param delimiters a bytes array delimiters&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @exception NullPointerException if bytes is &amp;lt;CODE&amp;gt;null&amp;lt;/CODE&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;ByteTokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;bytes&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;delimiters&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Constructs a bytes array tokenizer for the specified bytes. The byte&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;code&amp;gt;delimiter&amp;lt;/code&amp;gt; argument is the delimiter for separating tokens.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Delimiter byte itself will not be treated as tokens.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;p&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Note that if &amp;lt;tt&amp;gt;delimiter&amp;lt;/tt&amp;gt; is &amp;lt;tt&amp;gt;null&amp;lt;/tt&amp;gt;, this constructor does&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * not throw an exception. However, trying to invoke other methods on the&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * resulting &amp;lt;tt&amp;gt;ByteTokenizer&amp;lt;/tt&amp;gt; may result in a&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;tt&amp;gt;NullPointerException&amp;lt;/tt&amp;gt;.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @param bytes a bytes array to be parsed&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @param delimiter a byte delimiter&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @exception NullPointerException if bytes is &amp;lt;CODE&amp;gt;null&amp;lt;/CODE&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;ByteTokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;});&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Tests if there are more tokens available from this tokenizer&amp;#39;s bytes&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * array. If this method returns &amp;lt;tt&amp;gt;true&amp;lt;/tt&amp;gt;, then a subsequent call to&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;tt&amp;gt;nextToken&amp;lt;/tt&amp;gt; with no argument will successfully return a token.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @return &amp;lt;code&amp;gt;true&amp;lt;/code&amp;gt; if there are more tokens; &amp;lt;code&amp;gt;false&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *         otherwise.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;hasMoreTokens&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;skipDelimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Returns the same value as the &amp;lt;code&amp;gt;hasMoreTokens&amp;lt;/code&amp;gt; method. It&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * exists so that this class can implement the &amp;lt;code&amp;gt;Enumeration&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * interface.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @return &amp;lt;code&amp;gt;true&amp;lt;/code&amp;gt; if there are more tokens; &amp;lt;code&amp;gt;false&amp;lt;/code&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *         otherwise.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @see java.util.Enumeration&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @see com.duydo.util.ByteTokenizer#hasMoreTokens()&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;hasMoreElements&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;hasMoreTokens&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Returns the next token from this bytes array tokenizer.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @return the next token from this bytes array tokenizer.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @exception NoSuchElementException if there are no more tokens in this&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *                tokenizer&amp;#39;s bytes array.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;nexToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;skipDelimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+
+		&lt;span style=&#34;color: #75715e&#34;&gt;// Reset&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;newPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;NoSuchElementException&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;
+					&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;current token position is out of bound.&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;scanToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;];&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;arraycopy&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Returns the same value as the &amp;lt;code&amp;gt;nextToken&amp;lt;/code&amp;gt; method, except that&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * its declared return value is &amp;lt;code&amp;gt;Object&amp;lt;/code&amp;gt; rather than&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;code&amp;gt;String&amp;lt;/code&amp;gt;. It exists so that this class can implement the&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;code&amp;gt;Enumeration&amp;lt;/code&amp;gt; interface.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @return the next token in the bytes array.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @exception NoSuchElementException if there are no more tokens in this&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *                tokenizer&amp;#39;s bytes array.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @see java.util.Enumeration&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @see com.duydo.util.ByteTokenizer#nextToken()&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Object&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;nextElement&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;nexToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Calculates the number of times that this tokenizer&amp;#39;s&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * &amp;lt;code&amp;gt;nextToken&amp;lt;/code&amp;gt; method can be called before it generates an&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * exception. The current position is not advanced.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @return the number of tokens remaining in the bytes array using the&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 *         current delimiter set.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @see com.duydo.util.ByteTokenizer#nextToken()&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;countTokens&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenNums&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;currentPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;skipDelimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+			&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;scanToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenNums&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++;&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenNums&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Skips delimiters starting from the specified position. Returns the index&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * of the first non-delimiter byte at or after startPosition.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;skipDelimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;NullPointerException&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;delimiters&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+			&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * Skips ahead from startPosition and returns the index of the next&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * delimiter byte encountered, or maxPosition if no such delimiter is found.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;scanToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+			&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++;&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;isDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;maxPosition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;nDelimiter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+			&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;nDelimiter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;startPosition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;nDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;nDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;])&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+					&lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+					&lt;span style=&#34;color: #66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+				&lt;span style=&#34;color: #f8f8f2&#34;&gt;nDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++;&lt;/span&gt;
+			&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;position&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;++;&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;isDelimiter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Usage&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @(#)ByteTokenizerTest.java Sep 24, 2008&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * Copyright (C) 2008 Duy Do. All Rights Reserved.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;com.duydo.util&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * The class description here.&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; *&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @author &amp;lt;a href = &amp;quot;mailto:doquocduy@gmail.com&amp;quot;&amp;gt;Duy Do&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; * @version Sep 24, 2008 2:21:54 PM&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt; */&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;ByteTokenizerTest&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+
+	&lt;span style=&#34;color: #75715e&#34;&gt;/**&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 * @param args&lt;/span&gt;
+&lt;span style=&#34;color: #75715e&#34;&gt;	 */&lt;/span&gt;
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #75715e&#34;&gt;// bytes array to parse&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x31&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0xC0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x80&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x64&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x75&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x79&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x64&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0xC0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x80&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt;
+				&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x39&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;};&lt;/span&gt;
+		&lt;span style=&#34;color: #75715e&#34;&gt;// delimiters&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]{(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0xC0&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0x80&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;};&lt;/span&gt;
+
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Byte array to parse: &amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;getHexDump&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;));&lt;/span&gt;
+
+		&lt;span style=&#34;color: #75715e&#34;&gt;// Create an instance of ByteTokenizer&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;ByteTokenizer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenizer&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;ByteTokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;delimiters&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+
+		&lt;span style=&#34;color: #75715e&#34;&gt;// Count tokens&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tonkenNums&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;countTokens&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+		&lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Token numbers: &amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tonkenNums&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+
+		&lt;span style=&#34;color: #75715e&#34;&gt;// Print all tokens&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;;&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;while&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;hasMoreTokens&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[])&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;tokenizer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;nexToken&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Byte token: &amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;getHexDump&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;));&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+
+	&lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;getHexDump&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;StringBuffer&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;sb&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;StringBuffer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;byte&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;){&lt;/span&gt;
+			&lt;span style=&#34;color: #f8f8f2&#34;&gt;sb&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;append&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Integer&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;toHexString&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(((&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0xff&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;))).&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;append&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;);&lt;/span&gt;
+		&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+		&lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;sb&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #f92672&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;Byte array to parse: 31 c0 80 64 75 79 64 c0 80 39
+Token numbers: 3
+Byte token: 31
+Byte token: 64 75 79 64
+Byte token: 39
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
