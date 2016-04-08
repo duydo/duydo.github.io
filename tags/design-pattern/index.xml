@@ -15,11 +15,9 @@
       <pubDate>Sun, 28 Sep 2008 21:35:23 ICT</pubDate>
       <author>Duy Do</author>
       <guid>http://duydo.me/post/singleton-pattern-why-and-how-to-use-effectively/</guid>
-      <description>&lt;p&gt;With this post I will show you what it Singleton Pattern and how to use it  effectively.&lt;/p&gt;
+      <description>&lt;p&gt;First, consider definition for Singleton Patten:&lt;/p&gt;
 
-&lt;p&gt;First, consider definition for Singleton Patten:&lt;/p&gt;
-
-&lt;p&gt;The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;From this definition we can see the purpose of using this pattern:&lt;/p&gt;
 

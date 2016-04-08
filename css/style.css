@@ -85,7 +85,7 @@ article .read-more-link {
     font-size: 0.9em;
 }
 
-.entry-date, .entry-tags, .entry-author-name {
+.entry-date, .entry-tags, .entry-author-name, .reading-time {
     color: #aaa;
     font-size: 0.9em;
 }
