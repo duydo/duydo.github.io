@@ -17,7 +17,9 @@
       <guid>http://duydo.me/post/singleton-pattern-why-and-how-to-use-effectively/</guid>
       <description>&lt;p&gt;First, consider definition for Singleton Patten:&lt;/p&gt;
 
+&lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;From this definition we can see the purpose of using this pattern:&lt;/p&gt;
 
