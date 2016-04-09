@@ -1,17 +1,12 @@
 body {
     color: #555;
-    background-color: #333;
+    background-color: #222;
     font-size: 1em;
     line-height: 1.5;
-    /*font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;*/
 }
 
-/*.mid-col a {*/
-/*border-bottom: 1px solid #ddd;*/
-/*}*/
-
 a, a:link {
-    color: #555;
+    color: #333;
 }
 
 a:hover {
@@ -52,7 +47,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
-
 .author-avatar img {
     border-radius: 50%;
     -moz-border-radius: 50%;
@@ -75,14 +69,7 @@ article {
 }
 
 .container .mid-col .mid-col-container #content article .entry-content {
-    font-size: 1.25em;
-}
-
-article .read-more-link {
-    color: #aaa;
-    /*display: block;*/
-    /*padding: 20px 0;*/
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
 .entry-date, .entry-tags, .entry-author-name, .reading-time {
@@ -120,11 +107,6 @@ article h2 a {
 h2.year {
     font-size: 1.5em;
     font-weight: 400;
-}
-
-article .entry-content a:hover {
-    text-decoration: none;
-    border-bottom-color: #000;
 }
 
 .entry-tags a {
@@ -187,7 +169,7 @@ article .entry-content a:hover {
 }
 
 ul#all-tags li {
-     list-style-position: inside;
+    list-style-position: inside;
     text-transform: capitalize;
     font-size: 1.2em;
     font-weight: 300;
@@ -198,4 +180,29 @@ article code, article pre {
     color: #ccc;
     font-size: 0.8em;
     font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace, sans-serif;
+    padding: 20px;
+}
+
+article .entry-content a {
+    border-bottom: 1px solid #ccc;
+    color: #aaa;
+}
+
+article .entry-content a:hover {
+    text-decoration: none;
+    border-bottom-color: #000;
+    color: #333;
+
+}
+
+article .entry-content a.read-more-link {
+    /*display: block;*/
+    /*padding-top: 20px;*/
+    font-size: 0.8em;
+    border: none;
+    color: #aaa;
+}
+
+article .entry-content a.read-more-link:hover {
+    color: #888;
 }
