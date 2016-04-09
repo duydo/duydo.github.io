@@ -176,14 +176,14 @@ article .entry-content a:hover {
 }
 
 .archive-timeline {
-    width: 60%;
-    float: left;
+    float: right;
+    margin-left: 5%;
+    width: 70%;
 }
 
 .archive-tags {
-    width: 30%;
+    width: 25%;
     float: left;
-    margin-left: 10%;
 }
 
 ul#all-tags li {
