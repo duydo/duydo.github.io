@@ -17,7 +17,7 @@
       <guid>http://duydo.me/post/jpa-repository/</guid>
       <description>
 
-&lt;p&gt;This is a small lib I’ve created to implement repository programming model with JPA 2 and &lt;a href=&#34;Specification pattern&#34;&gt;http://en.wikipedia.org/wiki/Specification_pattern&lt;/a&gt; during learning and working with JPA, it provides a simple and easy way to build the data access layer. The source code is hosted at &lt;a href=&#34;GitHub&#34;&gt;https://github.com/duydo/jpa-repository&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is a small lib I’ve created to implement repository programming model with JPA 2 and &lt;a href=&#34;http://en.wikipedia.org/wiki/Specification_pattern&#34;&gt;Specification pattern&lt;/a&gt; during learning and working with JPA, it provides a simple and easy way to build the data access layer. The source code is hosted at &lt;a href=&#34;https://github.com/duydo/jpa-repository&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you have any suggestion or feedback, don’t hesitate to drop me a line :-)&lt;/p&gt;
 
