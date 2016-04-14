@@ -180,7 +180,7 @@ article code, article pre {
     color: #ccc;
     font-size: 0.8em;
     font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace, sans-serif;
-    padding: 2px;
+    padding: 2px 5px;
 }
 
 article .entry-content a {
