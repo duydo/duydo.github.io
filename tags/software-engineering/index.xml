@@ -15,9 +15,9 @@
       <pubDate>Thu, 25 Mar 2010 10:07:48 ICT</pubDate>
       <author>Duy Do</author>
       <guid>http://duydo.me/post/fluent-interface/</guid>
-      <description>&lt;p&gt;While playing with my own  framework, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;great article&lt;/a&gt; on blog of Martin Fowler about this term.&lt;/p&gt;
+      <description>&lt;p&gt;While playing with my own framework, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;The idea of  &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in &lt;em&gt;setter&lt;/em&gt; methods of an object, returning an object to promote object chaining.&lt;/p&gt;
+&lt;p&gt;The idea of &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in &lt;em&gt;setter&lt;/em&gt; methods of an object, returning an object to promote object chaining.&lt;/p&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Query&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;{&lt;/span&gt;
@@ -60,6 +60,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This will make the code more readable.&lt;/p&gt;
+
+&lt;p&gt;There is &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;great article&lt;/a&gt; of Martin Fowler gives you more information about this.&lt;/p&gt;
 </description>
     </item>
     

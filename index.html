@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Duy Do</title>
-	<meta name="author" content="map[email: name:Duy Do bio:Software Engineer in Vietnam]">
+	<meta name="author" content="map[name:Duy Do bio:Software Engineer in Vietnam email:]">
 
 	
 	
@@ -151,7 +151,7 @@ in <span class="entry-tags">
     </h2>
 
 	<p class="entry-content" itemprop="articleBody">
-		While playing with my own framework, I found a new term, called &ldquo;Fluent Interface&rdquo;. There is great article on blog of Martin Fowler about this term. The idea of &ldquo;Fluent Interface&rdquo; is instead of returning void in setter methods of an object, returning an object to promote object chaining. Example: class Query { private String props; private String table; private String condition; public Query select(String props) { this.props = props; return this; } public Query from(String table) { this.table = table; return this; } public Query where(String condition) { this.condition = condition; return this; } public String buildQuery() { return String.format(&quot;SELECT %s FROM %s WHERE %s&quot;, props, table, condition); } } Instead of: Query q = new Query(); q.select(&quot;username&quot;); q.from(&quot;user&quot;); q.where(&quot;username = &#39;duydo&#39;&quot;); String sql = q.buildQuery(); We can write: Query q = new Query(); String sql = q.select(&quot;username&quot;).from(&quot;user&quot;).where(&quot;username = &#39;duydo&#39;&quot;).buildQuery(); This will make the code more readable.
+		While playing with my own framework, I found a new term, called &ldquo;Fluent Interface&rdquo;. The idea of &ldquo;Fluent Interface&rdquo; is instead of returning void in setter methods of an object, returning an object to promote object chaining. Example: class Query { private String props; private String table; private String condition; public Query select(String props) { this.props = props; return this; } public Query from(String table) { this.table = table; return this; } public Query where(String condition) { this.condition = condition; return this; } public String buildQuery() { return String.format(&quot;SELECT %s FROM %s WHERE %s&quot;, props, table, condition); } } Instead of: Query q = new Query(); q.select(&quot;username&quot;); q.from(&quot;user&quot;); q.where(&quot;username = &#39;duydo&#39;&quot;); String sql = q.buildQuery(); We can write: Query q = new Query(); String sql = q.select(&quot;username&quot;).from(&quot;user&quot;).where(&quot;username = &#39;duydo&#39;&quot;).buildQuery(); This will make the code more readable.<a href="http://duydo.me/post/fluent-interface/" class="read-more-link"> Read more...</a>
     </p>
 </article>
 
