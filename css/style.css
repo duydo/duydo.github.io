@@ -157,22 +157,30 @@ h2.year {
     visibility: hidden;
 }
 
-.archive-timeline {
-    float: right;
+/*.archive-timeline {
+    float: left;
     margin-left: 5%;
     width: 70%;
-}
+}*/
 
 .archive-tags {
-    width: 25%;
-    float: left;
+    margin-bottom: 20px;
 }
 
+
 ul#all-tags li {
-    list-style-position: inside;
-    text-transform: capitalize;
-    font-size: 1.2em;
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+
+ul#all-tags li a {
+    font-size: 1em;
     font-weight: 300;
+    display: inline-block;
+    padding: 5px;
+    background: #ccc;
 }
 
 article code, article pre {
