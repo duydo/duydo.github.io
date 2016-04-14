@@ -15,7 +15,7 @@
       <pubDate>Thu, 25 Mar 2010 10:07:48 ICT</pubDate>
       <author>Duy Do</author>
       <guid>http://duydo.me/post/fluent-interface/</guid>
-      <description>&lt;p&gt;Recently, I’ve played with my own  framework I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great &lt;a href=&#34;article&#34;&gt;http://martinfowler.com/bliki/FluentInterface.html&lt;/a&gt; on blog of Martin Fowler about this term.&lt;/p&gt;
+      <description>&lt;p&gt;Recently, I’ve played with my own  framework I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;great article&lt;/a&gt; on blog of Martin Fowler about this term.&lt;/p&gt;
 
 &lt;p&gt;The idea of  &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in &lt;em&gt;setter&lt;/em&gt; methods of an object, returning an object to promote object chaining.&lt;/p&gt;
 
