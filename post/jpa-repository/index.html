@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>JPA Repository: Make your data access layer easy - Duy Do</title>
+	<meta name="author" content="map[email: name:Duy Do bio:Software Engineer in Vietnam]">
+
+	
+	
+	<meta name="description" content="">
+	
+
+	
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link href='/index.xml' rel="alternate" title="Duy Do" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://duydo.me/post/jpa-repository/">
+	<link href="http://duydo.me/favicon.png" rel="shortcut icon">
+	<link href="http://duydo.me/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="http://duydo.me/css/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<link href="http://duydo.me/css/style.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-68329720-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><section class="author">
+    
+<div class="author-avatar">
+    <a href="http://duydo.me/page/about">
+        <img src='http://www.gravatar.com/avatar/6ac96bcb854145bb47eac6fa80b50d44?s=120'
+             alt="Duy Do"
+             style="width: 120px;"/>
+    </a>
+
+    <h1>
+        <a class="author-name" href="http://duydo.me/page/about">
+            Duy Do
+        </a>
+
+        <p class="bio">
+            Software Engineer in Vietnam
+        </p>
+    </h1>
+
+</div>
+
+
+<nav id="sub-nav" class="author-social">
+    <div class="social">
+        
+        
+        
+        
+        <a class="twitter" href='http://twitter.com/duydo' title="Twitter">Twitter</a>
+        
+        
+        <a class="github" href='https://github.com/duydo' title="GitHub">GitHub</a>
+        
+        
+        <a class="linkedin" href='http://www.linkedin.com/in/duydo' title="LinkedIn">LinkedIn</a>
+        
+        
+        <a class="rss" href='/index.xml' title="RSS">RSS</a>
+        
+    </div>
+</nav>
+
+</section>
+<nav id="main-nav">
+    <ul>
+    <li><a href="http://duydo.me/">Blog</a></li>
+    <li><a href="http://duydo.me/post/">Archives</a></li>
+    <li><a href="http://duydo.me/page/about/">About</a></li>
+</ul>
+
+</nav>
+</header>
+			</div>
+		</div>
+		<div class="mid-col">
+			
+			<div class="mid-col-container">
+
+				<div id="content" class="inner">
+
+					<div itemscope itemtype="http://schema.org/Blog">
+						<div class="entry-meta clearfix">
+      <div class="meta-left">
+        <a class="author-avatar" href="http://duydo.me/page/about">
+            <img src='http://www.gravatar.com/avatar/6ac96bcb854145bb47eac6fa80b50d44?s=32'
+                 alt="Duy Do"
+                 style="width: 32px;"/>
+
+        </a>
+</div>
+<div class="meta-right">
+    <span class="entry-author-name">
+                <a href="http://duydo.me/page/about">
+
+Duy Do
+                    </a>
+        </span>
+
+in <span class="entry-tags">
+
+
+	
+	
+		<a href="http://duydo.me/tags/software-engineering">Software Engineering</a>,
+	
+
+	
+	
+		<a href="http://duydo.me/tags/jpa">JPA</a>,
+	
+
+	
+	
+		<a href="http://duydo.me/tags/java">Java</a>,
+	
+
+	
+	
+	    <a href="http://duydo.me/tags/specification">Specification</a>
+	
+
+
+</span>
+
+<br/>
+<span class="entry-date">
+        <time datetime='Monday, January 28, 2013' data-updated="true" itemprop="datePublished">Monday, January 28, 2013</time>
+
+    </span> - <span class="reading-time">2 min read</span>
+</div>
+	</div>
+					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="title" itemprop="name">JPA Repository: Make your data access layer easy</h1>
+	<div class="entry-content" itemprop="articleBody">
+
+<p>This is a small lib I’ve created to implement repository programming model with JPA 2 and <a href="Specification pattern">http://en.wikipedia.org/wiki/Specification_pattern</a> during learning and working with JPA, it provides a simple and easy way to build the data access layer. The source code is hosted at <a href="GitHub">https://github.com/duydo/jpa-repository</a></p>
+
+<p>If you have any suggestion or feedback, don’t hesitate to drop me a line :-)</p>
+
+<h2 id="build-install:e971cb517314f2562dbe26b4cd13926a">Build &amp; Install</h2>
+
+<p>It is very easy to build from source code with maven:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">git clone https://github.com/duydo/jpa-repository.git
+<span style="color: #f8f8f2">cd </span>jpa-repository
+mvn install
+</pre></div>
+
+<p>If you use maven with the project, just adding dependency to your pom.xml</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;dependency&gt;</span>
+    <span style="color: #f92672">&lt;groupId&gt;</span>com.duydo<span style="color: #f92672">&lt;/groupId&gt;</span>
+    <span style="color: #f92672">&lt;artifactId&gt;</span>jpa-repository<span style="color: #f92672">&lt;/artifactId&gt;</span>
+    <span style="color: #f92672">&lt;version&gt;</span>0.0.1-SNAPSHOT<span style="color: #f92672">&lt;/version&gt;</span>
+<span style="color: #f92672">&lt;/dependency&gt;</span>
+</pre></div>
+
+<h2 id="usage:e971cb517314f2562dbe26b4cd13926a">Usage</h2>
+
+<p>Create an entity, User for example:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">    <span style="color: #a6e22e">@Entity</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">User</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">EntityObject</span> <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">name</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">email</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">public</span> <span style="color: #a6e22e">User</span><span style="color: #f92672">()</span> <span style="color: #f92672">{}</span>
+        <span style="color: #75715e">//getter/setter here</span>
+    <span style="color: #f92672">}</span>
+</pre></div>
+
+<p>Create an instance of Repository:</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">EntityManager</span> <span style="color: #f8f8f2">em</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
+<span style="color: #f8f8f2">Repository</span> <span style="color: #f8f8f2">repo</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">JPARepository</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">em</span><span style="color: #f92672">);</span>
+</pre></div>
+
+<h3 id="basic-queries:e971cb517314f2562dbe26b4cd13926a">Basic Queries</h3>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//find all users</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findAll</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">)</span>
+
+<span style="color: #75715e">//find user by id</span>
+<span style="color: #f8f8f2">User</span> <span style="color: #f8f8f2">user</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findById</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">1L</span><span style="color: #f92672">);</span>
+
+<span style="color: #75715e">//create</span>
+<span style="color: #f8f8f2">User</span> <span style="color: #f8f8f2">user</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">User</span><span style="color: #f92672">();</span>
+<span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">save</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">user</span><span style="color: #f92672">);</span>
+
+<span style="color: #75715e">//update</span>
+<span style="color: #f8f8f2">User</span> <span style="color: #f8f8f2">user</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findById</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">1L</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">user</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setName</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Duy Do&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">update</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">user</span><span style="color: #f92672">);</span>
+
+<span style="color: #75715e">// delete</span>
+<span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">user</span><span style="color: #f92672">);</span>
+</pre></div>
+
+<h3 id="query-with-specification:e971cb517314f2562dbe26b4cd13926a">Query with Specification</h3>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">// Find unique user has email abc@example.com</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasEmail</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;email&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;abc@example.com&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">User</span> <span style="color: #f8f8f2">user</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasEmail</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asSingle</span><span style="color: #f92672">();</span>
+
+
+<span style="color: #75715e">// Find all users has name “Duy”</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+
+<span style="color: #75715e">//Find all users which name is not “Duy”</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">notName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">not</span><span style="color: #f92672">();</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">notName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+
+<span style="color: #75715e">// We can combine specifications with AND, OR</span>
+<span style="color: #75715e">//Find users has name &quot;Duy&quot; and age is &quot;28&quot;</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasAge28</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;age&quot;</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">28</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">.</span><span style="color: #a6e22e">and</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">hasAge28</span><span style="color: #f92672">)).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+</pre></div>
+
+<h3 id="sorting:e971cb517314f2562dbe26b4cd13926a">Sorting</h3>
+
+<p>Sorting by using method <code>sortXXX()</code> of <code>SepecificationResult</code></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">// Find all users has name “Duy” and sort ascending by name</span>
+
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">sortAscending</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+</pre></div>
+
+<h3 id="paging:e971cb517314f2562dbe26b4cd13926a">Paging</h3>
+
+<p>Paging by using method <code>skip(int count)</code> and <code>get(int count)</code> of <code>SepecificationResult</code></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//Find 10 users has name “Duy”</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+
+<span style="color: #75715e">// Find all users has name “Duy” but skip 10 first users</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">skip</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+
+<span style="color: #75715e">//Find 20 users has name “Duy” but skip 10 first users</span>
+<span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
+<span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">skip</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">).</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #ae81ff">20</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
+</pre></div>
+</div></article>
+					
+						<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size=''></a>
+	
+	
+	</div>
+	
+  	<script type="text/javascript" src='http://s7.addthis.com/js/250/addthis_widget.js#pubid='></script>
+  	
+</div>
+
+					
+					
+					<section id="comment">
+					    <h1 class="title">Comments</h1>
+					    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+					</section>
+					
+					
+
+<script type="text/javascript">
+    
+    var disqus_shortname = 'duydo';
+
+    
+    
+
+    
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+    
+</script>
+
+
+				    </div>
+				</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016 Duy Do. Powered by <a target="_blank" href="http://gohugo.io">Hugo</a>.
+
+<script src="http://duydo.me/js/slash.js"></script>
+<script src="http://duydo.me/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script></footer>
+		</div>
+	</div>
+	
+</body>
+</html>
