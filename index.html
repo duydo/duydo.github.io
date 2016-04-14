@@ -133,6 +133,52 @@ in <span class="entry-tags">
 
 	
 	
+	    <a href="http://duydo.me/tags/software-engineering">Software Engineering</a>
+	
+
+
+</span>
+
+<br/>
+<span class="entry-date">
+        <time datetime='Thursday, March 25, 2010' data-updated="true" itemprop="datePublished">Thursday, March 25, 2010</time>
+
+    </span> - <span class="reading-time">1 min read</span>
+</div>
+	</div>
+    <h2 class="title" itemprop="name">
+        <a href="http://duydo.me/post/fluent-interface/" itemprop="url">Fluent Interface</a>
+    </h2>
+
+	<p class="entry-content" itemprop="articleBody">
+		Recently, I’ve played with my own framework I found a new term, called &ldquo;Fluent Interface&rdquo;. There is a great http://martinfowler.com/bliki/FluentInterface.html on blog of Martin Fowler about this term. The idea of &ldquo;Fluent Interface&rdquo; is instead of returning void in setter methods of an object, returning an object to promote object chaining. Example: class Query { private String props; private String table; private String condition; public Query select(String props) { this.props = props; return this; } public Query from(String table) { this.table = table; return this; } public Query where(String condition) { this.condition = condition; return this; } public String buildQuery() { return String.format(&quot;SELECT %s FROM %s WHERE %s&quot;, props, table, condition); } } Instead of: Query q = new Query(); q.select(&quot;username&quot;); q.from(&quot;user&quot;); q.where(&quot;username = &#39;duydo&#39;&quot;); String sql = q.buildQuery(); We can write: Query q = new Query(); String sql = q.select(&quot;username&quot;).from(&quot;user&quot;).where(&quot;username = &#39;duydo&#39;&quot;).buildQuery(); This will make the code more readable.
+    </p>
+</article>
+
+				    
+				        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="entry-meta clearfix">
+      <div class="meta-left">
+        <a class="author-avatar" href="http://duydo.me/page/about">
+            <img src='http://www.gravatar.com/avatar/6ac96bcb854145bb47eac6fa80b50d44?s=32'
+                 alt="Duy Do"
+                 style="width: 32px;"/>
+
+        </a>
+</div>
+<div class="meta-right">
+    <span class="entry-author-name">
+                <a href="http://duydo.me/page/about">
+
+Duy Do
+                    </a>
+        </span>
+
+in <span class="entry-tags">
+
+
+	
+	
 		<a href="http://duydo.me/tags/java">Java</a>,
 	
 
