@@ -20,6 +20,7 @@
 }
 
 .single .post-date {
+    display: inline-block;
     border: medium none;
     margin: 0;
     padding: 0;
