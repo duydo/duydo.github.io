@@ -7,6 +7,10 @@
 /*color: #ffffff;*/
 /*}*/
 
+.post-date {
+     display: inline-block;
+}
+
 .single .post-header {
     margin-bottom: 3.4rem;
 }
