@@ -163,7 +163,7 @@ in <span class="entry-tags">
 <p>It ensures we have at most one instance of a class in our application.
 It also provides global access point to that instance. We can access to that instance  everywhere in our application.
 And now, wen implement it, I use Java:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f8f8f2">instance</span><span style="color: #f92672">;</span>
 	<span style="color: #75715e">/**</span>
 <span style="color: #75715e">	 * This private constructor prevents create an instance of Singleton class directly.</span>
@@ -234,7 +234,7 @@ And now, wen implement it, I use Java:</p>
 <p><strong>1. Synchronize method getInstance()</strong></p>
 
 <p>Synchronize method getInstance() with synchronized keyword. This ensures only one thread can execute getInstance() method at one time. Another thread wants to execute this method must wait another thread finish execute the method.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f8f8f2">instance</span><span style="color: #f92672">;</span>
 	<span style="color: #75715e">/**</span>
 <span style="color: #75715e">	 * This private constructor prevents create an instance of Singleton class directly.</span>
@@ -261,7 +261,7 @@ So, use this fix if performance is not critical in your application. Otherwise, 
 <p><strong>2. Use “double-checked locking” technique</strong></p>
 
 <p>With &ldquo;double-checking locked&rdquo; technique, we only synchronize the first time instance of Singleton class created. This can reduce overhead.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">volatile</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f8f8f2">instance</span><span style="color: #f92672">;</span>
 	<span style="color: #75715e">/**</span>
 <span style="color: #75715e">	 * This private constructor prevents create an instance of Singleton class directly.</span>
@@ -291,7 +291,7 @@ So, use this fix if performance is not critical in your application. Otherwise, 
 <p><strong>3. Eagerly to create instance of Singleton class</strong></p>
 
 <p>If in our application always use instance of Singleton class, we can eagerly create instance of Singleton class rather than a lazy created one, like this:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Singleton</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f8f8f2">instance</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Singleton</span><span style="color: #f92672">();</span>
 	<span style="color: #75715e">/**</span>
 <span style="color: #75715e">	 * This private constructor prevents create an instance of Singleton class directly.</span>
@@ -313,7 +313,7 @@ So, use this fix if performance is not critical in your application. Otherwise, 
 <p><strong>5. Using ENUM</strong></p>
 
 <p>This way was provided by Joshua Bloch in his 2nd Effective Java book.</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">Singleton</span> <span style="color: #f92672">{</span>
 	<span style="color: #f8f8f2">INSTANCE</span><span style="color: #f92672">;</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">foo</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
 		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;FOO&quot;</span><span style="color: #f92672">);</span>

@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Effective JPA: Use Enumeration Effectively - Duy Do</title>
-	<meta name="author" content="map[email: name:Duy Do bio:Software Engineer in Vietnam]">
+	<meta name="author" content="map[name:Duy Do bio:Software Engineer in Vietnam email:]">
 
 	
 	
@@ -154,7 +154,7 @@ in <span class="entry-tags">
 <p>There are some ways to model the post entity, we can save status as an integer value in database: draft -&gt; 0, pending-review -&gt; 1, published -&gt; 2</p>
 
 <p>Version 1</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #a6e22e">@Entity</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@Entity</span>
 <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Post</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">status</span><span style="color: #f92672">;</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #a6e22e">getStatus</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
@@ -167,14 +167,14 @@ in <span class="entry-tags">
 </pre></div>
 
 <p>Well that’s ok. A client can use:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
 <span style="color: #75715e">//Draft post</span>
 <span style="color: #f8f8f2">post</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setStatus</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">repository</span><span style="color: #f92672">.</span><span style="color: #a6e22e">store</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">post</span><span style="color: #f92672">);</span>
 </pre></div>
 
 <p>But this is not safe, the client can set any integer value for status. For more safety, we can define constants for status values like this:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">PostStatus</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">PostStatus</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">DRAFT</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">PENDING_REVIEW</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">;</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">PUBLISHED</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">;</span>
@@ -182,7 +182,7 @@ in <span class="entry-tags">
 </pre></div>
 
 <p>The client can use:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
 <span style="color: #75715e">//Draft post</span>
 <span style="color: #f8f8f2">post</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setStatus</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">PostStatus</span><span style="color: #f92672">.</span><span style="color: #a6e22e">DRAFT</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">repository</span><span style="color: #f92672">.</span><span style="color: #a6e22e">store</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">post</span><span style="color: #f92672">);</span>
@@ -191,7 +191,7 @@ in <span class="entry-tags">
 <p>But it is still not safe, because the client maybe do not use PostStatus class. Well, we can force the client use PostStatus by declaring PostStatus as an Enum and make it as as dependency of Post class:</p>
 
 <p>Version 2</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">PostStatus</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">PostStatus</span> <span style="color: #f92672">{</span>
 	<span style="color: #f8f8f2">DRAFT</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">PENDING_REVIEW</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">PUBLISHED</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">}</span>
 <span style="color: #a6e22e">@Entity</span>
@@ -208,7 +208,7 @@ in <span class="entry-tags">
 </pre></div>
 
 <p>And now client can use it:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Post</span> <span style="color: #f8f8f2">post</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
 <span style="color: #75715e">//Draft post</span>
 <span style="color: #f8f8f2">post</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setStatus</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">PostStatus</span><span style="color: #f92672">.</span><span style="color: #a6e22e">DRAFT</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">repository</span><span style="color: #f92672">.</span><span style="color: #a6e22e">store</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">post</span><span style="color: #f92672">);</span>
@@ -218,7 +218,7 @@ in <span class="entry-tags">
 
 <p>Version 3
 Enum type in Java 5 is wonderful, we can add constructor and do some business logic in it. Apply it we can re-write PostStatus like this:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">PostStatus</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">enum</span> <span style="color: #f8f8f2">PostStatus</span> <span style="color: #f92672">{</span>
 	<span style="color: #f8f8f2">DRAFT</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">),</span>
 	<span style="color: #f8f8f2">PENDING_REVIEW</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">),</span>
 	<span style="color: #f8f8f2">PUBLISHED</span><span style="color: #f92672">(</span><span style="color: #ae81ff">2</span><span style="color: #f92672">);</span>
@@ -233,7 +233,7 @@ Enum type in Java 5 is wonderful, we can add constructor and do some business lo
 </pre></div>
 
 <p>And Post class is re-wrote like this:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #a6e22e">@Entity</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@Entity</span>
 <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Post</span> <span style="color: #f92672">{</span>
 	<span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">status</span><span style="color: #f92672">;</span>
 	<span style="color: #66d9ef">public</span> <span style="color: #f8f8f2">PostStatus</span> <span style="color: #a6e22e">getStatus</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>

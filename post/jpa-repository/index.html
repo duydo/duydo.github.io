@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>JPA Repository: Make your data access layer easy - Duy Do</title>
-	<meta name="author" content="map[email: name:Duy Do bio:Software Engineer in Vietnam]">
+	<meta name="author" content="map[name:Duy Do bio:Software Engineer in Vietnam email:]">
 
 	
 	
@@ -153,26 +153,26 @@ in <span class="entry-tags">
 
 <p>If you have any suggestion or feedback, don’t hesitate to drop me a line :-)</p>
 
-<h2 id="build-install:e971cb517314f2562dbe26b4cd13926a">Build &amp; Install</h2>
+<h2 id="build-install">Build &amp; Install</h2>
 
 <p>It is very easy to build from source code with maven:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">git clone https://github.com/duydo/jpa-repository.git
-<span style="color: #f8f8f2">cd </span>jpa-repository
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>git clone https://github.com/duydo/jpa-repository.git
+<span style="color: #f8f8f2">cd</span> jpa-repository
 mvn install
 </pre></div>
 
 <p>If you use maven with the project, just adding dependency to your pom.xml</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;dependency&gt;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f92672">&lt;dependency&gt;</span>
     <span style="color: #f92672">&lt;groupId&gt;</span>com.duydo<span style="color: #f92672">&lt;/groupId&gt;</span>
     <span style="color: #f92672">&lt;artifactId&gt;</span>jpa-repository<span style="color: #f92672">&lt;/artifactId&gt;</span>
     <span style="color: #f92672">&lt;version&gt;</span>0.0.1-SNAPSHOT<span style="color: #f92672">&lt;/version&gt;</span>
 <span style="color: #f92672">&lt;/dependency&gt;</span>
 </pre></div>
 
-<h2 id="usage:e971cb517314f2562dbe26b4cd13926a">Usage</h2>
+<h2 id="usage">Usage</h2>
 
 <p>Create an entity, User for example:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">    <span style="color: #a6e22e">@Entity</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>    <span style="color: #a6e22e">@Entity</span>
     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">User</span> <span style="color: #66d9ef">extends</span> <span style="color: #f8f8f2">EntityObject</span> <span style="color: #f92672">{</span>
         <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">name</span><span style="color: #f92672">;</span>
         <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">Integer</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
@@ -184,12 +184,12 @@ mvn install
 </pre></div>
 
 <p>Create an instance of Repository:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">EntityManager</span> <span style="color: #f8f8f2">em</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">EntityManager</span> <span style="color: #f8f8f2">em</span> <span style="color: #f92672">=</span> <span style="color: #f92672">...;</span>
 <span style="color: #f8f8f2">Repository</span> <span style="color: #f8f8f2">repo</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">JPARepository</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">em</span><span style="color: #f92672">);</span>
 </pre></div>
 
-<h3 id="basic-queries:e971cb517314f2562dbe26b4cd13926a">Basic Queries</h3>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//find all users</span>
+<h3 id="basic-queries">Basic Queries</h3>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">//find all users</span>
 <span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findAll</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">)</span>
 
 <span style="color: #75715e">//find user by id</span>
@@ -208,8 +208,8 @@ mvn install
 <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">user</span><span style="color: #f92672">);</span>
 </pre></div>
 
-<h3 id="query-with-specification:e971cb517314f2562dbe26b4cd13926a">Query with Specification</h3>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">// Find unique user has email abc@example.com</span>
+<h3 id="query-with-specification">Query with Specification</h3>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">// Find unique user has email abc@example.com</span>
 <span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasEmail</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;email&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;abc@example.com&quot;</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">User</span> <span style="color: #f8f8f2">user</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasEmail</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asSingle</span><span style="color: #f92672">();</span>
 
@@ -229,19 +229,19 @@ mvn install
 <span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">.</span><span style="color: #a6e22e">and</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">hasAge28</span><span style="color: #f92672">)).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
 </pre></div>
 
-<h3 id="sorting:e971cb517314f2562dbe26b4cd13926a">Sorting</h3>
+<h3 id="sorting">Sorting</h3>
 
 <p>Sorting by using method <code>sortXXX()</code> of <code>SepecificationResult</code></p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">// Find all users has name “Duy” and sort ascending by name</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">// Find all users has name “Duy” and sort ascending by name</span>
 
 <span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">sortAscending</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
 </pre></div>
 
-<h3 id="paging:e971cb517314f2562dbe26b4cd13926a">Paging</h3>
+<h3 id="paging">Paging</h3>
 
 <p>Paging by using method <code>skip(int count)</code> and <code>get(int count)</code> of <code>SepecificationResult</code></p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">//Find 10 users has name “Duy”</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">//Find 10 users has name “Duy”</span>
 <span style="color: #f8f8f2">Specification</span> <span style="color: #f8f8f2">hasName</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Specifications</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equal</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;name&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Duy&quot;</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">List</span> <span style="color: #f8f8f2">users</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repo</span><span style="color: #f92672">.</span><span style="color: #a6e22e">findBySpecification</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">User</span><span style="color: #f92672">.</span><span style="color: #a6e22e">class</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">hasName</span><span style="color: #f92672">).</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">).</span><span style="color: #a6e22e">asList</span><span style="color: #f92672">();</span>
 

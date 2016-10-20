@@ -152,7 +152,7 @@ in <span class="entry-tags">
 <p>The idea of &ldquo;Fluent Interface&rdquo; is instead of returning void in <em>setter</em> methods of an object, returning an object to promote object chaining.</p>
 
 <p>Example:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Query</span> <span style="color: #f92672">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Query</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">props</span><span style="color: #f92672">;</span>
     <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">table</span><span style="color: #f92672">;</span>
     <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">condition</span><span style="color: #f92672">;</span>
@@ -179,7 +179,7 @@ in <span class="entry-tags">
 </pre></div>
 
 <p>Instead of:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Query</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Query</span><span style="color: #f92672">();</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Query</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Query</span><span style="color: #f92672">();</span>
 <span style="color: #f8f8f2">q</span><span style="color: #f92672">.</span><span style="color: #a6e22e">select</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;username&quot;</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">q</span><span style="color: #f92672">.</span><span style="color: #a6e22e">from</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;user&quot;</span><span style="color: #f92672">);</span>
 <span style="color: #f8f8f2">q</span><span style="color: #f92672">.</span><span style="color: #a6e22e">where</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;username = &#39;duydo&#39;&quot;</span><span style="color: #f92672">);</span>
@@ -187,7 +187,7 @@ in <span class="entry-tags">
 </pre></div>
 
 <p>We can write:</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">Query</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Query</span><span style="color: #f92672">();</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #f8f8f2">Query</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Query</span><span style="color: #f92672">();</span>
 <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">sql</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">q</span><span style="color: #f92672">.</span><span style="color: #a6e22e">select</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;username&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">from</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;user&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">where</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;username = &#39;duydo&#39;&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">buildQuery</span><span style="color: #f92672">();</span>
 </pre></div>
 

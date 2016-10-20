@@ -2,31 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Duy Do</title>
-    <link>http://duydo.me/index.xml</link>
+    <link>http://duydo.me/tags/elastic/index.xml</link>
     <description>Recent content on Duy Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright> © 2016</copyright>
-    <lastBuildDate>Tue, 18 Oct 2016 16:54:21 +0700</lastBuildDate>
-    <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>About</title>
-      <link>http://duydo.me/about/</link>
-      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
-      
-      <guid>http://duydo.me/about/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m Duy Do. I live in Ho Chi Minh, Vietnam with my two cute kids and a beautiful wife.&lt;/p&gt;
-
-&lt;p&gt;Currently, I am doing a small tech start-up as co-founder with my two friends. My areas of interest include information retrieval, distributed systems, data processing, data analytics, performance monitoring and development of new products interesting ways.&lt;/p&gt;
-
-&lt;p&gt;I love working with open source software. I have been contributing to Elasticsearch with
-&lt;a href=&#34;https://github.com/duydo/elasticsearch-analysis-vietnamese&#34;&gt;Vietnamese analysis plugin&lt;/a&gt; and founded &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;the Vietnamese Elasticsearch community&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can find me somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt;, &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt;, &lt;a href=&#34;https://vn.linkedin.com/in/duydo&#34;&gt;LinkedIn&lt;/a&gt; or
-on roads where I run every morning.&lt;/p&gt;
-</description>
-    </item>
+    <atom:link href="http://duydo.me/tags/elastic/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Interview at Elastic</title>
