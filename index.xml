@@ -11,11 +11,11 @@
     <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Elasticsearch for Engineers</title>
-      <link>http://duydo.me/elasticsearch-for-engineers/</link>
+      <title>Elasticsearch for Data Engineers</title>
+      <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
       <pubDate>Thu, 20 Oct 2016 18:26:39 +0700</pubDate>
       
-      <guid>http://duydo.me/elasticsearch-for-engineers/</guid>
+      <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
       <description>&lt;p&gt;This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
 
 &lt;script async class=&#39;speakerdeck-embed&#39; data-id=&#39;970178bcd293418cb303b342fa7d77f5&#39; data-ratio=&#39;1.33333333333333&#39; src=&#39;//speakerdeck.com/assets/embed.js&#39;&gt;&lt;/script&gt;
