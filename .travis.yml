@@ -4,10 +4,10 @@ go:
 env:
     global:
         - SSH_KEY="travis"
-        - GIT_NAME="Duy Do"
-        - GIT_EMAIL="doquocduy@gmail.com"
-        - SOURCE_DIR="public"
-        - DEPLOY_BRANCH="develop"
+        - GIT_DEPLOY_DIR=public
+        - GIT_DEPLOY_BRANCH=develop
+        - GIT_DEPLOY_USERNAME="Duy Do"
+        - GIT_DEPLOY_EMAIL=doquocduy@gmail.com
 git:
     submodules: false
 before_install:
