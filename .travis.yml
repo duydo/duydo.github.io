@@ -3,7 +3,6 @@ go:
     - "1.7.1"
 env:
     global:
-        - SSH_KEY="travis"
         - GIT_DEPLOY_DIR=public
         - GIT_DEPLOY_BRANCH=master
         - GIT_DEPLOY_USERNAME="Duy Do"
