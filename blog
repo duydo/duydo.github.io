@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    run)
+        hugo server --buildDrafts -w
+        ;;
+    build)
+        hugo
+        ;;
+    deploy)
+        hugo && cd public && git add . && git commit -m "$2" && git push
+        ;;
+    *)
+        echo "Usage: ./blog <run|build|deploy>"
+        exit 3
+esac
+exit 0

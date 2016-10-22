@@ -1,0 +1,35 @@
+baseurl = "http://duydo.me/"
+copyright = " © 2016"
+disqusshortname = "duydo"
+languagecode = "en-US"
+paginate = 5
+pluralizelisttitles = false
+theme = "casper"
+title = "Duy Do"
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -120
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
+weight = 101
+
+[params]
+#logo = "images/logo.png"
+#cover = "http://demo.ghost.io/content/images/2014/09/testimg-home-1.jpg"
+description = "A Father. A Husband. A Software Engineer."
+googleAnalyticsUserID = "UA-68329720-1"
+hideHUGOSupport = false
+#githubName = "duydo"
+#twitterName = "duydo"
+author="duydo"
+[permalinks]
+post = "/:slug/"
+
+[sitemap]
+ChangeFreq = ""
+Filename = "sitemap.xml"
+Priority = "-1"
