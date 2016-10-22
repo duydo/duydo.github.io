@@ -18,4 +18,4 @@ script:
     - ./bin/hugo
 after_success:
     - echo "duydo.me" > ./public/CNAME
-    - ./bin/deploy.sh
+    - bash deploy.sh
