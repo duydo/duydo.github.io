@@ -17,11 +17,14 @@ case "$1" in
     build)
         hugo
         ;;
+    sync)
+        git add --all && git commit -am "$2" && git push
+        ;;
     deploy)
         deploy
         ;;
     *)
-        echo "Usage: ./manage <run|build|deploy>"
+        echo "Usage: ./manage <run|build|push|deploy>"
         exit 3
 esac
 exit 0
