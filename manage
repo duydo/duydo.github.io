@@ -8,7 +8,8 @@ case "$1" in
         hugo
         ;;
     deploy)
-        hugo && cd public && git add . && git commit -m "$2" && git push
+        echo 'duydo.me' > ./public/CNAME
+        ./deploy.sh
         ;;
     *)
         echo "Usage: ./manage <run|build|deploy>"
