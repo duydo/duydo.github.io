@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+function deploy() {
+    export GIT_DEPLOY_DIR=public
+    export GIT_DEPLOY_BRANCH=master
+    export GIT_DEPLOY_USERNAME="Duy Do"
+    export GIT_DEPLOY_EMAIL=doquocduy@gmail.com
+    echo 'duydo.me' > ./public/CNAME
+    ./deploy.sh
+}
 
 case "$1" in
     run)
@@ -8,8 +16,7 @@ case "$1" in
         hugo
         ;;
     deploy)
-        echo 'duydo.me' > ./public/CNAME
-        ./deploy.sh
+        deploy
         ;;
     *)
         echo "Usage: ./manage <run|build|deploy>"
