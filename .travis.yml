@@ -17,5 +17,5 @@ before_install:
 script:
     - ./bin/hugo
 after_success:
-    - echo "duydo.me" > CNAME
+    - echo "duydo.me" > ./public/CNAME
     - ./deploy.sh
