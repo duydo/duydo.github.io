@@ -6,8 +6,9 @@ function deploy() {
     export GIT_DEPLOY_BRANCH=master
     export GIT_DEPLOY_USERNAME="Duy Do"
     export GIT_DEPLOY_EMAIL=doquocduy@gmail.com
-    echo 'duydo.me' > ./public/CNAME
+    cp ./CNAME ./public/CNAME
     ./deploy.sh
+    rm -rf ./public
 }
 
 case "$1" in

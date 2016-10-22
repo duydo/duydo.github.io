@@ -65,7 +65,7 @@ parse_args() {
 			break
 		fi
 	done
-
+    verbose=true
 	# Set internal option vars from the environment and arg flags. All internal
 	# vars should be declared here, with sane defaults if applicable.
 
