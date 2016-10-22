@@ -15,7 +15,7 @@ before_install:
 - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
 - git submodule update --init --recursive
 script:
-    - ./bin/hugo
+    - ./hugo
 after_success:
     - echo "duydo.me" > ./public/CNAME
     - ./deploy.sh
