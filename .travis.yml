@@ -18,4 +18,4 @@ script:
     - ./hugo
 after_success:
     - cp -f ./CNAME ./public/CNAME
-    - sh ./deploy.sh
+    - bash ./deploy.sh
