@@ -13,7 +13,6 @@ before_install:
 before_script:
     - go get -u -v github.com/spf13/hugo
 script:
-    - git submodule update
     - hugo
 after_success:
     - echo "duydo.me" > ./public/CNAME
