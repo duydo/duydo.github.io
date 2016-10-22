@@ -1,5 +1,5 @@
 baseurl = "http://duydo.me/"
-copyright = " © 2016"
+copyright = "© 2016"
 disqusshortname = "duydo"
 languagecode = "en-US"
 paginate = 5
