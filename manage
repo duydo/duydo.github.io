@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 function deploy() {
+    rm -rf ./public
+    hugo
     export GIT_DEPLOY_DIR=public
     export GIT_DEPLOY_BRANCH=master
     export GIT_DEPLOY_USERNAME="Duy Do"
