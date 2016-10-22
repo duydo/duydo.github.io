@@ -971,6 +971,8 @@ body:not(.post-template) .post-title {
 
 .read-more {
     text-decoration: none;
+    font-size: 1.35rem;
+    color: #9EABB3;
 }
 
 .post-meta {
@@ -980,6 +982,46 @@ body:not(.post-template) .post-title {
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
+}
+
+/* Post tag */
+.post-tag {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.post-tag a {
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid #9EABB3;
+    font-size: 1.35rem;
+    color: #9EABB3;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.post-tag a:hover {
+    color: #555;
+    border-color: #555;
+}
+
+
+.single .post-header {
+    margin-bottom: 3.4rem;
+}
+
+.single .post-title {
+    margin: 0;
+}
+
+.single .post-meta {
+    margin: 0;
+}
+
+.single .post-date {
+    border: medium none;
+    margin: 0;
+    padding: 0;
 }
 
 .author-thumb {
@@ -993,6 +1035,7 @@ body:not(.post-template) .post-title {
 .post-meta a {
     color: #9EABB3;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .post-meta a:hover {
@@ -1171,7 +1214,7 @@ body:not(.post-template) .post-title {
     position: absolute;
     top: 6rem;
     right: 0;
-    width: 180px;
+    width: auto;
 }
 
 .post-footer .share a {
