@@ -1,9 +1,9 @@
 +++
 date = "2016-04-08T17:59:15+07:00"
 draft = false
-title = "The Alchemist - Nhà Giả Kim"
+title = "Nhà Giả Kim - Paulo Coelho"
 image = "images/alchemist.jpg"
-tags = ["alchemist", "nha-gia-kim", "books"]
+tags = ["books", "Nha Gia Kim", "alchemist", "Paulo Coelho"]
 +++
 
 "Nhà Giả Kim" là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống "nay đây mai đó", để theo đuổi ước mơ vận mệnh của mình. Sách dường như là vật bất li thân của chàng, mỗi lúc chăn cừu chàng luôn có một cuốn sách bên cạnh. Điều này làm mình nhớ đến tuổi thơ của mình, lúc nào đi chăn bò cũng mang theo một cuốn sách ;-)
@@ -16,4 +16,4 @@ Chàng đã đạt được ước  mơ của đời mình nhưng thật sự nh
 
 Câu chuyện kết thúc tốt đẹp, mở toan ra những cánh cửa cho những con người có hoài bão, ước mơ, quyết tâm theo đuổi đến cùng vận mệnh của mình.
 
-> *"Kho báu không phải là đích đến, kho báu là cả cuộc hành trình"*
+*"Kho báu không phải là đích đến, kho báu là cả cuộc hành trình"*

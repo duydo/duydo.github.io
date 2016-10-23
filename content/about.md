@@ -1,5 +1,6 @@
 +++
 title = "About"
+slug="about"
 draft = false
 date = "2016-10-18T16:54:21+07:00"
 comments = false

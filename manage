@@ -22,6 +22,7 @@ case "$1" in
         hugo
         ;;
     sync)
+        rm -rf ./public
         git add --all && git commit -am "$2" && git push
         ;;
     deploy)

@@ -26,6 +26,7 @@ hideHUGOSupport = false
 #githubName = "duydo"
 #twitterName = "duydo"
 author="duydo"
+
 [permalinks]
 post = "/:slug/"
 
