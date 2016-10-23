@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
+me=$(basename "$0")
+
+
 function deploy() {
     rm -rf ./public
     hugo
+    cp ./CNAME ./public/CNAME
     export GIT_DEPLOY_DIR=public
     export GIT_DEPLOY_BRANCH=master
     export GIT_DEPLOY_USERNAME="Duy Do"
     export GIT_DEPLOY_EMAIL=doquocduy@gmail.com
-    cp ./CNAME ./public/CNAME
-    ./deploy.sh
+    ./bin/deploy.sh
     rm -rf ./public
 }
 
@@ -25,7 +28,7 @@ case "$1" in
         deploy
         ;;
     *)
-        echo "Usage: ./manage <run|build|push|deploy>"
+        echo "Usage: $me <run|build|sync|deploy>"
         exit 3
 esac
 exit 0
