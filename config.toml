@@ -18,7 +18,7 @@ url = "/about"
 weight = 101
 
 [params]
-#logo = "images/logo.png"
+#logo = ""
 #cover = "http://demo.ghost.io/content/images/2014/09/testimg-home-1.jpg"
 description = "A Father. A Husband. A Software Engineer."
 googleAnalyticsUserID = "UA-68329720-1"

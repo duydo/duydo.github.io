@@ -5,7 +5,7 @@ date = "2016-10-18T09:48:56+07:00"
 tags = ["Misc","elastic", "elasticsearch"]
 +++
 
-Some months ago, I had an interview with Elastic for Java Software/Support Engineer position. The interview was an interesting experience I've ever had, Elastic is a brilliant company with great people and amazing culture.
+Some months ago, I had an interview with [Elastic](https://elastic.co) for Java Software/Support Engineer position. The interview was an interesting experience I've ever had, Elastic is a brilliant company with great people and amazing culture.
 
 <!--more-->
 
@@ -13,7 +13,7 @@ The interview process is extremely thorough, all conversations were over the vid
 
 The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.
 
-The techincal questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don't need to master all Elastic's products to work as a support engineer, the people in your team will help you with the products you are not familliar with.
+The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don't need to master all Elastic's products to work as a support engineer, the people in your team will help you with the products you are not familliar with.
 
 My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.
 
