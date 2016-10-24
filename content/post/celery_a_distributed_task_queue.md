@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 tags = [
   "talks", "celery", "python", "distributed", "task queue"
 ]
