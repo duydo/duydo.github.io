@@ -6,11 +6,25 @@ paginate = 5
 pluralizelisttitles = false
 theme = "casper"
 title = "Duy Do"
+
 [[menu.main]]
-identifier = "home"
-name = "Home"
+identifier = "blog"
+name = "Blog"
 url = "/"
 weight = -120
+
+[[menu.main]]
+identifier = "talks"
+name = "Talks"
+url = "/tags/talks"
+weight = -110
+
+[[menu.main]]
+identifier = "misc"
+name = "Misc"
+url = "/tags/misc"
+weight = -100
+
 [[menu.main]]
 identifier = "about"
 name = "About"

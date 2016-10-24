@@ -6,7 +6,10 @@ image = "images/alchemist.jpg"
 tags = ["books", "Nha Gia Kim", "alchemist", "Paulo Coelho"]
 +++
 
-"Nhà Giả Kim" là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống "nay đây mai đó", để theo đuổi ước mơ vận mệnh của mình. Sách dường như là vật bất li thân của chàng, mỗi lúc chăn cừu chàng luôn có một cuốn sách bên cạnh. Điều này làm mình nhớ đến tuổi thơ của mình, lúc nào đi chăn bò cũng mang theo một cuốn sách ;-)
+"Nhà Giả Kim" là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống "nay đây mai đó", để theo đuổi ước mơ vận mệnh của mình.
+<!--more-->
+
+Sách dường như là vật bất li thân của chàng, mỗi lúc chăn cừu chàng luôn có một cuốn sách bên cạnh. Điều này làm mình nhớ đến tuổi thơ của mình, lúc nào đi chăn bò cũng mang theo một cuốn sách ;-)
 
 Câu chuyện nhẹ nhàng, tinh tế, hơi thần bí nhưng chứa đựng những thông điệp vô cùng ý nghĩa từ các nhân vật trong truyện. Mình thấy không có nhân vật nào thừa trong câu chuyện, từ những vĩ nhân thông thái như nhà vua xứ Salem, nhà giả kim đến những con người bình thường như anh bán kem, ông chủ cửa hàng pha lê, anh chàng người Anh, cô gái sa mạc, người phu lạc đà và cả những tên cướp trong sa mạc Sahara.  Dẫu đến từ những vùng đất khác nhau,  dẫu có nhiều điểm khác biệt nhưng các nhân vật đều có một điểm chung: họ có ước mơ, có vận mệnh của đời mình nhưng không phải ai cũng đi theo nó đến cùng, không phải ai cũng đưa ra được lựa chọn giữa "một bên là những gì quen thuộc gần gũi và một bên là những gì mình muốn sở hữu".
 
