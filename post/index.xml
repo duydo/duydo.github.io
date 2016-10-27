@@ -54,11 +54,12 @@
     
     <item>
       <title>Celery - a Distributed Task Queue</title>
-      <link>http://duydo.me/celery---a-distributed-task-queue/</link>
+      <link>http://duydo.me/celery-a-distributed-task-queue/</link>
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
       
-      <guid>http://duydo.me/celery---a-distributed-task-queue/</guid>
-      <description>&lt;p&gt;This was talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when I was working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;&lt;/p&gt;
+      <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
+      <description>&lt;p&gt;My talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when I was working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.
+&lt;/p&gt;
 
 &lt;p&gt;Celery is an asynchronous task queue/job queue based on distributed message passing.    It is focused on real-time operation, but supports scheduling as well.&lt;/p&gt;
 
@@ -66,9 +67,7 @@
     &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#39;ca7df6a1761745e1bd4de9e98c810d4c&#39;
             data-ratio=&#39;1.33333333333333&#39;
             src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-&lt;/p&gt;
-
-</description>
+&lt;/p&gt;</description>
     </item>
     
     <item>

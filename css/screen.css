@@ -1160,10 +1160,6 @@ body:not(.post-template) .post-title {
     white-space: nowrap;
 }
 
-.post-tag {
-    display: inline-block;
-    text-transform: capitalize;
-}
 
 .user-image {
     position: absolute;
@@ -1224,6 +1220,29 @@ body:not(.post-template) .post-title {
     border: none;
 }
 
+a.post-tag {
+    display: inline-block;
+    text-transform: capitalize;
+
+}
+
+.post-template a.post-tag {
+    margin: 0 5px 10px;
+}
+
+.post-tags a.post-tag {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #9EABB3;
+    color: #9EABB3;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.post-tags  a.post-tag:hover {
+    color: #555;
+    border-color: #555;
+}
+
 /* Stop elements, such as img wider than the post content, from
    creating horizontal scroll - slight hack due to imperfections
    with browser width % calculations and rounding */
@@ -1259,25 +1278,6 @@ body:not(.post-template) .post-title {
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
-}
-
-.post-tags .post-tag {
-    margin: 0 5px 10px;
-}
-
-.post-tags .post-tag a {
-    padding: 5px 10px;
-    border-radius: 2px;
-    border: 1px solid #9EABB3;
-    color: #9EABB3;
-    font-size: 1.35rem;
-    text-transform: capitalize;
-    text-decoration: none;
-}
-
-.post-tags .post-tag a:hover {
-    color: #555;
-    border-color: #555;
 }
 
 /* The author credit area after the post */
