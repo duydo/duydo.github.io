@@ -41,6 +41,9 @@ hideHUGOSupport = false
 #twitterName = "duydo"
 author="duydo"
 
+[taxonomies]
+tag =  "tags"
+
 [permalinks]
 post = "/:slug/"
 
