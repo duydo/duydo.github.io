@@ -54,6 +54,7 @@ html {
 
 body {
     margin: 0;
+    background: #000;
 }
 
 a {
@@ -635,6 +636,36 @@ body.nav-opened .site-wrapper {
     transition: transform 0.3s ease;
 }
 
+.button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all ease 0.3s;
+    min-height: 35px;
+    width: auto;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px; /* Hacks targeting Firefox. */
+    line-height: 13px; /* Hacks targeting Firefox. */
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: none;
+    border-radius: 0.3rem;
+    border: rgba(0, 0, 0, 0.05) 0.1em solid;
+    background: #000;
+}
+
+a.button:hover {
+    color: #fff;
+}
+
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
@@ -1068,6 +1099,101 @@ body.nav-opened .menu-button .word {
     animation-delay: 0.1s;
 }
 
+/** Landing page */
+
+.landing section {
+    padding: 0 5%;
+}
+
+.landing h3, .landing h4 {
+    font-size: 2rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.01rem;
+    color: rgba(0, 0, 0, 0.6);
+    /*text-align: center;*/
+    /*padding: 0 5em;*/
+    /*text-transform: uppercase;*/
+}
+.landing h4 {
+     font-weight: 600;
+    font-size: 2.5rem;
+}
+.services {
+    margin: 0 0 3em 0;
+    padding: 0 3em;
+}
+.services h3 {
+    margin: 1.75em 0;
+    text-align: center;
+}
+
+.services ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+
+
+.testimonials ul {
+    margin: 0;
+}
+
+.testimonials {
+    margin: 0 auto;
+    background: #333;
+}
+
+
+.testimonials ul {
+    list-style: none;
+    margin: 0;
+}
+
+.testimonials li {
+    padding: 1.75em 0;
+    margin: 0;
+}
+
+.testimonials cite {
+    display: inline-block;
+    width: 40%;
+    color: #bbb;
+    font-style: normal;
+    text-align: center;
+}
+
+.testimonials cite img {
+    width: 82px;
+    height: 82px;
+    border-radius: 82px;
+}
+
+.testimonials cite span {
+    display: block;
+}
+
+.testimonials cite span.title {
+    font-size: 1.3rem;
+    font-style: italic;
+
+}
+
+.testimonials blockquote {
+    width: 60%;
+    display: inline-block;
+    border-left: 1px solid #464646;
+    color: #bbb;
+    font-style: italic;
+    margin: 0 0 0 -2.2em;
+}
+
+.page-action {
+    margin: 1.75em 0;
+    text-align: center;
+}
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
@@ -1160,7 +1286,6 @@ body:not(.post-template) .post-title {
     white-space: nowrap;
 }
 
-
 .user-image {
     position: absolute;
     top: 0;
@@ -1238,7 +1363,7 @@ a.post-tag {
     text-decoration: none;
 }
 
-.post-tags  a.post-tag:hover {
+.post-tags a.post-tag:hover {
     color: #555;
     border-color: #555;
 }
@@ -1606,30 +1731,37 @@ a.post-tag {
 
 .site-footer {
     position: relative;
-    margin: 8rem 0 0 0;
-    padding: 0.5rem 15px;
-    /*border-top: #EBF2F6 1px solid;*/
+    margin: 0 0 0 0;
+    padding: 4rem 15px 2rem 15px;
     font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.75em;
-    color: #BBC7CC;
+    color: #50585D;
+    background: #000;
 }
 
 .site-footer a {
     color: #BBC7CC;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .site-footer a:hover {
-    color: #50585D;
+    color: #FFFFFF;
 }
 
-.poweredby {
+.socials {
     display: block;
     width: 45%;
     float: right;
     text-align: right;
+}
+
+.follow-me {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 0.5em;
 }
 
 .copyright {
@@ -1990,10 +2122,9 @@ a.post-tag {
         display: block;
     }
 
-    .site-footer {
-        margin-top: 3rem;
-    }
-
+    /*.site-footer {*/
+    /*margin-top: 3rem;*/
+    /*}*/
     .author-profile {
         padding-bottom: 2rem;
     }
@@ -2019,6 +2150,25 @@ a.post-tag {
         display: none;
     }
 
+    .testimonials ul {
+        padding: 20px;
+    }
+
+    .testimonials cite {
+        display: block;
+        width: 100%;
+    }
+
+    .testimonials blockquote {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .services li.service {
+        display: block;
+        width: 100%;
+    }
 }
 
 /* ==========================================================================

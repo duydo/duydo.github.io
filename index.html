@@ -65,17 +65,12 @@
         
             
             <li class="nav-opened nav-current" role="presentation">
-            	<a href="/">Blog</a>
+            	<a href="/">Services</a>
             </li>
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="/tags/talks">Talks</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="/tags/misc">Misc</a>
+            	<a href="/post">Blog</a>
             </li>
         
             
@@ -95,245 +90,98 @@
 
 
 
-<header class="main-header no-cover">
+        <header class="main-header no-cover">
+            
+            <nav class="main-nav overlay clearfix">
+                
+                
+                <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+                
+            </nav>
+            <div class="vertical">
+                <div class="main-header-content inner">
+                    <h1 class="page-title">Search. Analytic. Visualize</h1>
+                    <h2 class="page-description">Build best search experiences for your products.</h2>
 
+                </div>
+            </div>
+            <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+        </header>
 
-    <nav class="main-nav overlay clearfix">
-        
-        
-            <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-        
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
+        <main id="content" class="content landing" role="main">
+            <section class="services">
+                <h3>
+                    With many years of experience and endless passion in building real-world search applications based
+                    on <strong>Elasticsearch</strong>, we bring unique search experiences with <strong>seamless
+                    indexing</strong>, <strong>lightning-fast searching</strong>, <strong>best-in-class
+                    relevance</strong> and <strong>intuitive customization features</strong> for your products.
+                </h3>
+                
+                    
+                
+                   <div class="page-action">
+                        <a href="mailto:info@duydo.me" class="button">Need help? Contact us</a>
+                    </div>
+            </section>
+            <section class="testimonials">
+                <ul>
+                    <li>
+                        <cite>
+                            <img src="images/atul.jpg"/>
+                            <span>Atul Signh</span>
+                            <span class="title">Founder & CEO at TheShelf.com</span>
+                        </cite>
+                        <blockquote>
+                            “Duy is a perfect professional! He understands the inner workings of Elasticsearch system
+                            and was able to figure out our codebase and then make changes to it so that the performance
+                            was improved very quickly!
+                            He delivers on time and is always available and he always provides options for us to further
+                            improve the system.”
+                        </blockquote>
+
+                    </li>
+                    <li>
+                        <cite>
+                            <img src="images/salman.jpg"/>
+                            <span>Salman Jaffer</span>
+                            <span class="title">Head of Data Science at Sentifi AG</span>
+                        </cite>
+                        <blockquote>
+                            “Duy is a highly skill and competent technical expert. He has deep understanding of his
+                            domain of expertise and relates this technical domain knowledge quickly to business
+                            problems. Duy is a highly intelligent individual who can think clearly and always suggests
+                            pragmatic solutions. He has high levels of standards which he readily shares with his
+                            colleagues. Duy enjoys training and mentoring others and we look forward to working with him
+                            in the future.”
+                        </blockquote>
+
+                    </li>
+                </ul>
+            </section>
+        </main>
+            <footer class="site-footer clearfix">
+        <section class="copyright">Copyright © 2016 Duy Do. All rights reserved.</section>
+        <section class="socials">
+            <span class="follow-me">Follow me</span>
+               
+                <a class="bloglogo" href="https://twitter.com/duydo" target="_blank">
+                    <span class="icon-twitter"></span>
+                </a>
+            &nbsp;
+            
+            
+            
+                <a class="bloglogo" href="https://github.com/duydo" target="_blank">
+                <span class="icon-github"></span>
+                </a>
+            &nbsp;
+            
+
             
             
             
             
-            
-            
-            
-
-            <h1 class="page-title">Duy Do</h1>
-            <h2 class="page-description">A Father. A Husband. A Software Engineer.</h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
-</header>
-
-
-<main id="content" class="content" role="main">
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    
-        
-            
-        
-    
-
-    
-    
-    
-
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-    </div>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/how-elasticsearch-cluster-works/">How Elasticsearch cluster works</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:</p>
-
-<ul>
-<li>How a node in cluster talks to others?</li>
-<li>What happens when a node joins or leaves the cluster?</li>
-<li>What happens when a node stops or has encountered a problem?</li>
-</ul>
-
-<p></p></p>
-
-    </section>
-    <footer class="post-meta">
-        
-        
-            <img class="author-thumb" src="http://duydo.me/images/duydo.jpg" alt="Author image" nopin="nopin" />
-        
-        
-            <a href="http://duydo.me/">Duy Do</a>
-        
-        
-            
-                 on <a class="post-tag" href="http://duydo.me/tags/elasticsearch/">elasticsearch</a>
-        
-        <time class="post-date" datetime="2016-10-24T11:16:00&#43;07:00">
-            Oct 24, 2016
-
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/interview-at-elastic/">Interview at Elastic</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>Some months ago, I had an interview with <a href="https://elastic.co">Elastic</a> for Java Software/Support Engineer position. The interview was an interesting experience I&rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.</p>
-
-<p></p></p>
-
-    </section>
-    <footer class="post-meta">
-        
-        
-            <img class="author-thumb" src="http://duydo.me/images/duydo.jpg" alt="Author image" nopin="nopin" />
-        
-        
-            <a href="http://duydo.me/">Duy Do</a>
-        
-        
-            
-                 on <a class="post-tag" href="http://duydo.me/tags/misc/">Misc</a>
-        
-        <time class="post-date" datetime="2016-10-18T09:48:56&#43;07:00">
-            Oct 18, 2016
-
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/elasticsearch-for-data-engineers/">Elasticsearch for Data Engineers</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
- </p>
-
-    </section>
-    <footer class="post-meta">
-        
-        
-            <img class="author-thumb" src="http://duydo.me/images/duydo.jpg" alt="Author image" nopin="nopin" />
-        
-        
-            <a href="http://duydo.me/">Duy Do</a>
-        
-        
-            
-                 on <a class="post-tag" href="http://duydo.me/tags/talks/">talks</a>
-        
-        <time class="post-date" datetime="2016-10-17T18:26:39&#43;07:00">
-            Oct 17, 2016
-
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/celery-a-distributed-task-queue/">Celery - a Distributed Task Queue</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>My talk about <a href="http://www.celeryproject.org">Celery</a> when I was working at <a href="http://sentifi.com">Sentifi</a>.
-</p></p>
-
-    </section>
-    <footer class="post-meta">
-        
-        
-            <img class="author-thumb" src="http://duydo.me/images/duydo.jpg" alt="Author image" nopin="nopin" />
-        
-        
-            <a href="http://duydo.me/">Duy Do</a>
-        
-        
-            
-                 on <a class="post-tag" href="http://duydo.me/tags/talks/">talks</a>
-        
-        <time class="post-date" datetime="2016-10-17T08:28:45&#43;07:00">
-            Oct 17, 2016
-
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/nh%C3%A0-gi%E1%BA%A3-kim---paulo-coelho/">Nhà Giả Kim - Paulo Coelho</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>&ldquo;Nhà Giả Kim&rdquo; là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống &ldquo;nay đây mai đó&rdquo;, để theo đuổi ước mơ vận mệnh của mình.
-</p></p>
-
-    </section>
-    <footer class="post-meta">
-        
-        
-            <img class="author-thumb" src="http://duydo.me/images/duydo.jpg" alt="Author image" nopin="nopin" />
-        
-        
-            <a href="http://duydo.me/">Duy Do</a>
-        
-        
-            
-                 on <a class="post-tag" href="http://duydo.me/tags/books/">books</a>
-        
-        <time class="post-date" datetime="2016-04-08T17:59:15&#43;07:00">
-            Apr 8, 2016
-
-        </time>
-    </footer>
-</article>
-
-    
-
-    <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-
-</main>
-
-    <footer class="site-footer clearfix">
-        <section class="copyright">© 2016 <a href="">Duy Do</a></section>
-        
-        <section class="poweredby">
-            Powered by <a class="icon-hugo" href="http://gohugo.io">Hugo</a>.
-            Theme by <a class="icon-theme" href="https://github.com/duydo/hugo-theme-casper">Casper</a>
         </section>
-        
     </footer>
     </div>
     <script type="text/javascript" src="http://duydo.me/js/jquery.js"></script>
