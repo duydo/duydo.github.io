@@ -1,0 +1,88 @@
+{{ partial "header.html" . }}
+
+{{if .Site.Params.cover}}
+{{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
+<header class="main-header" style="background-image: url({{.Site.Params.cover}})">
+    {{ else }}
+    <header class="main-header" style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
+        {{ end }}
+        {{else}}
+        <header class="main-header no-cover">
+            {{end}}
+            <nav class="main-nav overlay clearfix">
+                {{ if .Site.Params.logo }}
+                <a class="blog-logo" href="{{ .Permalink }}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}"
+                                                                  alt="Blog Logo"/></a>
+                {{end}}
+                {{ if .Site.Menus.main }}
+                <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+                {{else}}
+                {{ if .Site.Params.RSSLink}}
+                <a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+                {{else}}
+                <a class="menu-button icon-feed" href="{{ .RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+                {{end}}
+                {{end}}
+            </nav>
+            <div class="vertical">
+                <div class="main-header-content inner">
+                    <h1 class="page-title">Search. Analytic. Visualize</h1>
+                    <h2 class="page-description">Build best search experiences for your products.</h2>
+
+                </div>
+            </div>
+            <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+        </header>
+
+        <main id="content" class="content landing" role="main">
+            <section class="services">
+                <h3>
+                    With many years of experience and endless passion in building real-world search applications based
+                    on <strong>Elasticsearch</strong>, we bring unique search experiences with <strong>seamless
+                    indexing</strong>, <strong>lightning-fast searching</strong>, <strong>best-in-class
+                    relevance</strong> and <strong>intuitive customization features</strong> for your products.
+                </h3>
+                <!--<p>-->
+                    <!--You want to build your own search engine? Let us help you with our consulting and training service, we provide a complete solution for your search engine, from collecting data to searching, doing analytics and visualization.-->
+                <!--</p>-->
+                   <div class="page-action">
+                        <a href="mailto:info@duydo.me" class="button">Need help? Contact us</a>
+                    </div>
+            </section>
+            <section class="testimonials">
+                <ul>
+                    <li>
+                        <cite>
+                            <img src="images/atul.jpg"/>
+                            <span>Atul Signh</span>
+                            <span class="title">Founder & CEO at TheShelf.com</span>
+                        </cite>
+                        <blockquote>
+                            “Duy is a perfect professional! He understands the inner workings of Elasticsearch system
+                            and was able to figure out our codebase and then make changes to it so that the performance
+                            was improved very quickly!
+                            He delivers on time and is always available and he always provides options for us to further
+                            improve the system.”
+                        </blockquote>
+
+                    </li>
+                    <li>
+                        <cite>
+                            <img src="images/salman.jpg"/>
+                            <span>Salman Jaffer</span>
+                            <span class="title">Head of Data Science at Sentifi AG</span>
+                        </cite>
+                        <blockquote>
+                            “Duy is a highly skill and competent technical expert. He has deep understanding of his
+                            domain of expertise and relates this technical domain knowledge quickly to business
+                            problems. Duy is a highly intelligent individual who can think clearly and always suggests
+                            pragmatic solutions. He has high levels of standards which he readily shares with his
+                            colleagues. Duy enjoys training and mentoring others and we look forward to working with him
+                            in the future.”
+                        </blockquote>
+
+                    </li>
+                </ul>
+            </section>
+        </main>
+        {{ partial "footer.html" . }}

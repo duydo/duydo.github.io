@@ -13,4 +13,4 @@ I love working with open source software. I have been contributing to Elasticsea
 [Vietnamese analysis plugin](https://github.com/duydo/elasticsearch-analysis-vietnamese) and founded [the Vietnamese Elasticsearch community](https://www.facebook.com/groups/elasticsearchvn/).
 
 You can find me somewhere else on [Twitter](https://twitter.com/duydo), [GitHub](https://github.com/duydo), [LinkedIn](https://vn.linkedin.com/in/duydo) or 
-on roads where I run every morning.
+the roads where I run every morning.

@@ -1,7 +1,7 @@
 +++
 draft = false
 tags = [
-  "talks", "celery", "python", "distributed", "task queue"
+  "talks", "engineering", "celery", "python", "distributed", "task queue"
 ]
 image = ""
 date = "2016-10-17T08:28:45+07:00"

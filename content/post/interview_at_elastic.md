@@ -2,7 +2,7 @@
 title = "Interview at Elastic"
 draft = false
 date = "2016-10-18T09:48:56+07:00"
-tags = ["Misc","elastic", "elasticsearch"]
+tags = ["Misc", "elastic", "elasticsearch"]
 +++
 
 Some months ago, I had an interview with [Elastic](https://elastic.co) for Java Software/Support Engineer position. The interview was an interesting experience I've ever had, Elastic is a brilliant company with great people and amazing culture.
@@ -17,7 +17,7 @@ The technical questions were not too difficult, I believe that you can answer mo
 
 My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.
 
-In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an influencer marketing platform, this was also a wonderful oppurtunity, wasn't it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I've ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team. 
+In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn't it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I've ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team. 
 
 Although I don't work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.
 

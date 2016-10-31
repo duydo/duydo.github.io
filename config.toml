@@ -1,5 +1,5 @@
 baseurl = "http://duydo.me/"
-copyright = "© 2016"
+copyright = "Copyright © 2016"
 disqusshortname = "duydo"
 languagecode = "en-US"
 paginate = 5
@@ -7,38 +7,14 @@ pluralizelisttitles = false
 theme = "casper"
 title = "Duy Do"
 
-[[menu.main]]
-identifier = "blog"
-name = "Blog"
-url = "/"
-weight = -120
-
-[[menu.main]]
-identifier = "talks"
-name = "Talks"
-url = "/tags/talks"
-weight = -110
-
-[[menu.main]]
-identifier = "misc"
-name = "Misc"
-url = "/tags/misc"
-weight = -100
-
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about"
-weight = 101
-
 [params]
-#logo = ""
+#logo = "images/duydo.jpg"
 #cover = "http://demo.ghost.io/content/images/2014/09/testimg-home-1.jpg"
 description = "A Father. A Husband. A Software Engineer."
 googleAnalyticsUserID = "UA-68329720-1"
-hideHUGOSupport = false
-#githubName = "duydo"
-#twitterName = "duydo"
+hideHUGOSupport = true
+githubName = "duydo"
+twitterName = "duydo"
 author="duydo"
 
 [taxonomies]
@@ -46,6 +22,26 @@ tag =  "tags"
 
 [permalinks]
 post = "/:slug/"
+
+
+[[menu.main]]
+identifier = "services"
+name = "Services"
+url = "/"
+weight = -300
+
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/post"
+weight = -200
+
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
+weight = 101
 
 [sitemap]
 ChangeFreq = ""
