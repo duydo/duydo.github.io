@@ -25,8 +25,8 @@ post = "/:slug/"
 
 
 [[menu.main]]
-identifier = "services"
-name = "Services"
+identifier = "home"
+name = "Home"
 url = "/"
 weight = -300
 
