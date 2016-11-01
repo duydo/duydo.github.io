@@ -1101,17 +1101,7 @@ body.nav-opened .menu-button .word {
 
 /** Landing page */
 
-.landing section {
-    padding: 0 10%;
-}
-
-.landing .section-title {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 1.75em 1.75em 1.5em 1.75em;
-}
-
-.landing h3 {
+.landing-content h3 {
     font-size: 2.5rem;
     line-height: 1.5em;
     font-weight: 500;
@@ -1120,24 +1110,18 @@ body.nav-opened .menu-button .word {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.services {
-    padding: 0 3em;
+.services, .testimonials{
+    padding: 0 15rem;
 }
-
-/*.services h3 {*/
-    /*margin: 0 0 1.75em 0;*/
-/*}*/
 
 .consulting, .training {
     display: block;
-    float: left;
-    /*padding: 1.75em;*/
     width: 48%;
+    float: left;
 }
 
 .consulting {
     padding: 0 2% 0 0;
-
 }
 
 .training {
@@ -1165,7 +1149,7 @@ body.nav-opened .menu-button .word {
 
 .testimonials cite {
     display: inline-block;
-    width: 30%;
+    width: 40%;
     color: #bbb;
     font-style: normal;
     text-align: center;
@@ -1188,7 +1172,7 @@ body.nav-opened .menu-button .word {
 }
 
 .testimonials blockquote {
-    width: 70%;
+    width: 60%;
     display: inline-block;
     border-left: 1px solid #464646;
     color: #bbb;
@@ -2157,13 +2141,25 @@ a.post-tag {
         display: none;
     }
 
+    .services {
+        margin: 2rem;
+        padding: 0;
+    }
+     .testimonials {
+         margin: 0;
+         padding:0;
+     }
     .training, .consulting {
         display: block;
         width: 100%;
     }
 
     .testimonials ul {
-        padding: 5px;
+        padding: 0;
+    }
+
+     .testimonials ul li {
+        padding: 2rem;
     }
 
     .testimonials cite {
@@ -2176,12 +2172,10 @@ a.post-tag {
         width: 100%;
         border: none;
         margin: 0;
+        padding: 0;
+        text-align: left;
     }
 
-    .services li.service {
-        display: block;
-        width: 100%;
-    }
 }
 
 /* ==========================================================================
