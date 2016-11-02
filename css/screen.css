@@ -1110,7 +1110,7 @@ body.nav-opened .menu-button .word {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.services, .testimonials{
+.services, .testimonials {
     padding: 0 15rem;
 }
 
@@ -1151,24 +1151,36 @@ body.nav-opened .menu-button .word {
     display: inline-block;
     width: 40%;
     color: #bbb;
+    vertical-align: top;
     font-style: normal;
-    text-align: center;
 }
 
-.testimonials cite img {
+.testimonials img {
     width: 72px;
     height: 72px;
     border-radius: 72px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.testimonials cite span {
+.testimonials .info {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 1.75em;
+    padding: 0;
+}
+
+.testimonials .info span {
     display: block;
 }
 
-.testimonials cite span.title {
+.testimonials .info .name {
+    font-size: 1.8rem;
+}
+
+.testimonials .info .title {
     font-size: 1.3rem;
     font-style: italic;
-
 }
 
 .testimonials blockquote {
@@ -2145,10 +2157,12 @@ a.post-tag {
         margin: 2rem;
         padding: 0;
     }
-     .testimonials {
-         margin: 0;
-         padding:0;
-     }
+
+    .testimonials {
+        margin: 0;
+        padding: 0;
+    }
+
     .training, .consulting {
         display: block;
         width: 100%;
@@ -2158,14 +2172,19 @@ a.post-tag {
         padding: 0;
     }
 
-     .testimonials ul li {
+    .testimonials ul li {
         padding: 2rem;
     }
 
     .testimonials cite {
         display: block;
         width: 100%;
+        text-align: center;
     }
+
+   .testimonials .info {
+       margin: 0 0 1.75em 0;
+   }
 
     .testimonials blockquote {
         display: block;
