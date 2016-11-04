@@ -1769,7 +1769,7 @@ a.post-tag {
 
 .copyright {
     display: block;
-    width: 45%;
+    /*width: 45%;*/
     float: left;
 }
 
