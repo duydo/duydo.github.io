@@ -3,7 +3,7 @@ title = "About"
 slug="about"
 draft = false
 date = "2016-10-18T16:54:21+07:00"
-comments = false
+comments = true
 +++
 I'm Duy Do. I live in Ho Chi Minh, Vietnam with my two cute kids and a beautiful wife.
 
