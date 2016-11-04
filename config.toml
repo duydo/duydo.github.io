@@ -10,11 +10,11 @@ title = "Duy Do"
 [params]
 #logo = "images/duydo.jpg"
 #cover = "http://demo.ghost.io/content/images/2014/09/testimg-home-1.jpg"
-description = "Build best search experiences for your users."
+description = "A Father. A Husband. A Software Engineer."
 googleAnalyticsUserID = "UA-68329720-1"
 hideHUGOSupport = true
-githubName = "duydo"
-twitterName = "duydo"
+#githubName = "duydo"
+#twitterName = "duydo"
 author="duydo"
 
 [taxonomies]
@@ -30,11 +30,11 @@ name = "Home"
 url = "/"
 weight = -300
 
-[[menu.main]]
-identifier = "blog"
-name = "Blog"
-url = "/post"
-weight = -200
+#[[menu.main]]
+#identifier = "blog"
+#name = "Blog"
+#url = "/post"
+#weight = -200
 
 
 [[menu.main]]
