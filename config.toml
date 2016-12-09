@@ -9,7 +9,7 @@ title = "Duy Do"
 
 [params]
 #logo = "images/duydo.jpg"
-#cover = "http://demo.ghost.io/content/images/2014/09/testimg-home-1.jpg"
+#cover = "images/ml_pictogram.png"
 description = "A Father. A Husband. A Software Engineer."
 googleAnalyticsUserID = "UA-68329720-1"
 hideHUGOSupport = true
