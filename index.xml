@@ -7,8 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2016</copyright>
-    <lastBuildDate>Mon, 24 Oct 2016 11:16:00 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 09 Dec 2016 08:07:09 +0700</lastBuildDate>
     <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Solve your search and analytics problems with Elasticsearch</title>
+      <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
+      <description>&lt;p&gt;This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p&gt;
+
+&lt;p class=&#34;embed-content&#34;&gt;
+    &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#39;9fa7022cc8da4e06be30f5e84ab03248&#39;
+            data-ratio=&#39;1.77777777777778&#39;
+            src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;
+
+</description>
+    </item>
     
     <item>
       <title>How Elasticsearch cluster works</title>
