@@ -5,12 +5,13 @@ draft = false
 date = "2016-10-18T16:54:21+07:00"
 comments = true
 +++
-I'm Duy Do. I live in Ho Chi Minh, Vietnam with my two cute kids and a beautiful wife.
 
-Currently, I am doing a small tech start-up as co-founder with my two friends. My areas of interest include information retrieval, distributed systems, data processing, data analytics, performance monitoring and development of new products interesting ways.
+I'm Duy Do, aka duydo. I live with my wife and two cute kids in Saigon, Vietnam.
 
-I love working with open source software. I have been contributing to Elasticsearch with
-[Vietnamese analysis plugin](https://github.com/duydo/elasticsearch-analysis-vietnamese) and founded [the Vietnamese Elasticsearch community](https://www.facebook.com/groups/elasticsearchvn/).
+Some people consider me a software engineer, others consider me an Elasticsearch expert, a programmer, a coder...whatever people call me, I consider myself a passionate software developer with interests in search engine, data analytics, big data, distributed systems and building interesting tools.
 
-You can find me somewhere else on [Twitter](https://twitter.com/duydo), [GitHub](https://github.com/duydo), [LinkedIn](https://vn.linkedin.com/in/duydo) or 
-the roads where I run every morning.
+Beside my daily works at our startup to build a new influencer marketing platform with [Xomad](http://xomad.com) team, I also work on open source softwares. I'm author of [Vietnamese Elasticsearch analysis plugin](https://github.com/duydo/elasticsearch-analysis-vietnamese) and founder of the [Vietnamese Elasticsearch community](https://www.facebook.com/groups/elasticsearchvn/).
+
+I love coding. I live, breath and eat code everyday.
+
+You can find me somewhere else on [Twitter @duydo](https://twitter.com/duydo), [GitHub](https://github.com/duydo), [LinkedIn](https://vn.linkedin.com/in/duydo) or the roads I run every morning.
