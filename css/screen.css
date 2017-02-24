@@ -1110,6 +1110,9 @@ body.nav-opened .menu-button .word {
     color: rgba(0, 0, 0, 0.5);
 }
 
+.section-title {
+    padding: 0 15rem;
+}
 .services, .testimonials {
     padding: 0 15rem;
 }
