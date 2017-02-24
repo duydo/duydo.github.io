@@ -1,4 +1,5 @@
 +++
+type = "post"
 title = "About"
 slug="about"
 draft = false

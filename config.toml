@@ -22,6 +22,7 @@ tag =  "tags"
 
 [permalinks]
 post = "/:slug/"
+page = "/:filename/"
 
 
 [[menu.main]]
@@ -30,11 +31,11 @@ name = "Home"
 url = "/"
 weight = -300
 
-#[[menu.main]]
-#identifier = "blog"
-#name = "Blog"
-#url = "/post"
-#weight = -200
+[[menu.main]]
+identifier = "services"
+name = "Services"
+url = "/services"
+weight = -200
 
 
 [[menu.main]]
