@@ -8,7 +8,7 @@ theme = "casper"
 title = "Duy Do"
 
 [params]
-#logo = "images/duydo.jpg"
+#logo = "images/logo.jpg"
 #cover = "images/ml_pictogram.png"
 description = "A Father. A Husband. A Software Engineer."
 googleAnalyticsUserID = "UA-68329720-1"
