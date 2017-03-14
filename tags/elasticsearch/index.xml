@@ -10,6 +10,31 @@
     <atom:link href="http://duydo.me/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Interview at Elastic</title>
+      <link>http://duydo.me/interview-at-elastic/</link>
+      <pubDate>Fri, 20 Jan 2017 09:48:56 +0700</pubDate>
+      
+      <guid>http://duydo.me/interview-at-elastic/</guid>
+      <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.&lt;/p&gt;
+
+&lt;p&gt;The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.&lt;/p&gt;
+
+&lt;p&gt;The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don&amp;rsquo;t need to master all Elastic&amp;rsquo;s products to work as a support engineer, the people in your team will help you with the products you are not familliar with.&lt;/p&gt;
+
+&lt;p&gt;My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.&lt;/p&gt;
+
+&lt;p&gt;In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&amp;rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&amp;rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.&lt;/p&gt;
+
+&lt;p&gt;Although I don&amp;rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.&lt;/p&gt;
+
+&lt;p&gt;By the way, I want to send my big thanks to Mark Walkom, who referred me to Elastic team :-)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Solve your search and analytics problems with Elasticsearch</title>
       <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
       <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
@@ -94,31 +119,6 @@
 &lt;p&gt;And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p&gt;
 
 &lt;p&gt;In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Interview at Elastic</title>
-      <link>http://duydo.me/interview-at-elastic/</link>
-      <pubDate>Tue, 18 Oct 2016 09:48:56 +0700</pubDate>
-      
-      <guid>http://duydo.me/interview-at-elastic/</guid>
-      <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.&lt;/p&gt;
-
-&lt;p&gt;The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.&lt;/p&gt;
-
-&lt;p&gt;The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don&amp;rsquo;t need to master all Elastic&amp;rsquo;s products to work as a support engineer, the people in your team will help you with the products you are not familliar with.&lt;/p&gt;
-
-&lt;p&gt;My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.&lt;/p&gt;
-
-&lt;p&gt;In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&amp;rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&amp;rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.&lt;/p&gt;
-
-&lt;p&gt;Although I don&amp;rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.&lt;/p&gt;
-
-&lt;p&gt;By the way, I want to send my big thanks to Mark Walkom, who referred me to Elastic team :-)&lt;/p&gt;</description>
     </item>
     
     <item>
