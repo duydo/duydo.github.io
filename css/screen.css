@@ -1131,6 +1131,10 @@ body.nav-opened .menu-button .word {
     padding: 0 0 0 2%;
 }
 
+.testimonials h3 {
+  color: #bbb;
+  padding: : 2% auto;
+}
 .testimonials ul {
     margin: 0;
 }
@@ -1172,6 +1176,8 @@ body.nav-opened .menu-button .word {
     margin: 0 0 0 1.75em;
     padding: 0;
 }
+
+
 
 .testimonials .info span {
     display: block;
