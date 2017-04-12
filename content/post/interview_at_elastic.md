@@ -1,7 +1,7 @@
 +++
 title = "Interview at Elastic"
 draft = false
-date = "2016-10-18T09:48:56+07:00"
+date = "2017-01-20T09:48:56+07:00"
 tags = ["Misc", "elastic", "elasticsearch"]
 +++
 
@@ -9,7 +9,7 @@ Some months ago, I had an interview with [Elastic](https://elastic.co) for Java 
 
 <!--more-->
 
-The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon. 
+The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.
 
 The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.
 
@@ -17,7 +17,7 @@ The technical questions were not too difficult, I believe that you can answer mo
 
 My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.
 
-In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn't it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I've ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team. 
+In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn't it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I've ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.
 
 Although I don't work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.
 
