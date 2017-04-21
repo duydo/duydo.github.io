@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Duy Do</title>
+    <link>http://duydo.me/tags/</link>
+    <description>Recent content in Tags on Duy Do</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2016</copyright>
+    <lastBuildDate>Fri, 08 Apr 2016 17:59:15 +0700</lastBuildDate>
+    
+	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alchemist</title>
+      <link>http://duydo.me/tags/alchemist/</link>
+      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/alchemist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>http://duydo.me/tags/books/</link>
+      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Celery</title>
+      <link>http://duydo.me/tags/celery/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/celery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed</title>
+      <link>http://duydo.me/tags/distributed/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/distributed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elastic</title>
+      <link>http://duydo.me/tags/elastic/</link>
+      <pubDate>Fri, 20 Jan 2017 09:48:56 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/elastic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>http://duydo.me/tags/elasticsearch/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://duydo.me/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering</title>
+      <link>http://duydo.me/tags/engineering/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Retrieval</title>
+      <link>http://duydo.me/tags/information-retrieval/</link>
+      <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/information-retrieval/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>http://duydo.me/tags/misc/</link>
+      <pubDate>Fri, 20 Jan 2017 09:48:56 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nha Gia Kim</title>
+      <link>http://duydo.me/tags/nha-gia-kim/</link>
+      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/nha-gia-kim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paulo Coelho</title>
+      <link>http://duydo.me/tags/paulo-coelho/</link>
+      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/paulo-coelho/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://duydo.me/tags/python/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Engine</title>
+      <link>http://duydo.me/tags/search-engine/</link>
+      <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/search-engine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>http://duydo.me/tags/talks/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Task Queue</title>
+      <link>http://duydo.me/tags/task-queue/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/task-queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vietnamese</title>
+      <link>http://duydo.me/tags/vietnamese/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://duydo.me/tags/vietnamese/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

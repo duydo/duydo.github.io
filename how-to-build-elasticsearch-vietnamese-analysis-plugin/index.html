@@ -5,26 +5,24 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  	<meta property="og:title" content=" Interview at Elastic &middot;  Duy Do" />
+  	<meta property="og:title" content=" How to build Elasticsearch Vietnamese Analysis Plugin &middot;  Duy Do" />
   	<meta property="og:site_name" content="Duy Do" />
-  	<meta property="og:url" content="http://duydo.me/interview-at-elastic/" />
+  	<meta property="og:url" content="http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/" />
 
     
   	<meta property="og:type" content="article" />
 
-    <meta property="og:article:published_time" content="2017-01-20T09:48:56&#43;07:00" />
+    <meta property="og:article:published_time" content="2017-04-21T00:00:00Z" />
 
     
-    <meta property="og:article:tag" content="Misc" />
+    <meta property="og:article:tag" content="Elasticsearch" />
     
-    <meta property="og:article:tag" content="elastic" />
-    
-    <meta property="og:article:tag" content="elasticsearch" />
+    <meta property="og:article:tag" content="Vietnamese" />
     
     
 
   <title>
-     Interview at Elastic &middot;  Duy Do
+     How to build Elasticsearch Vietnamese Analysis Plugin &middot;  Duy Do
   </title>
 
     <meta name="description" content="A Father. A Husband. A Software Engineer." />
@@ -46,7 +44,7 @@
     
     <meta name="generator" content="Hugo 0.20" />
 
-    <link rel="canonical" href="http://duydo.me/interview-at-elastic/" />
+    <link rel="canonical" href="http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/" />
 
     
     <script>
@@ -112,47 +110,82 @@
 <main class="single content" role="main">
     <article class="post post">
         <header class="post-header">
-            <h1 class="post-title">Interview at Elastic</h1>
+            <h1 class="post-title">How to build Elasticsearch Vietnamese Analysis Plugin</h1>
             <small></small>
             <section class="post-meta">
                 
-                <time class="post-date" datetime=" 2017-01-20T09:48:56&#43;07:00">
-                Jan 20, 2017
+                <time class="post-date" datetime=" 2017-04-21T00:00:00Z">
+                Apr 21, 2017
                 </time>
                  
                     
-                     on <a class="post-tag" href="http://duydo.me/tags/misc/">Misc</a>
+                     on <a class="post-tag" href="http://duydo.me/tags/elasticsearch/">Elasticsearch</a>
                 
                 
             </section>
         </header>
         <section class="post-content">
-            <p>Some months ago, I had an interview with <a href="https://elastic.co">Elastic</a> for Java Software/Support Engineer position. The interview was an interesting experience I&rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.</p>
+            
 
-<p></p>
+<p>Recently, I&rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&rsquo;m not available to do it immediately. In case of urgent, you can build it yourself with following steps.</p>
 
-<p>The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.</p>
+<h2 id="step-1-install-java-maven-git">Step 1: Install Java, Maven &amp; Git</h2>
 
-<p>The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.</p>
+<p>The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing  <a href="https://www.java.com/en/download/help/download_options.xml">Java</a>, <a href="https://maven.apache.org/install.html">Maven</a> and <a href="https://www.atlassian.com/git/tutorials/install-git">Git</a>.</p>
 
-<p>The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don&rsquo;t need to master all Elastic&rsquo;s products to work as a support engineer, the people in your team will help you with the products you are not familliar with.</p>
+<p>If you are using Mac, just use these commands:</p>
 
-<p>My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.</p>
+<pre><code class="language-sh">brew cask install java
+brew install maven
+brew install git
+</code></pre>
 
-<p>In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.</p>
+<h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer</h2>
 
-<p>Although I don&rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.</p>
+<p>The plugin is based on the VNTokenizer library, you have to build it before building the plugin</p>
 
-<p>By the way, I want to send my big thanks to Mark Walkom, who referred me to Elastic team :-)</p>
+<pre><code class="language-sh">git clone https://github.com/duydo/vn-nlp-libraries.git
+cd vn-nlp-libraries/nlp-parent
+mvn install
+</code></pre>
+
+<h2 id="step-3-build-the-plugin">Step 3: Build the plugin</h2>
+
+<p>Clone the plugin&rsquo;s source code:</p>
+
+<pre><code class="language-sh">git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git
+</code></pre>
+
+<p>Edit the <code>elasticsearch-analysis-vietnamese/pom.xml</code> to change the version of Elasticsearch you want to build the plugin with:</p>
+
+<pre><code class="language-xml">&lt;properties&gt;
+  ...
+    &lt;project.build.java.version&gt;1.8&lt;/project.build.java.version&gt;
+    &lt;elasticsearch.version&gt;5.2.1&lt;/elasticsearch.version&gt;
+    &lt;lucene.version&gt;6.4.1&lt;/lucene.version&gt;
+    ...
+&lt;/properties&gt;
+</code></pre>
+
+<p>Build the plugin:</p>
+
+<pre><code class="language-sh">cd elasticsearch-analysis-vietnamese
+mvn package
+</code></pre>
+
+<h2 id="step-4-install-the-plugin">Step 4: Install the plugin</h2>
+
+<pre><code class="language-sh">mvn clean package
+bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip
+</code></pre>
+
             
     
     <p class="post-tags">
     
-            <a class="post-tag" href="http://duydo.me/tags/misc">Misc</a>
+            <a class="post-tag" href="http://duydo.me/tags/elasticsearch">Elasticsearch</a>
     
-            <a class="post-tag" href="http://duydo.me/tags/elastic">elastic</a>
-    
-            <a class="post-tag" href="http://duydo.me/tags/elasticsearch">elasticsearch</a>
+            <a class="post-tag" href="http://duydo.me/tags/vietnamese">Vietnamese</a>
     
     </p>
 
@@ -190,19 +223,19 @@
             
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Interview%20at%20Elastic&nbsp;-&nbsp;Duy%20Do&amp;url=http%3a%2f%2fduydo.me%2finterview-at-elastic%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=How%20to%20build%20Elasticsearch%20Vietnamese%20Analysis%20Plugin&nbsp;-&nbsp;Duy%20Do&amp;url=http%3a%2f%2fduydo.me%2fhow-to-build-elasticsearch-vietnamese-analysis-plugin%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fduydo.me%2finterview-at-elastic%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fduydo.me%2fhow-to-build-elasticsearch-vietnamese-analysis-plugin%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fduydo.me%2finterview-at-elastic%2f&amp;description=Interview%20at%20Elastic"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fduydo.me%2fhow-to-build-elasticsearch-vietnamese-analysis-plugin%2f&amp;description=How%20to%20build%20Elasticsearch%20Vietnamese%20Analysis%20Plugin"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fduydo.me%2finterview-at-elastic%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fduydo.me%2fhow-to-build-elasticsearch-vietnamese-analysis-plugin%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -214,7 +247,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_shortname = 'duydo';
-  var disqus_url = 'http:\/\/duydo.me\/interview-at-elastic\/';
+  var disqus_url = 'http:\/\/duydo.me\/how-to-build-elasticsearch-vietnamese-analysis-plugin\/';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

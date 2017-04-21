@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Duy Do</title>
-    <link>http://duydo.me/tags/information-retrieval/index.xml</link>
-    <description>Recent content on Duy Do</description>
+    <title>Information Retrieval on Duy Do</title>
+    <link>http://duydo.me/tags/information-retrieval/</link>
+    <description>Recent content in Information Retrieval on Duy Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2016</copyright>
-    <atom:link href="http://duydo.me/tags/information-retrieval/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Oct 2016 11:16:00 +0700</lastBuildDate>
+    
+	<atom:link href="http://duydo.me/tags/information-retrieval/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How Elasticsearch cluster works</title>
@@ -23,60 +26,7 @@
 &lt;li&gt;What happens when a node stops or has encountered a problem?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;a-cluster-of-nodes&#34;&gt;A Cluster of Nodes&lt;/h2&gt;
-
-&lt;p&gt;When we start an instance of Elasticsearch, we are starting a &lt;em&gt;node&lt;/em&gt; and we have a &lt;em&gt;cluster&lt;/em&gt; with single node. We start another instance of Elasticsearch has same &lt;code&gt;cluster.name&lt;/code&gt; with the first instance and we have a cluster with two nodes. We can start more instances of Elasticsearch to form a cluster with number of nodes we want.&lt;/p&gt;
-
-&lt;p&gt;Every node in the cluster knows about the other nodes within the cluster, they talk to others directly using the native Elasticsearch language over &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_Control_Protocol&#34;&gt;TCP&lt;/a&gt;. This is known as a &lt;a href=&#34;http://en.wikipedia.org/wiki/Network_topology#Mesh&#34;&gt;full connected mesh topology&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&#34; alt=&#34;full connected mesh topology&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Figure 1. Full connected mesh topology (source &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&#34;&gt;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Besides that, the nodes are able to talk to external world using &lt;a href=&#34;http://www.json.org&#34;&gt;JSON&lt;/a&gt; &amp;ldquo;language&amp;rdquo; over &lt;a href=&#34;https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol&#34;&gt;HTTP&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So, we can say:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Elasticsearch is &lt;a href=&#34;https://en.wikipedia.org/wiki/Peer-to-peer&#34;&gt;peer-to-peer&lt;/a&gt; based system, nodes communicate with others directly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Each node in the cluster plays one or more roles; it can be a &lt;em&gt;master&lt;/em&gt; node, &lt;em&gt;data&lt;/em&gt; node, &lt;em&gt;client&lt;/em&gt; node, or &lt;em&gt;tribe&lt;/em&gt; node. Ech role has it own purpose.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The master node&lt;/strong&gt; is responsible for creating, deleting indices, adding the nodes or remove the nodes from the cluster. Each time a cluster state is changed, the master node broadcasts the changes to other nodes in the cluster. There is only one master node in the cluster at a time.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The data node&lt;/strong&gt; is responsible for holding the data in the shards and performing data related operations such as create, read, update, delete, search, and aggregations. We can have many data nodes in the cluster. If one of the data nodes stops, the cluster still operates and  re-organizes the data on other nodes.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The client node&lt;/strong&gt; is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a &amp;ldquo;smart &lt;a href=&#34;https://en.wikipedia.org/wiki/Router_(computing)&#34;&gt;router&lt;/a&gt;&amp;rdquo;. The client node does not hold any data, it also cannot become the master node.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://duydo.me/images/es_client_to_data_nodes.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
-&lt;em&gt;Figure 2. The client node routes the data-related request to every data nodes in the cluster.&lt;/em&gt;
-&lt;img src=&#34;http://duydo.me/images/es_client_to_master_node.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
-&lt;em&gt;Figure 3. The client node routes the cluster-related request to the master node in the cluster.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The tribe node&lt;/strong&gt; is special type of client node that is able to talk to multiple clusters to perform search and other operations.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The ingest node&lt;/strong&gt; is responsible for pre-processing documents before the actual indexing takes into account.&lt;/p&gt;
-
-&lt;p&gt;Now we know role of each node, next we look at what happens behind the sence when a node joins or leaves the cluster.&lt;/p&gt;
-
-&lt;h2 id=&#34;add-a-node-to-the-cluster&#34;&gt;Add a Node to the Cluster&lt;/h2&gt;
-
-&lt;p&gt;When we start a node, the node is starting to ping all the nodes in the cluster for finding the master node. Once the master  is found, it will ask the master  to join by sending a join request; the master accepts it as a new node of the cluster and then notify all the nodes in the cluster about presense of the new node, and finally the new node connects to all other nodes.&lt;/p&gt;
-
-&lt;p&gt;If the joined node is a data node, the master will reallocate the data evenly across the nodes.&lt;/p&gt;
-
-&lt;h2 id=&#34;remove-a-node-from-the-cluster&#34;&gt;Remove a Node from the Cluster&lt;/h2&gt;
-
-&lt;p&gt;If we stop a node or a node in the cluster is unresponsive in specific amout of time, the master node will remove it from the cluster and reallocate the data if the removed node is a data node.&lt;/p&gt;
-
-&lt;p&gt;You might be curious about how the master node knows if other nodes in the cluster are still alive. The master has a fault detection machanism, it pings all the other nodes in the cluster and verify that they are alive or not.&lt;/p&gt;
-
-&lt;p&gt;And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p&gt;
-
-&lt;p&gt;In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
