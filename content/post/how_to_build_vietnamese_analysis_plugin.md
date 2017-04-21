@@ -5,7 +5,9 @@ date = "2017-04-21"
 draft = false
 +++
 
-Recently, I've received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I'm not available to do it immediately. In case of urgent, you can build it yourself with following steps.
+Recently, I've received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I'm not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.
+
+<!--more-->
 
 ## Step 1: Install Java, Maven & Git
 The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing  [Java](https://www.java.com/en/download/help/download_options.xml), [Maven](https://maven.apache.org/install.html) and [Git](https://www.atlassian.com/git/tutorials/install-git).
