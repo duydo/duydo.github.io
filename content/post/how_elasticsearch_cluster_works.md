@@ -36,12 +36,12 @@ Each node in the cluster plays one or more roles; it can be a *master* node, *da
 
 **The data node** is responsible for holding the data in the shards and performing data related operations such as create, read, update, delete, search, and aggregations. We can have many data nodes in the cluster. If one of the data nodes stops, the cluster still operates and  re-organizes the data on other nodes.
 
-**The client node** is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a "smart [router](https://en.wikipedia.org/wiki/Router_(computing))". The client node does not hold any data, it also cannot become the master node. 
+**The client node** is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a "smart [router](https://en.wikipedia.org/wiki/Router_(computing))". The client node does not hold any data, it also cannot become the master node.
 
 ![es_client_to_data_nodes](/images/es_client_to_data_nodes.png)
-*Figure 2. The client node routes the data-related request to every data nodes in the cluster.* 
+*Figure 2. The client node routes the data-related request to every data nodes in the cluster.*
 ![es_client_to_data_nodes](/images/es_client_to_master_node.png)
-*Figure 3. The client node routes the cluster-related request to the master node in the cluster.* 
+*Figure 3. The client node routes the cluster-related request to the master node in the cluster.*
 
 **The tribe node** is special type of client node that is able to talk to multiple clusters to perform search and other operations.
 
