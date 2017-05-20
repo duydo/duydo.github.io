@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duydo.me/evm---elasticsearch-version-manager/</loc>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</loc>
     <lastmod>2017-04-21T00:00:00+00:00</lastmod>
   </url>
@@ -71,7 +76,7 @@
   
   <url>
     <loc>http://duydo.me/</loc>
-    <lastmod>2017-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,13 +88,19 @@
   
   <url>
     <loc>http://duydo.me/tags/elasticsearch/</loc>
-    <lastmod>2017-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/engineering/</loc>
-    <lastmod>2016-12-09T08:07:09+07:00</lastmod>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/evm/</loc>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,7 +130,7 @@
   
   <url>
     <loc>http://duydo.me/post/</loc>
-    <lastmod>2017-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -150,6 +161,12 @@
   <url>
     <loc>http://duydo.me/tags/task-queue/</loc>
     <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/version-manager/</loc>
+    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
   

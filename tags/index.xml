@@ -60,7 +60,7 @@
     <item>
       <title>Elasticsearch</title>
       <link>http://duydo.me/tags/elasticsearch/</link>
-      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
       <guid>http://duydo.me/tags/elasticsearch/</guid>
       <description></description>
@@ -69,9 +69,18 @@
     <item>
       <title>Engineering</title>
       <link>http://duydo.me/tags/engineering/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
       <guid>http://duydo.me/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evm</title>
+      <link>http://duydo.me/tags/evm/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/evm/</guid>
       <description></description>
     </item>
     
@@ -144,6 +153,15 @@
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
       
       <guid>http://duydo.me/tags/task-queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version Manager</title>
+      <link>http://duydo.me/tags/version-manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/version-manager/</guid>
       <description></description>
     </item>
     

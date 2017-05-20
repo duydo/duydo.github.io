@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2016</copyright>
-    <lastBuildDate>Fri, 21 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>EVM - Elasticsearch Version Manager</title>
+      <link>http://duydo.me/evm---elasticsearch-version-manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://duydo.me/evm---elasticsearch-version-manager/</guid>
+      <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
