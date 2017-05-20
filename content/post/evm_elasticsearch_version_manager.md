@@ -1,6 +1,6 @@
 +++
 date = "2017-05-20T17:50:35+07:00"
-draft = true
+draft = false
 image = ""
 tags = ["elasticsearch", "version-manager", "evm",  "engineering"]
 title = "EVM - Elasticsearch Version Manager"
