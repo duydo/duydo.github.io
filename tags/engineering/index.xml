@@ -7,31 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2016</copyright>
-    <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 24 Oct 2016 11:16:00 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>EVM - Elasticsearch Version Manager</title>
-      <link>http://duydo.me/evm---elasticsearch-version-manager/</link>
-      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      
-      <guid>http://duydo.me/evm---elasticsearch-version-manager/</guid>
-      <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Solve your search and analytics problems with Elasticsearch</title>
-      <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
-      
-      <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
-      <description>This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
-{{&amp;lt; speakerDeck data-id=&amp;ldquo;9fa7022cc8da4e06be30f5e84ab03248&amp;rdquo; data-ratio=&amp;ldquo;1.77777777777778&amp;rdquo; &amp;gt;}}</description>
-    </item>
     
     <item>
       <title>How Elasticsearch cluster works</title>
@@ -48,26 +27,6 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Elasticsearch for Data Engineers</title>
-      <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
-      <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
-      
-      <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
-      <description>This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
-{{&amp;lt; speakerDeck data-id=&amp;ldquo;970178bcd293418cb303b342fa7d77f5&amp;rdquo; &amp;gt;}}</description>
-    </item>
-    
-    <item>
-      <title>Celery - a Distributed Task Queue</title>
-      <link>http://duydo.me/celery-a-distributed-task-queue/</link>
-      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
-      
-      <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
-      <description>&lt;p&gt;My talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when I was working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.
-&lt;/p&gt;</description>
     </item>
     
   </channel>
