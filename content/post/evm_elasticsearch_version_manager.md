@@ -1,6 +1,6 @@
 +++
 date = "2017-05-20T17:50:35+07:00"
-draft = false
+draft = true
 image = ""
 tags = ["elasticsearch", "version-manager", "evm",  "engineering"]
 title = "EVM - Elasticsearch Version Manager"
@@ -20,7 +20,7 @@ sudo chmod +x /usr/local/bin/evm
 ```
 
 ### Usage
-```sh 
+```sh
 evm -h                                     Print help information
 evm -V                                     Print version information
 evm list                                   List all installed ES versions

@@ -1,6 +1,6 @@
 +++
 date = "2016-10-17T18:26:39+07:00"
-draft = false
+draft = true
 title = "Elasticsearch for Data Engineers"
 tags = ["talks", "engineering", "elasticsearch"]
 +++
