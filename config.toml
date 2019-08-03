@@ -1,50 +1,80 @@
-baseurl = "http://duydo.me/"
-copyright = "Copyright © 2016"
-disqusshortname = "duydo"
-languagecode = "en-US"
-paginate = 5
-pluralizelisttitles = false
-theme = "casper"
-title = "Duy Do"
+# This is a simple configuration.
+# If you want to see the full configuration, please check `full-config.toml` .
+# And see https://gohugo.io/getting-started/configuration/ .
 
-[params]
-#logo = "images/logo.jpg"
-#cover = "images/ml_pictogram.png"
-description = "Father. Husband. Software Engineer"
-googleAnalyticsUserID = "UA-68329720-1"
-hideHUGOSupport = true
-#githubName = "duydo"
-#twitterName = "duydo"
-author="duydo"
+baseURL = "http://localhost:1313/"
+title = "Duy Do's weblog"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "jane"
 
-[taxonomies]
-tag =  "tags"
+hasCJKLanguage = false     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
+paginate = 5              # Number of articles displayed on the homepage  # 首页每页显示的文章数
+rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+disqusShortname = "duydo"      # disqus_shortname
+googleAnalytics = "UA-68329720-1"      # UA-XXXXXXXX-X
+copyright = "Duy Do"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+
+# Highlight options.
+# See https://gohugo.io/content-management/syntax-highlighting/
+PygmentsCodeFences = true # Enable syntax highlighting with GitHub flavoured code fences
+PygmentsUseClasses = true # Use CSS classes to format highlighted code
+PygmentsCodefencesGuessSyntax = true
+PygmentsOptions = "linenos=table"
 
 [permalinks]
 post = "/:slug/"
 page = "/:filename/"
 
+# language support # en / zh-cn / other... translations present in i18n/
+defaultContentLanguage = "en"           # Default language to use
+[languages.en]
+  languageCode = "en"
+
+[author]                  # essential                     # 必需
+  name = "Duy Do"
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = -300
-
+  name = "Posts"
+  weight = 10
+  identifier = "home"
+  url = "/"
 [[menu.main]]
-identifier = "services"
-name = "Services"
-url = "/services"
-weight = -200
-
-
+  name = "Archives"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
 [[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about"
-weight = 101
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
 
-[sitemap]
-ChangeFreq = ""
-Filename = "sitemap.xml"
-Priority = "-1"
+[params]
+  since = "2016"            # Site creation time          # 站点建立时间
+  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
+  rssFullContent = true     # if false, Rss feed instead of the summary
+
+  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
+  logoTitle = "Duy Do"        # default: the title value    # 默认值: 上面设置的title值
+  keywords = ["Duy Do", "duydo","software", "engineering", "computer", "computer science"]
+  description = "Duy Do's personal website"
+
+  dateFormatToUse = "2006-01-02"
+  showAuthorInfo = true
+  moreMeta = true
+#  toc = true
+  photoswipe = true
+  customCSS = ['custom.css']
+  customJS = []
+
+  [params.social]
+    g-github = "https://github.com/duydo"
+    c-twitter = "https://twitter.com/duydo"
+    e-linkedin = "https://www.linkedin.com/in/duydo/"
+

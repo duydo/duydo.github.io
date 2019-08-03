@@ -1,0 +1,14 @@
+description = "Father, Husband, Software Engineer"
+[name]
+display = "Duy Do"
+
+ [image]
+ url = "images/duydo.jpg"
+# width = 128
+# height = 128
+
+# [en]
+# description = ""
+
+# [en.name]
+# display = "Ted"
