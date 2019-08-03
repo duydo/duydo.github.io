@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Duy Do&#39;s weblog</title>
-    <link>http://localhost:1313/</link>
+    <link>http://duydo.me/</link>
     <description>Recent content on Duy Do&#39;s weblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
     <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Interview at Elastic</title>
-      <link>http://localhost:1313/interview-at-elastic/</link>
+      <link>http://duydo.me/interview-at-elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
-      <guid>http://localhost:1313/interview-at-elastic/</guid>
+      <guid>http://duydo.me/interview-at-elastic/</guid>
       
         <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;
 
@@ -39,10 +39,10 @@
     
     <item>
       <title>EVM - Elasticsearch Version Manager</title>
-      <link>http://localhost:1313/evm-elasticsearch-version-manager/</link>
+      <link>http://duydo.me/evm-elasticsearch-version-manager/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
-      <guid>http://localhost:1313/evm-elasticsearch-version-manager/</guid>
+      <guid>http://duydo.me/evm-elasticsearch-version-manager/</guid>
       
         <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;
 
@@ -120,10 +120,10 @@ evm plugin remove x-pack                   Remove the x-pack plugin&lt;/code&gt;
     
     <item>
       <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
-      <link>http://localhost:1313/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
+      <link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
+      <guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
       
         <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;
 
@@ -218,10 +218,10 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     
     <item>
       <title>How Elasticsearch cluster works</title>
-      <link>http://localhost:1313/how-elasticsearch-cluster-works/</link>
+      <link>http://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/how-elasticsearch-cluster-works/</guid>
+      <guid>http://duydo.me/how-elasticsearch-cluster-works/</guid>
       
         <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
 
@@ -257,9 +257,9 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 
 &lt;p&gt;&lt;strong&gt;The client node&lt;/strong&gt; is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a &amp;ldquo;smart &lt;a href=&#34;https://en.wikipedia.org/wiki/Router_(computing)&#34;&gt;router&lt;/a&gt;&amp;rdquo;. The client node does not hold any data, it also cannot become the master node.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/es_client_to_data_nodes.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://duydo.me/images/es_client_to_data_nodes.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
 &lt;em&gt;Figure 2. The client node routes the data-related request to every data nodes in the cluster.&lt;/em&gt;
-&lt;img src=&#34;http://localhost:1313/images/es_client_to_master_node.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
+&lt;img src=&#34;http://duydo.me/images/es_client_to_master_node.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
 &lt;em&gt;Figure 3. The client node routes the cluster-related request to the master node in the cluster.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The tribe node&lt;/strong&gt; is special type of client node that is able to talk to multiple clusters to perform search and other operations.&lt;/p&gt;
@@ -288,10 +288,10 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://duydo.me/about/</link>
       <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://duydo.me/about/</guid>
       
         <description>&lt;p&gt;I&amp;rsquo;m Duy Do, a passionate software engineer from Vietnam, now living in Ho Chi Minh city with my wife, son and daughter.&lt;/p&gt;
 
@@ -307,10 +307,10 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     
     <item>
       <title>Elasticsearch Consulting</title>
-      <link>http://localhost:1313/services/</link>
+      <link>http://duydo.me/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/services/</guid>
+      <guid>http://duydo.me/services/</guid>
       
         <description></description>
       

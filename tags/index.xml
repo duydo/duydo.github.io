@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Duy Do&#39;s weblog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://duydo.me/tags/</link>
     <description>Recent content in Tags on Duy Do&#39;s weblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
     <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Misc</title>
-      <link>http://localhost:1313/tags/misc/</link>
+      <link>http://duydo.me/tags/misc/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/misc/</guid>
+      <guid>http://duydo.me/tags/misc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elastic</title>
-      <link>http://localhost:1313/tags/elastic/</link>
+      <link>http://duydo.me/tags/elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/elastic/</guid>
+      <guid>http://duydo.me/tags/elastic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elasticsearch</title>
-      <link>http://localhost:1313/tags/elasticsearch/</link>
+      <link>http://duydo.me/tags/elasticsearch/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/elasticsearch/</guid>
+      <guid>http://duydo.me/tags/elasticsearch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>engineering</title>
-      <link>http://localhost:1313/tags/engineering/</link>
+      <link>http://duydo.me/tags/engineering/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/engineering/</guid>
+      <guid>http://duydo.me/tags/engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>evm</title>
-      <link>http://localhost:1313/tags/evm/</link>
+      <link>http://duydo.me/tags/evm/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/evm/</guid>
+      <guid>http://duydo.me/tags/evm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>version-manager</title>
-      <link>http://localhost:1313/tags/version-manager/</link>
+      <link>http://duydo.me/tags/version-manager/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/version-manager/</guid>
+      <guid>http://duydo.me/tags/version-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vietnamese</title>
-      <link>http://localhost:1313/tags/vietnamese/</link>
+      <link>http://duydo.me/tags/vietnamese/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/vietnamese/</guid>
+      <guid>http://duydo.me/tags/vietnamese/</guid>
       <description></description>
     </item>
     
     <item>
       <title>information retrieval</title>
-      <link>http://localhost:1313/tags/information-retrieval/</link>
+      <link>http://duydo.me/tags/information-retrieval/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/information-retrieval/</guid>
+      <guid>http://duydo.me/tags/information-retrieval/</guid>
       <description></description>
     </item>
     
     <item>
       <title>search engine</title>
-      <link>http://localhost:1313/tags/search-engine/</link>
+      <link>http://duydo.me/tags/search-engine/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/tags/search-engine/</guid>
+      <guid>http://duydo.me/tags/search-engine/</guid>
       <description></description>
     </item>
     
