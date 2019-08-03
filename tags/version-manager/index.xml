@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>version-manager on Duy Do&#39;s weblog</title>
+    <link>http://localhost:1313/tags/version-manager/</link>
+    <description>Recent content in version-manager on Duy Do&#39;s weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Duy Do</copyright>
+    <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/version-manager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EVM - Elasticsearch Version Manager</title>
+      <link>http://localhost:1313/evm-elasticsearch-version-manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://localhost:1313/evm-elasticsearch-version-manager/</guid>
+      <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

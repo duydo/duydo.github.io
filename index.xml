@@ -1,46 +1,229 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Duy Do</title>
-    <link>http://duydo.me/</link>
-    <description>Recent content on Duy Do</description>
+    <title>Duy Do&#39;s weblog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Duy Do&#39;s weblog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>Copyright © 2016</copyright>
+    <language>en</language>
+    <copyright>Duy Do</copyright>
     <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate>
     
-	<atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Interview at Elastic</title>
-      <link>http://duydo.me/interview-at-elastic/</link>
+      <link>http://localhost:1313/interview-at-elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
-      <guid>http://duydo.me/interview-at-elastic/</guid>
-      <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;
+      <guid>http://localhost:1313/interview-at-elastic/</guid>
+      
+        <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.&lt;/p&gt;
+
+&lt;p&gt;The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.&lt;/p&gt;
+
+&lt;p&gt;The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don&amp;rsquo;t need to master all Elastic&amp;rsquo;s products to work as a support engineer, the people in your team will help you with the products you are not familliar with.&lt;/p&gt;
+
+&lt;p&gt;My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.&lt;/p&gt;
+
+&lt;p&gt;In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&amp;rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After carefull consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&amp;rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.&lt;/p&gt;
+
+&lt;p&gt;Although I don&amp;rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.&lt;/p&gt;
+
+&lt;p&gt;By the way, I want to send my big thanks to Mark Walkom, who referred me to Elastic team :-)&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>EVM - Elasticsearch Version Manager</title>
+      <link>http://localhost:1313/evm-elasticsearch-version-manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://localhost:1313/evm-elasticsearch-version-manager/</guid>
+      
+        <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;
+
+&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;Just download the &lt;code&gt;evm&lt;/code&gt; script and make it executable.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo curl -o /usr/local/bin/evm https://raw.githubusercontent.com/duydo/evm/master/evm
+sudo chmod +x /usr/local/bin/evm&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;evm -h                                     Print &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; information
+evm -V                                     Print version information
+evm list                                   List all installed ES versions
+evm version                                Print the current activated ES version
+evm install &amp;lt;version&amp;gt;                      Install a specific ES version
+evm use &amp;lt;version&amp;gt;                          Use a specific ES version
+evm remove &amp;lt;version&amp;gt;                       Remove a specific ES version &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; available
+evm which &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&amp;lt;version&amp;gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;                      Print path to installed ES version
+evm plugin list                            List all installed ES plugins
+evm plugin &amp;lt;install&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;remove&amp;gt; &amp;lt;plugin&amp;gt;       Install or remove an ES plugin
+evm start &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-c &amp;lt;/path/to/config/dir&amp;gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;       Start ES in the background with a specific config directory &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;optional&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+evm stop                                   Stop ES &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; it is running
+evm status                                 Check &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; ES is running&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;evm install &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.3.1                          Install ES &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.3.1
+evm use &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.3.1                              Use ES &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;.3.1
+evm start                                  Start ES node with the default config directory
+evm start -c /etc/elasticsearch            Start ES node with /etc/elasticsearch config directory
+evm status                                 Print ES running status
+evm stop                                   Stop ES &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; it is running
+evm plugin install x-pack                  Install the x-pack plugin
+evm plugin remove x-pack                   Remove the x-pack plugin&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
     
     <item>
       <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
-      <link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
+      <link>http://localhost:1313/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
-      <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;
+      <guid>http://localhost:1313/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
+      
+        <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;step-1-install-java-maven-git&#34;&gt;Step 1: Install Java, Maven &amp;amp; Git&lt;/h2&gt;
+
+&lt;p&gt;The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing  &lt;a href=&#34;https://www.java.com/en/download/help/download_options.xml&#34;&gt;Java&lt;/a&gt;, &lt;a href=&#34;https://maven.apache.org/install.html&#34;&gt;Maven&lt;/a&gt; and &lt;a href=&#34;https://www.atlassian.com/git/tutorials/install-git&#34;&gt;Git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are using Mac, just use these commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;brew cask install java
+brew install maven
+brew install git&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;step-2-build-the-vntokenizer&#34;&gt;Step 2: Build the VnTokenizer&lt;/h2&gt;
+
+&lt;p&gt;The plugin is based on the VNTokenizer library, you have to build it before building the plugin&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;git clone https://github.com/duydo/vn-nlp-libraries.git
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; vn-nlp-libraries/nlp-parent
+mvn install&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;step-3-build-the-plugin&#34;&gt;Step 3: Build the plugin&lt;/h2&gt;
+
+&lt;p&gt;Clone the plugin&amp;rsquo;s source code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Edit the &lt;code&gt;elasticsearch-analysis-vietnamese/pom.xml&lt;/code&gt; to change the version of Elasticsearch you want to build the plugin with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
+  ...
+    &lt;span class=&#34;nt&#34;&gt;&amp;lt;project.build.java.version&amp;gt;&lt;/span&gt;1.8&lt;span class=&#34;nt&#34;&gt;&amp;lt;/project.build.java.version&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;lt;elasticsearch.version&amp;gt;&lt;/span&gt;5.2.1&lt;span class=&#34;nt&#34;&gt;&amp;lt;/elasticsearch.version&amp;gt;&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;lt;lucene.version&amp;gt;&lt;/span&gt;6.4.1&lt;span class=&#34;nt&#34;&gt;&amp;lt;/lucene.version&amp;gt;&lt;/span&gt;
+    ...
+&lt;span class=&#34;nt&#34;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Build the plugin:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; elasticsearch-analysis-vietnamese
+mvn package&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;step-4-install-the-plugin&#34;&gt;Step 4: Install the plugin&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;mvn clean package
+bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
     
     <item>
       <title>How Elasticsearch cluster works</title>
-      <link>http://duydo.me/how-elasticsearch-cluster-works/</link>
+      <link>http://localhost:1313/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
-      <guid>http://duydo.me/how-elasticsearch-cluster-works/</guid>
-      <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
+      <guid>http://localhost:1313/how-elasticsearch-cluster-works/</guid>
+      
+        <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;How a node in cluster talks to others?&lt;/li&gt;
@@ -48,27 +231,89 @@
 &lt;li&gt;What happens when a node stops or has encountered a problem?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;a-cluster-of-nodes&#34;&gt;A Cluster of Nodes&lt;/h2&gt;
+
+&lt;p&gt;When we start an instance of Elasticsearch, we are starting a &lt;em&gt;node&lt;/em&gt; and we have a &lt;em&gt;cluster&lt;/em&gt; with single node. We start another instance of Elasticsearch has same &lt;code&gt;cluster.name&lt;/code&gt; with the first instance and we have a cluster with two nodes. We can start more instances of Elasticsearch to form a cluster with number of nodes we want.&lt;/p&gt;
+
+&lt;p&gt;Every node in the cluster knows about the other nodes within the cluster, they talk to others directly using the native Elasticsearch language over &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_Control_Protocol&#34;&gt;TCP&lt;/a&gt;. This is known as a &lt;a href=&#34;http://en.wikipedia.org/wiki/Network_topology#Mesh&#34;&gt;full connected mesh topology&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&#34; alt=&#34;full connected mesh topology&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Figure 1. Full connected mesh topology (source &lt;a href=&#34;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&#34;&gt;https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Besides that, the nodes are able to talk to external world using &lt;a href=&#34;http://www.json.org&#34;&gt;JSON&lt;/a&gt; &amp;ldquo;language&amp;rdquo; over &lt;a href=&#34;https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol&#34;&gt;HTTP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, we can say:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch is &lt;a href=&#34;https://en.wikipedia.org/wiki/Peer-to-peer&#34;&gt;peer-to-peer&lt;/a&gt; based system, nodes communicate with others directly.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Each node in the cluster plays one or more roles; it can be a &lt;em&gt;master&lt;/em&gt; node, &lt;em&gt;data&lt;/em&gt; node, &lt;em&gt;client&lt;/em&gt; node, or &lt;em&gt;tribe&lt;/em&gt; node. Ech role has it own purpose.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The master node&lt;/strong&gt; is responsible for creating, deleting indices, adding the nodes or remove the nodes from the cluster. Each time a cluster state is changed, the master node broadcasts the changes to other nodes in the cluster. There is only one master node in the cluster at a time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The data node&lt;/strong&gt; is responsible for holding the data in the shards and performing data related operations such as create, read, update, delete, search, and aggregations. We can have many data nodes in the cluster. If one of the data nodes stops, the cluster still operates and  re-organizes the data on other nodes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The client node&lt;/strong&gt; is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a &amp;ldquo;smart &lt;a href=&#34;https://en.wikipedia.org/wiki/Router_(computing)&#34;&gt;router&lt;/a&gt;&amp;rdquo;. The client node does not hold any data, it also cannot become the master node.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/es_client_to_data_nodes.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
+&lt;em&gt;Figure 2. The client node routes the data-related request to every data nodes in the cluster.&lt;/em&gt;
+&lt;img src=&#34;http://localhost:1313/images/es_client_to_master_node.png&#34; alt=&#34;es_client_to_data_nodes&#34; /&gt;
+&lt;em&gt;Figure 3. The client node routes the cluster-related request to the master node in the cluster.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The tribe node&lt;/strong&gt; is special type of client node that is able to talk to multiple clusters to perform search and other operations.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The ingest node&lt;/strong&gt; is responsible for pre-processing documents before the actual indexing takes into account.&lt;/p&gt;
+
+&lt;p&gt;Now we know role of each node, next we look at what happens behind the sence when a node joins or leaves the cluster.&lt;/p&gt;
+
+&lt;h2 id=&#34;add-a-node-to-the-cluster&#34;&gt;Add a Node to the Cluster&lt;/h2&gt;
+
+&lt;p&gt;When we start a node, the node is starting to ping all the nodes in the cluster for finding the master node. Once the master  is found, it will ask the master  to join by sending a join request; the master accepts it as a new node of the cluster and then notify all the nodes in the cluster about presense of the new node, and finally the new node connects to all other nodes.&lt;/p&gt;
+
+&lt;p&gt;If the joined node is a data node, the master will reallocate the data evenly across the nodes.&lt;/p&gt;
+
+&lt;h2 id=&#34;remove-a-node-from-the-cluster&#34;&gt;Remove a Node from the Cluster&lt;/h2&gt;
+
+&lt;p&gt;If we stop a node or a node in the cluster is unresponsive in specific amout of time, the master node will remove it from the cluster and reallocate the data if the removed node is a data node.&lt;/p&gt;
+
+&lt;p&gt;You might be curious about how the master node knows if other nodes in the cluster are still alive. The master has a fault detection machanism, it pings all the other nodes in the cluster and verify that they are alive or not.&lt;/p&gt;
+
+&lt;p&gt;And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p&gt;
+
+&lt;p&gt;In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p&gt;</description>
+      
     </item>
     
     <item>
       <title>About</title>
-      <link>http://duydo.me/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
       
-      <guid>http://duydo.me/about/</guid>
-      <description>I&amp;rsquo;m Duy Do, a passionate software developer from Vietnam, now living in Ho Chi Minh city with my wife, son and daughter.
-My areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.
-Currently I work as a Software Engineer for Krom, a small tech company I&amp;rsquo;m a co-founder of. Besides the daily works, I have been running Vietnamese Elasticsearch community and working on some open source projects in my spare time, such as: Vietnamese Elasticsearch analysis plugin, Elasticsearch Version Manager and Python Client for Mapzen APIs.</description>
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;p&gt;I&amp;rsquo;m Duy Do, a passionate software engineer from Vietnam, now living in Ho Chi Minh city with my wife, son and daughter.&lt;/p&gt;
+
+&lt;p&gt;My areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
+
+&lt;p&gt;Currently I work as a Software Engineer at KromLab, a small tech company I&amp;rsquo;m a co-founder of. Besides the daily works, I have been running &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Vietnamese Elasticsearch community&lt;/a&gt; and working on some open source projects in my spare time, such as: &lt;a href=&#34;https://github.com/duydo/elasticsearch-analysis-vietnamese&#34;&gt;Vietnamese Elasticsearch analysis plugin&lt;/a&gt;, &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;Elasticsearch Version Manager&lt;/a&gt;
+  and &lt;a href=&#34;https://github.com/duydo/python-mapzen&#34;&gt;Python Client for Mapzen APIs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find me somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt;, &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; and &lt;a href=&#34;https://vn.linkedin.com/in/duydo&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
     </item>
     
     <item>
       <title>Elasticsearch Consulting</title>
-      <link>http://duydo.me/services/</link>
+      <link>http://localhost:1313/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://duydo.me/services/</guid>
-      <description></description>
+      <guid>http://localhost:1313/services/</guid>
+      
+        <description></description>
+      
     </item>
     
   </channel>
