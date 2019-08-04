@@ -8,7 +8,7 @@ function deploy() {
     cp ./CNAME ./public/CNAME
     export GIT_DEPLOY_DIR=public
     export GIT_DEPLOY_BRANCH=master
-    export GIT_DEPLOY_USERNAME="Duy Do"
+    export GIT_DEPLOY_USERNAME="duydo"
     export GIT_DEPLOY_EMAIL=doquocduy@gmail.com
     ./bin/deploy.sh
     rm -rf ./public

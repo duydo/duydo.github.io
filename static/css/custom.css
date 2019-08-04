@@ -23,11 +23,6 @@ body {
     border-top: 3px solid #c05b4d;
 }
 
-.post {
-    padding: 2em 5em;
-    margin: 0 5em 3em;
-}
-
 .post .post-content p {
     font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
     text-align: justify;
