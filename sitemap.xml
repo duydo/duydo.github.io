@@ -15,12 +15,6 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/misc/</loc>
-    <lastmod>2017-07-20T09:48:56+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/post/</loc>
     <lastmod>2017-07-20T09:48:56+07:00</lastmod>
     <priority>0</priority>
@@ -40,6 +34,12 @@
   
   <url>
     <loc>http://duydo.me/tags/elasticsearch/</loc>
+    <lastmod>2017-07-20T09:48:56+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/interview/</loc>
     <lastmod>2017-07-20T09:48:56+07:00</lastmod>
     <priority>0</priority>
   </url>
@@ -83,6 +83,31 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</loc>
+    <lastmod>2016-12-09T08:07:09+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/barcamp/</loc>
+    <lastmod>2016-12-09T08:07:09+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/barcamp2016/</loc>
+    <lastmod>2016-12-09T08:07:09+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/talks/</loc>
+    <lastmod>2016-12-09T08:07:09+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/how-elasticsearch-cluster-works/</loc>
     <lastmod>2016-10-24T11:16:00+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -106,6 +131,44 @@
     <lastmod>2016-10-18T16:54:21+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/elasticsearch-for-data-engineers/</loc>
+    <lastmod>2016-10-17T18:26:39+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/celery-a-distributed-task-queue/</loc>
+    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/celery/</loc>
+    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/distributed/</loc>
+    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/python/</loc>
+    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/task-queue/</loc>
+    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>Misc</title>
-      <link>http://duydo.me/tags/misc/</link>
-      <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/misc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>elastic</title>
       <link>http://duydo.me/tags/elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
@@ -36,6 +27,15 @@
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
       
       <guid>http://duydo.me/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interview</title>
+      <link>http://duydo.me/tags/interview/</link>
+      <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/interview/</guid>
       <description></description>
     </item>
     
@@ -76,6 +76,33 @@
     </item>
     
     <item>
+      <title>barcamp</title>
+      <link>http://duydo.me/tags/barcamp/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/barcamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>barcamp2016</title>
+      <link>http://duydo.me/tags/barcamp2016/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/barcamp2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>talks</title>
+      <link>http://duydo.me/tags/talks/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>information retrieval</title>
       <link>http://duydo.me/tags/information-retrieval/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
@@ -90,6 +117,42 @@
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
       <guid>http://duydo.me/tags/search-engine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>celery</title>
+      <link>http://duydo.me/tags/celery/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/celery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>distributed</title>
+      <link>http://duydo.me/tags/distributed/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/distributed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://duydo.me/tags/python/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>task-queue</title>
+      <link>http://duydo.me/tags/task-queue/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/task-queue/</guid>
       <description></description>
     </item>
     

@@ -217,6 +217,22 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     </item>
     
     <item>
+      <title>Solve your search and analytics problems with Elasticsearch</title>
+      <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
+      
+        <description>&lt;p&gt;This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe id=&#34;talk_frame_370710&#34; src=&#34;//speakerdeck.com/player/9fa7022cc8da4e06be30f5e84ab03248&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+</description>
+      
+    </item>
+    
+    <item>
       <title>How Elasticsearch cluster works</title>
       <link>http://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
@@ -306,6 +322,49 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     </item>
     
     <item>
+      <title>Elasticsearch for Data Engineers</title>
+      <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
+      <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
+      
+      <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
+      
+        <description>&lt;p&gt;This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe id=&#34;talk_frame_359449&#34; src=&#34;//speakerdeck.com/player/970178bcd293418cb303b342fa7d77f5&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Celery - a Distributed Task Queue</title>
+      <link>http://duydo.me/celery-a-distributed-task-queue/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
+      
+        <description>&lt;p&gt;My talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when I was working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.
+Celery is an asynchronous task queue/job queue based on distributed message passing.    It is focused on real-time operation, but supports scheduling as well.
+&lt;p&gt;
+&lt;iframe
+  style=&#34;width: 100%; height: 500px;&#34;
+  frameborder=&#34;0&#34;
+  marginwidth=&#34;0&#34;
+  marginheight=&#34;0&#34;
+  scrolling=&#34;no&#34;
+  src=&#34;http://www.slideshare.net/slideshow/embed_code/50704487?rel=0&#34;
+    allowfullscreen=&#34;true&#34;
+    webkitallowfullscreen=&#34;true&#34;
+    mozallowfullscreen=&#34;true&#34;&gt;
+    &lt;/iframe&gt;
+&lt;/p&gt;
+&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Nhà Giả Kim - Paulo Coelho</title>
       <link>http://duydo.me/nh%C3%A0-gi%E1%BA%A3-kim-paulo-coelho/</link>
       <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
@@ -324,7 +383,9 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 
 &lt;p&gt;Câu chuyện kết thúc tốt đẹp, mở toan ra những cánh cửa cho những con người có hoài bão, ước mơ, quyết tâm theo đuổi đến cùng vận mệnh của mình.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&amp;ldquo;Kho báu không phải là đích đến, kho báu là cả cuộc hành trình&amp;rdquo;&lt;/em&gt;&lt;/p&gt;</description>
+&lt;blockquote&gt;
+&lt;p&gt;Kho báu không phải là đích đến, kho báu là cả cuộc hành trình&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       
     </item>
     

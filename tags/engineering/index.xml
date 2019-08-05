@@ -22,6 +22,16 @@
     </item>
     
     <item>
+      <title>Solve your search and analytics problems with Elasticsearch</title>
+      <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
+      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
+      
+      <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
+      <description>This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
+ </description>
+    </item>
+    
+    <item>
       <title>How Elasticsearch cluster works</title>
       <link>http://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
@@ -34,6 +44,25 @@
 &lt;li&gt;What happens when a node joins or leaves the cluster?&lt;/li&gt;
 &lt;li&gt;What happens when a node stops or has encountered a problem?&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch for Data Engineers</title>
+      <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
+      <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
+      
+      <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
+      <description>This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
+ </description>
+    </item>
+    
+    <item>
+      <title>Celery - a Distributed Task Queue</title>
+      <link>http://duydo.me/celery-a-distributed-task-queue/</link>
+      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
+      
+      <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
+      <description>My talk about Celery when I was working at Sentifi. Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well.   </description>
     </item>
     
   </channel>
