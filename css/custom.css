@@ -54,3 +54,8 @@ body {
 .post .post-content p code, .post .post-content p pre {
     font-size: 0.8em;
 }
+
+.archive .archive-post {
+    border: none;
+    font-size: 1em;
+}
