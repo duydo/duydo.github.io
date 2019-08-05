@@ -61,6 +61,10 @@ body {
     margin-bottom: 1em;
 }
 
+.archive .collection-title .archive-year {
+    margin: 1em 0 0;
+}
+
 .archive .archive-post {
     padding: 0;
     border: none;
