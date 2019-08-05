@@ -309,7 +309,7 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
       
       <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
       
-        <description>&lt;p&gt;This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
+        <description>&lt;p&gt;This is the slide for my talk about Elasticsearch for Data Engineers at &lt;a href=&#34;https://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
 
 &lt;p&gt;&lt;iframe id=&#34;talk_frame_359449&#34; src=&#34;//speakerdeck.com/player/970178bcd293418cb303b342fa7d77f5&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
 &lt;/p&gt;
