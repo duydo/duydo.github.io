@@ -3,16 +3,13 @@ body {
 }
 
 .post .post-header {
-    border-bottom: 2px solid #cacaca;
-    /*text-align: left;*/
+    border-bottom: none;
 }
 
 .post .post-header .post-title {
     font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
     font-weight: 700;
-    font-size: 2em;
-    /*text-align: left;*/
-
+    font-size: 36px;
 }
 
 .post .post-content h2 {
@@ -41,21 +38,39 @@ body {
     color: #606366;
 }
 
+.post .post-content .highlight > .chroma > table::after {
+    color: #606366;
+    font-weight: 400;
+}
+
 .post .post-content code {
     background: #2B2B2B;
     color: #A9B7C6;
 }
 
 .post .post-content code, .post .post-content pre {
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
-
 
 .post .post-content p code, .post .post-content p pre {
     font-size: 0.8em;
 }
 
+.archive .collection-title {
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin-bottom: 1em;
+}
+
 .archive .archive-post {
+    padding: 0;
     border: none;
     font-size: 1em;
+}
+
+.archive .archive-post:hover {
+    transform: none;
+}
+
+.post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
+    transform: none;
 }
