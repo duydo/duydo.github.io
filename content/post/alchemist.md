@@ -19,4 +19,4 @@ Chàng đã đạt được ước  mơ của đời mình nhưng thật sự nh
 
 Câu chuyện kết thúc tốt đẹp, mở toan ra những cánh cửa cho những con người có hoài bão, ước mơ, quyết tâm theo đuổi đến cùng vận mệnh của mình.
 
-*"Kho báu không phải là đích đến, kho báu là cả cuộc hành trình"*
+> Kho báu không phải là đích đến, kho báu là cả cuộc hành trình

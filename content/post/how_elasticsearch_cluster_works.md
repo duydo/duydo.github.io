@@ -1,7 +1,5 @@
 +++
-draft = false
 tags = ["elasticsearch", "engineering", "search engine", "information retrieval"]
-image = ""
 date = "2016-10-24T11:16:00+07:00"
 title = "How Elasticsearch cluster works"
 +++

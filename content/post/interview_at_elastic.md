@@ -2,7 +2,7 @@
 title = "Interview at Elastic"
 draft = false
 date = "2017-07-20T09:48:56+07:00"
-tags = ["Misc", "elastic", "elasticsearch"]
+tags = ["interview", "elastic", "elasticsearch"]
 +++
 
 Some months ago, I had an interview with [Elastic](https://elastic.co) for Java Software/Support Engineer position. The interview was an interesting experience I've ever had, Elastic is a brilliant company with great people and amazing culture.

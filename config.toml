@@ -50,6 +50,12 @@ defaultContentLanguage = "en"
   identifier = "tags"
   url = "/tags/"
 
+ [[menu.main]]
+  name = "Talks"
+  weight = 40
+  identifier = "talks"
+  url = "/tags/talks"
+
 [params]
   since = "2016"
   homeFullContent = false

@@ -2,7 +2,6 @@
 tags = ["Elasticsearch","Vietnamese"]
 title = "How to build Elasticsearch Vietnamese Analysis Plugin"
 date = "2017-04-21"
-draft = false
 +++
 
 Recently, I've received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I'm not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.
