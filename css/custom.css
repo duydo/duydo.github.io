@@ -93,7 +93,24 @@ body {
     display: none;
 }
 
+.author-info .author-box {
+    padding: 1em 0;
+}
+
 .author-info .author-box .author-content {
-    margin: 1em auto;
-    /*padding: 1em;*/
+    padding-left: 100px;
+}
+
+.author-info .author-box .author-image img {
+    height: 80px;
+    border: none;
+    margin: 0 auto;
+}
+
+.author-info .author-box .author-content .author-name {
+    margin-bottom: 0;
+}
+
+.author-info .author-box .author-content .author-desc {
+    margin-top: 0;
 }

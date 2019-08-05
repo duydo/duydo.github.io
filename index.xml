@@ -303,25 +303,6 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     </item>
     
     <item>
-      <title>About</title>
-      <link>http://duydo.me/about/</link>
-      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
-      
-      <guid>http://duydo.me/about/</guid>
-      
-        <description>&lt;p&gt;I&amp;rsquo;m Duy Do, a passionate software engineer from Vietnam, now living in Ho Chi Minh city with my wife, son and daughter.&lt;/p&gt;
-
-&lt;p&gt;My areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
-
-&lt;p&gt;Currently I work as a Software Engineer at KromLab, a small tech company I&amp;rsquo;m a co-founder of. Besides the daily works, I have been running &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Vietnamese Elasticsearch community&lt;/a&gt; and working on some open source projects in my spare time, such as: &lt;a href=&#34;https://github.com/duydo/elasticsearch-analysis-vietnamese&#34;&gt;Vietnamese Elasticsearch analysis plugin&lt;/a&gt;, &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;Elasticsearch Version Manager&lt;/a&gt;
-  and &lt;a href=&#34;https://github.com/duydo/python-mapzen&#34;&gt;Python Client for Mapzen APIs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can find me somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt;, &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; and &lt;a href=&#34;https://vn.linkedin.com/in/duydo&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>Elasticsearch for Data Engineers</title>
       <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
       <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
