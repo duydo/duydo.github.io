@@ -22,15 +22,14 @@ PygmentsOptions = "linenos=table"
 post = "/:slug/"
 page = "/:filename/"
 
-# language support # en / zh-cn / other... translations present in i18n/
-defaultContentLanguage = "en"           # Default language to use
+defaultContentLanguage = "en"
 [languages.en]
   languageCode = "en"
 
-[author]                  # essential                     # 必需
+[author]
   name = "Duy Do"
 
-[sitemap]                 # essential                     # 必需
+[sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
@@ -52,17 +51,18 @@ defaultContentLanguage = "en"           # Default language to use
   url = "/tags/"
 
 [params]
-  since = "2016"            # Site creation time          # 站点建立时间
-  homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
-  rssFullContent = true     # if false, Rss feed instead of the summary
+  since = "2016"
+  homeFullContent = false
+  rssFullContent = true
 
   logoTitle = "Duy Do"
-  keywords = ["Duy Do", "duydo","software", "engineering", "computer", "computer science"]
+  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch"]
   description = "Duy Do's personal website"
 
   dateFormatToUse = "2006-01-02"
   showAuthorInfo = true
   moreMeta = true
+  showReadMore = false
   toc = true
   photoswipe = true
   customCSS = ['custom.css']

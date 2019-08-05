@@ -22,9 +22,12 @@
         <div class="post-summary">
             {{ .Summary }}
         </div>
+
+         {{ if .Site.Params.showReadMore }}
         <div class="read-more">
             <a href="{{ .RelPermalink }}" class="read-more-link">{{ i18n "readmore" }}</a>
         </div>
+        {{ end }}
         {{ end }}
     </div>
 </article>
