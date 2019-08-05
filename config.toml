@@ -1,4 +1,4 @@
-baseURL = "http://duydo.me/"
+baseURL = "http://localhost:1313/"
 title = "Duy Do's weblog"
 enableRobotsTXT = true
 enableEmoji = true

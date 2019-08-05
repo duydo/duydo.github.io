@@ -2,7 +2,7 @@
 me=$(basename "$0")
 
 
-function deploy() {
+function publish() {
     rm -rf ./public
     hugo
     cp ./CNAME ./public/CNAME
@@ -25,8 +25,8 @@ case "$1" in
         rm -rf ./public
         git add --all && git commit -am "$2" && git push
         ;;
-    deploy)
-        deploy
+    publish)
+        publish
         ;;
     *)
         echo "Usage: $me <run|build|sync|deploy>"
