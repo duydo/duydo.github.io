@@ -1,6 +1,9 @@
 body {
     font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
 }
+.header .site-navbar .menu {
+  font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+}
 
 .header .site-description {
     float: left;
