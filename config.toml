@@ -56,15 +56,14 @@ defaultContentLanguage = "en"           # Default language to use
   homeFullContent = false   # if false, show post summaries on home page. Othewise show full content.
   rssFullContent = true     # if false, Rss feed instead of the summary
 
-  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "Duy Do"        # default: the title value    # 默认值: 上面设置的title值
+  logoTitle = "Duy Do"
   keywords = ["Duy Do", "duydo","software", "engineering", "computer", "computer science"]
   description = "Duy Do's personal website"
 
   dateFormatToUse = "2006-01-02"
   showAuthorInfo = true
   moreMeta = true
-#  toc = true
+  toc = true
   photoswipe = true
   customCSS = ['custom.css']
   customJS = []
