@@ -47,16 +47,6 @@
     </item>
     
     <item>
-      <title>Elasticsearch for Data Engineers</title>
-      <link>http://duydo.me/elasticsearch-for-data-engineers/</link>
-      <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
-      
-      <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
-      <description>This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
- </description>
-    </item>
-    
-    <item>
       <title>Celery - a Distributed Task Queue</title>
       <link>http://duydo.me/celery-a-distributed-task-queue/</link>
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>

@@ -40,6 +40,15 @@
     </item>
     
     <item>
+      <title>bash</title>
+      <link>http://duydo.me/tags/bash/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>engineering</title>
       <link>http://duydo.me/tags/engineering/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
@@ -49,11 +58,11 @@
     </item>
     
     <item>
-      <title>evm</title>
-      <link>http://duydo.me/tags/evm/</link>
+      <title>shell</title>
+      <link>http://duydo.me/tags/shell/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
-      <guid>http://duydo.me/tags/evm/</guid>
+      <guid>http://duydo.me/tags/shell/</guid>
       <description></description>
     </item>
     
@@ -67,7 +76,16 @@
     </item>
     
     <item>
-      <title>Vietnamese</title>
+      <title>analysis</title>
+      <link>http://duydo.me/tags/analysis/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://duydo.me/tags/analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vietnamese</title>
       <link>http://duydo.me/tags/vietnamese/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
       
@@ -103,7 +121,7 @@
     </item>
     
     <item>
-      <title>information retrieval</title>
+      <title>information-retrieval</title>
       <link>http://duydo.me/tags/information-retrieval/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
@@ -112,7 +130,7 @@
     </item>
     
     <item>
-      <title>search engine</title>
+      <title>search-engine</title>
       <link>http://duydo.me/tags/search-engine/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
       
@@ -171,24 +189,6 @@
       <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
       
       <guid>http://duydo.me/tags/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nha-gia-kim</title>
-      <link>http://duydo.me/tags/nha-gia-kim/</link>
-      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/nha-gia-kim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>paulo-coelho</title>
-      <link>http://duydo.me/tags/paulo-coelho/</link>
-      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/paulo-coelho/</guid>
       <description></description>
     </item>
     

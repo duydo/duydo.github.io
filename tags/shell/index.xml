@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>evm on Duy Do&#39;s weblog</title>
-    <link>http://duydo.me/tags/evm/</link>
-    <description>Recent content in evm on Duy Do&#39;s weblog</description>
+    <title>shell on Duy Do&#39;s weblog</title>
+    <link>http://duydo.me/tags/shell/</link>
+    <description>Recent content in shell on Duy Do&#39;s weblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
     <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
     
-	<atom:link href="http://duydo.me/tags/evm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://duydo.me/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

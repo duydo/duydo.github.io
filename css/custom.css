@@ -82,3 +82,18 @@ body {
 .post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
     transform: none;
 }
+
+.avatar {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.author-info .author-title {
+    display: none;
+}
+
+.author-info .author-box .author-content {
+    margin: 1em auto;
+    /*padding: 1em;*/
+}
