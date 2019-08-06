@@ -7,34 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 19:01:54 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Alan Turing - Một tài năng xuất chúng nhưng cuộc đời đầy bi kịch</title>
-      <link>http://duydo.me/alan-turing-m%E1%BB%99t-t%C3%A0i-n%C4%83ng-xu%E1%BA%A5t-ch%C3%BAng-nh%C6%B0ng-cu%E1%BB%99c-%C4%91%E1%BB%9Di-%C4%91%E1%BA%A7y-bi-k%E1%BB%8Bch/</link>
-      <pubDate>Tue, 06 Aug 2019 19:01:54 +0700</pubDate>
-      
-      <guid>http://duydo.me/alan-turing-m%E1%BB%99t-t%C3%A0i-n%C4%83ng-xu%E1%BA%A5t-ch%C3%BAng-nh%C6%B0ng-cu%E1%BB%99c-%C4%91%E1%BB%9Di-%C4%91%E1%BA%A7y-bi-k%E1%BB%8Bch/</guid>
-      <description>&lt;p&gt;Ngồi đợi ông con học, rảnh rỗi nên viết đôi dòng về Alan Turing.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;p class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/alan_turing.jpg&#34; title=&#34;Alan Turing&#34; alt=&#34;Alan Turing&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Alan Turing&lt;/span&gt;
-&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Java: Type Promotion</title>
@@ -84,6 +60,30 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       
       <guid>http://duydo.me/interview-at-elastic/</guid>
       <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Alan Turing - Một tài năng xuất chúng nhưng cuộc đời đầy bi kịch</title>
+      <link>http://duydo.me/alan-turing-m%E1%BB%99t-t%C3%A0i-n%C4%83ng-xu%E1%BA%A5t-ch%C3%BAng-nh%C6%B0ng-cu%E1%BB%99c-%C4%91%E1%BB%9Di-%C4%91%E1%BA%A7y-bi-k%E1%BB%8Bch/</link>
+      <pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate>
+      
+      <guid>http://duydo.me/alan-turing-m%E1%BB%99t-t%C3%A0i-n%C4%83ng-xu%E1%BA%A5t-ch%C3%BAng-nh%C6%B0ng-cu%E1%BB%99c-%C4%91%E1%BB%9Di-%C4%91%E1%BA%A7y-bi-k%E1%BB%8Bch/</guid>
+      <description>&lt;p&gt;Ngồi đợi ông con học, rảnh rỗi nên viết đôi dòng về Alan Turing.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;p class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/alan_turing.jpg&#34; title=&#34;Alan Turing&#34; alt=&#34;Alan Turing&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Alan Turing&lt;/span&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
