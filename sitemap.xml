@@ -219,10 +219,4 @@
     <priority>0</priority>
   </url>
   
-  <url>
-    <loc>http://duydo.me/services/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
 </urlset>

@@ -317,6 +317,8 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 
 &lt;p&gt;You can also find him somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt; or the roads he runs every morning.&lt;/p&gt;
 
+&lt;p&gt;He looks like this.&lt;/p&gt;
+
 
 
 
@@ -401,17 +403,6 @@ Celery is an asynchronous task queue/job queue based on distributed message pass
 &lt;blockquote&gt;
 &lt;p&gt;Kho báu không phải là đích đến, kho báu là cả cuộc hành trình&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Elasticsearch Consulting</title>
-      <link>http://duydo.me/services/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://duydo.me/services/</guid>
-      
-        <description></description>
       
     </item>
     

@@ -1,8 +1,8 @@
 body {
-    font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 .header .site-navbar .menu {
-  font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+  /* font-family: inherit; */
 }
 
 .header .site-description {
@@ -10,13 +10,11 @@ body {
 }
 
 .post .post-header {
-    border-bottom: none;
+    /* border-bottom: 2px solid #eee; */
 }
 
 .post .post-header .post-title {
-    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 36px;
+    font-family:'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 .post .post-content h2 {
@@ -24,7 +22,7 @@ body {
 }
 
 .post .post-content p {
-    font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
     text-align: justify;
 }
 
@@ -61,7 +59,13 @@ body {
 
 .post .post-content p code, .post .post-content p pre {
     font-size: 0.8em;
+    font-family: Consolas, monaco, monospace;
 }
+
+.post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
+    transform: none;
+}
+
 
 .archive .collection-title {
     font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -81,9 +85,8 @@ body {
 .archive .archive-post:hover {
     transform: none;
 }
-
-.post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
-    transform: none;
+.archive .archive-post .archive-post-time {
+  /* text-align: center; */
 }
 
 .avatar {
