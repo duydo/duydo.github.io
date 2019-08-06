@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>books on Duy Do - Thougths on computer</title>
-    <link>http://duydo.me/tags/books/</link>
-    <description>Recent content in books on Duy Do - Thougths on computer</description>
+    <title>reading on Duy Do - Thougths on computer</title>
+    <link>http://duydo.me/tags/reading/</link>
+    <description>Recent content in reading on Duy Do - Thougths on computer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
     <lastBuildDate>Mon, 06 Aug 2018 09:33:30 +0700</lastBuildDate>
     
-	<atom:link href="http://duydo.me/tags/books/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://duydo.me/tags/reading/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</guid>
       <description>&lt;p&gt;Lâu nay muốn viết về tầm quan trọng của việc đọc sách để chia sẻ với mấy đứa cháu ở nhà cũng như để nhắc nhở bản thân mà lười quá chưa viết, hôm qua tình cờ đọc được &lt;a href=&#34;http://science-technology.vn/?p=5565&#34;&gt;bài viết của giáo sư John Vu&lt;/a&gt; về chủ đề này, thấy khá phù hợp với suy nghĩ của mình nên mình chia sẻ lại ở đây.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Nhà Giả Kim - Paulo Coelho</title>
-      <link>http://duydo.me/nh%C3%A0-gi%E1%BA%A3-kim-paulo-coelho/</link>
-      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
-      
-      <guid>http://duydo.me/nh%C3%A0-gi%E1%BA%A3-kim-paulo-coelho/</guid>
-      <description>&lt;p&gt;&amp;ldquo;Nhà Giả Kim&amp;rdquo; là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống &amp;ldquo;nay đây mai đó&amp;rdquo;, để theo đuổi ước mơ vận mệnh của mình.&lt;/p&gt;</description>
     </item>
     
   </channel>

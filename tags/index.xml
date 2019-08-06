@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 06 Aug 2018 09:33:30 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>http://duydo.me/tags/books/</link>
+      <pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>http://duydo.me/tags/reading/</link>
+      <pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/reading/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>elastic</title>
@@ -171,24 +189,6 @@
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
       
       <guid>http://duydo.me/tags/task-queue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>alchemist</title>
-      <link>http://duydo.me/tags/alchemist/</link>
-      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/alchemist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>books</title>
-      <link>http://duydo.me/tags/books/</link>
-      <pubDate>Fri, 08 Apr 2016 17:59:15 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/books/</guid>
       <description></description>
     </item>
     
