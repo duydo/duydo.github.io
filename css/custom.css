@@ -61,6 +61,14 @@ body {
     font-size: 0.8em;
     font-family: Consolas, monaco, monospace;
 }
+.post p.caption-wrapper {
+  text-align: center;
+}
+
+.post .post-content .caption-text {
+  text-align: center;
+  display: block;
+}
 
 .post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
     transform: none;
