@@ -1,5 +1,5 @@
 baseURL = "http://duydo.me/"
-title = "Duy Do's weblog"
+title = "Duy Do - Thougths on computer"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
@@ -27,18 +27,18 @@ defaultContentLanguage = "en"
   languageCode = "en"
 
 [author]
-  name = "Duy Do"
+  name = "duydo"
 
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
 
-[[menu.main]]
-  name = "Posts"
-  weight = 10
-  identifier = "home"
-  url = "/"
+# [[menu.main]]
+#   name = "Home"
+#   weight = 10
+#   identifier = "home"
+#   url = "/"
 [[menu.main]]
   name = "Archives"
   weight = 20
@@ -49,12 +49,12 @@ defaultContentLanguage = "en"
   weight = 30
   identifier = "tags"
   url = "/tags/"
-
- [[menu.main]]
-  name = "Talks"
-  weight = 40
-  identifier = "talks"
-  url = "/tags/talks"
+#
+# [[menu.main]]
+#  name = "Code"
+#  weight = 40
+#  identifier = "code"
+#  url = "https://github.com/duydo"
 
 [params]
   since = "2016"
@@ -62,10 +62,10 @@ defaultContentLanguage = "en"
   rssFullContent = true
 
   logoTitle = "Duy Do"
-  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch"]
+  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer-science", "python", "java", "elasticsearch"]
   description = "Duy Do's personal website"
 
-  dateFormatToUse = "2006-01-02"
+  dateFormatToUse = "Jan 02, 2006"
   showAuthorInfo = true
   moreMeta = true
   showReadMore = false
@@ -74,8 +74,10 @@ defaultContentLanguage = "en"
   customCSS = ['custom.css']
   customJS = []
 
+  [params.commentCount.disqus]
+    enable = false
+
   [params.social]
     g-github = "https://github.com/duydo"
     c-twitter = "https://twitter.com/duydo"
-    e-linkedin = "https://www.linkedin.com/in/duydo/"
-
+    # e-linkedin = "https://www.linkedin.com/in/duydo/"

@@ -1,7 +1,5 @@
 +++
-tags = [
-  "talks", "engineering", "celery", "python", "distributed", "task-queue"
-]
+tags = ["talks", "engineering", "celery", "python", "distributed", "task-queue"]
 date = "2016-10-17T08:28:45+07:00"
 title = "Celery - a Distributed Task Queue"
 slug="celery-a-distributed-task-queue"

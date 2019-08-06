@@ -1,5 +1,8 @@
 body {
-    font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+}
+.header .site-navbar .menu {
+  /* font-family: inherit; */
 }
 
 .header .site-description {
@@ -7,13 +10,11 @@ body {
 }
 
 .post .post-header {
-    border-bottom: none;
+    /* border-bottom: 2px solid #eee; */
 }
 
 .post .post-header .post-title {
-    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    font-size: 36px;
+    font-family:'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 .post .post-content h2 {
@@ -21,7 +22,7 @@ body {
 }
 
 .post .post-content p {
-    font-family: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
     text-align: justify;
 }
 
@@ -58,7 +59,13 @@ body {
 
 .post .post-content p code, .post .post-content p pre {
     font-size: 0.8em;
+    font-family: Consolas, monaco, monospace;
 }
+
+.post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
+    transform: none;
+}
+
 
 .archive .collection-title {
     font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -78,7 +85,38 @@ body {
 .archive .archive-post:hover {
     transform: none;
 }
+.archive .archive-post .archive-post-time {
+  /* text-align: center; */
+}
 
-.post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
-    transform: none;
+.avatar {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.author-info .author-title {
+    display: none;
+}
+
+.author-info .author-box {
+    padding: 1em 0;
+}
+
+.author-info .author-box .author-content {
+    padding-left: 100px;
+}
+
+.author-info .author-box .author-image img {
+    height: 80px;
+    border: none;
+    margin: 0 auto;
+}
+
+.author-info .author-box .author-content .author-name {
+    margin-bottom: 0;
+}
+
+.author-info .author-box .author-content .author-desc {
+    margin-top: 0;
 }

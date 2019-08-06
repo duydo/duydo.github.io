@@ -2,13 +2,7 @@ description = "Father, Husband, Software Engineer"
 [name]
 display = "Duy Do"
 
- [image]
+[image]
  url = "images/duydo.jpg"
-# width = 128
-# height = 128
-
-# [en]
-# description = ""
-
-# [en.name]
-# display = "Ted"
+ width = 80
+ height = 80

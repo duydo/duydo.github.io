@@ -16,7 +16,7 @@ function publish() {
 
 case "$1" in
     run)
-        hugo server -D
+        hugo server -D -w --verbose
         ;;
     build)
         hugo
