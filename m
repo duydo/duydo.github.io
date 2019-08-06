@@ -14,22 +14,24 @@ function publish() {
     rm -rf ./public
 }
 
+function run_hugo() {
+  hugo server -D -w --verbose
+}
+
 case "$1" in
-    run)
-        hugo server -D -w --verbose
+    r)
+        run_hugo
         ;;
-    build)
-        hugo
-        ;;
-    sync)
+    s)
         rm -rf ./public
         git add --all && git commit -am "$2" && git push
         ;;
-    publish)
+    p)
         publish
         ;;
     *)
-        echo "Usage: $me <run|build|sync|deploy>"
-        exit 3
+      run_hugo
+      ;;
+
 esac
 exit 0

@@ -1,6 +1,6 @@
 ---
 title: "An algorithm for finding right-truncatable primes"
-date: 2019-08-06T12:10:30+07:00
+date: 2019-08-01T12:10:30+07:00
 lastmod: 2019-08-06T12:10:30+07:00
 draft: false
 keywords: ["algorithms", "right-truncatable-prime", "prime", "python"]
@@ -11,7 +11,7 @@ author: ""
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
-comment: false
+comment: true
 toc: false
 autoCollapseToc: false
 # You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
@@ -32,7 +32,7 @@ As promised him, I would solve this challenge.
 
 <!--more-->
 
-In order to find out an algorithm, we try to do analysis first.
+In order to find out an algorithm, we try to do math analysis first.
 
 Suppose *p(k)* is the prime, satisfies the characteristics of right-truncatable prime, has k digits: *a(1), a(2),...,a(k)*, value of each digit is in set *{0, 9}*:
 
@@ -62,7 +62,7 @@ is actually *p(k-1)*, so we get:
 
 *p(k)* is prime therefore *a(k)* and *10p(k-1)*, or 2*5*p(k-1), must not have common divisors. This leads to value of *a(k)* must be 1, 3, 7 or 9.
 
-From above analysis we have an algorithm to find the largest right-truncatable prime as following:
+From above analysis we have an algorithm to find the largest right-truncatable prime:
 ```
 Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
 (1) Let K = number of digits of N
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Modifies above program a little bit, we can print out all right-truncatable prime numbers as followings:
+Modifies above program a little bit, we can print out all right-truncatable prime numbers:
 
 ```
 23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,

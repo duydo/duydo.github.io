@@ -1,5 +1,5 @@
 ---
-title: "Debug stuck Celery worker"
+title: "Debug stuck Celery worker process"
 date: 2019-08-05T14:09:54+07:00
 lastmod: 2019-08-05T14:09:54+07:00
 draft: true
@@ -31,7 +31,7 @@ duy@goku-worker-de:~$
 <!--more-->
 
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo strace -p 26738 -c
 strace: Process 26738 attached
 ^Cstrace: Process 26738 detached
@@ -45,7 +45,7 @@ strace: Process 26738 attached
 duy@goku-worker-de:~$
 ```
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo strace -p 26738 -f
 ...
 [pid 26738] recvfrom(5, 0x7fbead4995c4, 7, 0, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
@@ -64,7 +64,7 @@ duy@goku-worker-de:~$ sudo strace -p 26738 -f
 [pid 26738] recvfrom(21, 0x7fbead4995c4, 7, 0, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
 ```
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo ls -la /proc/26738/fd/5
 lrwx------ 1 xomad xomad 64 Aug  2 06:05 /proc/26738/fd/5 -> socket:[99157475]
 duy@goku-worker-de:~$ sudo ls -la /proc/26738/fd/21
@@ -74,28 +74,28 @@ lrwx------ 1 xomad xomad 64 Aug  2 06:05 /proc/26738/fd/15 -> anon_inode:[eventp
 duy@goku-worker-de:~$
 ```
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo lsof -p 26738 | grep 99157475
 celery  26738 xomad    5u     IPv4 99157475      0t0      TCP goku-worker-de.c.xomad-1084.internal:50954->rabbit-de-2.c.xomad-1084.internal:amqp (ESTABLISHED)
 ```
 
 
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo lsof -p 26738 | grep 99144296
 celery  26738 xomad   21u     IPv4 99144296      0t0      TCP goku-worker-de.c.xomad-1084.internal:38194->rabbit-de-2.c.xomad-1084.internal:amqp (ESTABLISHED)
 ```
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo head -n1 /proc/26738/net/tcp; grep -a 99157475 /proc/26738/net/tcp
   sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode
   10: 8A01010A:C70A 5E00010A:1628 01 00000000:00000000 02:00000351 00000000  1005        0 99157475 2 0000000000000000 20 4 30 10 -1
 ```
 
-```sh 
+```sh
 duy@goku-worker-de:~$ sudo head -n1 /proc/26738/net/tcp; grep -a 99144296 /proc/26738/net/tcp
   sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode
   27: 8A01010A:9532 5E00010A:1628 01 00000000:00000000 02:00000B01 00000000  1005        0 99144296 2 0000000000000000 20 4 0 10 -1
 duy@goku-worker-de:~$
- 
+
 ```
