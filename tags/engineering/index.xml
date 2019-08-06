@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java: Type Promotion</title>
+      <link>http://duydo.me/java-type-promotion/</link>
+      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/java-type-promotion/</guid>
+      <description>Mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
+1 2  byte b = 1; b = b * 2;   Thật ra thì đoạn mã trên không thể biên dịch được.
+Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description>
+    </item>
     
     <item>
       <title>EVM - Elasticsearch Version Manager</title>

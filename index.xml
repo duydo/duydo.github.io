@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
     
         <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -44,6 +44,48 @@
   &lt;span class=&#34;caption-text&#34;&gt;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&lt;/span&gt;
 &lt;/span&gt;
 
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Java: Type Promotion</title>
+      <link>http://duydo.me/java-type-promotion/</link>
+      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/java-type-promotion/</guid>
+      
+        <description>&lt;p&gt;Mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p&gt;
+
+&lt;p&gt;Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
+Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo kiểu &lt;code&gt;byte&lt;/code&gt; và gán giá trị &lt;code&gt;1&lt;/code&gt;, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu &lt;code&gt;byte&lt;/code&gt; trong Java từ -128 đến 127.&lt;/p&gt;
+
+&lt;p&gt;Dòng mã tiếp theo gán &lt;code&gt;b = b * 2&lt;/code&gt;, lúc này biểu thức &lt;code&gt;b * 2&lt;/code&gt; sẽ có giá trị là &lt;code&gt;1 * 2 = 2&lt;/code&gt;, thuộc tầm trị [-128, 127] nên hoàn toàn có thể gán được lại cho b. Từ đây các bạn trả lời như đinh đóng cột đoạn mã trên biên dịch và chạy được là cái chắc :D&lt;/p&gt;
+
+&lt;p&gt;Nhưng các bạn đã nhầm, thực ra mọi thứ không diễn ra như vậy, vấn đề nằm ở dòng mã thứ 2, &lt;code&gt;b = b * 2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Khi thực hiện phép tính &lt;code&gt;b * 2&lt;/code&gt;, Java tự động chuyển kiểu của &lt;code&gt;b&lt;/code&gt; từ &lt;code&gt;byte&lt;/code&gt; thành &lt;code&gt;int&lt;/code&gt; để thực hiện phép * với 2, (2 là integer literal nên có kiểu int) và kết quả của &lt;code&gt;b * 2&lt;/code&gt; có kiểu &lt;code&gt;int&lt;/code&gt;. Tới đây thì ta đã rõ vì sao &lt;code&gt;b = b * 2&lt;/code&gt; không thực hiện được vì thằng mang kiểu &lt;code&gt;int&lt;/code&gt; thì không thể nào gán cho thằng mang kiểu &lt;code&gt;byte&lt;/code&gt; được.&lt;/p&gt;
+
+&lt;p&gt;Quá trình tự động chuyển kiểu dữ liệu như vậy gọi là &lt;strong&gt;Type Promotion&lt;/strong&gt;. Các bạn chỉ cần nhớ nguyên tắc chung khi thực hiện các biểu thức tính toán, Java sẽ tự động chuyển các kiểu dữ liệu của các toán hạng (operand) có tầm trị thấp sang kiểu dữ liệu của toán hạng có tầm trị cao hơn và kết quả của phép tính sẽ có kiểu dữ liệu của toán hạng có tầm trị cao nhất.&lt;/p&gt;
+
+&lt;p&gt;Cụ thể, các kiểu &lt;code&gt;byte&lt;/code&gt;, &lt;code&gt;short&lt;/code&gt; và &lt;code&gt;char&lt;/code&gt; sẽ được chuyển thành &lt;code&gt;int&lt;/code&gt; trước tiên, sau đó nếu toán hạng tiếp theo có kiểu &lt;code&gt;long&lt;/code&gt; thì toàn bộ biểu thức sẽ chuyển thành &lt;code&gt;long&lt;/code&gt;, cứ thế chuyển lên &lt;code&gt;float&lt;/code&gt; và cuối cùng là &lt;code&gt;double&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;byte, short, char =&amp;gt; int =&amp;gt; long =&amp;gt; float =&amp;gt; double&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Chúc anh em code Java vui vẻ &amp;lt;3&lt;/p&gt;
 </description>
       
     </item>

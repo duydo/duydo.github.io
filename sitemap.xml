@@ -9,28 +9,53 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
-    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <loc>http://duydo.me/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/java-type-promotion/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://duydo.me/</loc>
-    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/post/</loc>
-    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/</loc>
-    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/engineering/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/java/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/type-promotion/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -110,12 +135,6 @@
   
   <url>
     <loc>http://duydo.me/tags/bash/</loc>
-    <lastmod>2017-05-20T17:50:35+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/engineering/</loc>
     <lastmod>2017-05-20T17:50:35+07:00</lastmod>
     <priority>0</priority>
   </url>
