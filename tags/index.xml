@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 19:01:54 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>alan-turing</title>
+      <link>http://duydo.me/tags/alan-turing/</link>
+      <pubDate>Tue, 06 Aug 2019 19:01:54 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/alan-turing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enigma</title>
+      <link>http://duydo.me/tags/enigma/</link>
+      <pubDate>Tue, 06 Aug 2019 19:01:54 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/enigma/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>engineering</title>
@@ -171,24 +189,6 @@
       <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
       
       <guid>http://duydo.me/tags/barcamp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>barcamp2016</title>
-      <link>http://duydo.me/tags/barcamp2016/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/barcamp2016/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>talks</title>
-      <link>http://duydo.me/tags/talks/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/talks/</guid>
       <description></description>
     </item>
     

@@ -9,16 +9,16 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/</loc>
-    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
-    <priority>0</priority>
+    <loc>http://duydo.me/alan-turing-m%E1%BB%99t-t%C3%A0i-n%C4%83ng-xu%E1%BA%A5t-ch%C3%BAng-nh%C6%B0ng-cu%E1%BB%99c-%C4%91%E1%BB%9Di-%C4%91%E1%BA%A7y-bi-k%E1%BB%8Bch/</loc>
+    <lastmod>2017-07-17T19:01:54+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://duydo.me/java-type-promotion/</loc>
+    <loc>http://duydo.me/</loc>
     <lastmod>2019-08-06T18:51:46+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -31,6 +31,25 @@
     <loc>http://duydo.me/tags/</loc>
     <lastmod>2019-08-06T18:51:46+07:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/alan-turing/</loc>
+    <lastmod>2017-07-17T19:01:54+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/enigma/</loc>
+    <lastmod>2017-07-17T19:01:54+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/java-type-promotion/</loc>
+    <lastmod>2019-08-06T18:51:46+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
