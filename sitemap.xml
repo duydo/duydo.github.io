@@ -9,20 +9,51 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/</loc>
-    <lastmod>2019-08-06T09:33:30+07:00</lastmod>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/post/</loc>
-    <lastmod>2019-08-06T09:33:30+07:00</lastmod>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/</loc>
-    <lastmod>2019-08-06T09:33:30+07:00</lastmod>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/algorithms/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/prime/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/python/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/right-truncatable-prime/</loc>
+    <lastmod>2019-08-06T12:10:30+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -186,12 +217,6 @@
   
   <url>
     <loc>http://duydo.me/tags/distributed/</loc>
-    <lastmod>2016-10-17T08:28:45+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/python/</loc>
     <lastmod>2016-10-17T08:28:45+07:00</lastmod>
     <priority>0</priority>
   </url>
