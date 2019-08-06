@@ -13,6 +13,42 @@
     
     
     <item>
+      <title>About</title>
+      <link>http://duydo.me/about/</link>
+      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
+      
+      <guid>http://duydo.me/about/</guid>
+      
+        <description>&lt;p&gt;Duy Do is a passionate software engineer with strong background in computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
+
+&lt;p&gt;He is a co-founder of KromLab, an influencer marketing company, where he and his team build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires action.&lt;/p&gt;
+
+&lt;p&gt;He loves open sources, he loves community building. You can find his open source softwares on &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; or join &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Elasticsearch community for Vietnamese&lt;/a&gt;, where he found.&lt;/p&gt;
+
+&lt;p&gt;You can also find him somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt; or the roads he runs every morning.&lt;/p&gt;
+
+&lt;p&gt;He looks like this.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/duydo_at_half_marathon.jpg&#34; title=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34; alt=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&lt;/span&gt;
+&lt;/span&gt;
+
+</description>
+      
+    </item>
+    
+    <item>
       <title>Tầm quan trọng của việc đọc sách</title>
       <link>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</link>
       <pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate>
@@ -342,42 +378,6 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 &lt;p&gt;And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p&gt;
 
 &lt;p&gt;In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>http://duydo.me/about/</link>
-      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
-      
-      <guid>http://duydo.me/about/</guid>
-      
-        <description>&lt;p&gt;Duy Do is a passionate software engineer with strong background in computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
-
-&lt;p&gt;He is a co-founder of KromLab, an influencer marketing company, where he and his team build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires action.&lt;/p&gt;
-
-&lt;p&gt;He loves open sources, he loves community building. You can find his open source softwares on &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; or join &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Elasticsearch community for Vietnamese&lt;/a&gt;, where he found.&lt;/p&gt;
-
-&lt;p&gt;You can also find him somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt; or the roads he runs every morning.&lt;/p&gt;
-
-&lt;p&gt;He looks like this.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;span class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/duydo_at_half_marathon.jpg&#34; title=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34; alt=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&lt;/span&gt;
-&lt;/span&gt;
-
-</description>
       
     </item>
     

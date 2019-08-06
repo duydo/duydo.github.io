@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duydo.me/about/</loc>
+    <lastmod>2016-10-18T16:54:21+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/</loc>
     <lastmod>2019-08-06T09:33:30+07:00</lastmod>
     <priority>0</priority>
@@ -155,13 +162,6 @@
     <loc>http://duydo.me/tags/search-engine/</loc>
     <lastmod>2016-10-24T11:16:00+07:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/about/</loc>
-    <lastmod>2016-10-18T16:54:21+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
