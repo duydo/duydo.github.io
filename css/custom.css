@@ -10,7 +10,7 @@ body {
 }
 
 .post .post-header {
-    /* border-bottom: 2px solid #eee; */
+    border-bottom-width: 1px;
 }
 
 .post .post-header .post-title {
