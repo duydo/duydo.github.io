@@ -7,37 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>engineering</title>
-      <link>http://duydo.me/tags/engineering/</link>
-      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>http://duydo.me/tags/java/</link>
-      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>type-promotion</title>
-      <link>http://duydo.me/tags/type-promotion/</link>
-      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/type-promotion/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>algorithms</title>
@@ -72,6 +45,33 @@
       <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
       
       <guid>http://duydo.me/tags/right-truncatable-prime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering</title>
+      <link>http://duydo.me/tags/engineering/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://duydo.me/tags/java/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>type-promotion</title>
+      <link>http://duydo.me/tags/type-promotion/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/type-promotion/</guid>
       <description></description>
     </item>
     

@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Tue, 06 Aug 2019 18:51:46 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Java: Type Promotion</title>
-      <link>http://duydo.me/java-type-promotion/</link>
-      <pubDate>Tue, 06 Aug 2019 18:51:46 +0700</pubDate>
-      
-      <guid>http://duydo.me/java-type-promotion/</guid>
-      <description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
-1 2  byte b = 1; b = b * 2;   Thật ra thì đoạn mã trên không thể biên dịch được.
-Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description>
-    </item>
     
     <item>
       <title>An algorithm for finding right-truncatable primes</title>
@@ -42,6 +31,17 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
 &lt;/blockquote&gt;
 
 &lt;p&gt;As promised him, I would solve this challenge.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Java: Type Promotion</title>
+      <link>http://duydo.me/java-type-promotion/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      
+      <guid>http://duydo.me/java-type-promotion/</guid>
+      <description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
+1 2  byte b = 1; b = b * 2;   Thật ra thì đoạn mã trên không thể biên dịch được.
+Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description>
     </item>
     
     <item>
