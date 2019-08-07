@@ -77,10 +77,10 @@ defaultContentLanguage = "en"
   customJS = []
   archive-paginate = 100
 
-  [commentCount.disqus]
+  [params.commentCount.disqus]
     enable = false
 
-  [social]
+  [params.social]
     g-github = "https://github.com/duydo"
     c-twitter = "https://twitter.com/duydo"
     # e-linkedin = "https://www.linkedin.com/in/duydo/"
