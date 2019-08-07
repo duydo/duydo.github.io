@@ -2,7 +2,7 @@
 title: "Effective JPA with Enumeration"
 date: 2010-01-24T08:17:50+07:00
 lastmod: 2010-01-24T08:17:50+07:00
-draft: true
+draft: false
 keywords: []
 description: ""
 tags: ["java", "jpa", "engineering"]

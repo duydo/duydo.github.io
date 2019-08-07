@@ -22,6 +22,7 @@ PygmentsOptions = "linenos=table"
 post = "/:slug/"
 page = "/:filename/"
 
+
 defaultContentLanguage = "en"
 [languages.en]
   languageCode = "en"
@@ -58,7 +59,7 @@ defaultContentLanguage = "en"
 #  url = "https://github.com/duydo"
 
 [params]
-  since = "2016"
+  since = "2007"
   homeFullContent = false
   rssFullContent = true
 
@@ -74,11 +75,12 @@ defaultContentLanguage = "en"
   photoswipe = true
   customCSS = ['custom.css']
   customJS = []
+  archive-paginate = 100
 
-  [params.commentCount.disqus]
+  [commentCount.disqus]
     enable = false
 
-  [params.social]
+  [social]
     g-github = "https://github.com/duydo"
     c-twitter = "https://twitter.com/duydo"
     # e-linkedin = "https://www.linkedin.com/in/duydo/"

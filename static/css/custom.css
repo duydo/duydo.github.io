@@ -62,9 +62,13 @@ body {
     font-family: Consolas, monaco, monospace;
 }
 
+.post .post-content .caption-wrapper {
+  text-align: center;
+}
+
 .post .post-content .caption-text {
   font-family: Consolas,"sourcecodepro",Monaco,monospace;
-  font-size: 10px;
+  font-size: 0.7em;
   text-transform: uppercase;
   padding-top: 10px;
   display: block;
