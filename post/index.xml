@@ -157,5 +157,16 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       <description>&lt;p&gt;&amp;ldquo;Nhà Giả Kim&amp;rdquo; là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống &amp;ldquo;nay đây mai đó&amp;rdquo;, để theo đuổi ước mơ vận mệnh của mình.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Fluent Interface</title>
+      <link>http://duydo.me/fluent-interface/</link>
+      <pubDate>Wed, 25 Mar 2009 08:11:23 +0700</pubDate>
+      
+      <guid>http://duydo.me/fluent-interface/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve played with my own  framework recently, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;article&lt;/a&gt; of Martin Fowler about this term, you can read it if you have not heard about it yet.&lt;/p&gt;
+
+&lt;p&gt;The idea of  &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
