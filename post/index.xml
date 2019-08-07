@@ -158,6 +158,17 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
     </item>
     
     <item>
+      <title>Effective JPA with Enumeration</title>
+      <link>http://duydo.me/effective-jpa-with-enumeration/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      
+      <guid>http://duydo.me/effective-jpa-with-enumeration/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
+
+&lt;p&gt;I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Fluent Interface</title>
       <link>http://duydo.me/fluent-interface/</link>
       <pubDate>Wed, 25 Mar 2009 08:11:23 +0700</pubDate>
@@ -166,6 +177,23 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       <description>&lt;p&gt;I&amp;rsquo;ve played with my own  framework recently, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;article&lt;/a&gt; of Martin Fowler about this term, you can read it if you have not heard about it yet.&lt;/p&gt;
 
 &lt;p&gt;The idea of  &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Albert Einstein - Nguyễn Xuân Xanh</title>
+      <link>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</link>
+      <pubDate>Mon, 09 Feb 2009 08:33:58 +0700</pubDate>
+      
+      <guid>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</guid>
+      <description>&lt;p class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/einstein.jpg&#34; title=&#34;Albert Einstein&#34; alt=&#34;Albert Einstein&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Albert Einstein&lt;/span&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;Đầu năm nay công việc không được tốt, tình thần không được thỏa mái nên tôi quyết định nghỉ việc ở công ty.&lt;/p&gt;
+
+&lt;p&gt;Mấy hôm nay rảnh rỗi ngồi ở nhà nên tôi tìm đọc lại một số bài viết về Einstein. Đi khắp các nhà sách trong thành phố gần mấy tháng nay mà vẫn không tìm được cuốn sách viết về Einstein của Nguyễn Xuân Xanh. Hôm kia cùng &amp;ldquo;bà xã&amp;rdquo; đi vào nhà sách Nguyễn Văn Cừ (CMT8) vô tình thấy cuốn sách này, thế là bưng về nhà ngay.&lt;/p&gt;</description>
     </item>
     
   </channel>

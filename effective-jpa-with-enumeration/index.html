@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Fluent Interface - Duy Do&#39;s weblog</title>
+  <title>Effective JPA with Enumeration - Duy Do&#39;s weblog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,8 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Duy Do" />
-  <meta name="description" content="I&amp;rsquo;ve played with my own framework recently, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great article of Martin Fowler about this term, you can read it if you have not heard about it yet.
-The idea of &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in setter methods of an object, returning an object to promote object chaining.
+  <meta name="description" content="How to persist an enumeration effectively? Here is my experience.
+I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&amp;hellip;
 " />
 
   <meta name="keywords" content="Duy Do, duydo, software, engineering, computer, computer-science, python, java, elasticsearch" />
@@ -37,7 +37,7 @@ The idea of &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void 
 <meta name="generator" content="Hugo 0.56.3" />
 
 
-<link rel="canonical" href="http://duydo.me/fluent-interface/" />
+<link rel="canonical" href="http://duydo.me/effective-jpa-with-enumeration/" />
 
 
 
@@ -61,32 +61,32 @@ The idea of &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void 
 <link rel="stylesheet" href="/css/custom.css">
 
 
-<meta property="og:title" content="Fluent Interface" />
-<meta property="og:description" content="I&rsquo;ve played with my own  framework recently, I found a new term, called &ldquo;Fluent Interface&rdquo;. There is a great article of Martin Fowler about this term, you can read it if you have not heard about it yet.
+<meta property="og:title" content="Effective JPA with Enumeration" />
+<meta property="og:description" content="How to persist an enumeration effectively? Here is my experience.
 
-The idea of  &ldquo;Fluent Interface&rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining." />
+I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&hellip;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://duydo.me/fluent-interface/" />
-<meta property="article:published_time" content="2009-03-25T08:11:23+07:00" />
-<meta property="article:modified_time" content="2009-03-25T08:11:23+07:00" />
-<meta itemprop="name" content="Fluent Interface">
-<meta itemprop="description" content="I&rsquo;ve played with my own  framework recently, I found a new term, called &ldquo;Fluent Interface&rdquo;. There is a great article of Martin Fowler about this term, you can read it if you have not heard about it yet.
+<meta property="og:url" content="http://duydo.me/effective-jpa-with-enumeration/" />
+<meta property="article:published_time" content="2010-01-24T08:17:50+07:00" />
+<meta property="article:modified_time" content="2010-01-24T08:17:50+07:00" />
+<meta itemprop="name" content="Effective JPA with Enumeration">
+<meta itemprop="description" content="How to persist an enumeration effectively? Here is my experience.
 
-The idea of  &ldquo;Fluent Interface&rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining.">
-
-
-<meta itemprop="datePublished" content="2009-03-25T08:11:23&#43;07:00" />
-<meta itemprop="dateModified" content="2009-03-25T08:11:23&#43;07:00" />
-<meta itemprop="wordCount" content="197">
+I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&hellip;">
 
 
+<meta itemprop="datePublished" content="2010-01-24T08:17:50&#43;07:00" />
+<meta itemprop="dateModified" content="2010-01-24T08:17:50&#43;07:00" />
+<meta itemprop="wordCount" content="535">
 
-<meta itemprop="keywords" content="java,fluent-interface,engineering," />
+
+
+<meta itemprop="keywords" content="java,jpa,engineering," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Fluent Interface"/>
-<meta name="twitter:description" content="I&rsquo;ve played with my own  framework recently, I found a new term, called &ldquo;Fluent Interface&rdquo;. There is a great article of Martin Fowler about this term, you can read it if you have not heard about it yet.
+<meta name="twitter:title" content="Effective JPA with Enumeration"/>
+<meta name="twitter:description" content="How to persist an enumeration effectively? Here is my experience.
 
-The idea of  &ldquo;Fluent Interface&rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining."/>
+I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&hellip;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -299,15 +299,15 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Fluent Interface</h1>
+      <h1 class="post-title">Effective JPA with Enumeration</h1>
       
         <div class="post-meta">
-    <time datetime=" 2009-03-25" class="post-time">
-    Mar 25, 2009
+    <time datetime=" 2010-01-24" class="post-time">
+    Jan 24, 2010
     </time>
     
-    <span class="more-meta"> 197 words </span>
-    <span class="more-meta"> 1 min read </span>
+    <span class="more-meta"> 535 words </span>
+    <span class="more-meta"> 3 min read </span>
     
     
     
@@ -321,14 +321,97 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <p>I&rsquo;ve played with my own  framework recently, I found a new term, called &ldquo;Fluent Interface&rdquo;. There is a great <a href="http://martinfowler.com/bliki/FluentInterface.html">article</a> of Martin Fowler about this term, you can read it if you have not heard about it yet.</p>
+      <p>How to persist an enumeration effectively? Here is my experience.</p>
 
-<p>The idea of  &ldquo;Fluent Interface&rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining.</p>
+<p>I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&hellip;</p>
 
-<p>Example:</p>
+<p>There are some ways to model the post entity. We can save status as an integer value in database: draft -&gt; 0, pending-review -&gt; 1, published -&gt; 2</p>
+
+<h3 id="version-1">Version 1</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">Post</span> <span class="p">{</span>
+	<span class="kd">private</span> <span class="nf">Integer</span> <span class="n">status</span><span class="p">;</span>
+
+	<span class="kd">public</span> <span class="nf">Integer</span> <span class="n">getStatus</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="nf">void</span> <span class="n">setStatus</span><span class="p">(</span><span class="n">Integer</span> <span class="nf">status</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Well that&rsquo;s ok, clients can use it like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Post</span> <span class="nf">post</span> <span class="o">=</span> <span class="p">...;</span>
+	<span class="c1">//Draft post
+</span><span class="c1"></span><span class="n">post</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="n">0</span><span class="p">);</span>
+<span class="n">repository</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">post</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>But this is not safe, the clients can set any integer value for status. For more safe, we can define constants for status values like that:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">class</span> <span class="n">PostStatus</span> <span class="p">{</span>
+	<span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Integer</span> <span class="n">DRAFT</span> <span class="o">=</span> <span class="n">0</span><span class="p">;</span>
+	<span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Integer</span> <span class="n">PENDING_REVIEW</span> <span class="o">=</span> <span class="n">1</span><span class="p">;</span>
+	<span class="kd">public</span> <span class="nf">static</span> <span class="kd">final</span> <span class="nf">Integer</span> <span class="n">PUBLISHED</span> <span class="o">=</span> <span class="n">2</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Now the clients can use:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Post</span> <span class="nf">post</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="c1">//Draft post
+</span><span class="c1"></span><span class="n">post</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="n">PostStatus</span><span class="p">.</span><span class="na">DRAFT</span><span class="p">);</span>
+<span class="n">repository</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">post</span><span class="p">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>But it is still not safe, because the client maybe do not use <code>PostStatus</code> class. So for more safe, what we need to do?
+Yes, we can force the client use <code>PostStatus</code> by declaring <code>PostStatus</code> as an <code>Enum</code> and make it dependency in <code>Post</code> class:</p>
+
+<h3 id="version-2">Version 2</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -345,70 +428,118 @@ if (!doNotTrack) {
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nf">Query</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">props</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">table</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="nf">String</span> <span class="n">condition</span><span class="p">;</span>
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">enum</span> <span class="n">PostStatus</span> <span class="p">{</span>
+	<span class="n">DRAFT</span><span class="p">,</span> <span class="n">PENDING_REVIEW</span><span class="p">,</span> <span class="n">PUBLISHED</span><span class="p">;</span>
+<span class="p">}</span>
 
-    <span class="kd">public</span> <span class="nf">Query</span> <span class="n">select</span><span class="p">(</span><span class="n">String</span> <span class="nf">props</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">props</span> <span class="o">=</span> <span class="n">props</span><span class="p">;</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">Post</span> <span class="p">{</span>
+	<span class="nd">@Enumerated</span>
+	<span class="kd">private</span> <span class="nf">PostStatus</span> <span class="n">status</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Query</span> <span class="n">from</span><span class="p">(</span><span class="n">String</span> <span class="nf">table</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">table</span> <span class="o">=</span> <span class="n">table</span><span class="p">;</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
+	<span class="kd">public</span> <span class="nf">PostStatus</span> <span class="n">getStatus</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+	<span class="p">}</span>
 
-    <span class="kd">public</span> <span class="nf">Query</span> <span class="n">where</span><span class="p">(</span><span class="n">String</span> <span class="nf">condition</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">condition</span> <span class="o">=</span> <span class="n">condition</span><span class="p">;</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="nf">String</span> <span class="n">buildQuery</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&#34;SELECT %s FROM %s WHERE %s&#34;</span><span class="p">,</span> <span class="n">props</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">condition</span><span class="p">);</span>
-    <span class="p">}</span>
+	<span class="kd">public</span> <span class="nf">void</span> <span class="n">setStatus</span><span class="p">(</span><span class="n">PostStatus</span> <span class="nf">status</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="p">;</span>
+	<span class="p">}</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>Instead of:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Query</span> <span class="nf">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="p">();</span>
-<span class="n">q</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">);</span>
-<span class="n">q</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="s">&#34;user&#34;</span><span class="p">);</span>
-<span class="n">q</span><span class="p">.</span><span class="na">where</span><span class="p">(</span><span class="s">&#34;username = &#39;duydo&#39;&#34;</span><span class="p">);</span>
-<span class="n">String</span> <span class="nf">sql</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="na">buildQuery</span><span class="p">();</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>We can write:</p>
+<p>And now the clients can use it:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Query</span> <span class="nf">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="p">();</span>
-<span class="n">String</span> <span class="nf">sql</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="na">select</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">).</span><span class="na">from</span><span class="p">(</span><span class="s">&#34;user&#34;</span><span class="p">).</span><span class="na">where</span><span class="p">(</span><span class="s">&#34;username = &#39;duydo&#39;&#34;</span><span class="p">).</span><span class="na">buildQuery</span><span class="p">();</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">Post</span> <span class="nf">post</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="c1">//Draft post
+</span><span class="c1"></span><span class="n">post</span><span class="p">.</span><span class="na">setStatus</span><span class="p">(</span><span class="n">PostStatus</span><span class="p">.</span><span class="na">DRAFT</span><span class="p">);</span>
+<span class="n">repository</span><span class="p">.</span><span class="na">store</span><span class="p">(</span><span class="n">post</span><span class="p">);</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>This will make code more readable, but be careful when use this technique.</p>
+<p>Well, it is better. But wait&hellip;
+We know that JPA persists all enum constants in order we declare them in <code>PostStatus</code> with value started from 0. This is limitation, we can not change order of constants, we only can append a new constant. How does we solve this limitation?</p>
+
+<h3 id="version-3">Version 3</h3>
+
+<p><code>Enum</code> type in Java 5 is wonderful, we can add constructor and do some business logic in it. Apply it we can re-write <code>PostStatus</code> like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="nf">enum</span> <span class="n">PostStatus</span> <span class="p">{</span>
+	<span class="n">DRAFT</span><span class="p">(</span><span class="n">0</span><span class="p">),</span>
+	<span class="n">PENDING_REVIEW</span><span class="p">(</span><span class="n">1</span><span class="p">),</span>
+	<span class="n">PUBLISHED</span><span class="p">(</span><span class="n">2</span><span class="p">);</span>
+
+	<span class="kd">private</span> <span class="nf">final</span> <span class="n">Integer</span> <span class="nf">value</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="nf">PostStatus</span><span class="p">(</span><span class="n">Integer</span> <span class="nf">value</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kd">public</span> <span class="nf">Integer</span> <span class="n">getValue</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">value</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>And Post class is rewritten like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="nf">class</span> <span class="n">Post</span> <span class="p">{</span>
+	<span class="kd">private</span> <span class="nf">Integer</span> <span class="n">status</span><span class="p">;</span>
+
+	<span class="kd">public</span> <span class="nf">PostStatus</span> <span class="n">getStatus</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">//TODO we need a helper to convert status value to PostStatus enum
+</span><span class="c1"></span>		<span class="k">return</span> <span class="p">...;</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="nf">void</span> <span class="n">setStatus</span><span class="p">(</span><span class="n">PostStatus</span> <span class="nf">status</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Great!!!</p>
+
+<p>Now client can use code safety and we can add many constants as we want into PostStatus without worry about order of them.</p>
+
+<p>It reminds me of the sentence the guy talked in Java4Ever trailer: &ldquo;Look how beautiful, robust, secure, portable and scalable it is&rdquo; ;-)</p>
     </div>
 
     
@@ -421,7 +552,7 @@ if (!doNotTrack) {
     <footer class="post-footer">
       <div class="post-tags">
           <a href="http://duydo.me/tags/java/">java</a>
-          <a href="http://duydo.me/tags/fluent-interface/">fluent-interface</a>
+          <a href="http://duydo.me/tags/jpa/">jpa</a>
           <a href="http://duydo.me/tags/engineering/">engineering</a>
           
         </div>
@@ -429,7 +560,7 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/effective-jpa-with-enumeration/">
+          <a class="prev" href="/nh%C3%A0-gi%E1%BA%A3-kim-paulo-coelho/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -439,12 +570,12 @@ if (!doNotTrack) {
 </svg>
 
             </i>
-            <span class="prev-text nav-default">Effective JPA with Enumeration</span>
+            <span class="prev-text nav-default">Nhà Giả Kim - Paulo Coelho</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         
-          <a class="next" href="/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/">
-            <span class="next-text nav-default">Albert Einstein - Nguyễn Xuân Xanh</span>
+          <a class="next" href="/fluent-interface/">
+            <span class="next-text nav-default">Fluent Interface</span>
             <span class="prev-text nav-mobile">Next</span>
             
             <i class="iconfont">
@@ -494,7 +625,7 @@ if (!doNotTrack) {
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
-      this.page.url = "http://duydo.me/fluent-interface/";
+      this.page.url = "http://duydo.me/effective-jpa-with-enumeration/";
     };
     function load_disqus() {
       

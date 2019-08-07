@@ -291,6 +291,19 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/effective-jpa-with-enumeration/</loc>
+    <lastmod>2010-01-24T08:17:50+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/jpa/</loc>
+    <lastmod>2010-01-24T08:17:50+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/fluent-interface/</loc>
     <lastmod>2009-03-25T08:11:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -300,6 +313,19 @@
   <url>
     <loc>http://duydo.me/tags/fluent-interface/</loc>
     <lastmod>2009-03-25T08:11:23+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</loc>
+    <lastmod>2009-02-09T08:33:58+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/albert-einstein/</loc>
+    <lastmod>2009-02-09T08:33:58+07:00</lastmod>
     <priority>0</priority>
   </url>
   

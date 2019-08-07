@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jpa on Duy Do&#39;s weblog</title>
+    <link>http://duydo.me/tags/jpa/</link>
+    <description>Recent content in jpa on Duy Do&#39;s weblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Duy Do</copyright>
+    <lastBuildDate>Sun, 24 Jan 2010 08:17:50 +0700</lastBuildDate>
+    
+	<atom:link href="http://duydo.me/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Effective JPA with Enumeration</title>
+      <link>http://duydo.me/effective-jpa-with-enumeration/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      
+      <guid>http://duydo.me/effective-jpa-with-enumeration/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
+
+&lt;p&gt;I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
