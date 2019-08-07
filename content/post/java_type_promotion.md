@@ -1,7 +1,7 @@
 ---
 title: "Java: Type Promotion"
-date: 2019-08-06T18:51:46+07:00
-lastmod: 2019-08-06T18:51:46+07:00
+date: 2018-08-06T18:51:46+07:00
+lastmod: 2018-08-06T18:51:46+07:00
 draft: false
 keywords: []
 description: ""
@@ -11,7 +11,7 @@ author: ""
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
-comment: false
+comment: true
 toc: false
 autoCollapseToc: false
 # You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."

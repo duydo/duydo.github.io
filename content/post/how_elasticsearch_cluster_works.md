@@ -2,6 +2,7 @@
 tags = ["elasticsearch", "engineering", "search-engine", "information-retrieval"]
 date = "2016-10-24T11:16:00+07:00"
 title = "How Elasticsearch cluster works"
+comment = true
 +++
 
 This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:

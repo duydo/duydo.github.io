@@ -4,6 +4,8 @@ draft = false
 title = "Nhà Giả Kim - Paulo Coelho"
 image = "images/alchemist.jpg"
 tags = ["books", "nha-gia-kim", "alchemist", "paulo-coelho"]
+
+comment = true
 +++
 
 "Nhà Giả Kim" là câu chuyện về chàng chăn cừu Santiago ở tận xứ Tây Ban Nha, đã từ bỏ những kế hoạch vạch sẵn của ba mẹ cho mình để chọn lấy cuộc sống "nay đây mai đó", để theo đuổi ước mơ vận mệnh của mình.

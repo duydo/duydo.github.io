@@ -3,6 +3,7 @@ tags = ["talks", "engineering", "celery", "python", "distributed", "task-queue"]
 date = "2016-10-17T08:28:45+07:00"
 title = "Celery - a Distributed Task Queue"
 slug="celery-a-distributed-task-queue"
+comment = true
 +++
 
 My talk about [Celery](http://www.celeryproject.org) when I was working at [Sentifi](http://sentifi.com).
