@@ -1,5 +1,5 @@
 +++
-type = "about"
+type = "page"
 title = "About"
 slug="about"
 draft = false

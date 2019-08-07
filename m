@@ -19,6 +19,11 @@ function run_hugo() {
 }
 
 case "$1" in
+    -h)
+      echo './m: start server'
+      echo './m s: commit then push to develop branch'
+      echo './m p: publish to master branch'
+      ;;
     r)
         run_hugo
         ;;

@@ -1,0 +1,34 @@
+{{ define "content" -}}
+
+  <article class="post bg-white">
+    <!-- post-header -->
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ partial "post/i18nlist.html" . }}
+    </header>
+
+    <!-- TOC -->
+    {{ partial "post/toc.html" . }}
+
+    <!-- Content -->
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    <footer class="post-footer">
+      {{ with .Params.tags -}}
+        <div class="post-tags">
+          {{ range . }}
+          {{- $name := . -}}
+          {{- with $.Site.GetPage "taxonomy" (printf "tags/%s" $name) | default ($.Site.GetPage "taxonomy" (printf "tags/%s" ($name | urlize))) -}}
+          <a href="{{ .Permalink }}">{{ $name | lower }}</a>
+          {{ end -}}
+          {{ end }}
+        </div>
+      {{- end }}
+
+    </footer>
+  </article>
+  <!-- Comments -->
+  {{ partial "comments.html" . }}
+{{- end }}

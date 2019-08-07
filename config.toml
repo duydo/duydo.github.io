@@ -1,5 +1,5 @@
 baseURL = "http://duydo.me/"
-title = "Duy Do - Thougths on computer"
+title = "Duy Do's weblog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
@@ -34,11 +34,12 @@ defaultContentLanguage = "en"
   priority = 0.5
   filename = "sitemap.xml"
 
-# [[menu.main]]
-#   name = "Home"
-#   weight = 10
-#   identifier = "home"
-#   url = "/"
+[[menu.main]]
+  name = "Home"
+  weight = 5
+  identifier = "home"
+  url = "/"
+
 [[menu.main]]
   name = "Archives"
   weight = 20
