@@ -480,9 +480,7 @@ if (!doNotTrack) {
   
 
   <div class="disqus-comment">
-  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
-    Show Disqus Comments
-  </div>
+  
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_config = function () {
@@ -498,8 +496,9 @@ if (!doNotTrack) {
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 
-      $('#load_disqus').remove();
+      <!-- $('#load_disqus').remove(); -->
     };
+    load_disqus();
   </script>
   <noscript>Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
