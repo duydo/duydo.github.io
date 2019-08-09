@@ -55,7 +55,7 @@
       
       <guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</guid>
       
-        <description>&lt;p&gt;Inspired from &lt;a href=&#34;https://www.facebook.com/doquocduy/posts/10212275741143230&#34;&gt;my status on Facebook&lt;/a&gt;:&lt;/p&gt;
+        <description>&lt;p&gt;Inspired from &lt;a href=&#34;https://www.facebook.com/doquocduy/posts/10212275741143230&#34;&gt;my status&lt;/a&gt; on Facebook:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p&gt;

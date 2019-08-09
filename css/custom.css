@@ -2,11 +2,27 @@ body {
     font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 .header .site-navbar .menu {
-  /* font-family: inherit; */
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+}
+
+.header .menu a:hover {
+  color: inherit;
+}
+
+.header .site-navbar .menu .active {
+  font-weight: 400;
+}
+
+.header .site-navbar .menu .menu-item-link {
+    /* font-size: 16px; */
 }
 
 .header .site-description {
     float: left;
+}
+
+.post {
+  /* border-bottom: 1px solid #dadada; */
 }
 
 .post .post-header {
@@ -14,10 +30,15 @@ body {
 }
 
 .post .post-header .post-meta {
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  letter-spacing: -.01em;
+  text-align: left;
 }
 
 .post .post-header .post-title {
-    /* font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif; */
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  text-align: left;
+  letter-spacing: -.01em;
 }
 
 .post .post-content {
