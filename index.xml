@@ -674,7 +674,7 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
       
       <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
       
-        <description>&lt;p&gt;This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p&gt;
+        <description>&lt;p&gt;I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p&gt;
 
 &lt;p&gt;&lt;iframe id=&#34;talk_frame_370710&#34; src=&#34;//speakerdeck.com/player/9fa7022cc8da4e06be30f5e84ab03248&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
 &lt;/p&gt;
@@ -760,7 +760,7 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
       
       <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
       
-        <description>&lt;p&gt;This is the slide for my talk about Elasticsearch for Data Engineers at &lt;a href=&#34;https://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
+        <description>&lt;p&gt;I gave a talk about Elasticsearch for Data Engineers at &lt;a href=&#34;https://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;, it was only for beginners who are not familiar with Elasticsearch.&lt;/p&gt;
 
 &lt;p&gt;&lt;iframe id=&#34;talk_frame_359449&#34; src=&#34;//speakerdeck.com/player/970178bcd293418cb303b342fa7d77f5&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
 &lt;/p&gt;
@@ -776,8 +776,14 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
       
       <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
       
-        <description>&lt;p&gt;My talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when I was working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.
-Celery is an asynchronous task queue/job queue based on distributed message passing.    It is focused on real-time operation, but supports scheduling as well.
+        <description>&lt;p&gt;I gave a talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well.
+The execution units, called tasks, are executed concurrently on a single or more worker servers using multiprocessing, &lt;code&gt;Eventlet&lt;/code&gt;, or &lt;code&gt;gevent&lt;/code&gt;. Tasks can execute asynchronously (in the background) or synchronously (wait until ready).
+Celery is used in production systems to process millions of tasks a day.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;
 &lt;iframe
   style=&#34;width: 100%; height: 500px;&#34;
@@ -790,9 +796,7 @@ Celery is an asynchronous task queue/job queue based on distributed message pass
     webkitallowfullscreen=&#34;true&#34;
     mozallowfullscreen=&#34;true&#34;&gt;
     &lt;/iframe&gt;
-&lt;/p&gt;
-&lt;/p&gt;
-</description>
+&lt;/p&gt;</description>
       
     </item>
     

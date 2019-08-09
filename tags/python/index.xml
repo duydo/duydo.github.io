@@ -39,7 +39,7 @@
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
       
       <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
-      <description>My talk about Celery when I was working at Sentifi. Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well.   </description>
+      <description>&lt;p&gt;I gave a talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

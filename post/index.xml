@@ -110,7 +110,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
       
       <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
-      <description>This slide was for my talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;ve discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
+      <description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
  </description>
     </item>
     
@@ -135,7 +135,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       <pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate>
       
       <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
-      <description>This is the slide for my talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
+      <description>I gave a talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
  </description>
     </item>
     
@@ -145,7 +145,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
       
       <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
-      <description>My talk about Celery when I was working at Sentifi. Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well.   </description>
+      <description>&lt;p&gt;I gave a talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
