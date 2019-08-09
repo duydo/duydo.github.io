@@ -1,8 +1,28 @@
 body {
     font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
+.header .logo-wrapper {
+  padding-left: 5em ;
+
+}
+/*
+.header .logo-wrapper .logo {
+    background: #2B2B2B;
+    color: #A9B7C6;
+    padding: 5px 10px 1px;
+    width: 45px;
+    height: 45px;
+
+}
+ */
+
 .header .site-navbar .menu {
   font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  padding-right: 5em;
+}
+
+.header .site-navbar .menu .menu-item:last-child {
+  margin-right: 0;
 }
 
 .header .menu a:hover {
@@ -17,9 +37,14 @@ body {
     /* font-size: 16px; */
 }
 
-.header .site-description {
-    float: left;
-}
+/*
+.header  .site-description {
+  font-family: cursive,LiSu,sans-serif;
+  font-size: 18px;
+  display: block;
+  float: left;
+  padding-left: 5em;
+} */
 
 .post {
   /* border-bottom: 1px solid #dadada; */
