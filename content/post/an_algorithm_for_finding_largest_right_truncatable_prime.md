@@ -20,7 +20,7 @@ reward: false
 mathjax: true
 ---
 
-Inspired from [my status on Facebook](https://www.facebook.com/doquocduy/posts/10212275741143230):
+Inspired from [my status](https://www.facebook.com/doquocduy/posts/10212275741143230) on Facebook:
 
 > The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.
 

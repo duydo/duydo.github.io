@@ -1,10 +1,10 @@
 ---
-title: "Alan Turing - Một tài năng xuất chúng nhưng cuộc đời đầy bi kịch"
+title: "Alan Turing"
 date: 2017-07-17T19:01:54+07:00
 lastmod: 2017-07-17T19:01:54+07:00
 draft: false
 keywords: []
-description: ""
+description: "Alan Turing"
 tags: ["alan-turing", "enigma"]
 categories: []
 author: ""

@@ -6,6 +6,6 @@ tags = [ "talks", "elasticsearch"]
 comment = true
 +++
 
-This is the slide for my talk about Elasticsearch for Data Engineers at [Sentifi](https://sentifi.com), it was only for beginners who are not familiar with Elasticsearch.
+I gave a talk about Elasticsearch for Data Engineers at [Sentifi](https://sentifi.com), it was only for beginners who are not familiar with Elasticsearch.
 
 {{<oembed "https://speakerdeck.com/duydo/elasticsearch-for-data-engineers">}}

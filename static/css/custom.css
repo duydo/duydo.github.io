@@ -1,12 +1,55 @@
 body {
     font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
+.header .logo-wrapper {
+  padding-left: 5em ;
+
+}
+/*
+.header .logo-wrapper .logo {
+    background: #2B2B2B;
+    color: #A9B7C6;
+    padding: 5px 10px 1px;
+    width: 45px;
+    height: 45px;
+
+}
+ */
+
 .header .site-navbar .menu {
-  /* font-family: inherit; */
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  padding-right: 5em;
 }
 
-.header .site-description {
-    float: left;
+.header .site-navbar .menu .menu-item:last-child {
+  margin-right: 0;
+}
+
+.header .menu a:hover {
+  color: inherit;
+}
+
+.header .site-navbar .menu .active {
+  font-weight: 400;
+}
+
+.header .site-navbar .menu .menu-item-link {
+    /* font-size: 16px; */
+}
+.header .site-navbar .menu .menu-item-icon {
+  margin-right: 0;
+}
+/*
+.header  .site-description {
+  font-family: cursive,LiSu,sans-serif;
+  font-size: 18px;
+  display: block;
+  float: left;
+  padding-left: 5em;
+} */
+
+.post {
+  /* border-bottom: 1px solid #dadada; */
 }
 
 .post .post-header {
@@ -14,10 +57,19 @@ body {
 }
 
 .post .post-header .post-meta {
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  letter-spacing: -.01em;
+  text-align: left;
 }
 
 .post .post-header .post-title {
-    font-family:'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  text-align: left;
+  letter-spacing: -.01em;
+}
+
+.post .post-content {
+  font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
 }
 
 .post .post-content h2 {
@@ -25,7 +77,6 @@ body {
 }
 
 .post .post-content p {
-    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
     text-align: justify;
 }
 
@@ -47,21 +98,19 @@ body {
 }
 
 .post .post-content .highlight > .chroma > table::after {
-    color: #606366;
-    font-weight: 400;
+  visibility:  hidden;
 }
 
-.post .post-content code {
+.post .post-content .chroma code {
     background: #2B2B2B;
     color: #A9B7C6;
 }
 
 .post .post-content code, .post .post-content pre {
-    font-size: 0.85em;
+    font-size: 0.8em;
 }
 
 .post .post-content p code, .post .post-content p pre {
-    font-size: 0.8em;
     font-family: Consolas, monaco, monospace;
 }
 
@@ -70,7 +119,7 @@ body {
 }
 
 .post .post-content .caption-text {
-  font-family: Consolas,"sourcecodepro",Monaco,monospace;
+  font-family: Consolas, monaco, monospace;
   font-size: 0.7em;
   text-transform: uppercase;
   padding-top: 10px;

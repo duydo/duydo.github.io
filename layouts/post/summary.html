@@ -10,7 +10,6 @@
         </h1>
         {{ partial "post/i18nlist.html" . }}
         {{ partial "post/meta.html" . }}
-
     </header>
     <!-- Content -->
     <div class="post-content">
@@ -20,7 +19,7 @@
         </div>
         {{ else }}
         <div class="post-summary">
-            {{ .Summary }}
+            {{ .Summary | markdownify}}
         </div>
 
          {{ if .Site.Params.showReadMore }}

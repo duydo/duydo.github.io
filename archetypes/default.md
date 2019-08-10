@@ -3,7 +3,7 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
 keywords: []
-description: ""
+description: "{{ replace .TranslationBaseName "-" " " | title }}"
 tags: []
 categories: []
 author: ""

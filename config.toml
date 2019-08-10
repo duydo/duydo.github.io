@@ -1,15 +1,17 @@
 baseURL = "http://duydo.me/"
-title = "Duy Do's weblog"
+title = "Duy Do"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
 
 hasCJKLanguage = false
-paginate = 5
+paginate = 20
 rssLimit = 20
 disqusShortname = "duydo"
 googleAnalytics = "UA-68329720-1"
 copyright = "Duy Do"
+
+enableGitInfo = true
 
 # Highlight options.
 # See https://gohugo.io/content-management/syntax-highlighting/
@@ -17,6 +19,8 @@ PygmentsCodeFences = true
 PygmentsUseClasses = true
 PygmentsCodefencesGuessSyntax = true
 PygmentsOptions = "linenos=table"
+
+
 
 [permalinks]
 post = "/:slug/"
@@ -64,8 +68,8 @@ defaultContentLanguage = "en"
   rssFullContent = true
 
   logoTitle = "Duy Do"
-  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer-science", "python", "java", "elasticsearch"]
-  description = "Duy Do's personal website"
+  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
+  description = "Tầm nhìn ta thật ngắn nhưng thấy bao nhiêu thứ phải làm - Alan Turing"
 
   dateFormatToUse = "Jan 02, 2006"
   showAuthorInfo = true
@@ -79,6 +83,11 @@ defaultContentLanguage = "en"
 
   [params.commentCount.disqus]
     enable = false
+
+    [params.search.google]
+      enable = true
+      title = 'Seach for duydo.me'
+      id = '006487661450986107425:lgdmnhi9skm'
 
   [params.social]
     g-github = "https://github.com/duydo"
