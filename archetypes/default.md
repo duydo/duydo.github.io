@@ -6,7 +6,6 @@ keywords: []
 description: "{{ replace .TranslationBaseName "-" " " | title }}"
 tags: []
 categories: []
-author: ""
 
 draft: true
 comment: true

@@ -3,7 +3,7 @@ date = "2016-04-08T17:59:15+07:00"
 draft = false
 title = "Nhà Giả Kim - Paulo Coelho"
 image = "images/alchemist.jpg"
-tags = ["books", "nha-gia-kim", "alchemist", "paulo-coelho"]
+tags = ["nha-gia-kim", "alchemist", "paulo-coelho", "books", "books-duy-read", "books-reviews"]
 categories=["Books"]
 comment = true
 +++

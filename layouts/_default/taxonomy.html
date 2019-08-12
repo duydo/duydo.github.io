@@ -15,6 +15,7 @@
   {{ if not $paginator.HasPrev }}
   {{- $taxonomy_id :=  lower .Title -}}
   {{- $taxonomy :=  (index (.Site.Data.taxonomies | default dict) $taxonomy_id) -}}
+  {{- $taxonomy_display := $taxonomy.display -}}
   {{- $taxonomy_description := $taxonomy.description -}}
 
   {{ if eq .Data.Plural "tags" }}
@@ -28,7 +29,7 @@
   </div>
   {{ else if eq .Data.Plural "categories" }}
   <div class="archive-title category">
-    <h2 class="archive-name">{{humanize .Title }}</h2>
+    <h2 class="archive-name">{{title ($taxonomy_display | default .Title) }}</h2>
     {{ if $taxonomy_description }}
     <div class="archive-description">
         {{ $taxonomy_description | markdownify}}

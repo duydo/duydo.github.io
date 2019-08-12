@@ -1,15 +1,13 @@
 ---
 title: "Vũ Trụ Xa Hơn Mây Oort"
-date: 2019-08-12T13:34:43+07:00
-lastmod: 2019-08-12T13:34:43+07:00
-keywords: []
-description: "Vũ Trụ Xa Hơn Mây OOrt"
-tags: ["physic", "universe", "oortcloud", "books", "booksduyread"
-]
+date: 2019-04-22T13:34:43+07:00
+lastmod: 2019-04-22T13:34:43+07:00
+keywords: ["physic", "universe", "oortcloud", "books", "books-duy-read", "books-reviews"]
+description: "Vũ Trụ Xa Hơn Mây Oort"
+tags: ["physic", "universe", "oortcloud", "books", "books-duy-read", "books-reviews"]
 categories: ["Books"]
-author: ""
 
-draft: true
+draft: false
 comment: true
 toc: false
 autoCollapseToc: false

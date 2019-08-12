@@ -5,7 +5,7 @@ lastmod: 2009-02-09T08:33:58+07:00
 draft: false
 keywords: []
 description: ""
-tags: ["books", "albert-einstein"]
+tags: ["albert-einstein", "books", "books-duy-read", "books-reviews"]
 categories: ["Books"]
 
 # You can also close(false) or open(true) something for this content.

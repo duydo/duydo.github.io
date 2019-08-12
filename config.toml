@@ -1,5 +1,5 @@
 baseURL = "http://duydo.me/"
-title = "Duy Do's blog"
+title = "Duy Do"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
@@ -52,10 +52,15 @@ defaultContentLanguage = "en"
   url = "/post/"
 
 
+# [[menu.main]]
+#   name = "Books"
+#   weight = 20
+#   identifier = "books"
+#   url = "/categories/books"
 
 [[menu.main]]
   name = "About"
-  weight = 20
+  weight = 100
   identifier = "about"
   url = "/about"
   
@@ -78,7 +83,7 @@ defaultContentLanguage = "en"
 
   logoTitle = "Duy Do"
   keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
-  description = "Thoughts on life, people and tech"
+  description = "Thoughts on people, parenting, books and technology."
 
   dateFormatToUse = "Jan 02, 2006"
   showAuthorInfo = true
