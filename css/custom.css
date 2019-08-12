@@ -5,16 +5,12 @@ body {
   padding-left: 5em ;
 
 }
-/*
 .header .logo-wrapper .logo {
-    background: #2B2B2B;
-    color: #A9B7C6;
-    padding: 5px 10px 1px;
-    width: 45px;
-    height: 45px;
-
+    background: rgba(0,0,0,.84);
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0;
 }
- */
 
 .header .site-navbar .menu {
   font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
@@ -59,12 +55,10 @@ body {
 .post .post-header .post-meta {
   font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
   letter-spacing: -.01em;
-  text-align: left;
 }
 
 .post .post-header .post-title {
   font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
-  text-align: left;
   letter-spacing: -.01em;
 }
 
