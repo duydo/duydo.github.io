@@ -13,42 +13,6 @@
     
     
     <item>
-      <title>About</title>
-      <link>http://duydo.me/about/</link>
-      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
-      
-      <guid>http://duydo.me/about/</guid>
-      
-        <description>&lt;p&gt;Duy Do is a passionate software engineer with strong background in computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
-
-&lt;p&gt;He is a co-founder of KromLab, an influencer marketing company, where he and his team build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires action.&lt;/p&gt;
-
-&lt;p&gt;He loves open sources, he loves community building. You can find his open source softwares on &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; or join &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Elasticsearch community for Vietnamese&lt;/a&gt;, where he found.&lt;/p&gt;
-
-&lt;p&gt;You can also find him somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt; or the roads he runs every morning.&lt;/p&gt;
-
-&lt;p&gt;He looks like this.&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;p class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/duydo_at_half_marathon.jpg&#34; title=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34; alt=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&lt;/span&gt;
-&lt;/p&gt;
-
-</description>
-      
-    </item>
-    
-    <item>
       <title>An algorithm for finding right-truncatable primes</title>
       <link>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</link>
       <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
@@ -442,7 +406,7 @@ Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo
       
       <guid>http://duydo.me/alan-turing/</guid>
       
-        <description>&lt;p&gt;Ngồi đợi ông con học, rảnh rỗi nên viết đôi dòng về Alan Turing.&lt;/p&gt;
+        <description>&lt;p&gt;Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.&lt;/p&gt;
 
 
 
@@ -484,7 +448,13 @@ Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo
 
 &lt;p&gt;Tài năng là thế nhưng cuộc đời của Turing là một bi kịch chỉ bởi…ông là người đồng tính. Ông bị cảnh sát Anh bắt vào năm 1952 vì đồng tính là &amp;ldquo;lăng nhục thuần phong mỹ tục&amp;rdquo;, họ buộc ông phải chọn một là ở tù hai là phải dùng thuốc &amp;ldquo;điều trị&amp;rdquo; giảm ham muốn tình dục, một hình thức thiến hóa học biến ông thành phụ nữ. Vì ở tù thì ông không thể nào tiếp tục công việc của mình nên ông đã chọn “điều trị” để ông được tiếp tục làm việc. Hàng ngày phải dùng thuốc điều trị khiến ông đau đớn ức chế, bế tắc, cơ thể thay đổi, vú phát triển to lên. Không chịu nổi điều này, ông đã kết liễu cuộc đời mình bằng chất độc Cyanua 2 năm sau đó, 1954, lúc ông 41 tuổi. Một cái kết buồn cho một tài năng xuất chúng của nhân loại.&lt;/p&gt;
 
-&lt;p&gt;Năm 2009, Thủ tướng Anh Gordon Brown chính thức xin lỗi vì cách hành xử khủng khiếp đối với ông. Năm 2012 nhân kỉ niệm 100 năm ngày sinh của Turing, các nhà khoa Anh đã yêu cầu chính phủ Anh hủy bản án bất công này đối với ông. Cuối năm 2013 Nữ Hoàng Elizabeth II đã chính thức đưa ra lệnh đặc xá sau 60 năm bị kết án vì đồng tính.&lt;/p&gt;</description>
+&lt;p&gt;Năm 2009, Thủ tướng Anh Gordon Brown chính thức xin lỗi vì cách hành xử khủng khiếp đối với ông. Năm 2012 nhân kỉ niệm 100 năm ngày sinh của Turing, các nhà khoa Anh đã yêu cầu chính phủ Anh hủy bản án bất công này đối với ông. Cuối năm 2013 Nữ Hoàng Elizabeth II đã chính thức đưa ra lệnh đặc xá sau 60 năm bị kết án vì đồng tính.&lt;/p&gt;
+
+&lt;p&gt;Mình rất thích câu nói nổi tiếng này của Alan Turing:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Tầm nhìn ta thật ngắn mà đã thấy bao thứ để làm - Alan Turing&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       
     </item>
     
@@ -750,6 +720,42 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 &lt;p&gt;And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p&gt;
 
 &lt;p&gt;In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://duydo.me/about/</link>
+      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
+      
+      <guid>http://duydo.me/about/</guid>
+      
+        <description>&lt;p&gt;Duy Do is a passionate software engineer with strong background in computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p&gt;
+
+&lt;p&gt;He is a co-founder of KromLab, an influencer marketing company, where he and his team build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires action.&lt;/p&gt;
+
+&lt;p&gt;He loves open sources, he loves community building. You can find his open source softwares on &lt;a href=&#34;https://github.com/duydo&#34;&gt;GitHub&lt;/a&gt; or join &lt;a href=&#34;https://www.facebook.com/groups/elasticsearchvn/&#34;&gt;Elasticsearch community for Vietnamese&lt;/a&gt;, where he found.&lt;/p&gt;
+
+&lt;p&gt;You can also find him somewhere else on &lt;a href=&#34;https://twitter.com/duydo&#34;&gt;Twitter&lt;/a&gt; or the roads he runs every morning.&lt;/p&gt;
+
+&lt;p&gt;He looks like this.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;p class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/duydo_at_half_marathon.jpg&#34; title=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34; alt=&#34;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019.&lt;/span&gt;
+&lt;/p&gt;
+
+</description>
       
     </item>
     

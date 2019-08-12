@@ -70,14 +70,15 @@ body {
 
 .post .post-content {
   font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  text-align: justify;
 }
 
 .post .post-content h2 {
     border: none !important;
 }
 
-.post .post-content p {
-    text-align: justify;
+.post .post-content blockquote {
+  font-family: inherit;
 }
 
 .highlight {
@@ -131,6 +132,10 @@ body {
 }
 
 
+.post .post-content .read-more {
+  font-family: inherit;
+}
+
 .archive .collection-title {
     font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
     margin-bottom: 1em;
@@ -160,7 +165,7 @@ body {
 }
 
 .author-info .author-title {
-    display: none;
+    /* display: none; */
 }
 
 .author-info .author-box {
@@ -175,7 +180,6 @@ body {
 .author-info .author-box .author-image img {
     height: 80px;
     border: none;
-    margin: 0 auto;
 }
 
 .author-info .author-box .author-content .author-name {
