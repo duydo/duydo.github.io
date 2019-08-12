@@ -2,100 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://duydo.me/categories/books/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/categories/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
-    <priority>0</priority>
+    <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/post/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/algorithms/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/prime/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/python/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/right-truncatable-prime/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/categories/books/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/categories/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/books/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/booksduyread/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <loc>http://duydo.me/tags/books-duy-read/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/books-reviews/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/oortcloud/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/physic/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/universe/</loc>
-    <lastmod>2019-08-12T13:47:53+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/algorithms/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/prime/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/python/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/right-truncatable-prime/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -310,26 +316,26 @@
   
   <url>
     <loc>http://duydo.me/nh%C3%A0-gi%E1%BA%A3-kim-paulo-coelho/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/alchemist/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/nha-gia-kim/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/paulo-coelho/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -361,14 +367,14 @@
   
   <url>
     <loc>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/albert-einstein/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
   

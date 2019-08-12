@@ -1,5 +1,7 @@
 body {
-    font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
 }
 .header .logo-wrapper {
   padding-left: 5em ;
@@ -13,7 +15,7 @@ body {
 }
 
 .header .site-navbar .menu {
-  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  font-family: Georgia, Times, Times New Roman, serif;
   padding-right: 5em;
 }
 
@@ -29,43 +31,37 @@ body {
   font-weight: 400;
 }
 
-.header .site-navbar .menu .menu-item-link {
-    /* font-size: 16px; */
-}
 .header .site-navbar .menu .menu-item-icon {
   margin-right: 0;
 }
-/*
-.header  .site-description {
-  font-family: cursive,LiSu,sans-serif;
-  font-size: 18px;
-  display: block;
-  float: left;
-  padding-left: 5em;
-} */
-
 
 .post .post-header {
     border-bottom: 1px solid #cacaca ;
 }
 
-.post .post-header .post-meta {
-  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
-  letter-spacing: -.01em;
-}
 
 .post .post-header .post-title {
-  font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif;
-  letter-spacing: -.01em;
+  font-family: Georgia, Times, Times New Roman, serif;
+  font-weight: 500;
+}
+
+
+.post .post-header .post-meta {
+  font-family: Georgia, Times, Times New Roman, serif;
+}
+
+.post .post-header .post-meta .post-category a::before,
+.post .post-header .post-meta .more-meta::before {
+  content: '.';
 }
 
 .post .post-content {
-  font-family: 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
   text-align: justify;
 }
 
 .post .post-content h2 {
-    border: none !important;
+    border: none;
 }
 
 .post .post-content blockquote {
@@ -103,7 +99,7 @@ body {
 }
 
 .post .post-content p code, .post .post-content p pre {
-    font-family: Consolas, monaco, monospace;
+  font-family: consolas, manaco, 'courier new', courier, monospace;
 }
 
 .post .post-content .caption-wrapper {
@@ -131,6 +127,14 @@ body {
 
 .post .post-content .read-more {
   font-family: inherit;
+  text-align: left;
+}
+
+.archive .archive-title {
+  border-bottom: 1px solid #cacaca ;
+  text-align: center;
+  display: block;
+  padding-bottom: 10px;
 }
 
 .archive .collection-title {

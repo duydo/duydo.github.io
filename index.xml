@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Duy Do&#39;s blog</title>
+    <title>Duy Do</title>
     <link>http://duydo.me/</link>
-    <description>Recent content on Duy Do&#39;s blog</description>
+    <description>Recent content on Duy Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Mon, 12 Aug 2019 13:34:43 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
     
         <atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Vũ Trụ Xa Hơn Mây Oort</title>
-      <link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid>
-      
-        <description>&lt;p&gt;Từ lúc có ý thức về gia đình, cội nguồn mình luôn mong một ngày nào đó có thể tìm thấy được nguồn gốc khởi thủy của dòng họ Đỗ, hay các dòng họ khác, hay xa hơn nữa là nguồn gốc khởi thủy của loài người&amp;hellip;cứ thế nhìn về quá khứ xa xăm, hiểu được nơi vạn vật được bắt đầu, nơi vũ trụ được sinh ra.&lt;/p&gt;
-
-&lt;p&gt;Nếu bạn có thắc mắc như mình thì thử tìm đọc cuốn &amp;ldquo;Vũ Trụ Xa Hơn Mây Oort&amp;rdquo;, cuốn sách giải đáp được phần nào về sự hình thành của vũ trụ. Chỉ cần nhớ lại kiến thức về các hạt cơ bản và các định luật vật lý đã học thời trung học là có thể hiểu được hầu hết nội dung của cuốn sách.&lt;/p&gt;
-
-&lt;p&gt;Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản cho đến sự hành thành các ngôi sao, hành tinh hay các hố đen trong vũ trụ. Các bạn sẽ tìm thấy trong đó lý do tại sao thuyết Big Bang được các nhà khoa học chấp nhận rộng rãi xem như là khởi thủy của vũ trụ, hay việc không thể tách rời giữa không gian, thời gian và vật chất, hoặc hình dạng của các ngôi sao, hành tinh là hình cầu mà không phải hình dạng nào khác&amp;hellip;&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;p class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/oort_cloud.jpg&#34; title=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34; alt=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span&gt;
-&lt;/p&gt;
-
-
-&lt;p&gt;Happy reading &amp;lt;3&lt;/p&gt;</description>
-      
-    </item>
     
     <item>
       <title>An algorithm for finding right-truncatable primes</title>
@@ -319,6 +286,39 @@ is actually &lt;em&gt;p(k-1)&lt;/em&gt;, so we get:&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Happy coding &amp;lt;3.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Vũ Trụ Xa Hơn Mây Oort</title>
+      <link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid>
+      
+        <description>&lt;p&gt;Từ lúc có ý thức về gia đình, cội nguồn mình luôn mong một ngày nào đó có thể tìm thấy được nguồn gốc khởi thủy của dòng họ Đỗ, hay các dòng họ khác, hay xa hơn nữa là nguồn gốc khởi thủy của loài người&amp;hellip;cứ thế nhìn về quá khứ xa xăm, hiểu được nơi vạn vật được bắt đầu, nơi vũ trụ được sinh ra.&lt;/p&gt;
+
+&lt;p&gt;Nếu bạn có thắc mắc như mình thì thử tìm đọc cuốn &amp;ldquo;Vũ Trụ Xa Hơn Mây Oort&amp;rdquo;, cuốn sách giải đáp được phần nào về sự hình thành của vũ trụ. Chỉ cần nhớ lại kiến thức về các hạt cơ bản và các định luật vật lý đã học thời trung học là có thể hiểu được hầu hết nội dung của cuốn sách.&lt;/p&gt;
+
+&lt;p&gt;Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản cho đến sự hành thành các ngôi sao, hành tinh hay các hố đen trong vũ trụ. Các bạn sẽ tìm thấy trong đó lý do tại sao thuyết Big Bang được các nhà khoa học chấp nhận rộng rãi xem như là khởi thủy của vũ trụ, hay việc không thể tách rời giữa không gian, thời gian và vật chất, hoặc hình dạng của các ngôi sao, hành tinh là hình cầu mà không phải hình dạng nào khác&amp;hellip;&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+&lt;p class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/oort_cloud.jpg&#34; title=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34; alt=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;Happy reading &amp;lt;3&lt;/p&gt;</description>
       
     </item>
     

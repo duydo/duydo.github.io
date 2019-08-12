@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Duy Do&#39;s blog</title>
+    <title>Categories on Duy Do</title>
     <link>http://duydo.me/categories/</link>
-    <description>Recent content in Categories on Duy Do&#39;s blog</description>
+    <description>Recent content in Categories on Duy Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Mon, 12 Aug 2019 13:34:43 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 13:34:43 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Books</title>
       <link>http://duydo.me/categories/books/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
       
       <guid>http://duydo.me/categories/books/</guid>
       <description></description>

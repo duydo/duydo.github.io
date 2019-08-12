@@ -1,61 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Duy Do&#39;s blog</title>
+    <title>Tags on Duy Do</title>
     <link>http://duydo.me/tags/</link>
-    <description>Recent content in Tags on Duy Do&#39;s blog</description>
+    <description>Recent content in Tags on Duy Do</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Mon, 12 Aug 2019 13:34:43 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>books</title>
-      <link>http://duydo.me/tags/books/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>booksduyread</title>
-      <link>http://duydo.me/tags/booksduyread/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/booksduyread/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>oortcloud</title>
-      <link>http://duydo.me/tags/oortcloud/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/oortcloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>physic</title>
-      <link>http://duydo.me/tags/physic/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/physic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>universe</title>
-      <link>http://duydo.me/tags/universe/</link>
-      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/universe/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>algorithms</title>
@@ -90,6 +45,60 @@
       <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
       
       <guid>http://duydo.me/tags/right-truncatable-prime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>books</title>
+      <link>http://duydo.me/tags/books/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>books-duy-read</title>
+      <link>http://duydo.me/tags/books-duy-read/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books-duy-read/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>books-reviews</title>
+      <link>http://duydo.me/tags/books-reviews/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books-reviews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oortcloud</title>
+      <link>http://duydo.me/tags/oortcloud/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/oortcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>physic</title>
+      <link>http://duydo.me/tags/physic/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/physic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>universe</title>
+      <link>http://duydo.me/tags/universe/</link>
+      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/universe/</guid>
       <description></description>
     </item>
     
@@ -180,15 +189,6 @@
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
       <guid>http://duydo.me/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>http://duydo.me/tags/shell/</link>
-      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/shell/</guid>
       <description></description>
     </item>
     
