@@ -4,7 +4,7 @@ draft = false
 title = "Nhà Giả Kim - Paulo Coelho"
 image = "images/alchemist.jpg"
 tags = ["books", "nha-gia-kim", "alchemist", "paulo-coelho"]
-
+categories=["Books"]
 comment = true
 +++
 

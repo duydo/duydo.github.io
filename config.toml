@@ -47,14 +47,23 @@ defaultContentLanguage = "en"
 
 [[menu.main]]
   name = "Archives"
-  weight = 20
+  weight = 10
   identifier = "archives"
   url = "/post/"
+
+
+
 [[menu.main]]
-  name = "Tags"
-  weight = 30
-  identifier = "tags"
-  url = "/tags/"
+  name = "About"
+  weight = 20
+  identifier = "about"
+  url = "/about"
+  
+# [[menu.main]]
+#   name = "Tags"
+#   weight = 30
+#   identifier = "tags"
+#   url = "/tags/"
 #
 # [[menu.main]]
 #  name = "Code"
@@ -69,12 +78,12 @@ defaultContentLanguage = "en"
 
   logoTitle = "Duy Do"
   keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
-  description = "Tầm nhìn ta thật ngắn nhưng thấy bao nhiêu thứ phải làm - Alan Turing"
+  description = "Thoughts on life, people and tech"
 
   dateFormatToUse = "Jan 02, 2006"
   showAuthorInfo = true
   moreMeta = true
-  showReadMore = false
+  showReadMore = true
   toc = true
   photoswipe = true
   customCSS = ['custom.css']
@@ -84,7 +93,7 @@ defaultContentLanguage = "en"
   [params.commentCount.disqus]
     enable = false
 
-    [params.search.google]
+  [params.search.google]
       enable = true
       title = 'Seach for duydo.me'
       id = '006487661450986107425:lgdmnhi9skm'

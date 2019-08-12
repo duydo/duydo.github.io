@@ -5,8 +5,6 @@ slug="about"
 draft = false
 date = "2016-10-18T16:54:21+07:00"
 comment = false
-menu = "main"
-weight = 10
 +++
 
 

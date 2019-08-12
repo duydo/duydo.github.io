@@ -20,7 +20,7 @@ reward: false
 mathjax: false
 ---
 
-Ngồi đợi ông con học, rảnh rỗi nên viết đôi dòng về Alan Turing.
+Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.
 
 {{<imgcap title="Alan Turing" src="/images/posts/alan_turing.jpg">}}
 
@@ -38,3 +38,8 @@ Máy Enigma được người Đức chế tạo dùng để tạo mã hóa và 
 Tài năng là thế nhưng cuộc đời của Turing là một bi kịch chỉ bởi…ông là người đồng tính. Ông bị cảnh sát Anh bắt vào năm 1952 vì đồng tính là "lăng nhục thuần phong mỹ tục", họ buộc ông phải chọn một là ở tù hai là phải dùng thuốc "điều trị" giảm ham muốn tình dục, một hình thức thiến hóa học biến ông thành phụ nữ. Vì ở tù thì ông không thể nào tiếp tục công việc của mình nên ông đã chọn “điều trị” để ông được tiếp tục làm việc. Hàng ngày phải dùng thuốc điều trị khiến ông đau đớn ức chế, bế tắc, cơ thể thay đổi, vú phát triển to lên. Không chịu nổi điều này, ông đã kết liễu cuộc đời mình bằng chất độc Cyanua 2 năm sau đó, 1954, lúc ông 41 tuổi. Một cái kết buồn cho một tài năng xuất chúng của nhân loại.
 
 Năm 2009, Thủ tướng Anh Gordon Brown chính thức xin lỗi vì cách hành xử khủng khiếp đối với ông. Năm 2012 nhân kỉ niệm 100 năm ngày sinh của Turing, các nhà khoa Anh đã yêu cầu chính phủ Anh hủy bản án bất công này đối với ông. Cuối năm 2013 Nữ Hoàng Elizabeth II đã chính thức đưa ra lệnh đặc xá sau 60 năm bị kết án vì đồng tính.
+
+
+Mình rất thích câu nói nổi tiếng này của Alan Turing:
+
+> Tầm nhìn ta thật ngắn mà đã thấy bao thứ để làm - Alan Turing

@@ -1,4 +1,4 @@
-description = "Co-founder, Software Engineer at KromLab"
+description = """Co-founder, Software Engineer at KromLab."""
 [name]
 display = "Duy Do"
 
@@ -6,3 +6,5 @@ display = "Duy Do"
  url = "images/duydo.jpg"
  width = 80
  height = 80
+
+
