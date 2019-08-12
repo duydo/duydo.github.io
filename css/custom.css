@@ -6,8 +6,8 @@ body {
 
 }
 .header .logo-wrapper .logo {
-    background: rgba(0,0,0,.84);
-    color: #fff;
+    background: #0a0a0a;
+    color: #fefefe;
     padding: 10px 20px;
     margin: 0;
 }
@@ -44,12 +44,9 @@ body {
   padding-left: 5em;
 } */
 
-.post {
-  /* border-bottom: 1px solid #dadada; */
-}
 
 .post .post-header {
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid #cacaca ;
 }
 
 .post .post-header .post-meta {
@@ -114,11 +111,17 @@ body {
 }
 
 .post .post-content .caption-text {
-  font-family: Consolas, monaco, monospace;
+  font-family: monaco, monospace;
   font-size: 0.7em;
   text-transform: uppercase;
   padding-top: 10px;
   display: block;
+}
+
+.post .post-footer .post-tags a {
+  background: #f8f5ec;
+  /* color: #cacaca; */
+  padding: 5px;
 }
 
 .post .post-footer .post-nav .next:hover, .post .post-footer .post-nav .prev:hover {
