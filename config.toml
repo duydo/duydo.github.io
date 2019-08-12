@@ -1,5 +1,5 @@
 baseURL = "http://duydo.me/"
-title = "Duy Do"
+title = "Duy Do's blog"
 enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"

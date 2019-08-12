@@ -5,13 +5,13 @@
   translation: Tags
 
 - id: tag
-  translation: "Tag: "
+  translation: ""
 
 - id: categories
   translation: Categories
 
 - id: category
-  translation: "Category: "
+  translation: ""
 
 - id: authors
   translation: Authors
