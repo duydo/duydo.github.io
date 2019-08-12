@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 13:34:43 +0700</lastBuildDate>
     
 	<atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>http://duydo.me/tags/books/</link>
+      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>booksduyread</title>
+      <link>http://duydo.me/tags/booksduyread/</link>
+      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/booksduyread/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oortcloud</title>
+      <link>http://duydo.me/tags/oortcloud/</link>
+      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/oortcloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>physic</title>
+      <link>http://duydo.me/tags/physic/</link>
+      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/physic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>universe</title>
+      <link>http://duydo.me/tags/universe/</link>
+      <pubDate>Mon, 12 Aug 2019 13:34:43 +0700</pubDate>
+      
+      <guid>http://duydo.me/tags/universe/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>algorithms</title>
@@ -72,15 +117,6 @@
       <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
       
       <guid>http://duydo.me/tags/type-promotion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>books</title>
-      <link>http://duydo.me/tags/books/</link>
-      <pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/books/</guid>
       <description></description>
     </item>
     
@@ -153,42 +189,6 @@
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
       
       <guid>http://duydo.me/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>version-manager</title>
-      <link>http://duydo.me/tags/version-manager/</link>
-      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/version-manager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>analysis</title>
-      <link>http://duydo.me/tags/analysis/</link>
-      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://duydo.me/tags/analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vietnamese</title>
-      <link>http://duydo.me/tags/vietnamese/</link>
-      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://duydo.me/tags/vietnamese/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>barcamp</title>
-      <link>http://duydo.me/tags/barcamp/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
-      
-      <guid>http://duydo.me/tags/barcamp/</guid>
       <description></description>
     </item>
     
