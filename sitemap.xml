@@ -276,13 +276,6 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/about/</loc>
-    <lastmod>2019-08-12T09:37:57+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/elasticsearch-for-data-engineers/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -336,32 +329,6 @@
   <url>
     <loc>http://duydo.me/tags/paulo-coelho/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/effective-jpa-with-enumeration/</loc>
-    <lastmod>2019-08-07T11:19:23+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/jpa/</loc>
-    <lastmod>2019-08-07T11:19:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/fluent-interface/</loc>
-    <lastmod>2019-08-07T08:29:51+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/fluent-interface/</loc>
-    <lastmod>2019-08-07T08:29:51+07:00</lastmod>
     <priority>0</priority>
   </url>
   

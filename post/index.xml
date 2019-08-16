@@ -167,28 +167,6 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
     </item>
     
     <item>
-      <title>Effective JPA with Enumeration</title>
-      <link>http://duydo.me/effective-jpa-with-enumeration/</link>
-      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
-      
-      <guid>http://duydo.me/effective-jpa-with-enumeration/</guid>
-      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
-
-&lt;p&gt;I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fluent Interface</title>
-      <link>http://duydo.me/fluent-interface/</link>
-      <pubDate>Wed, 25 Mar 2009 08:11:23 +0700</pubDate>
-      
-      <guid>http://duydo.me/fluent-interface/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve played with my own  framework recently, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great &lt;a href=&#34;http://martinfowler.com/bliki/FluentInterface.html&#34;&gt;article&lt;/a&gt; of Martin Fowler about this term, you can read it if you have not heard about it yet.&lt;/p&gt;
-
-&lt;p&gt;The idea of  &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in  setter methods of an object, returning an object to promote object chaining.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Albert Einstein - Nguyễn Xuân Xanh</title>
       <link>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</link>
       <pubDate>Mon, 09 Feb 2009 08:33:58 +0700</pubDate>
