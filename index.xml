@@ -290,39 +290,6 @@ is actually &lt;em&gt;p(k-1)&lt;/em&gt;, so we get:&lt;/p&gt;
     </item>
     
     <item>
-      <title>Vũ Trụ Xa Hơn Mây Oort</title>
-      <link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link>
-      <pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate>
-      
-      <guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid>
-      
-        <description>&lt;p&gt;Từ lúc có ý thức về gia đình, cội nguồn mình luôn mong một ngày nào đó có thể tìm thấy được nguồn gốc khởi thủy của dòng họ Đỗ, hay các dòng họ khác, hay xa hơn nữa là nguồn gốc khởi thủy của loài người&amp;hellip;cứ thế nhìn về quá khứ xa xăm, hiểu được nơi vạn vật được bắt đầu, nơi vũ trụ được sinh ra.&lt;/p&gt;
-
-&lt;p&gt;Nếu bạn có thắc mắc như mình thì thử tìm đọc cuốn &amp;ldquo;Vũ Trụ Xa Hơn Mây Oort&amp;rdquo;, cuốn sách giải đáp được phần nào về sự hình thành của vũ trụ. Chỉ cần nhớ lại kiến thức về các hạt cơ bản và các định luật vật lý đã học thời trung học là có thể hiểu được hầu hết nội dung của cuốn sách.&lt;/p&gt;
-
-&lt;p&gt;Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản cho đến sự hành thành các ngôi sao, hành tinh hay các hố đen trong vũ trụ. Các bạn sẽ tìm thấy trong đó lý do tại sao thuyết Big Bang được các nhà khoa học chấp nhận rộng rãi xem như là khởi thủy của vũ trụ, hay việc không thể tách rời giữa không gian, thời gian và vật chất, hoặc hình dạng của các ngôi sao, hành tinh là hình cầu mà không phải hình dạng nào khác&amp;hellip;&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-&lt;p class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/oort_cloud.jpg&#34; title=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34; alt=&#34;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span&gt;
-&lt;/p&gt;
-
-
-&lt;p&gt;Happy reading &amp;lt;3&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
       <title>Java: Type Promotion</title>
       <link>http://duydo.me/java-type-promotion/</link>
       <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
@@ -679,8 +646,25 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
       
         <description>&lt;p&gt;I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p&gt;
 
+
+
+
+
+
+
+
+
+
+
+&lt;p class=&#34;caption-wrapper&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg&#34; title=&#34;&#34; alt=&#34;&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+
 &lt;p&gt;&lt;iframe id=&#34;talk_frame_370710&#34; src=&#34;//speakerdeck.com/player/9fa7022cc8da4e06be30f5e84ab03248&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
 &lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch&#34; target=&#34;_blank&#34;&gt;https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch&lt;/a&gt;&lt;/p&gt;
 
 </description>
       
@@ -767,6 +751,7 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
 
 &lt;p&gt;&lt;iframe id=&#34;talk_frame_359449&#34; src=&#34;//speakerdeck.com/player/970178bcd293418cb303b342fa7d77f5&#34; width=&#34;710&#34; height=&#34;399&#34; style=&#34;border:0; padding:0; margin:0; background:transparent;&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;
 &lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://speakerdeck.com/duydo/elasticsearch-for-data-engineers&#34; target=&#34;_blank&#34;&gt;https://speakerdeck.com/duydo/elasticsearch-for-data-engineers&lt;/a&gt;&lt;/p&gt;
 
 </description>
       
@@ -825,31 +810,6 @@ Celery is used in production systems to process millions of tasks a day.&lt;/p&g
 &lt;blockquote&gt;
 &lt;p&gt;Kho báu không phải là đích đến, kho báu là cả cuộc hành trình&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Albert Einstein - Nguyễn Xuân Xanh</title>
-      <link>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</link>
-      <pubDate>Mon, 09 Feb 2009 08:33:58 +0700</pubDate>
-      
-      <guid>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</guid>
-      
-        <description>&lt;p class=&#34;caption-wrapper&#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/einstein.jpg&#34; title=&#34;Albert Einstein&#34; alt=&#34;Albert Einstein&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Albert Einstein&lt;/span&gt;
-&lt;/p&gt;
-
-
-&lt;p&gt;Đầu năm nay công việc không được tốt, tình thần không được thỏa mái nên tôi quyết định nghỉ việc ở công ty.&lt;/p&gt;
-
-&lt;p&gt;Mấy hôm nay rảnh rỗi ngồi ở nhà nên tôi tìm đọc lại một số bài viết về Einstein. Đi khắp các nhà sách trong thành phố gần mấy tháng nay mà vẫn không tìm được cuốn sách viết về Einstein của Nguyễn Xuân Xanh. Hôm kia cùng &amp;ldquo;bà xã&amp;rdquo; đi vào nhà sách Nguyễn Văn Cừ (CMT8) vô tình thấy cuốn sách này, thế là bưng về nhà ngay.&lt;/p&gt;
-
-&lt;p&gt;Có thể nói đây là cuốn sách tiếng Việt đầy đủ nhất về cuộc đời của Einstein, cùng với những phát kiến vĩ đại của ông trong ngành Vật Lý Lý Thuyết. Đọc cuốn sách này tôi càng thấu hiểu vì sao Einstein đã đi đến kết luận: Trí tưởng tượng quan trọng hơn tri thức (Imagination is more important than knowledge). Đọc cuốn sách này giúp tôi hiểu hơn về một số nhà khoa học khác cùng thời với ông như Max Planck (người tìm ra hằng số planck h) , Pauli, Bohr, Erwin Schrodinger (người tìm ra phương trình sóng Schrodinger), Heisenberg (cơ học lượng tử)&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Ngoài hoạt động khoa học, Einstein còn tham gia hoạt động chính trị. Ông đã từ bỏ nước Đức ra đi lúc 15 tuổi  vì chủ nghĩa bài trừ Do Thái do Hitler khởi xưởng. Cuộc sống khó khăn, tình hình chính trị rối ren nhưng không hề ngăn cản nổi ông trên con đường đi tìm chân lý khoa học, kể cả chân lý chính trị và đạo đức.&lt;/p&gt;
-
-&lt;p&gt;Một cuốn sách đáng để chúng ta đọc, suy ngẫm và học tập.&lt;/p&gt;</description>
       
     </item>
     

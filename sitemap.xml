@@ -51,61 +51,6 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/categories/books/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/categories/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/books/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/books-duy-read/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/books-reviews/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/oortcloud/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/physic/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/universe/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/java-type-promotion/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -131,10 +76,28 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/categories/books/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/categories/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/books/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -321,6 +284,18 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/tags/books-duy-read/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/books-reviews/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/tags/nha-gia-kim/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
@@ -328,19 +303,6 @@
   
   <url>
     <loc>http://duydo.me/tags/paulo-coelho/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/albert-einstein-nguy%E1%BB%85n-xu%C3%A2n-xanh/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/albert-einstein/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <priority>0</priority>
   </url>
