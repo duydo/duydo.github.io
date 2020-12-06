@@ -1,7 +1,7 @@
 +++
 type = "landing"
 title = "Elasticsearch Consulting"
-draft = true
+draft = false
 +++
 
 With nearly a decade of professional experience working with Elasticsearh and deep understanding of how it works internally, I've helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:
