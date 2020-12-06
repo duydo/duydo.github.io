@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://duydo.me/tags/algorithms/</loc>
+    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,44 +17,58 @@
   
   <url>
     <loc>http://duydo.me/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/post/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/algorithms/</loc>
-    <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/prime/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/python/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/right-truncatable-prime/</loc>
     <lastmod>2019-08-12T20:38:29+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/engineering/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/java/</loc>
+    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -58,77 +79,73 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/engineering/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tags/java/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/tags/type-promotion/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/categories/books/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/categories/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/books/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/categories/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/reading/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://duydo.me/interview-at-elastic/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
+    <loc>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/elastic/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/elasticsearch/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/interview/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/interview-at-elastic/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -141,13 +158,22 @@
   <url>
     <loc>http://duydo.me/tags/alan-turing/</loc>
     <lastmod>2019-08-12T09:37:57+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/enigma/</loc>
     <lastmod>2019-08-12T09:37:57+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/bash/</loc>
+    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -158,21 +184,24 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/bash/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/tags/shell/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/version-manager/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/analysis/</loc>
+    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -183,40 +212,38 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/analysis/</loc>
-    <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/tags/vietnamese/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/barcamp/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/barcamp2016/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/talks/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -229,17 +256,33 @@
   <url>
     <loc>http://duydo.me/tags/information-retrieval/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/search-engine/</loc>
     <lastmod>2019-08-07T12:55:23+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/about/</loc>
+    <lastmod>2020-12-06T12:47:31+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/elasticsearch-for-data-engineers/</loc>
+    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/tags/celery/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -253,21 +296,24 @@
   </url>
   
   <url>
-    <loc>http://duydo.me/tags/celery/</loc>
-    <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://duydo.me/tags/distributed-system/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://duydo.me/tags/queue/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://duydo.me/consulting/</loc>
+    <lastmod>2020-12-06T12:47:58+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>

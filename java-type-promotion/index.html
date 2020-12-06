@@ -34,7 +34,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy."
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 <link rel="canonical" href="http://duydo.me/java-type-promotion/" />
@@ -53,7 +53,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy."
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.9e113a1264210fea3e54d8989ab84f97e23534523a30a883f4fa1b47cdbb67f8.css" integrity="sha256-nhE6EmQhD&#43;o&#43;VNiYmrhPl&#43;I1NFI6MKiD9PobR827Z/g=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.675b3f32c955e1757c3263e3fb5e00bfa466847a78b39ad80b1c35fc2d6ff12f.css" integrity="sha256-Z1s/MslV4XV8MmPj&#43;14Av6RmhHp4s5rYCxw1/C1v8S8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -73,10 +73,8 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy."
 <meta itemprop="description" content="Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
 1 2  byte b = 1; b = b * 2;   Thật ra thì đoạn mã trên không thể biên dịch được.
 Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.">
-
-
-<meta itemprop="datePublished" content="2018-08-06T18:51:46&#43;07:00" />
-<meta itemprop="dateModified" content="2019-08-07T12:55:23&#43;07:00" />
+<meta itemprop="datePublished" content="2018-08-06T18:51:46+07:00" />
+<meta itemprop="dateModified" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="wordCount" content="424">
 
 
@@ -400,33 +398,25 @@ if (!doNotTrack) {
       <p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">byte</span> <span class="nf">b</span> <span class="o">=</span> <span class="n">1</span><span class="p">;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">2</span><span class="p">;</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">2</span><span class="o">;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Thật ra thì đoạn mã trên không thể biên dịch được.</p>
-
+</div><p>Thật ra thì đoạn mã trên không thể biên dịch được.</p>
 <p>Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
 Nhìn vào đoạn mã thì thấy <code>b</code> được khai báo kiểu <code>byte</code> và gán giá trị <code>1</code>, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu <code>byte</code> trong Java từ -128 đến 127.</p>
-
 <p>Dòng mã tiếp theo gán <code>b = b * 2</code>, lúc này biểu thức <code>b * 2</code> sẽ có giá trị là <code>1 * 2 = 2</code>, thuộc tầm trị [-128, 127] nên hoàn toàn có thể gán được lại cho b. Từ đây các bạn trả lời như đinh đóng cột đoạn mã trên biên dịch và chạy được là cái chắc :D</p>
-
 <p>Nhưng các bạn đã nhầm, thực ra mọi thứ không diễn ra như vậy, vấn đề nằm ở dòng mã thứ 2, <code>b = b * 2</code>.</p>
-
 <p>Khi thực hiện phép tính <code>b * 2</code>, Java tự động chuyển kiểu của <code>b</code> từ <code>byte</code> thành <code>int</code> để thực hiện phép * với 2, (2 là integer literal nên có kiểu int) và kết quả của <code>b * 2</code> có kiểu <code>int</code>. Tới đây thì ta đã rõ vì sao <code>b = b * 2</code> không thực hiện được vì thằng mang kiểu <code>int</code> thì không thể nào gán cho thằng mang kiểu <code>byte</code> được.</p>
-
 <p>Quá trình tự động chuyển kiểu dữ liệu như vậy gọi là <strong>Type Promotion</strong>. Các bạn chỉ cần nhớ nguyên tắc chung khi thực hiện các biểu thức tính toán, Java sẽ tự động chuyển các kiểu dữ liệu của các toán hạng (operand) có tầm trị thấp sang kiểu dữ liệu của toán hạng có tầm trị cao hơn và kết quả của phép tính sẽ có kiểu dữ liệu của toán hạng có tầm trị cao nhất.</p>
-
 <p>Cụ thể, các kiểu <code>byte</code>, <code>short</code> và <code>char</code> sẽ được chuyển thành <code>int</code> trước tiên, sau đó nếu toán hạng tiếp theo có kiểu <code>long</code> thì toàn bộ biểu thức sẽ chuyển thành <code>long</code>, cứ thế chuyển lên <code>float</code> và cuối cùng là <code>double</code>.</p>
-
 <blockquote>
 <p>byte, short, char =&gt; int =&gt; long =&gt; float =&gt; double</p>
 </blockquote>
-
 <p>Chúc anh em code Java vui vẻ &lt;3</p>
 
     </div>
@@ -577,7 +567,7 @@ Nhìn vào đoạn mã thì thấy <code>b</code> được khai báo kiểu <cod
     &copy;
     
       2007 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

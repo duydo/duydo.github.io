@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 <link rel="canonical" href="http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.9e113a1264210fea3e54d8989ab84f97e23534523a30a883f4fa1b47cdbb67f8.css" integrity="sha256-nhE6EmQhD&#43;o&#43;VNiYmrhPl&#43;I1NFI6MKiD9PobR827Z/g=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.675b3f32c955e1757c3263e3fb5e00bfa466847a78b39ad80b1c35fc2d6ff12f.css" integrity="sha256-Z1s/MslV4XV8MmPj&#43;14Av6RmhHp4s5rYCxw1/C1v8S8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -68,10 +68,8 @@
 <meta property="article:modified_time" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="name" content="How to build Elasticsearch Vietnamese Analysis Plugin">
 <meta itemprop="description" content="Recently, I&rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.">
-
-
-<meta itemprop="datePublished" content="2017-04-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-08-07T12:55:23&#43;07:00" />
+<meta itemprop="datePublished" content="2017-04-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="wordCount" content="195">
 
 
@@ -391,15 +389,12 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">Table of Contents</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#step-1-install-java-maven-git">Step 1: Install Java, Maven &amp; Git</a></li>
-<li><a href="#step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer</a></li>
-<li><a href="#step-3-build-the-plugin">Step 3: Build the plugin</a></li>
-<li><a href="#step-4-install-the-plugin">Step 4: Install the plugin</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#step-1-install-java-maven--git">Step 1: Install Java, Maven &amp; Git</a></li>
+    <li><a href="#step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer</a></li>
+    <li><a href="#step-3-build-the-plugin">Step 3: Build the plugin</a></li>
+    <li><a href="#step-4-install-the-plugin">Step 4: Install the plugin</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -407,54 +402,49 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>Recently, I&rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.</p>
-
-<h2 id="step-1-install-java-maven-git">Step 1: Install Java, Maven &amp; Git</h2>
-
+<h2 id="step-1-install-java-maven--git">Step 1: Install Java, Maven &amp; Git</h2>
 <p>The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing  <a href="https://www.java.com/en/download/help/download_options.xml">Java</a>, <a href="https://maven.apache.org/install.html">Maven</a> and <a href="https://www.atlassian.com/git/tutorials/install-git">Git</a>.</p>
-
 <p>If you are using Mac, just use these commands:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">brew cask install java
 brew install maven
-brew install git</code></pre></td></tr></table>
+brew install git
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer</h2>
-
+</div><h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer</h2>
 <p>The plugin is based on the VNTokenizer library, you have to build it before building the plugin</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/duydo/vn-nlp-libraries.git
 <span class="nb">cd</span> vn-nlp-libraries/nlp-parent
-mvn install</code></pre></td></tr></table>
+mvn install
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="step-3-build-the-plugin">Step 3: Build the plugin</h2>
-
+</div><h2 id="step-3-build-the-plugin">Step 3: Build the plugin</h2>
 <p>Clone the plugin&rsquo;s source code:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Edit the <code>elasticsearch-analysis-vietnamese/pom.xml</code> to change the version of Elasticsearch you want to build the plugin with:</p>
+</div><p>Edit the <code>elasticsearch-analysis-vietnamese/pom.xml</code> to change the version of Elasticsearch you want to build the plugin with:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -469,29 +459,30 @@ mvn install</code></pre></td></tr></table>
     <span class="nt">&lt;elasticsearch.version&gt;</span>5.2.1<span class="nt">&lt;/elasticsearch.version&gt;</span>
     <span class="nt">&lt;lucene.version&gt;</span>6.4.1<span class="nt">&lt;/lucene.version&gt;</span>
     ...
-<span class="nt">&lt;/properties&gt;</span></code></pre></td></tr></table>
+<span class="nt">&lt;/properties&gt;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Build the plugin:</p>
+</div><p>Build the plugin:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> elasticsearch-analysis-vietnamese
-mvn package</code></pre></td></tr></table>
+mvn package
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="step-4-install-the-plugin">Step 4: Install the plugin</h2>
+</div><h2 id="step-4-install-the-plugin">Step 4: Install the plugin</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">mvn clean package
-bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip</code></pre></td></tr></table>
+bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -642,7 +633,7 @@ bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vie
     &copy;
     
       2007 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

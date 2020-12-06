@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 <link rel="canonical" href="http://duydo.me/how-elasticsearch-cluster-works/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.9e113a1264210fea3e54d8989ab84f97e23534523a30a883f4fa1b47cdbb67f8.css" integrity="sha256-nhE6EmQhD&#43;o&#43;VNiYmrhPl&#43;I1NFI6MKiD9PobR827Z/g=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.675b3f32c955e1757c3263e3fb5e00bfa466847a78b39ad80b1c35fc2d6ff12f.css" integrity="sha256-Z1s/MslV4XV8MmPj&#43;14Av6RmhHp4s5rYCxw1/C1v8S8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -62,7 +62,6 @@
 
 <meta property="og:title" content="How Elasticsearch cluster works" />
 <meta property="og:description" content="This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:
-
 
 How a node in cluster talks to others?
 What happens when a node joins or leaves the cluster?
@@ -75,15 +74,12 @@ What happens when a node stops or has encountered a problem?
 <meta itemprop="name" content="How Elasticsearch cluster works">
 <meta itemprop="description" content="This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:
 
-
 How a node in cluster talks to others?
 What happens when a node joins or leaves the cluster?
 What happens when a node stops or has encountered a problem?
 ">
-
-
-<meta itemprop="datePublished" content="2016-10-24T11:16:00&#43;07:00" />
-<meta itemprop="dateModified" content="2019-08-07T12:55:23&#43;07:00" />
+<meta itemprop="datePublished" content="2016-10-24T11:16:00+07:00" />
+<meta itemprop="dateModified" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="wordCount" content="735">
 
 
@@ -92,7 +88,6 @@ What happens when a node stops or has encountered a problem?
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How Elasticsearch cluster works"/>
 <meta name="twitter:description" content="This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:
-
 
 How a node in cluster talks to others?
 What happens when a node joins or leaves the cluster?
@@ -409,14 +404,11 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">Table of Contents</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#a-cluster-of-nodes">A Cluster of Nodes</a></li>
-<li><a href="#add-a-node-to-the-cluster">Add a Node to the Cluster</a></li>
-<li><a href="#remove-a-node-from-the-cluster">Remove a Node from the Cluster</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#a-cluster-of-nodes">A Cluster of Nodes</a></li>
+    <li><a href="#add-a-node-to-the-cluster">Add a Node to the Cluster</a></li>
+    <li><a href="#remove-a-node-from-the-cluster">Remove a Node from the Cluster</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -424,64 +416,39 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:</p>
-
 <ul>
 <li>How a node in cluster talks to others?</li>
 <li>What happens when a node joins or leaves the cluster?</li>
 <li>What happens when a node stops or has encountered a problem?</li>
 </ul>
-
 <h2 id="a-cluster-of-nodes">A Cluster of Nodes</h2>
-
 <p>When we start an instance of Elasticsearch, we are starting a <em>node</em> and we have a <em>cluster</em> with single node. We start another instance of Elasticsearch has same <code>cluster.name</code> with the first instance and we have a cluster with two nodes. We can start more instances of Elasticsearch to form a cluster with number of nodes we want.</p>
-
 <p>Every node in the cluster knows about the other nodes within the cluster, they talk to others directly using the native Elasticsearch language over <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP</a>. This is known as a <a href="http://en.wikipedia.org/wiki/Network_topology#Mesh">full connected mesh topology</a>:</p>
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png" alt="full connected mesh topology" /></p>
-
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png" alt="full connected mesh topology"></p>
 <p><em>Figure 1. Full connected mesh topology (source <a href="https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png">https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png</a>)</em></p>
-
 <p>Besides that, the nodes are able to talk to external world using <a href="http://www.json.org">JSON</a> &ldquo;language&rdquo; over <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a>.</p>
-
 <p>So, we can say:</p>
-
 <blockquote>
 <p>Elasticsearch is <a href="https://en.wikipedia.org/wiki/Peer-to-peer">peer-to-peer</a> based system, nodes communicate with others directly.</p>
 </blockquote>
-
 <p>Each node in the cluster plays one or more roles; it can be a <em>master</em> node, <em>data</em> node, <em>client</em> node, or <em>tribe</em> node. Ech role has it own purpose.</p>
-
 <p><strong>The master node</strong> is responsible for creating, deleting indices, adding the nodes or remove the nodes from the cluster. Each time a cluster state is changed, the master node broadcasts the changes to other nodes in the cluster. There is only one master node in the cluster at a time.</p>
-
 <p><strong>The data node</strong> is responsible for holding the data in the shards and performing data related operations such as create, read, update, delete, search, and aggregations. We can have many data nodes in the cluster. If one of the data nodes stops, the cluster still operates and  re-organizes the data on other nodes.</p>
-
 <p><strong>The client node</strong> is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a &ldquo;smart <a href="https://en.wikipedia.org/wiki/Router_(computing)">router</a>&rdquo;. The client node does not hold any data, it also cannot become the master node.</p>
-
-<p><img src="/images/es_client_to_data_nodes.png" alt="es_client_to_data_nodes" />
+<p><img src="/images/es_client_to_data_nodes.png" alt="es_client_to_data_nodes">
 <em>Figure 2. The client node routes the data-related request to every data nodes in the cluster.</em>
-<img src="/images/es_client_to_master_node.png" alt="es_client_to_data_nodes" />
+<img src="/images/es_client_to_master_node.png" alt="es_client_to_data_nodes">
 <em>Figure 3. The client node routes the cluster-related request to the master node in the cluster.</em></p>
-
 <p><strong>The tribe node</strong> is special type of client node that is able to talk to multiple clusters to perform search and other operations.</p>
-
 <p><strong>The ingest node</strong> is responsible for pre-processing documents before the actual indexing takes into account.</p>
-
 <p>Now we know role of each node, next we look at what happens behind the sence when a node joins or leaves the cluster.</p>
-
 <h2 id="add-a-node-to-the-cluster">Add a Node to the Cluster</h2>
-
 <p>When we start a node, the node is starting to ping all the nodes in the cluster for finding the master node. Once the master  is found, it will ask the master  to join by sending a join request; the master accepts it as a new node of the cluster and then notify all the nodes in the cluster about presense of the new node, and finally the new node connects to all other nodes.</p>
-
 <p>If the joined node is a data node, the master will reallocate the data evenly across the nodes.</p>
-
 <h2 id="remove-a-node-from-the-cluster">Remove a Node from the Cluster</h2>
-
 <p>If we stop a node or a node in the cluster is unresponsive in specific amout of time, the master node will remove it from the cluster and reallocate the data if the removed node is a data node.</p>
-
 <p>You might be curious about how the master node knows if other nodes in the cluster are still alive. The master has a fault detection machanism, it pings all the other nodes in the cluster and verify that they are alive or not.</p>
-
 <p>And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.</p>
-
 <p>In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.</p>
     </div>
 
@@ -632,7 +599,7 @@ if (!doNotTrack) {
     &copy;
     
       2007 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

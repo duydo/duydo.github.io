@@ -33,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 <link rel="canonical" href="http://duydo.me/evm-elasticsearch-version-manager/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.9e113a1264210fea3e54d8989ab84f97e23534523a30a883f4fa1b47cdbb67f8.css" integrity="sha256-nhE6EmQhD&#43;o&#43;VNiYmrhPl&#43;I1NFI6MKiD9PobR827Z/g=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.675b3f32c955e1757c3263e3fb5e00bfa466847a78b39ad80b1c35fc2d6ff12f.css" integrity="sha256-Z1s/MslV4XV8MmPj&#43;14Av6RmhHp4s5rYCxw1/C1v8S8=" media="screen" crossorigin="anonymous">
 
 
 
@@ -68,10 +68,8 @@
 <meta property="article:modified_time" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="name" content="EVM - Elasticsearch Version Manager">
 <meta itemprop="description" content="As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created evm. It allows me to install, remove, test multiple versions easily.">
-
-
-<meta itemprop="datePublished" content="2017-05-20T17:50:35&#43;07:00" />
-<meta itemprop="dateModified" content="2019-08-07T12:55:23&#43;07:00" />
+<meta itemprop="datePublished" content="2017-05-20T17:50:35+07:00" />
+<meta itemprop="dateModified" content="2019-08-07T12:55:23+07:00" />
 <meta itemprop="wordCount" content="246">
 
 
@@ -391,17 +389,15 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">Table of Contents</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -409,24 +405,22 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created <a href="https://github.com/duydo/evm"><strong>evm</strong></a>. It allows me to install, remove, test multiple versions easily.</p>
-
 <h3 id="installation">Installation</h3>
-
 <p>Just download the <code>evm</code> script and make it executable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">sudo curl -o /usr/local/bin/evm https://raw.githubusercontent.com/duydo/evm/master/evm
-sudo chmod +x /usr/local/bin/evm</code></pre></td></tr></table>
+sudo chmod +x /usr/local/bin/evm
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="usage">Usage</h3>
+</div><h3 id="usage">Usage</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -453,13 +447,13 @@ evm plugin list                            List all installed ES plugins
 evm plugin &lt;install<span class="p">|</span>remove&gt; &lt;plugin&gt;       Install or remove an ES plugin
 evm start <span class="o">[</span>-c &lt;/path/to/config/dir&gt;<span class="o">]</span>       Start ES in the background with a specific config directory <span class="o">(</span>optional<span class="o">)</span>
 evm stop                                   Stop ES <span class="k">if</span> it is running
-evm status                                 Check <span class="k">if</span> ES is running</code></pre></td></tr></table>
+evm status                                 Check <span class="k">if</span> ES is running
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="example">Example</h3>
+</div><h3 id="example">Example</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -469,14 +463,15 @@ evm status                                 Check <span class="k">if</span> ES is
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">evm install <span class="m">5</span>.3.1                          Install ES <span class="m">5</span>.3.1
-evm use <span class="m">5</span>.3.1                              Use ES <span class="m">5</span>.3.1
+<pre class="chroma"><code class="language-sh" data-lang="sh">evm install 5.3.1                          Install ES 5.3.1
+evm use 5.3.1                              Use ES 5.3.1
 evm start                                  Start ES node with the default config directory
 evm start -c /etc/elasticsearch            Start ES node with /etc/elasticsearch config directory
 evm status                                 Print ES running status
 evm stop                                   Stop ES <span class="k">if</span> it is running
 evm plugin install x-pack                  Install the x-pack plugin
-evm plugin remove x-pack                   Remove the x-pack plugin</code></pre></td></tr></table>
+evm plugin remove x-pack                   Remove the x-pack plugin
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -629,7 +624,7 @@ evm plugin remove x-pack                   Remove the x-pack plugin</code></pre>
     &copy;
     
       2007 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

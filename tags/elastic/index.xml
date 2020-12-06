@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elastic on Duy Do</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Duy Do</copyright>
-    <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate>
-    
-	<atom:link href="http://duydo.me/tags/elastic/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 20 Jul 2017 09:48:56 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/elastic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interview at Elastic</title>
       <link>http://duydo.me/interview-at-elastic/</link>
