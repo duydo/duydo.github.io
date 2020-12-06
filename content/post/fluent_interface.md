@@ -2,7 +2,7 @@
 title: "Fluent Interface"
 date: 2009-03-25T08:11:23+07:00
 lastmod: 2009-03-25T08:11:23+07:00
-draft: false
+draft: true
 keywords: []
 description: ""
 tags: ["java", "fluent-interface", "engineering"]

@@ -7,7 +7,7 @@ draft: false
 keywords: []
 description: ""
 tags: ["books", "reading"]
-categories: []
+categories: ["Books"]
 author: ""
 
 # You can also close(false) or open(true) something for this content.

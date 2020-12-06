@@ -9,4 +9,7 @@ comment = true
 
 I gave a talk about Elasticsearch at Barcamp Saigon 2016. We'd discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
 
+{{<imgcap src="/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg">}}
+
 {{<oembed "https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch">}}
+

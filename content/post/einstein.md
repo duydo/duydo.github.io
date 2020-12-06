@@ -2,7 +2,7 @@
 title: "Albert Einstein - Nguyễn Xuân Xanh"
 date: 2009-02-09T08:33:58+07:00
 lastmod: 2009-02-09T08:33:58+07:00
-draft: false
+draft: true
 keywords: []
 description: ""
 tags: ["albert-einstein", "books", "books-duy-read", "books-reviews"]

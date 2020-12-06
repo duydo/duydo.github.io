@@ -22,4 +22,4 @@ In meantime, there was an event happened to me. An investor from US came to me a
 
 Although I don't work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.
 
-By the way, I want to send my big thanks to Mark Walkom, who referred me to Elastic team :-)
+By the way, I want to send my big thanks to [Mark Walkom](https://twitter.com/warkolm), who referred me to Elastic team :-)

@@ -1,12 +1,11 @@
 ---
-title: "Celery: debug stuck worker process"
+title: "Debug stuck Celery process"
 date: 2019-08-05T14:09:54+07:00
 lastmod: 2019-08-05T14:09:54+07:00
 draft: true
-keywords: []
-description: "Debug stuck Celery worker process"
+keywords: ["celery", "python", "debug", "engineering"]
+description: "Debug stuck Celery process"
 tags: ["celery", "python", "debug", "engineering"]
-author: "duydo"
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed

@@ -7,7 +7,7 @@ description: "Vũ Trụ Xa Hơn Mây Oort"
 tags: ["physic", "universe", "oortcloud", "books", "books-duy-read", "books-reviews"]
 categories: ["Books"]
 
-draft: false
+draft: true
 comment: true
 toc: false
 autoCollapseToc: false
@@ -27,4 +27,4 @@ Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản c
 
 {{<imgcap title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" src="/images/posts/oort_cloud.jpg">}}
 
-Happy reading <3 
+Happy reading <3

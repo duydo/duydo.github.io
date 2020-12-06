@@ -2,7 +2,7 @@
 me=$(basename "$0")
 
 
-function publish() {
+publish() {
     rm -rf ./public
     hugo
     cp ./CNAME ./public/CNAME
@@ -14,29 +14,28 @@ function publish() {
     rm -rf ./public
 }
 
-function run_hugo() {
+run() {
   hugo server -D -w --verbose
 }
 
+
+help() {
+  cat << EOF
+    ${me}: start server
+    ${me} s: commit then push to develop branch
+    ${me} p: publish to master branch
+EOF
+}
+
 case "$1" in
-    -h)
-      echo './m: start server'
-      echo './m s: commit then push to develop branch'
-      echo './m p: publish to master branch'
-      ;;
-    r)
-        run_hugo
-        ;;
+    -h) help;;
+    r) run;;
     s)
         rm -rf ./public
         git add --all && git commit -am "$2" && git push
         ;;
-    p)
-        publish
-        ;;
-    *)
-      run_hugo
-      ;;
+    p) publish;;
+    *) run;;
 
 esac
 exit 0
