@@ -25,10 +25,10 @@
 
 
 
-&lt;p class=&#34;caption-wrapper&#34;&gt;
+&lt;span class=&#34;caption-wrapper&#34;&gt;
   &lt;img class=&#34;caption&#34; src=&#34;http://duydo.me/images/posts/alan_turing.jpg&#34; title=&#34;Alan Turing&#34; alt=&#34;Alan Turing&#34;&gt;
   &lt;span class=&#34;caption-text&#34;&gt;Alan Turing&lt;/span&gt;
-&lt;/p&gt;</description>
+&lt;/span&gt;</description>
     </item>
     
   </channel>
