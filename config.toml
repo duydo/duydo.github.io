@@ -52,26 +52,26 @@ defaultContentLanguage = "en"
   url = "/post/"
 
 
-# [[menu.main]]
-#   name = "Consulting"
-#   weight = 20
-#   identifier = "consulting"
-#   url = "/consulting"
-#   hasChildren = true
+ [[menu.main]]
+   name = "Consulting"
+   weight = 20
+   identifier = "consulting"
+   url = "/consulting"
+   hasChildren = true
   
-
+#
 # [[menu.main]]
 #   name = "Books"
 #   weight = 20
 #   identifier = "books"
 #   url = "/categories/books"
 
-# [[menu.main]]
-#   name = "About"
-#   weight = 100
-#   identifier = "about"
-#   url = "/about"
-  
+ [[menu.main]]
+   name = "About"
+   weight = 100
+   identifier = "about"
+   url = "/about"
+#
 # [[menu.main]]
 #   name = "Tags"
 #   weight = 30
