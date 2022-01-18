@@ -15,7 +15,7 @@ publish() {
 }
 
 run() {
-  hugo server -D -w --verbose
+  hugo server -w --verbose $@
 }
 
 

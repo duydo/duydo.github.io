@@ -1,10 +1,11 @@
 +++
 type = "landing"
 title = "Elasticsearch Consulting"
+date = "2016-10-18T16:54:21+07:00"
 draft = false
 +++
 
-With nearly a decade of professional experience working with Elasticsearh and deep understanding of how it works internally, I've helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:
+With a decade of professional experience working with Elasticsearch and deep understanding of how it works internally, I've helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:
 
 - Architect search applications based on your specific use case, data volume, growth needs and business requirements.
 - Optimize queries, index mapping and tune relevancy for existing Elasticsearch implementations.
@@ -32,5 +33,5 @@ With nearly a decade of professional experience working with Elasticsearh and de
 >  Outstanding performance by Duy. He's the master of Elasticsearch. What's more, he was very responsive, polite, professional and has perfect command of the English language. I wouldn't hesitate one second to hire him again.
 
 
-## Need my help?
-[Get in touch](mailto:doquocduy@gmail.com?subject=Elasticsearch Consulting) and work with me.
+## Are you interested in my consulting service?
+Please send me an email to doquocduy [at] gmail [dot] com
