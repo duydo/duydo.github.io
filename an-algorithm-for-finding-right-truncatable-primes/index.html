@@ -7,7 +7,7 @@
   
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -37,7 +37,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.92.0" />
 
 
 <link rel="canonical" href="http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/" />
@@ -58,7 +58,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.f1e506a781bf25d33ffc18aa6b4e972a965c58049d27d4f92b7db2e9bf28e4bf.css" integrity="sha256-8eUGp4G/JdM//Biqa06XKpZcWASdJ9T5K32y6b8o5L8=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
 
 
 
@@ -77,9 +77,10 @@ Can you write a program reading a number N from keyboard then finding the neares
 
 As promised him, I would solve this challenge." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/" />
+<meta property="og:url" content="http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-08-01T12:10:30+07:00" />
 <meta property="article:modified_time" content="2019-08-12T20:38:29+07:00" />
+
 <meta itemprop="name" content="An algorithm for finding right-truncatable primes">
 <meta itemprop="description" content="Inspired from my status on Facebook:
 
@@ -89,15 +90,10 @@ One of my friends gave a challenge:
 
 Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?
 
-As promised him, I would solve this challenge.">
-<meta itemprop="datePublished" content="2019-08-01T12:10:30+07:00" />
+As promised him, I would solve this challenge."><meta itemprop="datePublished" content="2019-08-01T12:10:30+07:00" />
 <meta itemprop="dateModified" content="2019-08-12T20:38:29+07:00" />
 <meta itemprop="wordCount" content="874">
-
-
-
-<meta itemprop="keywords" content="algorithms,right-truncatable-prime,prime,python," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="algorithms,right-truncatable-prime,prime,python," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="An algorithm for finding right-truncatable primes"/>
 <meta name="twitter:description" content="Inspired from my status on Facebook:
 
@@ -129,7 +125,6 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 
 
@@ -485,7 +480,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 <p>From above analysis we have an algorithm to find the largest right-truncatable prime:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -502,7 +497,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
 (1) Let K = number of digits of N
 (2) Initialize A = {2, 3, 5, 7}, B = {1, 3, 7, 9}, MAX_PRIME
 (3) For i = 2, 3,... up to K:
@@ -523,7 +518,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 <p>Below is a program I wrote in Python to implement the algorithm. The algorithm can be optimized for more efficient but I leave it for now as an exercise for whom is interested in.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -602,7 +597,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 </span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&#34;duydo&#34;</span>
 
@@ -623,26 +618,26 @@ is actually <em>p(k-1)</em>, so we get:</p>
     <span class="k">def</span> <span class="nf">witness</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="bp">True</span>
+                <span class="k">return</span> <span class="kc">True</span>
             <span class="n">r</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">r</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="n">k</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">decompose</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># n - 1 = 2^k * m</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
             <span class="n">a</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">witness</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-                <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">return</span> <span class="bp">True</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
 
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="kc">True</span>
         <span class="c1"># n is even?</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
     <span class="k">return</span> <span class="n">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
@@ -654,8 +649,8 @@ is actually <em>p(k-1)</em>, so we get:</p>
     <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
     <span class="n">ak</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-    <span class="n">max_prime</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">max_prime</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ak</span><span class="p">:</span>
@@ -672,9 +667,9 @@ is actually <em>p(k-1)</em>, so we get:</p>
 
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;Enter N: &#39;</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s1">&#39;Enter N: &#39;</span><span class="p">)</span>
     <span class="n">rt_prime</span> <span class="o">=</span> <span class="n">find_largest_right_truncatable_prime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">print</span> <span class="s1">&#39;Largest right-truncatable prime &lt;= N:&#39;</span><span class="p">,</span> <span class="n">rt_prime</span>
+    <span class="nb">print</span> <span class="s1">&#39;Largest right-truncatable prime &lt;= N:&#39;</span><span class="p">,</span> <span class="n">rt_prime</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -684,7 +679,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 </div><p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -694,7 +689,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,
 379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119,
 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339,
 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399,
@@ -841,7 +836,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
     &copy;
     
       2007 -
-    2020
+    2022
     <span class="heart">
       
       <i class="iconfont">

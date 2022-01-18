@@ -275,6 +275,13 @@
   </url>
   
   <url>
+    <loc>http://duydo.me/consulting/</loc>
+    <lastmod>2020-12-06T12:47:58+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://duydo.me/elasticsearch-for-data-engineers/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -305,13 +312,6 @@
   <url>
     <loc>http://duydo.me/tags/queue/</loc>
     <lastmod>2019-08-10T13:27:36+07:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://duydo.me/consulting/</loc>
-    <lastmod>2020-12-06T12:47:58+07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
