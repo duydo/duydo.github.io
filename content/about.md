@@ -4,6 +4,7 @@ title: About
 slug: about
 draft: false
 comment: false
+showAuthorInfo: false
 ---
 
 

@@ -3,6 +3,7 @@ type: page
 title: Elasticsearch Consulting
 date: 2016-10-18T16:54:21+07:00
 draft: false
+showAuthorInfo: false
 ---
 
 With a decade of professional experience working with Elasticsearch and deep understanding of how it works internally, I've helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:
