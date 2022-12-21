@@ -32,7 +32,7 @@
       
       <guid>http://duydo.me/java-type-promotion/</guid>
       <description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
-1 2  byte b = 1; b = b * 2;   Thật ra thì đoạn mã trên không thể biên dịch được.
+1 2 byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
 Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description>
     </item>
     
@@ -102,7 +102,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       
       <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
       <description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
-   https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description>
+https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@ Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.<
       
       <guid>http://duydo.me/elasticsearch-for-data-engineers/</guid>
       <description>I gave a talk about Elasticsearch for Data Engineers at Sentifi, it was only for beginners who are not familiar with Elasticsearch.
- https://speakerdeck.com/duydo/elasticsearch-for-data-engineers</description>
+https://speakerdeck.com/duydo/elasticsearch-for-data-engineers</description>
     </item>
     
     <item>

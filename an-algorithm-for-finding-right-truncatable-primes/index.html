@@ -24,10 +24,10 @@
 
 <meta name="author" content="Duy Do" />
   <meta name="description" content="Inspired from my status on Facebook:
- The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.
- One of my friends gave a challenge:
- Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?
- As promised him, I would solve this challenge.
+The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.
+One of my friends gave a challenge:
+Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?
+As promised him, I would solve this challenge.
 " />
 <meta name="keywords" content="algorithms, right-truncatable-prime, prime, python" />
 
@@ -37,7 +37,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.0" />
+<meta name="generator" content="Hugo 0.105.0" />
 
 
 <link rel="canonical" href="http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/" />
@@ -58,7 +58,9 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.fa4b2b9f31b5c6d0b683db81157a9226e17b06e61911791ab547242a4a0556f2.css" integrity="sha256-&#43;ksrnzG1xtC2g9uBFXqSJuF7BuYZEXkatUckKkoFVvI=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.de22abc00de44766eebd1054fd9e0b254b071f89d5019044f893c484a9249a8d.css" integrity="sha256-3iKrwA3kR2buvRBU/Z4LJUsHH4nVAZBE&#43;JPEhKkkmo0=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -118,14 +120,15 @@ As promised him, I would solve this challenge."/>
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-68329720-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
 
 
 </head>
@@ -153,14 +156,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://duydo.me/post/">Posts</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="http://duydo.me/consulting">Consulting</a>
+            <a class="menu-item-link" href="http://duydo.me/post">Archive</a>
           
         
       </li><li class="mobile-menu-item">
@@ -315,18 +311,7 @@ if (!doNotTrack) {
         
           
           
-            <a class="menu-item-link" href="http://duydo.me/post/">Posts</a>
-          
-
-        
-
-      </li>
-    
-        <li class="menu-item">
-        
-          
-          
-            <a class="menu-item-link" href="http://duydo.me/consulting">Consulting</a>
+            <a class="menu-item-link" href="http://duydo.me/post">Archive</a>
           
 
         
@@ -421,36 +406,44 @@ if (!doNotTrack) {
   </header>
 
   <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
+    <main id="main" class="main bg-llight wallpaper">
       <div class="content-wrapper">
         <div id="content" class="content container">
           <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">An algorithm for finding right-truncatable primes</h1>
-      
-      <div class="post-meta">
-        <time datetime="2019-08-01" class="post-time">
-          Aug 01, 2019
-        </time>
-        
-        <span class="more-meta"> 874 words </span>
-          <span class="more-meta"> 5 min read </span>
-
-        
-        
-
-        
-        
-      </div>
-    </header>
-
-    
+  
+  <header class="post-header">
+    <h1 class="post-title">An algorithm for finding right-truncatable primes</h1>
     
 
     
-    <div class="post-content">
-      <p>Inspired from <a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status</a> on Facebook:</p>
+
+<div class="post-meta">
+   <span class="post-time">
+      Aug 01, 2019
+    </span>
+
+
+  
+
+
+  <span class="post-meta-more">
+        874 words
+      </span>
+  <span class="post-meta-more">
+        5 min read
+      </span>
+</div>
+
+
+  </header>
+
+  
+  
+
+
+  
+  <div class="post-content">
+    <p>Inspired from <a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status</a> on Facebook:</p>
 <blockquote>
 <p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.</p>
 </blockquote>
@@ -478,270 +471,273 @@ is actually <em>p(k-1)</em>, so we get:</p>
 <p>\[p(k) = 10p(k-1) + a(k)\]</p>
 <p><em>p(k)</em> is prime therefore <em>a(k)</em> and <em>10p(k-1)</em>, or 2<em>5</em>p(k-1), must not have common divisors. This leads to value of <em>a(k)</em> must be 1, 3, 7 or 9.</p>
 <p>From above analysis we have an algorithm to find the largest right-truncatable prime:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-15">15</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
-(1) Let K = number of digits of N
-(2) Initialize A = {2, 3, 5, 7}, B = {1, 3, 7, 9}, MAX_PRIME
-(3) For i = 2, 3,... up to K:
-      Let P = empty list, this list stores primes are found for each i
-      With each a in A
-          With each b in B:
-              Calculate p = 10*a + b
-              If p &gt; n: Exit loop (3)
-              If p is prime:
-                  Set MAX_PRIME = p
-                  Add p to P
-      If P is empty: Exit loop (3)
-      Else: Set A = P
-(4) Return MAX_PRIME
-</code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
+</span></span><span style="display:flex;"><span>(1) Let K = number of digits of N
+</span></span><span style="display:flex;"><span>(2) Initialize A = {2, 3, 5, 7}, B = {1, 3, 7, 9}, MAX_PRIME
+</span></span><span style="display:flex;"><span>(3) For i = 2, 3,... up to K:
+</span></span><span style="display:flex;"><span>      Let P = empty list, this list stores primes are found for each i
+</span></span><span style="display:flex;"><span>      With each a in A
+</span></span><span style="display:flex;"><span>          With each b in B:
+</span></span><span style="display:flex;"><span>              Calculate p = 10*a + b
+</span></span><span style="display:flex;"><span>              If p &gt; n: Exit loop (3)
+</span></span><span style="display:flex;"><span>              If p is prime:
+</span></span><span style="display:flex;"><span>                  Set MAX_PRIME = p
+</span></span><span style="display:flex;"><span>                  Add p to P
+</span></span><span style="display:flex;"><span>      If P is empty: Exit loop (3)
+</span></span><span style="display:flex;"><span>      Else: Set A = P
+</span></span><span style="display:flex;"><span>(4) Return MAX_PRIME
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In step (3), in order to check if a number is prime we can use different algorithms such as: Eratosthenes, Atkin, AKS and Miller-Rabin. I choose <a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin</a> for testing large input number.</p>
 <p>Below is a program I wrote in Python to implement the algorithm. The algorithm can be optimized for more efficient but I leave it for now as an exercise for whom is interested in.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-12">12</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-13">13</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-14">14</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-15">15</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-16"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-16">16</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-17"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-17">17</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-18"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-18">18</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-19"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-19">19</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-20"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-20">20</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-21"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-21">21</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-22"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-22">22</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-23"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-23">23</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-24"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-24">24</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-25"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-25">25</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-26"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-26">26</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-27"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-27">27</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-28"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-28">28</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-29"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-29">29</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-30"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-30">30</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-31"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-31">31</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-32"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-32">32</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-33"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-33">33</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-34"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-34">34</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-35"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-35">35</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-36"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-36">36</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-37"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-37">37</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-38"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-38">38</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-39"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-39">39</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-40"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-40">40</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-41"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-41">41</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-42"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-42">42</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-43"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-43">43</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-44"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-44">44</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-45"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-45">45</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-46"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-46">46</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-47"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-47">47</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-48"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-48">48</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-49"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-49">49</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-50"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-50">50</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-51"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-51">51</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-52"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-52">52</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-53"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-53">53</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-54"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-54">54</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-55"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-55">55</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-56"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-56">56</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-57"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-57">57</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-58"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-58">58</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-59"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-59">59</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-60"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-60">60</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-61"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-61">61</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-62"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-62">62</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-63"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-63">63</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-64"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-64">64</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-65"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-65">65</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-66"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-66">66</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-67"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-67">67</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-68"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-68">68</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-69"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-69">69</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-70"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-70">70</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-71"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-71">71</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-72"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-72">72</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-73"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-73">73</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-74"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-74">74</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-75"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-75">75</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-76"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-76">76</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-77"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-77">77</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
-
-<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&#34;duydo&#34;</span>
-
-<span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;Check if n is prime using Miller-Robin test
-</span><span class="s2">    :param n: a number to test
-</span><span class="s2">    :return: True if n is prime, otherwise False
-</span><span class="s2">    &#34;&#34;&#34;</span>
-
-    <span class="k">def</span> <span class="nf">decompose</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
-        <span class="s2">&#34;&#34;&#34;p = 2^k * m&#34;&#34;&#34;</span>
-        <span class="n">k</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p</span>
-        <span class="k">while</span> <span class="n">m</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">m</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
-            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span>
-
-    <span class="k">def</span> <span class="nf">witness</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">True</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">r</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-        <span class="n">k</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">decompose</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># n - 1 = 2^k * m</span>
-        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-            <span class="n">a</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">witness</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-        <span class="c1"># n is even?</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-    <span class="k">return</span> <span class="n">miller_rabin</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">find_largest_right_truncatable_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="s2">&#34;&#34;&#34;Returns largest right-truncatable prime less than or equals n.&#34;&#34;&#34;</span>
-
-    <span class="k">assert</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-    <span class="n">ak</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-    <span class="n">max_prime</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ak</span><span class="p">:</span>
-                <span class="n">pk</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">u</span> <span class="o">+</span> <span class="n">v</span>
-                <span class="k">if</span> <span class="n">pk</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
-                    <span class="k">break</span>
-                <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">pk</span><span class="p">):</span>
-                    <span class="n">max_prime</span> <span class="o">=</span> <span class="n">pk</span>
-                    <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pk</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">break</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="k">return</span> <span class="n">max_prime</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">raw_input</span><span class="p">(</span><span class="s1">&#39;Enter N: &#39;</span><span class="p">)</span>
-    <span class="n">rt_prime</span> <span class="o">=</span> <span class="n">find_largest_right_truncatable_prime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="nb">print</span> <span class="s1">&#39;Largest right-truncatable prime &lt;= N:&#39;</span><span class="p">,</span> <span class="n">rt_prime</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randrange
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>__author__ <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;duydo&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_prime</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Check if n is prime using Miller-Robin test
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param n: a number to test
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :return: True if n is prime, otherwise False
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decompose</span>(p):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;p = 2^k * m&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        k, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, p
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> m <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            m <span style="color:#f92672">&gt;&gt;=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> k, m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">witness</span>(a, k, m, n):
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> pow(a, m, n)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> r <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> xrange(k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> r <span style="color:#f92672">==</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">=</span> pow(r, <span style="color:#ae81ff">2</span>, n)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> r <span style="color:#f92672">==</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">miller_rabin</span>(n, t<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>        k, m <span style="color:#f92672">=</span> decompose(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># n - 1 = 2^k * m</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> xrange(t):
+</span></span><span style="display:flex;"><span>            a <span style="color:#f92672">=</span> randrange(<span style="color:#ae81ff">2</span>, n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> witness(a, k, m, n):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># n is even?</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> miller_rabin(n)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find_largest_right_truncatable_prime</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Returns largest right-truncatable prime less than or equals n.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> len(str(n))
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>]
+</span></span><span style="display:flex;"><span>    ak <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>]
+</span></span><span style="display:flex;"><span>    max_prime <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> xrange(<span style="color:#ae81ff">2</span>, k <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> u <span style="color:#f92672">in</span> a:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> ak:
+</span></span><span style="display:flex;"><span>                pk <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> u <span style="color:#f92672">+</span> v
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> pk <span style="color:#f92672">&gt;</span> n:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> is_prime(pk):
+</span></span><span style="display:flex;"><span>                    max_prime <span style="color:#f92672">=</span> pk
+</span></span><span style="display:flex;"><span>                    r<span style="color:#f92672">.</span>append(pk)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(r) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">=</span> r
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> max_prime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> raw_input(<span style="color:#e6db74">&#39;Enter N: &#39;</span>)
+</span></span><span style="display:flex;"><span>    rt_prime <span style="color:#f92672">=</span> find_largest_right_truncatable_prime(int(n))
+</span></span><span style="display:flex;"><span>    print <span style="color:#e6db74">&#39;Largest right-truncatable prime &lt;= N:&#39;</span>, rt_prime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8">8</a>
 </span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,
-379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119,
-3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339,
-23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399,
-71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933,
-593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999,
-3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999,
-59393339, 73939133
-</code></pre></td></tr></table>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,
+</span></span><span style="display:flex;"><span>379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119,
+</span></span><span style="display:flex;"><span>3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339,
+</span></span><span style="display:flex;"><span>23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399,
+</span></span><span style="display:flex;"><span>71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933,
+</span></span><span style="display:flex;"><span>593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999,
+</span></span><span style="display:flex;"><span>3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999,
+</span></span><span style="display:flex;"><span>59393339, 73939133
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Happy coding &lt;3.</p>
-    </div>
+  </div>
 
-    
-    
+  
+  
 
 
-    
-    
 
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="http://duydo.me/tags/algorithms/">algorithms</a>
-          <a href="http://duydo.me/tags/right-truncatable-prime/">right-truncatable-prime</a>
-          <a href="http://duydo.me/tags/prime/">prime</a>
-          <a href="http://duydo.me/tags/python/">python</a>
-          
-        </div>
+  
+  
 
+
+  <footer class="post-footer">
+    <div class="post-tags">
+      <a href="http://duydo.me/tags/algorithms/">algorithms</a>
+      <a href="http://duydo.me/tags/right-truncatable-prime/">right-truncatable-prime</a>
+      <a href="http://duydo.me/tags/prime/">prime</a>
+      <a href="http://duydo.me/tags/python/">python</a>
       
-      <nav class="post-nav">
+    </div>
+    
+    
+    <nav class="post-nav">
+      
+      
+      <a class="next" href="/java-type-promotion/">
+        <span class="next-text nav-default">Java: Type Promotion</span>
+        <span class="prev-text nav-mobile">Next</span>
         
-        
-          <a class="next" href="/java-type-promotion/">
-            <span class="next-text nav-default">Java: Type Promotion</span>
-            <span class="prev-text nav-mobile">Next</span>
-            
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+        <i class="iconfont">
+          <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+        </i>
+      </a>
+    </nav>
+    
+  </footer>
+</article>
 
-  
-  
-  <section class="author-info">
+
+
+<section class="author-info">
   <div class="author-box">
     <div class="author-image"><img src="/images/duydo.jpg" alt="Duy Do" width="80" height="80"/></div>
     <div class="author-content">
@@ -752,10 +748,22 @@ is actually <em>p(k-1)</em>, so we get:</p>
     <div class="author-bottom"></div>
   </div>
 </section>
+
+
+
+
+
+
   
 
   
   
+
+  
+  
+
+  
+
   <div class="disqus-comment">
   <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
     Show Disqus Comments
@@ -769,18 +777,28 @@ is actually <em>p(k-1)</em>, so we get:</p>
       
       
       if (window.location.hostname === 'localhost') return;
+
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       var disqus_shortname = 'duydo';
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
     };
-    load_disqus();
   </script>
-  <noscript>Please enable JavaScript to view the
+  <noscript
+    >Please enable JavaScript to view the
     <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
   
-  </div>
+</div>
+
+
+    
+
+  
+
+  
 
         </div>
       </div>
@@ -822,7 +840,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -882,7 +900,7 @@ is actually <em>p(k-1)</em>, so we get:</p>
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.fe83e11b4fbc9193d67e2c9db78bad21f8dc59fca0cacd8c1c3bb071bb16a852.js" integrity="sha256-/oPhG0&#43;8kZPWfiydt4utIfjcWfygys2MHDuwcbsWqFI=" crossorigin="anonymous"></script>
 
 
 
@@ -907,6 +925,8 @@ is actually <em>p(k-1)</em>, so we get:</p>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
 
 
 
