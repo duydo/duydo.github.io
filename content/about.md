@@ -1,11 +1,10 @@
-+++
-type = "page"
-title = "About"
-slug="about"
-draft = false
-date = "2016-10-18T16:54:21+07:00"
-comment = false
-+++
+---
+type: page
+title: About
+slug: about
+draft: false
+comment: false
+---
 
 
 
@@ -16,7 +15,3 @@ He is a co-founder of KromLab, an influencer marketing company, where he and his
 He loves open sources, he loves community building. You can find his open source softwares on [GitHub](https://github.com/duydo) or join [Elasticsearch community for Vietnamese](https://www.facebook.com/groups/elasticsearchvn/), where he found.
 
 You can also find him somewhere else on [Twitter](https://twitter.com/duydo) or the roads he runs every morning.
-<!--
-He looks like this.
-
-{{<imgcap title="Duy Do conquered his first trail half-marathon at Dalat Ultra Trail 2019." src="/images/duydo_at_half_marathon.jpg">}} -->

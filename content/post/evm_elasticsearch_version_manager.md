@@ -5,6 +5,7 @@ image = ""
 tags = [ "shell", "bash", "elasticsearch", "version-manager", "engineering"]
 title = "EVM - Elasticsearch Version Manager"
 comment = true
+toc = false
 +++
 
 As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created [**evm**](https://github.com/duydo/evm). It allows me to install, remove, test multiple versions easily.

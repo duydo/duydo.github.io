@@ -15,11 +15,29 @@ enableGitInfo = true
 
 # Highlight options.
 # See https://gohugo.io/content-management/syntax-highlighting/
-PygmentsCodeFences = true
-PygmentsUseClasses = true
-PygmentsCodefencesGuessSyntax = true
-PygmentsOptions = "linenos=table"
+#PygmentsCodeFences = true
+#PygmentsUseClasses = true
+#PygmentsCodefencesGuessSyntax = true
+#PygmentsOptions = "linenos=table"
+#
+#
 
+
+[markup]
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = true
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noClasses = true
+noHl = false
+style = 'monokai'
+tabWidth = 4
 
 
 [permalinks]
@@ -29,36 +47,36 @@ page = "/:filename/"
 
 defaultContentLanguage = "en"
 [languages.en]
-  languageCode = "en"
+languageCode = "en"
 
 [author]
-  name = "duydo"
+name = "duydo"
 
 [sitemap]
-  changefreq = "weekly"
-  priority = 0.5
-  filename = "sitemap.xml"
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
 
 [[menu.main]]
-  name = "Home"
-  weight = 5
-  identifier = "home"
-  url = "/"
+name = "Home"
+weight = 5
+identifier = "home"
+url = "/"
 
 [[menu.main]]
-  name = "Archives"
-  weight = 10
-  identifier = "archives"
-  url = "/post/"
+name = "Archive"
+weight = 10
+identifier = "archive"
+url = "/post"
 
+#
+#[[menu.main]]
+#name = "Consulting"
+#weight = 20
+#identifier = "consulting"
+#url = "/consulting"
+#hasChildren = true
 
- [[menu.main]]
-   name = "Consulting"
-   weight = 20
-   identifier = "consulting"
-   url = "/consulting"
-   hasChildren = true
-  
 #
 # [[menu.main]]
 #   name = "Books"
@@ -66,11 +84,11 @@ defaultContentLanguage = "en"
 #   identifier = "books"
 #   url = "/categories/books"
 
- [[menu.main]]
-   name = "About"
-   weight = 100
-   identifier = "about"
-   url = "/about"
+[[menu.main]]
+name = "About"
+weight = 100
+identifier = "about"
+url = "/about"
 #
 # [[menu.main]]
 #   name = "Tags"
@@ -85,33 +103,33 @@ defaultContentLanguage = "en"
 #  url = "https://github.com/duydo"
 
 [params]
-  since = "2007"
-  homeFullContent = false
-  rssFullContent = true
+since = "2007"
+homeFullContent = false
+rssFullContent = true
 
-  logoTitle = "Duy Do"
-  keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
-  description = "Thoughts on people, parenting, books and technology."
+logoTitle = "Duy Do"
+keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
+description = "Thoughts on people, parenting, books and technology."
 
-  dateFormatToUse = "Jan 02, 2006"
-  showAuthorInfo = true
-  moreMeta = true
-  showReadMore = true
-  toc = true
-  photoswipe = true
-  customCSS = ['custom.css']
-  customJS = []
-  archive-paginate = 100
+dateFormatToUse = "Jan 02, 2006"
+showAuthorInfo = true
+moreMeta = true
+showReadMore = true
+toc = false
+photoswipe = true
+customCSS = ['custom.css']
+customJS = []
+archive-paginate = 100
 
-  [params.commentCount.disqus]
-    enable = false
+[params.commentCount.disqus]
+enable = false
 
-  [params.search.google]
-      enable = true
-      title = 'Seach for duydo.me'
-      id = '006487661450986107425:lgdmnhi9skm'
+[params.search.google]
+enable = true
+title = 'Seach for duydo.me'
+id = '006487661450986107425:lgdmnhi9skm'
 
-  [params.social]
-    g-github = "https://github.com/duydo"
-    c-twitter = "https://twitter.com/duydo"
-    # e-linkedin = "https://www.linkedin.com/in/duydo/"
+[params.social]
+g-github = "https://github.com/duydo"
+c-twitter = "https://twitter.com/duydo"
+# e-linkedin = "https://www.linkedin.com/in/duydo/"
