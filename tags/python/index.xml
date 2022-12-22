@@ -1,38 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>python on Duy Do</title>
-    <link>http://duydo.me/tags/python/</link>
-    <description>Recent content in python on Duy Do</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Duy Do</copyright>
-    <lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>An algorithm for finding right-truncatable primes</title>
-      <link>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</link>
-      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
-      
-      <guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</guid>
-      <description>&lt;p&gt;Inspired from &lt;a href=&#34;https://www.facebook.com/doquocduy/posts/10212275741143230&#34;&gt;my status&lt;/a&gt; on Facebook:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;One of my friends gave a challenge:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As promised him, I would solve this challenge.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Celery - a Distributed Task Queue</title>
-      <link>http://duydo.me/celery-a-distributed-task-queue/</link>
-      <pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate>
-      
-      <guid>http://duydo.me/celery-a-distributed-task-queue/</guid>
-      <description>&lt;p&gt;I gave a talk about &lt;a href=&#34;http://www.celeryproject.org&#34;&gt;Celery&lt;/a&gt; when working at &lt;a href=&#34;http://sentifi.com&#34;&gt;Sentifi&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on Duy Do</title><link>http://duydo.me/tags/python/</link><description>Recent content in python on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>An algorithm for finding right-truncatable primes</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
+&lt;blockquote>
+&lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
+&lt;/blockquote>
+&lt;p>One of my friends gave a challenge:&lt;/p>
+&lt;blockquote>
+&lt;p>Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p>
+&lt;/blockquote>
+&lt;p>As promised him, I would solve this challenge.&lt;/p></description></item><item><title>Celery - a Distributed Task Queue</title><link>http://duydo.me/celery-a-distributed-task-queue/</link><pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate><guid>http://duydo.me/celery-a-distributed-task-queue/</guid><description>&lt;p>I gave a talk about &lt;a href="http://www.celeryproject.org">Celery&lt;/a> when working at &lt;a href="http://sentifi.com">Sentifi&lt;/a>.&lt;/p></description></item></channel></rss>

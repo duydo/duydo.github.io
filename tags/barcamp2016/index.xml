@@ -1,22 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>barcamp2016 on Duy Do</title>
-    <link>http://duydo.me/tags/barcamp2016/</link>
-    <description>Recent content in barcamp2016 on Duy Do</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>Duy Do</copyright>
-    <lastBuildDate>Fri, 09 Dec 2016 08:07:09 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/barcamp2016/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Solve your search and analytics problems with Elasticsearch</title>
-      <link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link>
-      <pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate>
-      
-      <guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid>
-      <description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
-https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>barcamp2016 on Duy Do</title><link>http://duydo.me/tags/barcamp2016/</link><description>Recent content in barcamp2016 on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Fri, 09 Dec 2016 08:07:09 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/barcamp2016/index.xml" rel="self" type="application/rss+xml"/><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
+https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description></item></channel></rss>
