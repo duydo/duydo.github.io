@@ -2,11 +2,11 @@
 type: page
 title: About
 slug: about
-draft: false
+draft: true
 comment: false
 showAuthorInfo: false
+menu: main
 ---
-
 
 
 Duy Do is a software engineer with strong background in both computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.

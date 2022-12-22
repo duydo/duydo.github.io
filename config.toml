@@ -4,26 +4,26 @@ enableRobotsTXT = true
 enableEmoji = true
 theme = "jane"
 
+defaultContentLanguage = "en"
 hasCJKLanguage = false
-paginate = 20
+paginate = 5
 rssLimit = 20
 disqusShortname = "duydo"
 googleAnalytics = "UA-68329720-1"
 copyright = "Duy Do"
-
 enableGitInfo = true
 
-# Highlight options.
-# See https://gohugo.io/content-management/syntax-highlighting/
-#PygmentsCodeFences = true
-#PygmentsUseClasses = true
-#PygmentsCodefencesGuessSyntax = true
-#PygmentsOptions = "linenos=table"
-#
-#
+mainSections = ["post"]
+
+[author]
+name = "duydo"
+url = "/about"
 
 
-[markup]
+[languages.en]
+languageCode = "en"
+
+
 [markup.highlight]
 anchorLineNos = true
 codeFences = true
@@ -40,67 +40,21 @@ style = 'monokai'
 tabWidth = 4
 
 
-[permalinks]
-post = "/:slug/"
-page = "/:filename/"
-
-
-defaultContentLanguage = "en"
-[languages.en]
-languageCode = "en"
-
-[author]
-name = "duydo"
-
-[sitemap]
-changefreq = "weekly"
-priority = 0.5
-filename = "sitemap.xml"
-
 [[menu.main]]
 name = "Home"
 weight = 5
 identifier = "home"
-url = "/"
+pageref = "/"
 
 [[menu.main]]
 name = "Archive"
 weight = 10
 identifier = "archive"
-url = "/post"
+pageref = "/post/"
 
-#
-#[[menu.main]]
-#name = "Consulting"
-#weight = 20
-#identifier = "consulting"
-#url = "/consulting"
-#hasChildren = true
+[minify]
+  minifyOutput = true
 
-#
-# [[menu.main]]
-#   name = "Books"
-#   weight = 20
-#   identifier = "books"
-#   url = "/categories/books"
-
-[[menu.main]]
-name = "About"
-weight = 100
-identifier = "about"
-url = "/about"
-#
-# [[menu.main]]
-#   name = "Tags"
-#   weight = 30
-#   identifier = "tags"
-#   url = "/tags/"
-#
-# [[menu.main]]
-#  name = "Code"
-#  weight = 40
-#  identifier = "code"
-#  url = "https://github.com/duydo"
 
 [params]
 since = "2007"
@@ -113,8 +67,9 @@ description = "Thoughts on people, parenting, books and technology."
 
 dateFormatToUse = "Jan 02, 2006"
 showAuthorInfo = true
+showReadMore = false
 moreMeta = true
-showReadMore = true
+
 toc = false
 photoswipe = true
 customCSS = ['custom.css']
@@ -133,3 +88,13 @@ id = '006487661450986107425:lgdmnhi9skm'
 g-github = "https://github.com/duydo"
 c-twitter = "https://twitter.com/duydo"
 # e-linkedin = "https://www.linkedin.com/in/duydo/"
+
+
+[permalinks]
+post = "/:slug/"
+'/' = "/:filename/"
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
