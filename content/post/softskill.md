@@ -1,7 +1,7 @@
 ---
 title: "Kỹ năng mềm"
 slug: ky-nang-mem
-date: 2019-09-05T09:41:07+07:00
+date: 2017-09-05T09:41:07+07:00
 lastmod: 2019-09-05T09:41:07+07:00
 tags: [softskill, ky-nang-mem]
 ---
