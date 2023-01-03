@@ -2,7 +2,7 @@
 title: "Effective JPA with Enumeration"
 date: 2010-01-24T08:17:50+07:00
 lastmod: 2010-01-24T08:17:50+07:00
-draft: true
+draft: false
 keywords: []
 description: ""
 tags: ["java", "jpa", "engineering"]
@@ -22,11 +22,11 @@ mathjax: false
 
 How to persist an enumeration effectively? Here is my experience.
 
-I will use Wordpress for example. We all know that every post in wordpress blog system has a status with possible values: draft, pending-review, published...
+I will use Wordpress for example. We all know that every post in Wordpress blog system has a status with possible values: draft, pending-review, published...
 
 <!--more-->
 
-There are some ways to model the post entity. We can save status as an integer value in database: draft -> 0, pending-review -> 1, published -> 2
+There are some ways to model the post entity. We can save status as an integer value in database: `draft -> 0`, `pending-review -> 1`, `published -> 2`
 
 ### Version 1
 
@@ -53,7 +53,7 @@ post.setStatus(0);
 repository.store(post);
 ```
 
-But this is not safe, the clients can set any integer value for status. For more safe, we can define constants for status values like that:
+But this is not safe, the clients can set any integer value for status. For more safe, we can define constants for status values like this:
 
 ```java
 public class PostStatus {
@@ -70,8 +70,8 @@ post.setStatus(PostStatus.DRAFT);
 repository.store(post);
 ```
 
-But it is still not safe, because the client maybe do not use `PostStatus` class. So for more safe, what we need to do?
-Yes, we can force the client use `PostStatus` by declaring `PostStatus` as an `Enum` and make it dependency in `Post` class:
+But it is still not safe, because the clients maybe do not use `PostStatus` class. So for more safe, what we need to do?
+Yes, we can force the clients use `PostStatus` by declaring `PostStatus` as an `Enum` and make it dependency in `Post` class:
 
 ### Version 2
 
@@ -145,6 +145,6 @@ public class Post {
 
 Great!!!
 
-Now client can use code safety and we can add many constants as we want into PostStatus without worry about order of them.
+Now the clients can use code safety and we can add many constants as we want into `PostStatus` without worry about order of them.
 
 It reminds me of the sentence the guy talked in Java4Ever trailer: "Look how beautiful, robust, secure, portable and scalable it is" ;-)

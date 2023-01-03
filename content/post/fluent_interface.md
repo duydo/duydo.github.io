@@ -2,13 +2,8 @@
 title: "Fluent Interface"
 date: 2009-03-25T08:11:23+07:00
 lastmod: 2009-03-25T08:11:23+07:00
-draft: true
-keywords: []
-description: ""
-tags: ["java", "fluent-interface", "engineering"]
-categories: []
-author: ""
-
+draft: false
+tags: ["java", "engineering"]
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed
 comment: true
