@@ -1,0 +1,52 @@
+body {
+  line-height: 1.5;
+}
+
+.header .site-navbar .menu .menu-item:last-child {
+  margin-right: 0;
+}
+
+.header .site-navbar .menu .menu-item-icon {
+  margin-right: 0;
+}
+
+.post .post-header .post-title {
+  font-size: 1.8em;
+}
+
+.post .post-header .post-meta {
+  color: #8a8a8a;
+  font-size: 0.9em;
+}
+
+.author-info .author-box {
+  padding: 1em 0;
+}
+
+.author-info .author-box .author-content {
+  padding-left: 100px;
+}
+
+
+.author-info .author-box .author-image img {
+  height: 80px;
+  border: none;
+}
+
+.author-info .author-box .author-content .author-name {
+  margin-bottom: 0;
+}
+
+.author-info .author-box .author-content .author-desc {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 504px) {
+  .author-info .author-box .author-content {
+    padding-left: 0;
+  }
+}
+
+.archive .archive-post {
+  font-size: 1em;
+}
