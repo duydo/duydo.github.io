@@ -63,7 +63,7 @@ rssFullContent = true
 
 logoTitle = "Duy Do"
 keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
-description = "Thoughts on people, parenting, books and technology."
+description = "Thoughts on software engineering, parenting, books and technology."
 
 dateFormatToUse = "Jan 02, 2006"
 showAuthorInfo = true
@@ -72,7 +72,7 @@ moreMeta = true
 
 toc = false
 photoswipe = true
-customCSS = ['custom.css']
+customCSS = ['duydo_me.css']
 customJS = []
 archive-paginate = 100
 
