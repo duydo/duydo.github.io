@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>An algorithm for finding right-truncatable primes</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-primes/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
 &lt;blockquote>
 &lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
 &lt;/blockquote>
@@ -7,7 +7,7 @@
 &lt;p>Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p>
 &lt;/blockquote>
 &lt;p>As promised him, I would solve this challenge.&lt;/p>
-&lt;p>In order to find out an algorithm, we try to do math analysis first.&lt;/p>
+&lt;p>In order to find out an algorithm, we try to do some math first.&lt;/p>
 &lt;p>Suppose &lt;em>p(k)&lt;/em> is the prime, satisfies the characteristics of right-truncatable prime, has k digits: &lt;em>a(1), a(2),&amp;hellip;,a(k)&lt;/em>, value of each digit is in set &lt;em>{0, 9}&lt;/em>:&lt;/p>
 &lt;p>\[p(k) = \overline {a(1)a(2)&amp;hellip;a(k)}\]&lt;/p>
 &lt;p>Removes one digit from right to left of the number p(i), with i = 1..k, we get:
@@ -225,29 +225,8 @@ is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7">7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8">8&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>59393339, 73939133
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
+&lt;p>&lt;code>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373, 379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339, 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399, 71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933, 593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999, 3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999, 59393339, 73939133&lt;/code>&lt;/p>
+&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
