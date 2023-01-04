@@ -1,5 +1,6 @@
 body {
-  line-height: 1.5;
+  font-family: 'Georgia', sans-serif;
+  line-height: 1.6;
 }
 
 .header .site-navbar .menu .menu-item:last-child {
@@ -11,13 +12,21 @@ body {
 }
 
 .post .post-header .post-title {
-  font-size: 1.8em;
+  font-family: 'Georgia', sans-serif;
+  font-weight: 600;
 }
 
-.post .post-header .post-meta {
+.post .post-header .post-meta,
+.post .post-header .post-meta .post-meta__right {
   color: #8a8a8a;
-  font-size: 0.9em;
+  font-size: .9em;
 }
+
+
+.post .post-content .highlight {
+  border: 1px solid #ddd;
+}
+
 
 .author-info .author-box {
   padding: 1em 0;
