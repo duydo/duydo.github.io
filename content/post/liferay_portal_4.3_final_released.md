@@ -3,8 +3,6 @@ title: "Liferay Portal 4.3 Final Released"
 date: 2007-07-04T13:08:27+07:00
 lastmod: 2023-01-03T13:08:27+07:00
 tags: ["engineering", "liferay", 'java']
-categories: ["Engineering"]
-
 # Uncomment to pin article to front page
 # weight: 1
 # You can also close(false) or open(true) something for this content.

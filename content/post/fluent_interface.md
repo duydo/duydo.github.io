@@ -2,17 +2,7 @@
 title: "Fluent Interface"
 date: 2009-03-25T08:11:23+07:00
 lastmod: 2009-03-25T08:11:23+07:00
-draft: false
 tags: ["java", "engineering"]
-# You can also close(false) or open(true) something for this content.
-# P.S. comment can only be closed
-comment: true
-toc: false
-autoCollapseToc: false
-# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
-contentCopyright: false
-reward: false
-mathjax: false
 ---
 
 I've played with my own  framework recently, I found a new term, called "Fluent Interface". There is a great [article](http://martinfowler.com/bliki/FluentInterface.html) of Martin Fowler about this term, you can read it if you have not heard about it yet.

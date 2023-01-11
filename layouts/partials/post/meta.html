@@ -1,48 +1,61 @@
+{{ if ne .Type "page"}}
 <div class="post-meta">
+  {{- $author_id := .Params.author | default .Site.Author.name -}}
+  {{- $author := (index ($.Site.Data.authors | default dict) $author_id) -}}
+  {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
+  {{- $author_name := $author_lang.name.display | default $author.name.display | default $author_id -}}
+  {{- $author_url := $author_lang.url | default $author.url | default .Site.Author.url -}}
+  {{- $author_image := $author_lang.image | default $author.image | default (dict "url" "image/blank-profile.png") -}}
   <div class="post-meta-author">
-    Posted by
-    {{- $author_id := .Params.author | default .Site.Author.name -}}
-    {{- $author := (index ($.Site.Data.authors | default dict) $author_id) -}}
-    {{- $author_lang := (index ($author | default dict) .Site.Language.Lang) -}}
-    {{- $author_name := $author_lang.name.display | default $author.name.display | default $author_id -}}
-    {{- $author_url := $author_lang.url | default $author.url | default .Site.Author.url -}}
-    {{ if $author_url }}
+    {{ if $author_image }}
+    <span class="post-meta-author-image">
+            <img src="{{ $author_image.url | relURL }}" alt="{{ $author_name }}"/>
+      </span>
+    {{end}}
+    <span class="post-meta-author-name-wrapper">
+       <span class="post-meta-author-name">
+               {{ if $author_url }}
+
       <a href="{{ $author_url | relLangURL | safeURL }}">
-        <span class="post-meta-author-name">
-          {{ $author_name | safeHTML }}
-        </span>
+
+            {{ $author_name | safeHTML }}
+
       </a>
-    {{ else }}
+      {{ else }}
       {{ $author_name | safeHTML }}
-    {{ end }}
-    on
-     <time datetime="{{ .Date.Format "2006-01-02" }}">
-      {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
-    </time>
+      {{ end }}
+          </span>
+        <time datetime="{{ .Date.Format " 2006-01-02" }}">
+        {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+      </time>
+    </span>
+
+
   </div>
 
   <div class="post-meta__right">
     {{ if .Site.Params.moreMeta -}}
-      <span class="post-meta-more">
+    <span class="post-meta-more">
         {{ i18n "readingTime" .ReadingTime }}
       </span>
     {{- end }}
 
     {{ with .Params.categories -}}
-      <div class="post-meta-category">
-        {{ range . }}
-          {{- $name := . -}}
-          {{- with $.Site.GetPage "taxonomy" (printf "categories/%s" $name) | default ($.Site.GetPage "taxonomy" (printf "categories/%s" ($name | urlize))) -}}
-            <a href="{{ .Permalink }}"> {{ $name }} </a>
-          {{ end -}}
-        {{ end }}
-      </div>
+    <div class="post-meta-category">
+      {{ range . }}
+      {{- $name := . -}}
+      {{- with $.Site.GetPage "taxonomy" (printf "categories/%s" $name) | default ($.Site.GetPage "taxonomy" (printf
+      "categories/%s" ($name | urlize))) -}}
+      <a href="{{ .Permalink }}"> {{ $name }} </a>
+      {{ end -}}
+      {{ end }}
+    </div>
     {{- end }}
 
 
     <!-- Counter busuanzi -->
     {{ if .Site.Params.counter.busuanzi.enable }}
-      <span id="busuanzi_container_page_pv">
+    <span id="busuanzi_container_page_pv">
         | 阅读 <span id="busuanzi_value_page_pv"></span>
       </span>
     {{ end }}
@@ -50,14 +63,15 @@
 
     <!-- Counter leancloud -->
     {{ if .Site.Params.counter.leancloud.enable }}
-      <span
+    <span
         id="{{ .RelPermalink }}"
         class="leancloud_visitors"
         data-flag-title="{{ .Title }}"
-      >
+    >
         <span class="post-meta-item-text"> | 阅读 </span>
         <span class="leancloud-visitors-count"></span>
       </span>
     {{ end }}
   </div>
 </div>
+{{ end }}

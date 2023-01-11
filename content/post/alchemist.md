@@ -3,15 +3,11 @@ title: "Nhà Giả Kim - Paulo Coelho"
 date: 2016-04-08T17:59:15+07:00
 image: images/alchemist.jpg
 tags: ["nha-gia-kim", "alchemist", "paulo-coelho", "books", "booksduyread", "booksreviews"]
-categories: ["Books"]
 draft: true
 ---
-
-
-"Nhà Giả Kim" kể về anh chàng chăn cừu Santiago ở tận xứ Tây Ban Nha đã từ bỏ những kế hoạch mà ba mẹ vạch sẵn để chọn lấy cuộc sống "nay đây mai đó", theo đuổi ước mơ vận mệnh của mình.
-<!--more-->
-
 {{<imgcap title="The Alchemist" src="/images/posts/alchemist.jpg">}}
+<!--more-->
+"Nhà Giả Kim" kể về anh chàng chăn cừu Santiago ở tận xứ Tây Ban Nha đã từ bỏ những kế hoạch mà ba mẹ vạch sẵn để chọn lấy cuộc sống "nay đây mai đó", theo đuổi ước mơ vận mệnh của mình.
 
 Sách dường như là vật bất li thân của chàng, mỗi lúc chăn cừu chàng luôn có một cuốn sách bên cạnh. Điều này gợi nhớ đến tuổi thơ của mình, lúc nào đi chăn bò mình cũng mang theo một cuốn sách ;-)
 

@@ -2,9 +2,7 @@
 title: "Autostart Programs On Linux"
 date: 2007-06-19T12:48:32+07:00
 lastmod: 2023-01-03T12:48:32+07:00
-tags: ["engineering"]
-categories: ["Engineering"]
-author: ""
+tags: ["engineering", "linux"]
 ---
 
 Bài viết này nhằm cung cấp các cách để chương trình có thể khởi động ngay sau khi chúng ta đăng nhập vào hệ thống Linux (autostart programs).

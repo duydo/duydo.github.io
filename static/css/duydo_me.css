@@ -3,6 +3,17 @@ body {
   line-height: 1.6;
 }
 
+.logo {
+  background: #0a0a0a;
+  color: #fefefe;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.mobile-header-logo .logo {
+  padding: 8px 20px;
+}
+
 .header .site-navbar .menu .menu-item:last-child {
   margin-right: 0;
 }
@@ -11,6 +22,14 @@ body {
   margin-right: 0;
 }
 
+.header .site-description {
+  display: block;
+  width: 100%;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+/* Single Post */
 .post .post-header .post-title {
   font-family: 'Georgia', sans-serif;
   font-weight: 600;
@@ -22,12 +41,62 @@ body {
   font-size: .9em;
 }
 
+.post-meta-author {
+  display: flex;
+}
+
+.post-meta-author-name-wrapper {
+  margin-left: 10px;
+}
+
+.post-meta-author-name {
+}
+
+.post-meta-author a {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.post .post-header .post-meta .post-meta-author-image {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.post .post-header .post-meta .post-meta-author-image img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
 
 .post .post-content .highlight {
   border: 1px solid #ddd;
 }
 
+.post .post-content blockquote {
+  font-style: italic;
+}
 
+/* Image Box */
+.post .post-content .caption-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post .post-content .caption-wrapper img {
+  display: block;
+}
+
+.post .post-content .caption-text {
+  padding-top: 10px;
+  text-align: center;
+  font-style: italic;
+}
+
+
+/* Author Avatar Box */
 .author-info .author-box {
   padding: 1em 0;
 }

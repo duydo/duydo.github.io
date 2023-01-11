@@ -15,7 +15,7 @@ publish() {
 }
 
 run() {
-  hugo server -w --verbose --disableFastRender  $@
+  hugo server -w --verbose --disableFastRender -D  $@
 }
 
 

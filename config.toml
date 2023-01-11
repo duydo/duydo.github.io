@@ -63,10 +63,10 @@ rssFullContent = true
 
 logoTitle = "Duy Do"
 keywords = ["Duy Do", "duydo", "software", "engineering", "computer", "computer science", "python", "java", "elasticsearch", "programming", "programming languges"]
-description = "Thoughts on software engineering, parenting, books and technology."
+description = "Tầm nhìn ta thật ngắn mà đã thấy bao thứ để làm — Alan Turing"
 
 dateFormatToUse = "Jan 02, 2006"
-showAuthorInfo = true
+showAuthorInfo = false
 showReadMore = false
 moreMeta = true
 

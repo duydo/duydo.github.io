@@ -3,20 +3,7 @@ title: "Albert Einstein - Nguyễn Xuân Xanh"
 date: 2009-02-09T08:33:58+07:00
 lastmod: 2009-02-09T08:33:58+07:00
 draft: true
-keywords: []
-description: ""
-tags: ["albert-einstein", "books", "books-duy-read", "books-reviews"]
-categories: ["Books"]
-
-# You can also close(false) or open(true) something for this content.
-# P.S. comment can only be closed
-comment: true
-toc: false
-autoCollapseToc: false
-# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
-contentCopyright: false
-reward: false
-mathjax: false
+tags: ["einstein", "alberteinstein", "books", "booksduyread"]
 ---
 
 {{<imgcap title="Albert Einstein" src="/images/posts/einstein.jpg">}}

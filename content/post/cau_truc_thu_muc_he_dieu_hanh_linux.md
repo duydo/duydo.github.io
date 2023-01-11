@@ -6,8 +6,6 @@ draft: false
 keywords: []
 description: ""
 tags: ["linux"]
-categories: ["Engineering"]
-author: ""
 ---
 
 

@@ -1,11 +1,7 @@
 +++
 date = "2017-05-20T17:50:35+07:00"
-draft = false
-image = ""
-tags = [ "shell", "bash", "elasticsearch", "version-manager", "engineering"]
+tags = [ "shell", "bash", "elasticsearch", "versionmanager", "engineering"]
 title = "EVM - Elasticsearch Version Manager"
-comment = true
-toc = false
 +++
 
 As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created [**evm**](https://github.com/duydo/evm). It allows me to install, remove, test multiple versions easily.

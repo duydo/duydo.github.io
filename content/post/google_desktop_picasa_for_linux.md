@@ -3,17 +3,6 @@ title: "Google Desktop & Picasa for Linux"
 date: 2007-06-29T12:57:42+07:00
 lastmod: 2023-01-03T12:57:42+07:00
 tags: ["engineering", "linux", "google", "picasa"]
-categories: ["Engineering"]
-
-# Uncomment to pin article to front page
-# weight: 1
-# You can also close(false) or open(true) something for this content.
-# P.S. comment can only be closed
-# Uncomment to add to the homepage's dropdown menu; weight = order of article
-# menu:
-#   main:
-#     parent: "docs"
-#     weight: 1
 ---
 
 
