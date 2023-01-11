@@ -48,7 +48,8 @@ transaction log still keeps the documents until it gets big enough, a full commi
 the old transaction log is deleted and the new one is created.
 
 If the replication is enabled, the replication data process are triggered. This data node sends a replication request
-to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node.
+to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node to
+create a copy of those documents.
 
 
 
