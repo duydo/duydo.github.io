@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Tue, 10 Jan 2023 07:52:35 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Elasticsearch Indexing Data Flow</title><link>http://duydo.me/elasticsearch-indexing-data-flow/</link><pubDate>Tue, 10 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Mon, 09 Jan 2023 07:52:35 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
 &lt;span class="caption-wrapper">
 &lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
 &lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
 &lt;/span>
-&lt;p>The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes followings steps:&lt;/p>
+&lt;p>The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes following basic steps:&lt;/p>
 &lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
 process.&lt;/p>
 &lt;p>&lt;strong>Step 2&lt;/strong>: The coordinator node uses the &lt;code>pipeline&lt;/code> parameter in the indexing request to check if the document needs to
 be enriched or transformed before routing to a data node for further processing.&lt;/p>
-&lt;p>If &lt;code>No&lt;/code> the document is routed to a data node in the cluster.&lt;/p>
-&lt;p>If &lt;code>Yes&lt;/code> the document is routed to an ingest node in the
+&lt;p>If answer is &lt;code>No&lt;/code>, the document is routed to a data node in the cluster. If the answer is &lt;code>Yes&lt;/code>, the document is routed to an ingest node in the
 cluster to enrich the document. When the enriching process is done, the ingest node continues routing the enriched document to the data node.&lt;/p>
 &lt;p>Decision of which data node in the cluster will take the document to process further is based on index&amp;rsquo;s shard information and the hashing modulo formular:&lt;/p>
 &lt;p>&lt;code>shard = hash(routing) % number_of_shards&lt;/code>&lt;/p>
