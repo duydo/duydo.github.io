@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>information-retrieval on Duy Do</title><link>http://duydo.me/tags/information-retrieval/</link><description>Recent content in information-retrieval on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Mon, 24 Oct 2016 11:16:00 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/information-retrieval/index.xml" rel="self" type="application/rss+xml"/><item><title>How Elasticsearch cluster works</title><link>http://duydo.me/how-elasticsearch-cluster-works/</link><pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate><guid>http://duydo.me/how-elasticsearch-cluster-works/</guid><description>&lt;p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p>
-&lt;ul>
-&lt;li>How a node in cluster talks to others?&lt;/li>
-&lt;li>What happens when a node joins or leaves the cluster?&lt;/li>
-&lt;li>What happens when a node stops or has encountered a problem?&lt;/li>
-&lt;/ul></description></item></channel></rss>

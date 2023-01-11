@@ -226,7 +226,14 @@ is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
 &lt;/div>
 &lt;/div>&lt;p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:&lt;/p>
 &lt;p>&lt;code>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373, 379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339, 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399, 71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933, 593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999, 3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999, 59393339, 73939133&lt;/code>&lt;/p>
-&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
+&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Vũ Trụ Xa Hơn Mây Oort</title><link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link><pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate><guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid><description>&lt;span class="caption-wrapper">
+&lt;img class="caption" src="http://duydo.me/images/posts/oort_cloud.jpg" title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" alt="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn">
+&lt;span class="caption-text">Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span>
+&lt;/span>
+&lt;p>Từ lúc có ý thức về gia đình, cội nguồn mình luôn mong một ngày nào đó có thể tìm thấy được nguồn gốc khởi thủy của dòng họ Đỗ, hay các dòng họ khác, hay xa hơn nữa là nguồn gốc khởi thủy của loài người&amp;hellip;cứ thế nhìn về quá khứ xa xăm, hiểu được nơi vạn vật được bắt đầu, nơi vũ trụ được sinh ra.&lt;/p>
+&lt;p>Nếu bạn có thắc mắc như mình thì thử tìm đọc cuốn &amp;ldquo;Vũ Trụ Xa Hơn Mây Oort&amp;rdquo;, cuốn sách giải đáp được phần nào về sự hình thành của vũ trụ. Chỉ cần nhớ lại kiến thức về các hạt cơ bản và các định luật vật lý đã học thời trung học là có thể hiểu được hầu hết nội dung của cuốn sách.&lt;/p>
+&lt;p>Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản cho đến sự hành thành các ngôi sao, hành tinh hay các hố đen trong vũ trụ. Các bạn sẽ tìm thấy trong đó lý do tại sao thuyết Big Bang được các nhà khoa học chấp nhận rộng rãi xem như là khởi thủy của vũ trụ, hay việc không thể tách rời giữa không gian, thời gian và vật chất, hoặc hình dạng của các ngôi sao, hành tinh là hình cầu mà không phải hình dạng nào khác&amp;hellip;&lt;/p>
+&lt;p>Happy reading &amp;lt;3&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
 &lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
@@ -1583,41 +1590,4 @@ Below is instructions for setting up these softwares on Fedora and Ubuntu (I onl
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>picasa
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Autostart Programs On Linux</title><link>http://duydo.me/autostart-programs-on-linux/</link><pubDate>Tue, 19 Jun 2007 12:48:32 +0700</pubDate><guid>http://duydo.me/autostart-programs-on-linux/</guid><description>&lt;p>Bài viết này nhằm cung cấp các cách để chương trình có thể khởi động ngay sau khi chúng ta đăng nhập vào hệ thống Linux (autostart programs).&lt;/p>
-&lt;p>Chú ý: Các bạn mới tìm hiểu về Linux chú ý rẵng kí hiệu ~ thay thế cho đường dẫn đến thư mục home của user. Các chỉ dẫn này điều đã được kiểm tra trên Ubuntu và FC, mình nghĩ nó cũng sẽ work trên các distro khác 😀&lt;/p>
-&lt;h3 id="1-đối-với-kde">1. Đối với KDE:&lt;/h3>
-&lt;p>Ta đặt các chương trình mong muốn autostart vào &lt;code>~/.kde/Autostart&lt;/code>.&lt;/p>
-&lt;p>Để cho đơn giản chúng ta tạo các “soft link” cho các chương trình ta muốn autostart rồi đặt vào.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> cd ~/.kde/Autostart
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ln -s /usr/bin/gaim gaim
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="2-đối-với-fluxbox">2. Đối với FluxBox:&lt;/h3>
-&lt;p>Ta đặt các chương trình mong muốn autostart vào &lt;code>~/.fluxbox/startup&lt;/code>. Chú ý là danh sách các chương trình đưa vào phải được đặt trước dòng &lt;code>exec /usr/bin/fluxbox&lt;/code>.&lt;/p>
-&lt;p>Ví dụ: Đưa GAIM và danh sách autostart:&lt;/p>
-&lt;p>Mở file &lt;code>~/.fluxbox/startup&lt;/code> chèn &lt;code>/usr/bin/gaim &amp;amp;&lt;/code> vào trước &lt;code>exec /usr/bin/fluxbox&lt;/code>&lt;/p>
-&lt;h3 id="3-đối-với-gnome">3. Đối với GNOME:&lt;/h3>
-&lt;p>Đưa danh sách các chương trình muốn autostart vào &lt;code>~/.gnome2/session-manual&lt;/code> với cú pháp như sau:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5">5&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[Default]num_clients=1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0,RestartClientHint=3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0,Priority=50
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0,RestartCommand=gdesklets
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0,Program=gdesklets
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Nếu dùng GUI thì vào &lt;code>Menu Preferences -&amp;gt; Sessions -&amp;gt; Startup Programs&lt;/code>, rồi add các chương trình chúng ta muốn khởi động vào.&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
