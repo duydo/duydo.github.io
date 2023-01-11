@@ -5,7 +5,7 @@ lastmod: 2017-07-17T19:01:54+07:00
 draft: false
 keywords: []
 description: "Alan Turing"
-tags: ["alan-turing", "enigma"]
+tags: ["alanturing", "enigma"]
 categories: []
 author: ""
 

@@ -3,7 +3,7 @@ title: "Kỹ năng mềm"
 slug: ky-nang-mem
 date: 2017-09-05T09:41:07+07:00
 lastmod: 2019-09-05T09:41:07+07:00
-tags: [softskill, ky-nang-mem]
+tags: [softskill, kynangmem]
 ---
 
 {{<imgcap title="Duy Do talked about Elasticsearch at Barcamp 2016" src="/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg">}}

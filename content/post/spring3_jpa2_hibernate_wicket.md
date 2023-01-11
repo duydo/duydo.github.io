@@ -4,7 +4,6 @@ date: 2010-01-25T12:09:04+07:00
 lastmod: 2023-01-03T12:09:04+07:00
 draft: false
 tags: ["engineering", "java", "spring", "jpa", "hibernate", "wicket", "maven"]
-categories: ["Engineering"]
 ---
 
 This is just a quick note for someone wants to use Spring 3, Jpa 2, Hibernate 3 and Wicket within Maven 2 project.
