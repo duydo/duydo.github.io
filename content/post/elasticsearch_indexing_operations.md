@@ -1,6 +1,6 @@
 ---
-title: "Elasticsearch Indexing Data Flow"
-date: 2023-01-10T07:52:35+07:00
+title: "Understanding Elasticsearch indexing data flow"
+date: 2023-01-09T07:52:35+07:00
 lastmod: 2023-01-10T07:52:35+07:00
 draft: false
 tags: ["elasticsearch", "engineering"]
@@ -23,7 +23,7 @@ data structure that supports full-text searches efficiently and very fast.
 
 <!--more-->
 
-The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes followings steps:
+The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes following basic steps:
 
 **Step 1**: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to 
 process.
@@ -31,9 +31,7 @@ process.
 **Step 2**: The coordinator node uses the `pipeline` parameter in the indexing request to check if the document needs to 
 be enriched or transformed before routing to a data node for further processing.
 
-If `No` the document is routed to a data node in the cluster.
-
-If `Yes` the document is routed to an ingest node in the
+If answer is `No`, the document is routed to a data node in the cluster. If the answer is `Yes`, the document is routed to an ingest node in the
 cluster to enrich the document. When the enriching process is done, the ingest node continues routing the enriched document to the data node.
 
 Decision of which data node in the cluster will take the document to process further is based on index's shard information and the hashing modulo formular:
@@ -51,9 +49,6 @@ the old transaction log is deleted and the new one is created.
 
 If the replication is enabled, the replication data process are triggered. This data node sends a replication request
 to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node.
-
-
-
 
 
 
