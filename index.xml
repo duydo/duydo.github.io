@@ -21,7 +21,8 @@ Finally, the document is added to a memory buffer and appended to the transactio
 transaction log still keeps the documents until it gets big enough, a full commit is performed. The documents is flushed to disk permanently,
 the old transaction log is deleted and the new one is created.&lt;/p>
 &lt;p>If the replication is enabled, the replication data process are triggered. This data node sends a replication request
-to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node.&lt;/p></description></item><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
+to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node to
+create a copy of those documents.&lt;/p></description></item><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
 &lt;blockquote>
 &lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
 &lt;/blockquote>
