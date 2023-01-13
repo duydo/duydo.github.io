@@ -35,6 +35,10 @@ body {
   font-weight: 600;
 }
 
+.post .post-header .post-meta a {
+  color: #c05b4d;
+}
+
 .post .post-header .post-meta,
 .post .post-header .post-meta .post-meta__right {
   color: #8a8a8a;
