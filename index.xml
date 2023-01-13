@@ -1,10 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Mon, 09 Jan 2023 07:52:35 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Tue, 10 Jan 2023 12:51:30 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch Deleting Data Flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behind the scene of deleting a single document operations.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
+&lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
+&lt;/span>
+&lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to delete a document from the cluster, a coordinator node in the cluster takes the request to
+process.&lt;/p>
+&lt;p>&lt;strong>Step 2&lt;/strong>: Based on shard information and the document ID, the coordinator node routes the delete request to a data node
+which contains primary shard that stored the document.&lt;/p>
+&lt;p>&lt;strong>Step 3&lt;/strong>: The data node doesn&amp;rsquo;t delete the document immediately, it marks the document as deleted then adding it to
+the memory buffer and appending it to the transaction log. At this time, the document is unsearchable.&lt;/p>
+&lt;p>When the buffer fills up, the changes are written to a segment and the buffer is clear. In the meantime, the
+transaction log still keeps the deleted documents until it gets too big, a full commit is performed. The changes are flushed to
+disk, the document is deleted permanently.&lt;/p>
+&lt;p>If replication is enabled for the index, the replication data process gets started. This data node sends the delete request
+to a data node which contains replicas shards of the index. The whole deleting process here will be done on that node to
+delete the document from the replica shards completely.&lt;/p></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
 &lt;span class="caption-wrapper">
 &lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
 &lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
 &lt;/span>
-&lt;p>The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes following basic steps:&lt;/p>
+&lt;p>The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:&lt;/p>
 &lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
 process.&lt;/p>
 &lt;p>&lt;strong>Step 2&lt;/strong>: The coordinator node uses the &lt;code>pipeline&lt;/code> parameter in the indexing request to check if the document needs to
@@ -1443,80 +1459,4 @@ We know that JPA persists all enum constants in order we declare them in &lt;cod
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String sql &lt;span style="color:#f92672">=&lt;/span> q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">select&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">from&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">where&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username = &amp;#39;duydo&amp;#39;&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">buildQuery&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>This will make code more readable, but be careful when use this technique.&lt;/p></description></item><item><title>Liferay Portal 4.3 Final Released</title><link>http://duydo.me/liferay-portal-4.3-final-released/</link><pubDate>Wed, 04 Jul 2007 13:08:27 +0700</pubDate><guid>http://duydo.me/liferay-portal-4.3-final-released/</guid><description>&lt;p>Liferay Portal 4.3 Final was released yesterday. At work, I have to develop a server communicate with mobile device based-on Liferay portal. I’m very pleasure with this version of Liferay, mobile device is supported :-).&lt;/p>
-&lt;p>Below is its features &amp;amp; Road Map.&lt;/p>
-&lt;h3 id="architecture">Architecture&lt;/h3>
-&lt;ul>
-&lt;li>Portal Publishing &amp;amp; Staging Framework (Added Back)&lt;/li>
-&lt;li>Liferay Software Catalog&lt;/li>
-&lt;li>Provide a plug-in framework to install Liferay components&lt;/li>
-&lt;li>Sitemaps Protocol Support&lt;/li>
-&lt;li>Enterprise Search: OpenSearch Support&lt;/li>
-&lt;li>Microformat Support&lt;/li>
-&lt;li>Community-Scoped Roles (Sponsored Feature)&lt;/li>
-&lt;li>Multiple Enterprise Management, aka Dynamic Company Management (Added)&lt;/li>
-&lt;li>ICEfaces Integration for AJAX + JSF&lt;/li>
-&lt;li>Deprecate EJB services in favor of Spring POJO’s (Added)&lt;/li>
-&lt;li>Tag / Folksonomy and Asset Management Framework (Sponsored Feature)&lt;/li>
-&lt;li>Expose REST-style JSON Web Services (Added)&lt;/li>
-&lt;li>Javascript Client Libraries for JSON Web Services (Added)&lt;/li>
-&lt;li>LAR Import / Export for Themes (Sponsored Feature)&lt;/li>
-&lt;li>PHP and Ruby Support (Added)&lt;/li>
-&lt;/ul>
-&lt;h3 id="security">Security&lt;/h3>
-&lt;ul>
-&lt;li>Enterprise Password Policy Management w / Provisioning to LDAP (Added, Sponsored Feature)&lt;/li>
-&lt;li>Active Directory Single-SignOn via NTLM (Added)&lt;/li>
-&lt;li>OpenID Enabled SSO&lt;/li>
-&lt;/ul>
-&lt;h3 id="performance-improvements">Performance improvements&lt;/h3>
-&lt;ul>
-&lt;li>Database tuning&lt;/li>
-&lt;li>Scalability – optimize memory usage&lt;/li>
-&lt;/ul>
-&lt;h3 id="integration">Integration&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>Microsoft Exchange, iCal Support – Import / Export from Calendar Portlet (Added)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Yahoo Maps&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Full WebDAV Support&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Context-Sensitive Help&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Liferay Eclipse&lt;/p>
-&lt;ul>
-&lt;li>Portlet Development&lt;/li>
-&lt;li>Portlet Deployment&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Portlets&lt;/p>
-&lt;ul>
-&lt;li>Address Book&lt;/li>
-&lt;li>Tags Admin (Sponsored Feature)&lt;/li>
-&lt;li>Tags Content (Sponsored Feature)&lt;/li>
-&lt;li>Tagify Existing Portlets (Sponsored Feature)&lt;/li>
-&lt;li>PHP and Ruby Sample Portlets (Added)&lt;/li>
-&lt;li>Sample ICEfaces Portlet (Added)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Themes/Layout&lt;/p>
-&lt;ul>
-&lt;li>Role-base Theme Management (Sponsored Feature)&lt;/li>
-&lt;li>Standardize on jQuery JavaScript Framework (Added)&lt;/li>
-&lt;li>Simplify Theme Development Process (Added)&lt;/li>
-&lt;li>Semantic and Non-Obtrusive Markup&lt;/li>
-&lt;li>Standards Compliance&lt;/li>
-&lt;li>Free-form (WebOS) Layout&lt;/li>
-&lt;li>Link to Layout Type&lt;/li>
-&lt;li>Mobile Device Support (Added, Sponsored Feature)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/div>&lt;p>This will make code more readable, but be careful when use this technique.&lt;/p></description></item></channel></rss>
