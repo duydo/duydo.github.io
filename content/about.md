@@ -1,6 +1,6 @@
 ---
 type: page
-title: About Duy
+title: About
 slug: about
 draft: false
 comment: false
