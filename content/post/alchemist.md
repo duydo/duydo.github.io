@@ -2,7 +2,7 @@
 title: "Nhà Giả Kim - Paulo Coelho"
 date: 2016-04-08T17:59:15+07:00
 image: images/alchemist.jpg
-tags: ["nha-gia-kim", "alchemist", "paulo-coelho", "books", "booksduyread", "booksreviews"]
+tags: ["reading", "books"]
 draft: true
 ---
 {{<imgcap title="The Alchemist" src="/images/posts/alchemist.jpg">}}

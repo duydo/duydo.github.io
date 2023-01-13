@@ -4,7 +4,7 @@ date: 2019-08-05T14:09:54+07:00
 lastmod: 2019-08-05T14:09:54+07:00
 draft: true
 description: "Debug stuck Celery process"
-tags: ["celery", "python", "debug", "engineering"]
+tags: ["celery", "python", "engineering"]
 
 # You can also close(false) or open(true) something for this content.
 # P.S. comment can only be closed

@@ -4,7 +4,7 @@ date: 2019-04-22T13:34:43+07:00
 lastmod: 2019-04-22T13:34:43+07:00
 keywords: ["physic", "universe", "oortcloud", "books", "booksduyread", "books-reviews"]
 description: "Vũ Trụ Xa Hơn Mây Oort"
-tags: ["physic", "universe", "oortcloud", "books", "booksduyread", "booksreviews"]
+tags: ["reading", "books"]
 ---
 
 {{<imgcap title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" src="/images/posts/oort_cloud.jpg">}}

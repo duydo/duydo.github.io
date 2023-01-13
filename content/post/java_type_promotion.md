@@ -5,7 +5,7 @@ lastmod: 2018-08-06T18:51:46+07:00
 draft: false
 keywords: []
 description: ""
-tags: ["java",  "typepromotion", "engineering"]
+tags: ["java", "engineering"]
 categories: []
 author: ""
 

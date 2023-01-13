@@ -1,10 +1,10 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
+description: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
 tags: ["engineering"]
-categories: ["Engineering"]
 
 # Uncomment to pin article to front page
 # weight: 1

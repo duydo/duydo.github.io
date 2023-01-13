@@ -1,18 +1,19 @@
 ---
 type: page
-title: About
+title: About Duy
 slug: about
-draft: true
+draft: false
 comment: false
 showAuthorInfo: false
 menu: main
 ---
 
+Duy Do is 15 years of experience software engineer with solid background in both computer science and mathematics.
+His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.
 
-Duy Do is a software engineer with strong background in both computer science and mathematics. His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.
+He is a co-founder of KromLab, a young technology company, where he and his partners build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires actions.
 
-He is a co-founder of KromLab, an influencer marketing company, where he and his partners build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires action.
+He loves open sources and community building. You can find his open source softwares on [GitHub](https://github.com/duydo) or join [Elasticsearch community for Vietnamese](https://www.facebook.com/groups/elasticsearchvn/), where he found.
 
-He loves open sources, he loves community building. You can find his open source softwares on [GitHub](https://github.com/duydo) or join [Elasticsearch community for Vietnamese](https://www.facebook.com/groups/elasticsearchvn/), where he found.
+You can also find him somewhere else on [Twitter](https://twitter.com/duydo) or the roads he drives with his beloved family on weekends.
 
-You can also find him somewhere else on [Twitter](https://twitter.com/duydo) or the roads he runs every morning.

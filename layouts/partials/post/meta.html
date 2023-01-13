@@ -41,6 +41,20 @@
       </span>
     {{- end }}
 
+
+    {{ with .Params.tags -}}
+    <div class="post-meta-tags">
+      {{ range . }}
+      {{- $name := . -}}
+      {{- with $.Site.GetPage "taxonomy" (printf "tags/%s" $name) | default ($.Site.GetPage "taxonomy" (printf
+      "tags/%s" ($name | urlize))) -}}
+      <a href="{{ .Permalink }}">#{{ $name }} </a>
+      {{ end -}}
+      {{ end }}
+    </div>
+    {{- end }}
+
+
     {{ with .Params.categories -}}
     <div class="post-meta-category">
       {{ range . }}
