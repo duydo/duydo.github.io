@@ -23,7 +23,7 @@ data structure that supports full-text searches efficiently and very fast.
 
 <!--more-->
 
-The above diagram shows the data flow behind the scene when a document is indexed into a Elasticsearch cluster. It includes following basic steps:
+The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:
 
 **Step 1**: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to 
 process.
