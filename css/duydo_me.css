@@ -45,6 +45,14 @@ body {
   font-size: .9em;
 }
 
+.post .post-series a {
+  color: #c05b4d;
+}
+
+.post .post-series a.post-series-active {
+  border-bottom: 1px solid #c05b4d;
+}
+
 .post-meta-author {
   display: flex;
 }
