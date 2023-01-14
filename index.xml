@@ -13,12 +13,12 @@ process. Based on the index&amp;rsquo;s information, the coordinator node routes
 which contain index&amp;rsquo;s data.&lt;/p>
 &lt;h3 id="phase-2-search">Phase 2: Search&lt;/h3>
 &lt;p>Each data node, which received the search request in &amp;ldquo;Phase 1&amp;rdquo;, parses the request to check if any query clauses in
-search query needs to be applied &lt;em>text analysis process&lt;/em>. If &lt;code>yes&lt;/code>, the text analysis is get stared. Finally, the data node
-execute the search on every segment of index&amp;rsquo;s shards.&lt;/p>
+search query needs to be applied &lt;em>text analysis process&lt;/em>. If &lt;code>yes&lt;/code>, the text analysis processing gets started. Finally, the data node
+executes the search request on every segment of the index&amp;rsquo;s shards.&lt;/p>
 &lt;h3 id="phase-3-gather--merge">Phase 3: Gather &amp;amp; Merge&lt;/h3>
-&lt;p>The coordinator node in &amp;ldquo;Phase 1&amp;rdquo; gathers all search results from the data nodes that it routed the search request to.
-After the gathering processing is done, the merging processing gets started. It merges, ranking and sorting the search
-results then returning back to the client.&lt;/p></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
+&lt;p>The coordinator node in &amp;ldquo;Phase 1&amp;rdquo; gathers the search results from all data nodes that it routed the search request to.
+After the gathering processing is done, the merging processing gets started. It merges, ranks and sorts the search
+results then returning them back to the client.&lt;/p></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
 &lt;span class="caption-wrapper">
 &lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
 &lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
