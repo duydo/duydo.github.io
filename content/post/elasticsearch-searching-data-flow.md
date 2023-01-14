@@ -31,17 +31,15 @@ operations.
 
 Elasticsearch executes searches in phases known informally as **scatter**, **search**, **gather**, and **merge**.
 
-
 ### Phase 1: Scatter
-
 The client makes a search request to the cluster, a coordinator node in the cluster takes the request to 
 process. Based on the index's information, the coordinator node routes the search request to all data nodes
 which contain index's data.
 
 ### Phase 2: Search
 Each data node, which received the search request in "Phase 1", parses the request to check if any query clauses in 
-search query needs to be applied *text analysis process*. If `yes`, the text analysis is get stared. Finally, the data node
-execute the search on every segment of index's shards.
+search query needs to be applied *text analysis process*. If `yes`, the text analysis processing gets started. Finally, the data node
+executes the search request on every segment of the index's shards.
 
 ### Phase 3: Gather & Merge
 The coordinator node in "Phase 1" gathers all search results from the data nodes that it routed the search request to.
