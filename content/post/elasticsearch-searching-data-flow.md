@@ -3,7 +3,7 @@ title: "Understanding Elasticsearch searching data flow"
 date: 2023-01-11T22:32:29+07:00
 lastmod: 2023-01-11T22:32:29+07:00
 draft: true
-tags: ["elasticsearch","engineering"]
+tags: ["elasticsearch", "engineering"]
 series: ["Elasticsearch Basic Data Flows"]
 
 

@@ -33,6 +33,7 @@ body {
 .post .post-header .post-title {
   font-family: 'Georgia', sans-serif;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .post .post-header .post-meta a {
