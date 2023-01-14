@@ -1,10 +1,11 @@
 ---
-title: "Understanding Elasticsearch Deleting Data Flow"
+title: "Understanding Elasticsearch deleting data flow"
 description: "Elasticsearch Deleting Data Flow"
 date: 2023-01-10T12:51:30+07:00
 lastmod: 2023-01-13T12:51:30+07:00
 draft: false
 tags: ["elasticsearch","engineering"]
+series: ["Elasticsearch Basic Data Flows"]
 
 # Uncomment to pin article to front page
 # weight: 1

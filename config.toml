@@ -100,3 +100,8 @@ post = "/:slug/"
 changefreq = "weekly"
 priority = 0.5
 filename = "sitemap.xml"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"

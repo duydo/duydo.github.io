@@ -4,6 +4,8 @@ date: 2023-01-09T07:52:35+07:00
 lastmod: 2023-01-10T07:52:35+07:00
 draft: false
 tags: ["elasticsearch", "engineering"]
+series: ["Elasticsearch Basic Data Flows"]
+
 
 # Uncomment to pin article to front page
 # weight: 1

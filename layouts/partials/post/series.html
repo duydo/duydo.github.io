@@ -1,0 +1,26 @@
+{{- if .Params.series -}}
+<div class="post-series">
+  {{- with index (.GetTerms "series") 0 -}}
+  <div class="post-series-info">
+    <p>This post is part of the <a href="{{ .Permalink }}">{{ .LinkTitle }}</a> series:</p>
+  </div>
+  {{- end -}}
+
+  <div class="post-series-list">
+    {{- $series := where .Site.RegularPages.ByDate ".Params.series" "intersect" .Params.series -}}
+    {{- with $series -}}
+    <ol>
+      {{- range . -}}
+      <li>
+        {{- if eq .File.UniqueID $.File.UniqueID -}}
+        <a class="post-series-active" href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- else -}}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- end -}}
+      </li>
+      {{- end -}}
+    </ol>
+    {{- end -}}
+  </div>
+</div>
+{{- end -}}
