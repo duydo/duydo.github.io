@@ -42,10 +42,7 @@ search query needs to be applied *text analysis process*. If `yes`, the text ana
 executes the search request on every segment of the index's shards.
 
 ### Phase 3: Gather & Merge
-The coordinator node in "Phase 1" gathers all search results from the data nodes that it routed the search request to.
-After the gathering processing is done, the merging processing gets started. It merges, ranking and sorting the search 
-results then returning back to the client.
-
-
-
+The coordinator node in "Phase 1" gathers the search results from all data nodes that it routed the search request to.
+After the gathering processing is done, the merging processing gets started. It merges, ranks and sorts the search 
+results then returning them back to the client.
 
