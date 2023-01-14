@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Tue, 10 Jan 2023 12:51:30 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Wed, 11 Jan 2023 22:32:29 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch searching data flow</title><link>http://duydo.me/understanding-elasticsearch-searching-data-flow/</link><pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-searching-data-flow/</guid><description>&lt;p>&lt;strong>Search&lt;/strong> is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
+full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
+&lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
+operations.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" src="http://duydo.me/images/posts/es-searching-data-flow.png" title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
+&lt;span class="caption-text">Elasticsearch Searching Data Flow&lt;/span>
+&lt;/span>
+&lt;p>Elasticsearch executes searches in phases known informally as &lt;strong>scatter&lt;/strong>, &lt;strong>search&lt;/strong>, &lt;strong>gather&lt;/strong>, and &lt;strong>merge&lt;/strong>.&lt;/p>
+&lt;h3 id="phase-1-scatter">Phase 1: Scatter&lt;/h3>
+&lt;p>The client makes a search request to the cluster, a coordinator node in the cluster takes the request to
+process. Based on the index&amp;rsquo;s information, the coordinator node routes the search request to all data nodes
+which contain index&amp;rsquo;s data.&lt;/p>
+&lt;h3 id="phase-2-search">Phase 2: Search&lt;/h3>
+&lt;p>Each data node, which received the search request in &amp;ldquo;Phase 1&amp;rdquo;, parses the request to check if any query clauses in
+search query needs to be applied &lt;em>text analysis process&lt;/em>. If &lt;code>yes&lt;/code>, the text analysis is get stared. Finally, the data node
+execute the search on every segment of index&amp;rsquo;s shards.&lt;/p>
+&lt;h3 id="phase-3-gather--merge">Phase 3: Gather &amp;amp; Merge&lt;/h3>
+&lt;p>The coordinator node in &amp;ldquo;Phase 1&amp;rdquo; gathers all search results from the data nodes that it routed the search request to.
+After the gathering processing is done, the merging processing gets started. It merges, ranking and sorting the search
+results then returning back to the client.&lt;/p></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
 &lt;span class="caption-wrapper">
 &lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
 &lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
@@ -1374,89 +1394,4 @@ We know that JPA persists all enum constants in order we declare them in &lt;cod
 &lt;/div>
 &lt;/div>&lt;ol start="3">
 &lt;li>Done 🙂&lt;/li>
-&lt;/ol></description></item><item><title>Fluent Interface</title><link>http://duydo.me/fluent-interface/</link><pubDate>Wed, 25 Mar 2009 08:11:23 +0700</pubDate><guid>http://duydo.me/fluent-interface/</guid><description>&lt;p>I&amp;rsquo;ve played with my own framework recently, I found a new term, called &amp;ldquo;Fluent Interface&amp;rdquo;. There is a great &lt;a href="http://martinfowler.com/bliki/FluentInterface.html">article&lt;/a> of Martin Fowler about this term, you can read it if you have not heard about it yet.&lt;/p>
-&lt;p>The idea of &amp;ldquo;Fluent Interface&amp;rdquo; is instead of returning void in setter methods of an object, returning an object to promote object chaining.&lt;/p>
-&lt;p>Example:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-24">24&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Query&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String props&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String table&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String condition&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Query &lt;span style="color:#a6e22e">select&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String props&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">props&lt;/span> &lt;span style="color:#f92672">=&lt;/span> props&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Query &lt;span style="color:#a6e22e">from&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String table&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">table&lt;/span> &lt;span style="color:#f92672">=&lt;/span> table&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Query &lt;span style="color:#a6e22e">where&lt;/span>&lt;span style="color:#f92672">(&lt;/span>String condition&lt;span style="color:#f92672">)&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">condition&lt;/span> &lt;span style="color:#f92672">=&lt;/span> condition&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">buildQuery&lt;/span>&lt;span style="color:#f92672">()&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">format&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;SELECT %s FROM %s WHERE %s&amp;#34;&lt;/span>&lt;span style="color:#f92672">,&lt;/span> props&lt;span style="color:#f92672">,&lt;/span> table&lt;span style="color:#f92672">,&lt;/span> condition&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Instead of:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5">5&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Query q &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Query&lt;span style="color:#f92672">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">select&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">from&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">where&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username = &amp;#39;duydo&amp;#39;&amp;#34;&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String sql &lt;span style="color:#f92672">=&lt;/span> q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">buildQuery&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>We can write:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>Query q &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Query&lt;span style="color:#f92672">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>String sql &lt;span style="color:#f92672">=&lt;/span> q&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">select&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">from&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">where&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username = &amp;#39;duydo&amp;#39;&amp;#34;&lt;/span>&lt;span style="color:#f92672">).&lt;/span>&lt;span style="color:#a6e22e">buildQuery&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>This will make code more readable, but be careful when use this technique.&lt;/p></description></item></channel></rss>
+&lt;/ol></description></item></channel></rss>
