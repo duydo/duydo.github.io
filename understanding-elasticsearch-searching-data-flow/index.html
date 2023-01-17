@@ -8,16 +8,14 @@ operations.
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Searching Data Flow
+      
   
-  Elasticsearch Searching Data Flow
-"><meta property="og:type" content="article"><meta property="og:url" content="http://duydo.me/understanding-elasticsearch-searching-data-flow/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-01-11T22:32:29+07:00"><meta property="article:modified_time" content="2023-01-14T13:18:27+07:00"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-deleting-data-flow/"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-indexing-data-flow/"><meta itemprop=name content="Understanding Elasticsearch searching data flow"><meta itemprop=description content="Search is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
+"><meta property="og:type" content="article"><meta property="og:url" content="http://duydo.me/understanding-elasticsearch-searching-data-flow/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-01-11T22:32:29+07:00"><meta property="article:modified_time" content="2023-01-17T15:41:18+07:00"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-deleting-data-flow/"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-indexing-data-flow/"><meta itemprop=name content="Understanding Elasticsearch searching data flow"><meta itemprop=description content="Search is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.
 How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.
@@ -25,16 +23,14 @@ operations.
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Searching Data Flow
+      
   
-  Elasticsearch Searching Data Flow
-"><meta itemprop=datePublished content="2023-01-11T22:32:29+07:00"><meta itemprop=dateModified content="2023-01-14T13:18:27+07:00"><meta itemprop=wordCount content="211"><meta itemprop=keywords content="elasticsearch,engineering,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Understanding Elasticsearch searching data flow"><meta name=twitter:description content="Search is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
+"><meta itemprop=datePublished content="2023-01-11T22:32:29+07:00"><meta itemprop=dateModified content="2023-01-17T15:41:18+07:00"><meta itemprop=wordCount content="211"><meta itemprop=keywords content="elasticsearch,engineering,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Understanding Elasticsearch searching data flow"><meta name=twitter:description content="Search is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.
 How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.
@@ -42,15 +38,13 @@ operations.
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Searching Data Flow
+      
   
-  Elasticsearch Searching Data Flow
 "><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=G-MWQHCX1NZ9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MWQHCX1NZ9")</script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Duy Do</a></div><div class=mobile-navbar-icon><span></span>
@@ -64,8 +58,7 @@ operations.
 <time datetime=" 2023-01-11">Jan 11, 2023</time></span></div><div class=post-meta__right><span class=post-meta-more>1 min read</span><div class=post-meta-tags><a href=http://duydo.me/tags/elasticsearch/>#elasticsearch</a>
 <a href=http://duydo.me/tags/engineering/>#engineering</a></div></div></div></header><div class=post-series><div class=post-series-info><p>This post is part of the <a href=http://duydo.me/series/elasticsearch-basic-data-flows/>Elasticsearch Basic Data Flows</a> series:</p></div><div class=post-series-list><ol><li><a href=http://duydo.me/understanding-elasticsearch-indexing-data-flow/>Understanding Elasticsearch indexing data flow</a></li><li><a href=http://duydo.me/understanding-elasticsearch-deleting-data-flow/>Understanding Elasticsearch deleting data flow</a></li><li><a class=post-series-active href=http://duydo.me/understanding-elasticsearch-searching-data-flow/>Understanding Elasticsearch searching data flow</a></li></ol></div></div><div class=post-content><p><strong>Search</strong> is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.</p><p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
-operations.</p><span class=caption-wrapper><img class=caption src=/images/posts/es-searching-data-flow.png title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
-<span class=caption-text>Elasticsearch Searching Data Flow</span></span><p>Elasticsearch executes searches in phases known informally as <strong>scatter</strong>, <strong>search</strong>, <strong>gather</strong>, and <strong>merge</strong>.</p><h3 id=phase-1-scatter>Phase 1: Scatter</h3><p>The client makes a search request to the cluster, a coordinator node in the cluster takes the request to
+operations.</p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/images/posts/es-searching-data-flow.png></div><a href=/images/posts/es-searching-data-flow.png itemprop=contentUrl></a><figcaption><h4>Elasticsearch Searching Data Flow</h4></figcaption></figure></div><p>Elasticsearch executes searches in phases known informally as <strong>scatter</strong>, <strong>search</strong>, <strong>gather</strong>, and <strong>merge</strong>.</p><h3 id=phase-1-scatter>Phase 1: Scatter</h3><p>The client makes a search request to the cluster, a coordinator node in the cluster takes the request to
 process. Based on the index&rsquo;s information, the coordinator node routes the search request to all data nodes
 which contain index&rsquo;s data.</p><h3 id=phase-2-search>Phase 2: Search</h3><p>Each data node, which received the search request in &ldquo;Phase 1&rdquo;, parses the request to check if any query clauses in
 search query needs to be applied <em>text analysis process</em>. If <code>yes</code>, the text analysis processing gets started. Finally, the data node

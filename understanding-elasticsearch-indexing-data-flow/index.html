@@ -5,45 +5,39 @@ data structure that supports full-text searches efficiently and very fast.
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Indexing Data Flow
+      
   
-  Elasticsearch Indexing Data Flow
-"><meta property="og:type" content="article"><meta property="og:url" content="http://duydo.me/understanding-elasticsearch-indexing-data-flow/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-01-09T07:52:35+07:00"><meta property="article:modified_time" content="2023-01-14T10:51:43+07:00"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-searching-data-flow/"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-deleting-data-flow/"><meta itemprop=name content="Understanding Elasticsearch indexing data flow"><meta itemprop=description content="When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+"><meta property="og:type" content="article"><meta property="og:url" content="http://duydo.me/understanding-elasticsearch-indexing-data-flow/"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-01-09T07:52:35+07:00"><meta property="article:modified_time" content="2023-01-17T15:41:18+07:00"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-searching-data-flow/"><meta property="og:see_also" content="http://duydo.me/understanding-elasticsearch-deleting-data-flow/"><meta itemprop=name content="Understanding Elasticsearch indexing data flow"><meta itemprop=description content="When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.
 
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Indexing Data Flow
+      
   
-  Elasticsearch Indexing Data Flow
-"><meta itemprop=datePublished content="2023-01-09T07:52:35+07:00"><meta itemprop=dateModified content="2023-01-14T10:51:43+07:00"><meta itemprop=wordCount content="377"><meta itemprop=keywords content="elasticsearch,engineering,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Understanding Elasticsearch indexing data flow"><meta name=twitter:description content="When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+"><meta itemprop=datePublished content="2023-01-09T07:52:35+07:00"><meta itemprop=dateModified content="2023-01-17T15:41:18+07:00"><meta itemprop=wordCount content="377"><meta itemprop=keywords content="elasticsearch,engineering,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Understanding Elasticsearch indexing data flow"><meta name=twitter:description content="When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.
 
 
 
 
-
-
-
-
-
-
-
+    
+      
+    
+    
+      Elasticsearch Indexing Data Flow
+      
   
-  Elasticsearch Indexing Data Flow
 "><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--><script async src="https://www.googletagmanager.com/gtag/js?id=G-MWQHCX1NZ9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MWQHCX1NZ9")</script></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Duy Do</a></div><div class=mobile-navbar-icon><span></span>
@@ -56,8 +50,7 @@ data structure that supports full-text searches efficiently and very fast.
 <span class=post-meta-author-name-wrapper><span class=post-meta-author-name><a href=/about>Duy Do</a></span>
 <time datetime=" 2023-01-09">Jan 09, 2023</time></span></div><div class=post-meta__right><span class=post-meta-more>2 min read</span><div class=post-meta-tags><a href=http://duydo.me/tags/elasticsearch/>#elasticsearch</a>
 <a href=http://duydo.me/tags/engineering/>#engineering</a></div></div></div></header><div class=post-series><div class=post-series-info><p>This post is part of the <a href=http://duydo.me/series/elasticsearch-basic-data-flows/>Elasticsearch Basic Data Flows</a> series:</p></div><div class=post-series-list><ol><li><a class=post-series-active href=http://duydo.me/understanding-elasticsearch-indexing-data-flow/>Understanding Elasticsearch indexing data flow</a></li><li><a href=http://duydo.me/understanding-elasticsearch-deleting-data-flow/>Understanding Elasticsearch deleting data flow</a></li><li><a href=http://duydo.me/understanding-elasticsearch-searching-data-flow/>Understanding Elasticsearch searching data flow</a></li></ol></div></div><div class=post-content><p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
-data structure that supports full-text searches efficiently and very fast.</p><span class=caption-wrapper><img class=caption src=/images/posts/es_index_operations.png title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
-<span class=caption-text>Elasticsearch Indexing Data Flow</span></span><p>The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:</p><p><strong>Step 1</strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
+data structure that supports full-text searches efficiently and very fast.</p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/images/posts/es_index_operations.png></div><a href=/images/posts/es_index_operations.png itemprop=contentUrl></a><figcaption><h4>Elasticsearch Indexing Data Flow</h4></figcaption></figure></div><p>The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:</p><p><strong>Step 1</strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
 process.</p><p><strong>Step 2</strong>: The coordinator node uses the <code>pipeline</code> parameter in the indexing request to check if the document needs to
 be enriched or transformed before routing to a data node for further processing.</p><p>If answer is <code>No</code>, the document is routed to a data node in the cluster. If the answer is <code>Yes</code>, the document is routed to an ingest node in the
 cluster to enrich the document. When the enriching process is done, the ingest node continues routing the enriched document to the data node.</p><p>Decision of which data node in the cluster will take the document to process further is based on index&rsquo;s shard information and the hashing modulo formular:</p><p><code>shard = hash(routing) % number_of_shards</code></p><p><strong>Step 3</strong>: The data node parses the document to a JSON object then checking if there is any <code>text</code> values in the object.

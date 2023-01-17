@@ -2,20 +2,44 @@
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
 &lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-searching-data-flow.png" title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
-&lt;span class="caption-text">Elasticsearch Searching Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
-&lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-searching-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-searching-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Searching Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-deleting-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-deleting-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Deleting Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
-&lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
-1 2 byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es_index_operations.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es_index_operations.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Indexing Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
+byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
 Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description></item><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
 https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description></item><item><title>How Elasticsearch cluster works</title><link>http://duydo.me/how-elasticsearch-cluster-works/</link><pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate><guid>http://duydo.me/how-elasticsearch-cluster-works/</guid><description>&lt;p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p>
 &lt;ul>

@@ -2,10 +2,18 @@
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
 &lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-searching-data-flow.png" title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
-&lt;span class="caption-text">Elasticsearch Searching Data Flow&lt;/span>
-&lt;/span>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-searching-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-searching-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Searching Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Elasticsearch executes searches in phases known informally as &lt;strong>scatter&lt;/strong>, &lt;strong>search&lt;/strong>, &lt;strong>gather&lt;/strong>, and &lt;strong>merge&lt;/strong>.&lt;/p>
 &lt;h3 id="phase-1-scatter">Phase 1: Scatter&lt;/h3>
 &lt;p>The client makes a search request to the cluster, a coordinator node in the cluster takes the request to
@@ -19,10 +27,18 @@ executes the search request on every segment of the index&amp;rsquo;s shards.&lt
 &lt;p>The coordinator node in &amp;ldquo;Phase 1&amp;rdquo; gathers the search results from all data nodes that it routed the search request to.
 After the gathering processing is done, the merging processing gets started. It merges, ranks and sorts the search
 results then returning them back to the client.&lt;/p></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
-&lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
-&lt;/span>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-deleting-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-deleting-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Deleting Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to delete a document from the cluster, a coordinator node in the cluster takes the request to
 process.&lt;/p>
 &lt;p>&lt;strong>Step 2&lt;/strong>: Based on shard information and the document ID, the coordinator node routes the delete request to a data node
@@ -36,10 +52,18 @@ disk, the document is deleted permanently.&lt;/p>
 to a data node which contains replicas shards of the index. The whole deleting process here will be done on that node to
 delete the document from the replica shards completely.&lt;/p></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
-&lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
-&lt;/span>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es_index_operations.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es_index_operations.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Indexing Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:&lt;/p>
 &lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
 process.&lt;/p>
@@ -86,26 +110,7 @@ is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
 &lt;p>\[p(k) = 10p(k-1) + a(k)\]&lt;/p>
 &lt;p>&lt;em>p(k)&lt;/em> is prime therefore &lt;em>a(k)&lt;/em> and &lt;em>10p(k-1)&lt;/em>, or 2&lt;em>5&lt;/em>p(k-1), must not have common divisors. This leads to value of &lt;em>a(k)&lt;/em> must be 1, 3, 7 or 9.&lt;/p>
 &lt;p>From above analysis we have an algorithm to find the largest right-truncatable prime:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-15">15&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(1) Let K = number of digits of N
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(2) Initialize A = {2, 3, 5, 7}, B = {1, 3, 7, 9}, MAX_PRIME
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(3) For i = 2, 3,... up to K:
@@ -120,92 +125,9 @@ is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If P is empty: Exit loop (3)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Else: Set A = P
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(4) Return MAX_PRIME
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>In step (3), in order to check if a number is prime we can use different algorithms such as: Eratosthenes, Atkin, AKS and Miller-Rabin. I choose &lt;a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin&lt;/a> for testing large input number.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In step (3), in order to check if a number is prime we can use different algorithms such as: Eratosthenes, Atkin, AKS and Miller-Rabin. I choose &lt;a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin&lt;/a> for testing large input number.&lt;/p>
 &lt;p>Below is a program I wrote in Python to implement the algorithm. The algorithm can be optimized for more efficient but I leave it for now as an exercise for whom is interested in.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-24">24&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-25">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-25">25&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-26">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-26">26&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-27">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-27">27&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-28">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-28">28&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-29">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-29">29&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-30">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-30">30&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-31">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-31">31&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-32">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-32">32&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-33">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-33">33&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-34">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-34">34&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-35">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-35">35&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-36">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-36">36&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-37">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-37">37&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-38">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-38">38&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-39">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-39">39&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-40">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-40">40&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-41">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-41">41&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-42">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-42">42&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-43">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-43">43&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-44">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-44">44&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-45">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-45">45&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-46">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-46">46&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-47">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-47">47&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-48">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-48">48&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-49">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-49">49&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-50">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-50">50&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-51">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-51">51&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-52">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-52">52&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-53">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-53">53&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-54">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-54">54&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-55">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-55">55&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-56">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-56">56&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-57">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-57">57&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-58">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-58">58&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-59">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-59">59&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-60">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-60">60&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-61">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-61">61&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-62">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-62">62&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-63">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-63">63&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-64">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-64">64&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-65">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-65">65&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-66">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-66">66&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-67">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-67">67&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-68">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-68">68&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-69">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-69">69&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-70">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-70">70&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-71">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-71">71&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-72">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-72">72&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-73">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-73">73&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-74">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-74">74&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-75">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-75">75&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-76">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-76">76&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-77">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-77">77&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> random &lt;span style="color:#f92672">import&lt;/span> randrange
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> random &lt;span style="color:#f92672">import&lt;/span> randrange
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__author__ &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;duydo&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -282,29 +204,27 @@ is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:&lt;/p>
 &lt;p>&lt;code>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373, 379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339, 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399, 71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933, 593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999, 3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999, 59393339, 73939133&lt;/code>&lt;/p>
-&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Vũ Trụ Xa Hơn Mây Oort</title><link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link><pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate><guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid><description>&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/oort_cloud.jpg" title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" alt="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn">
-&lt;span class="caption-text">Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span>
-&lt;/span>
+&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Vũ Trụ Xa Hơn Mây Oort</title><link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link><pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate><guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/oort_cloud.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/oort_cloud.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Từ lúc có ý thức về gia đình, cội nguồn mình luôn mong một ngày nào đó có thể tìm thấy được nguồn gốc khởi thủy của dòng họ Đỗ, hay các dòng họ khác, hay xa hơn nữa là nguồn gốc khởi thủy của loài người&amp;hellip;cứ thế nhìn về quá khứ xa xăm, hiểu được nơi vạn vật được bắt đầu, nơi vũ trụ được sinh ra.&lt;/p>
 &lt;p>Nếu bạn có thắc mắc như mình thì thử tìm đọc cuốn &amp;ldquo;Vũ Trụ Xa Hơn Mây Oort&amp;rdquo;, cuốn sách giải đáp được phần nào về sự hình thành của vũ trụ. Chỉ cần nhớ lại kiến thức về các hạt cơ bản và các định luật vật lý đã học thời trung học là có thể hiểu được hầu hết nội dung của cuốn sách.&lt;/p>
 &lt;p>Nội dung cuốn sách dẫn dắt chúng ta đi từ những hạt cơ bản cho đến sự hành thành các ngôi sao, hành tinh hay các hố đen trong vũ trụ. Các bạn sẽ tìm thấy trong đó lý do tại sao thuyết Big Bang được các nhà khoa học chấp nhận rộng rãi xem như là khởi thủy của vũ trụ, hay việc không thể tách rời giữa không gian, thời gian và vật chất, hoặc hình dạng của các ngôi sao, hành tinh là hình cầu mà không phải hình dạng nào khác&amp;hellip;&lt;/p>
 &lt;p>Happy reading &amp;lt;3&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">byte&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">byte&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#f92672">=&lt;/span> b &lt;span style="color:#f92672">*&lt;/span> 2&lt;span style="color:#f92672">;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p>
 &lt;p>Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
 Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiểu &lt;code>byte&lt;/code> và gán giá trị &lt;code>1&lt;/code>, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu &lt;code>byte&lt;/code> trong Java từ -128 đến 127.&lt;/p>
 &lt;p>Dòng mã tiếp theo gán &lt;code>b = b * 2&lt;/code>, lúc này biểu thức &lt;code>b * 2&lt;/code> sẽ có giá trị là &lt;code>1 * 2 = 2&lt;/code>, thuộc tầm trị [-128, 127] nên hoàn toàn có thể gán được lại cho b. Từ đây các bạn trả lời như đinh đóng cột đoạn mã trên biên dịch và chạy được là cái chắc :D&lt;/p>
@@ -335,10 +255,18 @@ Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiể
 &lt;blockquote>
 &lt;p>Với mọi bằng chứng rõ ràng, điều bản chất với bố mẹ là đọc cho con cái họ khi chúng còn nhỏ vì đó là sự phát triển phần não mấu chốt của chúng và giáo dục tương lai của chúng. Anh không thể &amp;ldquo;khoán ngoài&amp;rdquo; giáo dục con anh cho người khác rồi phàn nàn rằng họ không giúp cho chúng. Giáo dục yêu cầu bố mẹ tham gia từ sớm, đặc biệt trong tuổi mấu chốt nhất từ bốn tới mười hai tuổi khi não chúng đang phát triển, và họ cần chắc con cái họ đọc sách.&lt;/p>
 &lt;/blockquote>
-&lt;p>Cách trẻ em đọc và điều chúng đọc sẽ xác định nhiều về thái độ của người lớn về thế giới bao quanh họ. Trong thời đại thông tin nơi mọi thứ đang xảy ra nhanh chóng, bạn cần có gốc rễ vững chắc hay tri thức sâu để duy trì viễn cảnh nhìn cuộc sống của bạn; bằng không bạn sẽ bị ảnh hưởng bởi nhiều thứ tới mức điều đó có thể đẩy bạn ra khỏi việc kiểm soát.&lt;/p></description></item><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" title="Duy Do talked about Elasticsearch at Barcamp 2016" alt="Duy Do talked about Elasticsearch at Barcamp 2016">
-&lt;span class="caption-text">Duy Do talked about Elasticsearch at Barcamp 2016&lt;/span>
-&lt;/span>
+&lt;p>Cách trẻ em đọc và điều chúng đọc sẽ xác định nhiều về thái độ của người lớn về thế giới bao quanh họ. Trong thời đại thông tin nơi mọi thứ đang xảy ra nhanh chóng, bạn cần có gốc rễ vững chắc hay tri thức sâu để duy trì viễn cảnh nhìn cuộc sống của bạn; bằng không bạn sẽ bị ảnh hưởng bởi nhiều thứ tới mức điều đó có thể đẩy bạn ra khỏi việc kiểm soát.&lt;/p></description></item><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Duy Do talked about Elasticsearch at Barcamp 2016&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Mình không biết các ngành nghề khác như thế nào chứ riêng ngành kỹ thuật phần mềm như bọn mình đang làm thì kỹ năng mềm là kỹ năng cực kỳ quan trọng, ảnh hưởng rất lớn đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p>
 &lt;p>Ngoài kiến thức chuyên môn, các bạn sinh viên hay các bạn trẻ mới bước vào nghề hãy nghiêm túc trao dồi kỹ năng mềm cho thật tốt, đặc biệt là kỹ năng giao tiếp. Hãy lập cho mình một blog, viết bài chia sẻ những gì mình học được, những gì mình đã và đang làm, cố gắng đi dự hội thảo bổ ích, quan sát xem ngoài kia người ta đang làm gì, có gì hay ho để học hỏi không. Hãy mạnh dạn nói chuyện ở các hội thảo, để rèn luyện khả năng trình bày, giải thích cho người khác hiểu. Mình chỉ thật sự hiểu một chủ đề nào đó sâu sắc khi mình có thể giải thích cho người khác hiểu nó một cách dễ dàng, cụ Einstein từng nói:&lt;/p>
 &lt;blockquote>
@@ -354,17 +282,32 @@ Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiể
 &lt;p>In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&amp;rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After careful consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&amp;rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.&lt;/p>
 &lt;p>Although I don&amp;rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.&lt;/p>
 &lt;p>By the way, I want to send my big thanks to &lt;a href="https://twitter.com/warkolm">Mark Walkom&lt;/a>, who referred me to Elastic team :-)&lt;/p></description></item><item><title>Alan Turing</title><link>http://duydo.me/alan-turing/</link><pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate><guid>http://duydo.me/alan-turing/</guid><description>&lt;p>Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/alan_turing.jpg" title="Alan Turing" alt="Alan Turing">
-&lt;span class="caption-text">Alan Turing&lt;/span>
-&lt;/span>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/alan_turing.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/alan_turing.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Alan Turing&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Ắt hẳn ai học chuyên ngành máy tính cũng ít nhiều biết về Alan Turing. Ông là một nhà toán học, nhà mật mã học thiên tài người Anh, ông đã khai sinh ra ngành khoa học máy tính, đưa ra những lý thuyết đầu tiên về trí thông minh nhân tạo.&lt;/p>
 &lt;p>Trong chiến tranh thế giới lần 2, nhờ vào tài năng toán học cùng khả năng giải mã xuất chúng của mình Turing đã chế tạo ra được chiếc máy giải mã các thông điệp tình báo, chỉ thị quận sự mật của hải quân Đức được mã hóa bởi máy Enigma, giúp quân Đồng Minh đánh bại Hitler cứu được hàng triệu sinh mạng, góp phần làm cho cuộc chiến kết thúc sớm hơn dự tính.&lt;/p>
 &lt;p>Máy Enigma được người Đức chế tạo dùng để tạo mã hóa và giải mã các thông tin cơ mật, họ tin rằng nó là một chiếc máy siêu bảo mật không ai có thể thể phá được mật mã của họ, một kí tự bị mã hóa có khả năng cho ra tới 159 nghìn tỷ kết quả khác nhau khi giải mã. Giải mã được Enigma nhưng chính phủ Anh giữ bí mật, mãi đến 30 năm sau khi chiến tranh thế giới lần 2 kết thúc họ mới công bố và thừa nhận. Chi tiết về cuộc giải mã này được dựng thành bộ phim rất xuất xắc &amp;ldquo;The Imitation Game&amp;rdquo;, bạn nào tò mò có thể xem để hiểu thêm nhé.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/enigma.jpg" title="Enigma" alt="Enigma">
-&lt;span class="caption-text">Enigma&lt;/span>
-&lt;/span>
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/enigma.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/enigma.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Enigma&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Tài năng là thế nhưng cuộc đời của Turing là một bi kịch chỉ bởi…ông là người đồng tính. Ông bị cảnh sát Anh bắt vào năm 1952 vì đồng tính là &amp;ldquo;lăng nhục thuần phong mỹ tục&amp;rdquo;, họ buộc ông phải chọn một là ở tù hai là phải dùng thuốc &amp;ldquo;điều trị&amp;rdquo; giảm ham muốn tình dục, một hình thức thiến hóa học biến ông thành phụ nữ. Vì ở tù thì ông không thể nào tiếp tục công việc của mình nên ông đã chọn “điều trị” để ông được tiếp tục làm việc. Hàng ngày phải dùng thuốc điều trị khiến ông đau đớn ức chế, bế tắc, cơ thể thay đổi, vú phát triển to lên. Không chịu nổi điều này, ông đã kết liễu cuộc đời mình bằng chất độc Cyanua 2 năm sau đó, 1954, lúc ông 41 tuổi. Một cái kết buồn cho một tài năng xuất chúng của nhân loại.&lt;/p>
 &lt;p>Năm 2009, Thủ tướng Anh Gordon Brown chính thức xin lỗi vì cách hành xử khủng khiếp đối với ông. Năm 2012 nhân kỉ niệm 100 năm ngày sinh của Turing, các nhà khoa Anh đã yêu cầu chính phủ Anh hủy bản án bất công này đối với ông. Cuối năm 2013 Nữ Hoàng Elizabeth II đã chính thức đưa ra lệnh đặc xá sau 60 năm bị kết án vì đồng tính.&lt;/p>
 &lt;p>Mình rất thích câu nói nổi tiếng này của Alan Turing:&lt;/p>
@@ -373,35 +316,10 @@ Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiể
 &lt;/blockquote></description></item><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p>
 &lt;h3 id="installation">Installation&lt;/h3>
 &lt;p>Just download the &lt;code>evm&lt;/code> script and make it executable.&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo curl -o /usr/local/bin/evm https://raw.githubusercontent.com/duydo/evm/master/evm
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo curl -o /usr/local/bin/evm https://raw.githubusercontent.com/duydo/evm/master/evm
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x /usr/local/bin/evm
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="usage">Usage&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-13">13&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm -h Print help information
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="usage">Usage&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm -h Print help information
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm -V Print version information
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm list List all installed ES versions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm version Print the current activated ES version
@@ -414,22 +332,8 @@ Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiể
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start &lt;span style="color:#f92672">[&lt;/span>-c &amp;lt;/path/to/config/dir&amp;gt;&lt;span style="color:#f92672">]&lt;/span> Start ES in the background with a specific config directory &lt;span style="color:#f92672">(&lt;/span>optional&lt;span style="color:#f92672">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm stop Stop ES &lt;span style="color:#66d9ef">if&lt;/span> it is running
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm status Check &lt;span style="color:#66d9ef">if&lt;/span> ES is running
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="example">Example&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7">7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8">8&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm install 5.3.1 Install ES 5.3.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm install 5.3.1 Install ES 5.3.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm use 5.3.1 Use ES 5.3.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start Start ES node with the default config directory
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start -c /etc/elasticsearch Start ES node with /etc/elasticsearch config directory
@@ -437,96 +341,46 @@ Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiể
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm stop Stop ES &lt;span style="color:#66d9ef">if&lt;/span> it is running
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin install x-pack Install the x-pack plugin
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin remove x-pack Remove the x-pack plugin
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>How to build Elasticsearch Vietnamese Analysis Plugin</title><link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid><description>&lt;p>Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to build Elasticsearch Vietnamese Analysis Plugin</title><link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid><description>&lt;p>Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p>
 &lt;h2 id="step-1-install-java-maven--git">Step 1: Install Java, Maven &amp;amp; Git&lt;/h2>
 &lt;p>The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing &lt;a href="https://www.java.com/en/download/help/download_options.xml">Java&lt;/a>, &lt;a href="https://maven.apache.org/install.html">Maven&lt;/a> and &lt;a href="https://www.atlassian.com/git/tutorials/install-git">Git&lt;/a>.&lt;/p>
 &lt;p>If you are using Mac, just use these commands:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>brew cask install java
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>brew cask install java
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install maven
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer&lt;/h2>
 &lt;p>The plugin is based on the VNTokenizer library, you have to build it before building the plugin&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/vn-nlp-libraries.git
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/vn-nlp-libraries.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd vn-nlp-libraries/nlp-parent
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn install
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="step-3-build-the-plugin">Step 3: Build the plugin&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-build-the-plugin">Step 3: Build the plugin&lt;/h2>
 &lt;p>Clone the plugin&amp;rsquo;s source code:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Edit the &lt;code>elasticsearch-analysis-vietnamese/pom.xml&lt;/code> to change the version of Elasticsearch you want to build the plugin with:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-6">6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-7">7&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Edit the &lt;code>elasticsearch-analysis-vietnamese/pom.xml&lt;/code> to change the version of Elasticsearch you want to build the plugin with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;project.build.java.version&amp;gt;&lt;/span>1.8&lt;span style="color:#f92672">&amp;lt;/project.build.java.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;elasticsearch.version&amp;gt;&lt;/span>5.2.1&lt;span style="color:#f92672">&amp;lt;/elasticsearch.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;lucene.version&amp;gt;&lt;/span>6.4.1&lt;span style="color:#f92672">&amp;lt;/lucene.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Build the plugin:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd elasticsearch-analysis-vietnamese
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Build the plugin:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd elasticsearch-analysis-vietnamese
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn package
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="step-4-install-the-plugin">Step 4: Install the plugin&lt;/h2>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mvn clean package
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-install-the-plugin">Step 4: Install the plugin&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mvn clean package
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>&lt;p>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
 &lt;/div>
-&lt;/div></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>&lt;p>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" title="" alt="">
-&lt;span class="caption-text">&lt;/span>
-&lt;/span>
+&lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
+&lt;/figure>
+&lt;/div>
 &lt;p>&lt;iframe id="talk_frame_370710" class="speakerdeck-iframe" src="//speakerdeck.com/player/9fa7022cc8da4e06be30f5e84ab03248" width="710" height="399" style="aspect-ratio:710/399; border:0; padding:0; margin:0; background:transparent;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" mozallowfullscreen="true" webkitallowfullscreen="true">&lt;/iframe>
 &lt;/p>
 &lt;p>&lt;a href="https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch" target="_blank">https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch&lt;/a>&lt;/p></description></item><item><title>How Elasticsearch cluster works</title><link>http://duydo.me/how-elasticsearch-cluster-works/</link><pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate><guid>http://duydo.me/how-elasticsearch-cluster-works/</guid><description>&lt;p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p>
@@ -610,48 +464,14 @@ mozallowfullscreen="true">
 &lt;p>You can download an example project &lt;a href="https://www.dropbox.com/s/jf2yys51l4k8r1x/wicket-spring-jpa-hibernate.zip?dl=0">here&lt;/a> and remember that only Spring version from 3.0.1 supports JPA 2 fully.&lt;/p>
 &lt;h3 id="i-add-properties-and-dependencies-into-your-pomxml-file">I. Add properties and dependencies into your POM.XML file&lt;/h3>
 &lt;h4 id="1-add-properties">1. Add properties&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6">6&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;wicket.version&amp;gt;&lt;/span>1.4.9&lt;span style="color:#f92672">&amp;lt;/wicket.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;spring.version&amp;gt;&lt;/span>3.0.2.RELEASE&lt;span style="color:#f92672">&amp;lt;/spring.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;hibernate.version&amp;gt;&lt;/span>3.5.1-Final&lt;span style="color:#f92672">&amp;lt;/hibernate.version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h4 id="2-add-wicket-dependencies">2. Add Wicket dependencies&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-18">18&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- WICKET DEPENDENCIES --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="2-add-wicket-dependencies">2. Add Wicket dependencies&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- WICKET DEPENDENCIES --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.apache.wicket&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>wicket&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -669,66 +489,8 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>wicket-spring&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>${wicket.version}&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h4 id="3-add-spring-3-dependencies">3. Add Spring 3 dependencies&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-24">24&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-25">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-25">25&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-26">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-26">26&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-27">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-27">27&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-28">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-28">28&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-29">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-29">29&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-30">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-30">30&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-31">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-31">31&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-32">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-32">32&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-33">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-33">33&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-34">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-34">34&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-35">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-35">35&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-36">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-36">36&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-37">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-37">37&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-38">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-38">38&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-39">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-39">39&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-40">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-40">40&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-41">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-41">41&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-42">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-42">42&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-43">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-43">43&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-44">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-44">44&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-45">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-45">45&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-46">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-46">46&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-47">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-47">47&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-48">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-48">48&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-49">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-49">49&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-50">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-50">50&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-51">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-51">51&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-52">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-52">52&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- SPRING DEPENDENCIES --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-add-spring-3-dependencies">3. Add Spring 3 dependencies&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- SPRING DEPENDENCIES --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-core&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -780,38 +542,8 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>${spring.version}&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>test&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h4 id="4-add-jpa-2o-hibernate-3-dependencies">4. Add JPA 2.o /Hibernate 3 dependencies&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-24">24&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;!-- HIBERNATE 3.5.1 JPA --&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="4-add-jpa-2o-hibernate-3-dependencies">4. Add JPA 2.o /Hibernate 3 dependencies&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;!-- HIBERNATE 3.5.1 JPA --&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;dependency&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;groupId&amp;gt;org.hibernate.java-persistence&amp;lt;/groupId&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;artifactId&amp;gt;jpa-api&amp;lt;/artifactId&amp;gt;
@@ -835,32 +567,9 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;version&amp;gt;1.2.125&amp;lt;/version&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/dependency&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="ii-create-applicationcontextxml-for-spring-3">II. Create applicationContext.xml for Spring 3&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ii-create-applicationcontextxml-for-spring-3">II. Create applicationContext.xml for Spring 3&lt;/h3>
 &lt;h4 id="1-create-applicationproperties-for-datasource-and-jpa-configuration">1. Create application.properties for datasource and jpa configuration:&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-17">17&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># connection pool config (c3p0 ComboPooledDataSource)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># connection pool config (c3p0 ComboPooledDataSource)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># all time values are in seconds
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c3p0.minPoolSize=2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c3p0.maxPoolSize=20
@@ -877,81 +586,8 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jpa.databasePlatform=org.hibernate.dialect.HSQLDialect
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jpa.generateDdl=true
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jpa.showSql=true
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h4 id="2-an-example-applicatoncontextxml">2. An example applicatonContext.xml:&lt;/h4>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-24">24&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-25">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-25">25&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-26">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-26">26&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-27">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-27">27&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-28">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-28">28&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-29">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-29">29&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-30">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-30">30&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-31">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-31">31&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-32">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-32">32&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-33">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-33">33&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-34">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-34">34&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-35">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-35">35&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-36">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-36">36&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-37">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-37">37&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-38">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-38">38&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-39">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-39">39&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-40">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-40">40&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-41">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-41">41&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-42">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-42">42&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-43">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-43">43&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-44">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-44">44&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-45">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-45">45&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-46">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-46">46&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-47">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-47">47&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-48">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-48">48&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-49">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-49">49&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-50">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-50">50&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-51">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-51">51&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-52">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-52">52&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-53">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-53">53&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-54">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-54">54&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-55">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-55">55&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-56">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-56">56&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-57">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-57">57&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-58">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-58">58&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-59">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-59">59&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-60">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-60">60&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-61">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-61">61&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-62">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-62">62&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-63">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-63">63&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-64">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-64">64&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-65">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-65">65&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-66">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-66">66&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-67">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-67">67&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="2-an-example-applicatoncontextxml">2. An example applicatonContext.xml:&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;beans&lt;/span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.springframework.org/schema/beans&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:xsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">xmlns:context=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.springframework.org/schema/context&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns:tx=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.springframework.org/schema/tx&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">xmlns:p=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.springframework.org/schema/p&amp;#34;&lt;/span>
@@ -1018,22 +654,8 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;bean&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;wicketApplication&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">class=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.duydo.WicketApplication&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/beans&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="iii-modify-your-persistencexml-as-following">III. Modify your PERSISTENCE.XML as following&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-6">6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-7">7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-8">8&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="iii-modify-your-persistencexml-as-following">III. Modify your PERSISTENCE.XML as following&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;persistence&lt;/span> &lt;span style="color:#a6e22e">version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.0&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://java.sun.com/xml/ns/persistence&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">xmlns:xsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xsi:schemaLocation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
@@ -1041,58 +663,8 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;provider&amp;gt;&lt;/span>org.hibernate.ejb.HibernatePersistence&lt;span style="color:#f92672">&amp;lt;/provider&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/persistence-unit&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/persistence&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="iv-modify-your-webxml-as-following">IV. Modify your WEB.XML as following&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-17">17&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-18">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-18">18&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-19">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-19">19&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-20">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-20">20&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-21">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-21">21&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-22">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-22">22&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-23">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-23">23&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-24">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-24">24&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-25">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-25">25&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-26">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-26">26&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-27">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-27">27&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-28">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-28">28&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-29">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-29">29&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-30">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-30">30&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-31">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-31">31&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-32">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-32">32&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-33">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-33">33&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-34">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-34">34&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-35">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-35">35&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-36">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-36">36&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-37">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-37">37&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-38">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-38">38&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-39">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-39">39&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-40">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-40">40&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-41">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-41">41&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-42">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-42">42&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-43">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-43">43&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-44">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-44">44&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="iv-modify-your-webxml-as-following">IV. Modify your WEB.XML as following&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;web-app&lt;/span> &lt;span style="color:#a6e22e">xmlns=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://java.sun.com/xml/ns/j2ee&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">xmlns:xsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">xsi:schemaLocation=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">version=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;2.4&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
@@ -1136,29 +708,11 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;listener-class&amp;gt;&lt;/span>org.springframework.web.context.ContextLoaderListener&lt;span style="color:#f92672">&amp;lt;/listener-class&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/listener&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/web-app&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Effective JPA with Enumeration</title><link>http://duydo.me/effective-jpa-with-enumeration/</link><pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate><guid>http://duydo.me/effective-jpa-with-enumeration/</guid><description>&lt;p>How to persist an enumeration effectively? Here is my experience.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Effective JPA with Enumeration</title><link>http://duydo.me/effective-jpa-with-enumeration/</link><pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate><guid>http://duydo.me/effective-jpa-with-enumeration/</guid><description>&lt;p>How to persist an enumeration effectively? Here is my experience.&lt;/p>
 &lt;p>I will use Wordpress for example. We all know that every post in Wordpress blog system has a status with possible values: draft, pending-review, published&amp;hellip;&lt;/p>
 &lt;p>There are some ways to model the post entity. We can save status as an integer value in database: &lt;code>draft -&amp;gt; 0&lt;/code>, &lt;code>pending-review -&amp;gt; 1&lt;/code>, &lt;code>published -&amp;gt; 2&lt;/code>&lt;/p>
 &lt;h3 id="version-1">Version 1&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-12">12&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Entity&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Entity&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Post&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> Integer status&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1170,80 +724,26 @@ mozallowfullscreen="true">
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">status&lt;/span> &lt;span style="color:#f92672">=&lt;/span> status&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Well that&amp;rsquo;s ok, clients can use it like this:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Well that&amp;rsquo;s ok, clients can use it like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//Draft post
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>post&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setStatus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>0&lt;span style="color:#f92672">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>repository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">store&lt;/span>&lt;span style="color:#f92672">(&lt;/span>post&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>But this is not safe, the clients can set any integer value for status. For more safe, we can define constants for status values like this:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">PostStatus&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But this is not safe, the clients can set any integer value for status. For more safe, we can define constants for status values like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">PostStatus&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> Integer DRAFT &lt;span style="color:#f92672">=&lt;/span> 0&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> Integer PENDING_REVIEW &lt;span style="color:#f92672">=&lt;/span> 1&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> Integer PUBLISHED &lt;span style="color:#f92672">=&lt;/span> 2&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Now the clients can use:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-3-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now the clients can use:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//Draft post
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>post&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setStatus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>PostStatus&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">DRAFT&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>repository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">store&lt;/span>&lt;span style="color:#f92672">(&lt;/span>post&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>But it is still not safe, because the clients maybe do not use &lt;code>PostStatus&lt;/code> class. So for more safe, what we need to do?
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But it is still not safe, because the clients maybe do not use &lt;code>PostStatus&lt;/code> class. So for more safe, what we need to do?
 Yes, we can force the clients use &lt;code>PostStatus&lt;/code> by declaring &lt;code>PostStatus&lt;/code> as an &lt;code>Enum&lt;/code> and make it dependency in &lt;code>Post&lt;/code> class:&lt;/p>
 &lt;h3 id="version-2">Version 2&lt;/h3>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-13">13&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-14">14&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-15">15&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-16">16&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-4-17">17&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> PostStatus &lt;span style="color:#f92672">{&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> PostStatus &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DRAFT&lt;span style="color:#f92672">,&lt;/span> PENDING_REVIEW&lt;span style="color:#f92672">,&lt;/span> PUBLISHED&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1260,45 +760,16 @@ Yes, we can force the clients use &lt;code>PostStatus&lt;/code> by declaring &lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">status&lt;/span> &lt;span style="color:#f92672">=&lt;/span> status&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>And now the clients can use it:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-5-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And now the clients can use it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>Post post &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">...;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//Draft post
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>post&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">setStatus&lt;/span>&lt;span style="color:#f92672">(&lt;/span>PostStatus&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">DRAFT&lt;/span>&lt;span style="color:#f92672">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>repository&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">store&lt;/span>&lt;span style="color:#f92672">(&lt;/span>post&lt;span style="color:#f92672">);&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Well, it is better. But wait&amp;hellip;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Well, it is better. But wait&amp;hellip;
 We know that JPA persists all enum constants in order we declare them in &lt;code>PostStatus&lt;/code> with value started from 0. This is limitation, we can not change order of constants, we only can append a new constant. How does we solve this limitation?&lt;/p>
 &lt;h3 id="version-3">Version 3&lt;/h3>
 &lt;p>&lt;code>Enum&lt;/code> type in Java 5 is wonderful, we can add constructor and do some business logic in it. Apply it we can re-write &lt;code>PostStatus&lt;/code> like this:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-6-13">13&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> PostStatus &lt;span style="color:#f92672">{&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">enum&lt;/span> PostStatus &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DRAFT&lt;span style="color:#f92672">(&lt;/span>0&lt;span style="color:#f92672">),&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PENDING_REVIEW&lt;span style="color:#f92672">(&lt;/span>1&lt;span style="color:#f92672">),&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PUBLISHED&lt;span style="color:#f92672">(&lt;/span>2&lt;span style="color:#f92672">);&lt;/span>
@@ -1311,27 +782,8 @@ We know that JPA persists all enum constants in order we declare them in &lt;cod
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> value&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>And Post class is rewritten like this:&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-1"> 1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-2"> 2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-3"> 3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-4"> 4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-5"> 5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-6"> 6&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-7"> 7&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-8"> 8&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-9"> 9&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-10">10&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-11">11&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-12">12&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-7-13">13&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Entity&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And Post class is rewritten like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Java" data-lang="Java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Entity&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Post&lt;/span> &lt;span style="color:#f92672">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> Integer status&lt;span style="color:#f92672">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1344,54 +796,26 @@ We know that JPA persists all enum constants in order we declare them in &lt;cod
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">status&lt;/span> &lt;span style="color:#f92672">=&lt;/span> status&lt;span style="color:#f92672">.&lt;/span>&lt;span style="color:#a6e22e">getValue&lt;/span>&lt;span style="color:#f92672">();&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>Great!!!&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Great!!!&lt;/p>
 &lt;p>Now the clients can use code safety and we can add many constants as we want into &lt;code>PostStatus&lt;/code> without worry about order of them.&lt;/p>
 &lt;p>It reminds me of the sentence the guy talked in Java4Ever trailer: &amp;ldquo;Look how beautiful, robust, secure, portable and scalable it is&amp;rdquo; ;-)&lt;/p></description></item><item><title>Install Thrift on Ubuntu</title><link>http://duydo.me/install-thrift-on-ubuntu/</link><pubDate>Sun, 10 Jan 2010 12:21:17 +0700</pubDate><guid>http://duydo.me/install-thrift-on-ubuntu/</guid><description>&lt;p>A quick note for installing Thrift on Ubuntu.&lt;/p>
 &lt;ol start="0">
 &lt;li>Install basic lib&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> sudo apt-get install build-essential libboost-dev automake libtool flex bison pkg-config
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> sudo apt-get install build-essential libboost-dev automake libtool flex bison pkg-config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
 &lt;li>Get Thrift:&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> wget http://www.apache.org/dyn/closer.cgi?path&lt;span style="color:#f92672">=&lt;/span>/incubator/thrift/0.2.0-incubating/thrift-0.2.0-incubating.tar.gz
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="2">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span> wget http://www.apache.org/dyn/closer.cgi?path&lt;span style="color:#f92672">=&lt;/span>/incubator/thrift/0.2.0-incubating/thrift-0.2.0-incubating.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
 &lt;li>Install Thrift&lt;/li>
 &lt;/ol>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-1">1&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-2">2&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-3">3&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-4">4&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-5">5&lt;/a>
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6">&lt;a style="outline: none; text-decoration:none; color:inherit" href="#hl-2-6">6&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar zxvf thrift-0.2.0-incubating.tar.gz
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar zxvf thrift-0.2.0-incubating.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd thrift-0.2.0-incubating
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./bootstrap.sh
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --with-boost&lt;span style="color:#f92672">=&lt;/span>/usr/local
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo make install
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ol start="3">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
 &lt;li>Done 🙂&lt;/li>
 &lt;/ol></description></item></channel></rss>

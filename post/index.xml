@@ -2,19 +2,43 @@
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
 &lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-searching-data-flow.png" title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
-&lt;span class="caption-text">Elasticsearch Searching Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
-&lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-searching-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-searching-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Searching Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-deleting-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-deleting-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Deleting Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
-&lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
-&lt;/span></description></item><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es_index_operations.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es_index_operations.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Indexing Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
 &lt;blockquote>
 &lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
 &lt;/blockquote>
@@ -22,20 +46,44 @@ data structure that supports full-text searches efficiently and very fast.&lt;/p
 &lt;blockquote>
 &lt;p>Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p>
 &lt;/blockquote>
-&lt;p>As promised him, I would solve this challenge.&lt;/p></description></item><item><title>Vũ Trụ Xa Hơn Mây Oort</title><link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link><pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate><guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid><description>&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/oort_cloud.jpg" title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" alt="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn">
-&lt;span class="caption-text">Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/span>
-&lt;/span></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
-1 2 byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
-Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description></item><item><title>Tầm quan trọng của việc đọc sách</title><link>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</link><pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate><guid>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</guid><description>&lt;p>Lâu nay muốn viết về tầm quan trọng của việc đọc sách để chia sẻ với mấy đứa cháu ở nhà cũng như để nhắc nhở bản thân mà lười quá chưa viết, hôm qua tình cờ đọc được &lt;a href="http://science-technology.vn/?p=5565">bài viết của giáo sư John Vu&lt;/a> về chủ đề này, thấy khá phù hợp với suy nghĩ của mình nên mình chia sẻ lại ở đây.&lt;/p></description></item><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" title="Duy Do talked about Elasticsearch at Barcamp 2016" alt="Duy Do talked about Elasticsearch at Barcamp 2016">
-&lt;span class="caption-text">Duy Do talked about Elasticsearch at Barcamp 2016&lt;/span>
-&lt;/span>
+&lt;p>As promised him, I would solve this challenge.&lt;/p></description></item><item><title>Vũ Trụ Xa Hơn Mây Oort</title><link>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</link><pubDate>Mon, 22 Apr 2019 13:34:43 +0700</pubDate><guid>http://duydo.me/v%C5%A9-tr%E1%BB%A5-xa-h%C6%A1n-m%C3%A2y-oort/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/oort_cloud.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/oort_cloud.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
+byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
+Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description></item><item><title>Tầm quan trọng của việc đọc sách</title><link>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</link><pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate><guid>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</guid><description>&lt;p>Lâu nay muốn viết về tầm quan trọng của việc đọc sách để chia sẻ với mấy đứa cháu ở nhà cũng như để nhắc nhở bản thân mà lười quá chưa viết, hôm qua tình cờ đọc được &lt;a href="http://science-technology.vn/?p=5565">bài viết của giáo sư John Vu&lt;/a> về chủ đề này, thấy khá phù hợp với suy nghĩ của mình nên mình chia sẻ lại ở đây.&lt;/p></description></item><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Duy Do talked about Elasticsearch at Barcamp 2016&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
 &lt;p>Mình không biết các ngành nghề khác như thế nào chứ riêng ngành kỹ thuật phần mềm như bọn mình đang làm thì kỹ năng mềm là kỹ năng cực kỳ quan trọng, ảnh hưởng rất lớn đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p></description></item><item><title>Interview at Elastic</title><link>http://duydo.me/interview-at-elastic/</link><pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate><guid>http://duydo.me/interview-at-elastic/</guid><description>&lt;p>Some months ago, I had an interview with &lt;a href="https://elastic.co">Elastic&lt;/a> for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p></description></item><item><title>Alan Turing</title><link>http://duydo.me/alan-turing/</link><pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate><guid>http://duydo.me/alan-turing/</guid><description>&lt;p>Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/alan_turing.jpg" title="Alan Turing" alt="Alan Turing">
-&lt;span class="caption-text">Alan Turing&lt;/span>
-&lt;/span></description></item><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p></description></item><item><title>How to build Elasticsearch Vietnamese Analysis Plugin</title><link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid><description>&lt;p>Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/alan_turing.jpg" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/alan_turing.jpg" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Alan Turing&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p></description></item><item><title>How to build Elasticsearch Vietnamese Analysis Plugin</title><link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid><description>&lt;p>Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.
 https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch</description></item><item><title>How Elasticsearch cluster works</title><link>http://duydo.me/how-elasticsearch-cluster-works/</link><pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate><guid>http://duydo.me/how-elasticsearch-cluster-works/</guid><description>&lt;p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p>
 &lt;ul>
 &lt;li>How a node in cluster talks to others?&lt;/li>

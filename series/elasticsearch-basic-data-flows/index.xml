@@ -2,16 +2,40 @@
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
 &lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-searching-data-flow.png" title="Elasticsearch Searching Data Flow" alt="Elasticsearch Searching Data Flow">
-&lt;span class="caption-text">Elasticsearch Searching Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es-deleting-data-flow.png" title="Elasticsearch Deleting Data Flow" alt="Elasticsearch Deleting Data Flow">
-&lt;span class="caption-text">Elasticsearch Deleting Data Flow&lt;/span>
-&lt;/span></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-searching-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-searching-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Searching Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-deleting-data-flow.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es-deleting-data-flow.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Deleting Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p>
-&lt;span class="caption-wrapper">
-&lt;img class="caption" src="http://duydo.me/images/posts/es_index_operations.png" title="Elasticsearch Indexing Data Flow" alt="Elasticsearch Indexing Data Flow">
-&lt;span class="caption-text">Elasticsearch Indexing Data Flow&lt;/span>
-&lt;/span></description></item></channel></rss>
+&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
+&lt;div class="box">
+&lt;figure itemprop="associatedMedia"
+itemscope itemtype="http://schema.org/ImageObject" >
+&lt;div class="img">
+&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es_index_operations.png" />
+&lt;/div>
+&lt;a href="http://duydo.me/images/posts/es_index_operations.png" itemprop="contentUrl">&lt;/a>
+&lt;figcaption>&lt;h4>Elasticsearch Indexing Data Flow&lt;/h4>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div></description></item></channel></rss>
