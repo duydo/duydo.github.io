@@ -8,6 +8,8 @@ showAuthorInfo: false
 menu: main
 ---
 
+{{< figure src="/images/duydo.jpg" class="right" width="300px">}}
+
 Duy Do is 15 years of experience software engineer with solid background in both computer science and mathematics.
 His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.
 

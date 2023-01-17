@@ -6,7 +6,7 @@ lastmod: 2019-09-05T09:41:07+07:00
 tags: [softskill, kynangmem]
 ---
 
-{{<imgcap title="Duy Do talked about Elasticsearch at Barcamp 2016" src="/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg">}}
+{{<figure title="Duy Do talked about Elasticsearch at Barcamp 2016" src="/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg">}}
 
 Mình không biết các ngành nghề khác như thế nào chứ riêng ngành kỹ thuật phần mềm như bọn mình đang làm thì kỹ năng mềm là kỹ năng cực kỳ quan trọng, ảnh hưởng rất lớn đến sự thăng tiến và thành công trong sự nghiệp.
 

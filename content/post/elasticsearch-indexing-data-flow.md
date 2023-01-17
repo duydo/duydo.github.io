@@ -21,7 +21,7 @@ series: ["Elasticsearch Basic Data Flows"]
 When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index 
 data structure that supports full-text searches efficiently and very fast.
 
-{{<imgcap title="Elasticsearch Indexing Data Flow" src="/images/posts/es_index_operations.png">}}
+{{<figure title="Elasticsearch Indexing Data Flow" src="/images/posts/es_index_operations.png">}}
 
 <!--more-->
 

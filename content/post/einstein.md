@@ -6,7 +6,7 @@ draft: true
 tags: ["books", "reading"]
 ---
 
-{{<imgcap title="Albert Einstein" src="/images/posts/einstein.jpg">}}
+{{<figure title="Albert Einstein" src="/images/posts/einstein.jpg">}}
 
 Đầu năm nay công việc không được tốt, tình thần không được thỏa mái nên tôi quyết định nghỉ việc ở công ty.
 

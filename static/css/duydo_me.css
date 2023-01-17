@@ -83,11 +83,37 @@ body {
 }
 
 .post .post-content .highlight {
-  border: 1px solid #ddd;
+  border: none;
 }
+
+
+.post .post-content .highlight pre {
+  font-family: Consolas, Menlo, Monaco,Source Code Pro,Inconsolata, Monaco, Courier New, Monospace;
+  padding: 3px 7px;
+}
+
 
 .post .post-content blockquote {
   font-style: italic;
+}
+
+/* Figure */
+
+.post .post-content figure.right {
+  margin-right: 0;
+}
+
+.post .post-content figure.left {
+  margin-left: 0;
+}
+
+.post .post-content figure figcaption {
+  font-style: italic;
+}
+
+.post .post-content figure h4 {
+font-weight: 400;
+font-size: 1em;
 }
 
 /* Image Box */

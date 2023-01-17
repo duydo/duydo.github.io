@@ -22,7 +22,7 @@ mathjax: false
 
 Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.
 
-{{<imgcap title="Alan Turing" src="/images/posts/alan_turing.jpg">}}
+{{<figure title="Alan Turing" src="/images/posts/alan_turing.jpg">}}
 
 <!--more-->
 
@@ -33,7 +33,7 @@ Trong chiến tranh thế giới lần 2, nhờ vào tài năng toán học cùn
 Máy Enigma được người Đức chế tạo dùng để tạo mã hóa và giải mã các thông tin cơ mật, họ tin rằng nó là một chiếc máy siêu bảo mật không ai có thể thể phá được mật mã của họ, một kí tự bị mã hóa có khả năng cho ra tới 159 nghìn tỷ kết quả khác nhau khi giải mã. Giải mã được Enigma nhưng chính phủ Anh giữ bí mật, mãi đến 30 năm sau khi chiến tranh thế giới lần 2 kết thúc họ mới công bố và thừa nhận. Chi tiết về cuộc giải mã này được dựng thành bộ phim rất xuất xắc "The Imitation Game", bạn nào tò mò có thể xem để hiểu thêm nhé.
 
 
-{{<imgcap title="Enigma" src="/images/posts/enigma.jpg">}}
+{{<figure title="Enigma" src="/images/posts/enigma.jpg">}}
 
 Tài năng là thế nhưng cuộc đời của Turing là một bi kịch chỉ bởi…ông là người đồng tính. Ông bị cảnh sát Anh bắt vào năm 1952 vì đồng tính là "lăng nhục thuần phong mỹ tục", họ buộc ông phải chọn một là ở tù hai là phải dùng thuốc "điều trị" giảm ham muốn tình dục, một hình thức thiến hóa học biến ông thành phụ nữ. Vì ở tù thì ông không thể nào tiếp tục công việc của mình nên ông đã chọn “điều trị” để ông được tiếp tục làm việc. Hàng ngày phải dùng thuốc điều trị khiến ông đau đớn ức chế, bế tắc, cơ thể thay đổi, vú phát triển to lên. Không chịu nổi điều này, ông đã kết liễu cuộc đời mình bằng chất độc Cyanua 2 năm sau đó, 1954, lúc ông 41 tuổi. Một cái kết buồn cho một tài năng xuất chúng của nhân loại.
 

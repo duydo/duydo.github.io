@@ -7,7 +7,7 @@ description: "Vũ Trụ Xa Hơn Mây Oort"
 tags: ["reading", "books"]
 ---
 
-{{<imgcap title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" src="/images/posts/oort_cloud.jpg">}}
+{{<figure title="Vũ Trụ Xa Hơn Mây OOrt - Đặng Vũ Tuấn Sơn" src="/images/posts/oort_cloud.jpg">}}
 
 <!--more-->
 

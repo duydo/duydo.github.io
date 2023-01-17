@@ -5,7 +5,7 @@ image: images/alchemist.jpg
 tags: ["reading", "books"]
 draft: true
 ---
-{{<imgcap title="The Alchemist" src="/images/posts/alchemist.jpg">}}
+{{<figure title="The Alchemist" src="/images/posts/alchemist.jpg">}}
 <!--more-->
 "Nhà Giả Kim" kể về anh chàng chăn cừu Santiago ở tận xứ Tây Ban Nha đã từ bỏ những kế hoạch mà ba mẹ vạch sẵn để chọn lấy cuộc sống "nay đây mai đó", theo đuổi ước mơ vận mệnh của mình.
 

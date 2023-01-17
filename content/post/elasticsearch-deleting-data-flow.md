@@ -20,7 +20,7 @@ series: ["Elasticsearch Basic Data Flows"]
 
 How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.
 
-{{<imgcap title="Elasticsearch Deleting Data Flow" src="/images/posts/es-deleting-data-flow.png">}}
+{{<figure title="Elasticsearch Deleting Data Flow" src="/images/posts/es-deleting-data-flow.png">}}
 
 <!--more-->
 
