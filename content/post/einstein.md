@@ -3,7 +3,6 @@ title: "Albert Einstein - Nguyễn Xuân Xanh"
 date: 2009-02-09T08:33:58+07:00
 lastmod: 2009-02-09T08:33:58+07:00
 draft: true
-tags: ["books", "reading"]
 ---
 
 {{<figure title="Albert Einstein" src="/images/posts/einstein.jpg">}}

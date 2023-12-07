@@ -3,6 +3,7 @@ title: "Install Thrift on Ubuntu"
 date: 2010-01-10T12:21:17+07:00
 lastmod: 2023-01-03T12:21:17+07:00
 tags: ["engineering", "thrift", "linux", "ubuntu"]
+draft: true
 ---
 
 A quick note for installing Thrift on Ubuntu.

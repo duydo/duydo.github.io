@@ -2,7 +2,7 @@
 title: "Cấu trúc thư mục hệ điều điều hành Linux"
 date: 2007-06-15T12:39:40+07:00
 lastmod: 2023-01-03T12:39:40+07:00
-draft: false
+draft: true
 keywords: []
 description: ""
 tags: ["linux"]

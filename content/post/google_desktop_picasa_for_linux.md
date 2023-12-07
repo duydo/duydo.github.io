@@ -3,6 +3,8 @@ title: "Google Desktop & Picasa for Linux"
 date: 2007-06-29T12:57:42+07:00
 lastmod: 2023-01-03T12:57:42+07:00
 tags: ["engineering", "linux", "google", "picasa"]
+
+draft: true
 ---
 
 

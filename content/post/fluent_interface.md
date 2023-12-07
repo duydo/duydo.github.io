@@ -3,6 +3,7 @@ title: "Fluent Interface"
 date: 2009-03-25T08:11:23+07:00
 lastmod: 2009-03-25T08:11:23+07:00
 tags: ["java", "engineering"]
+draft: true
 ---
 
 I've played with my own  framework recently, I found a new term, called "Fluent Interface". There is a great [article](http://martinfowler.com/bliki/FluentInterface.html) of Martin Fowler about this term, you can read it if you have not heard about it yet.

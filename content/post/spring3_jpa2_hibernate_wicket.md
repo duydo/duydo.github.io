@@ -2,7 +2,7 @@
 title: "Spring 3 + JPA 2.0 + Hibernate 3.5.1-Final + Wicket 1.4.9 + Maven 2"
 date: 2010-01-25T12:09:04+07:00
 lastmod: 2023-01-03T12:09:04+07:00
-draft: false
+draft: true
 tags: ["engineering", "java", "spring", "jpa", "hibernate", "wicket", "maven"]
 ---
 

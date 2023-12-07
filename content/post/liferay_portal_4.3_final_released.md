@@ -12,6 +12,7 @@ tags: ["engineering", "liferay", 'java']
 #   main:
 #     parent: "docs"
 #     weight: 1
+draft: true
 ---
 
 Liferay Portal 4.3 Final was released yesterday. At work, I have to develop a server communicate with mobile device based-on Liferay portal. I’m very pleasure with this version of Liferay, mobile device is supported :-).
