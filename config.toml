@@ -52,7 +52,13 @@ pageref = "/"
 name = "Archive"
 weight = 10
 identifier = "archive"
-pageref = "/post/"
+pageref = "/post"
+
+[[menu.main]]
+name = "Consulting"
+weight = 15
+identifier = "consulting"
+pageref = "/consulting"
 
 [minify]
   minifyOutput = true
