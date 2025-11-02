@@ -4,17 +4,18 @@ date: 2018-08-06T18:51:46+07:00
 lastmod: 2018-08-06T18:51:46+07:00
 tags: ["java", "engineering"]
 ---
-Cách đây cũng khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, các bạn đều bảo rằng đoạn mã này không có vấn đề, biên dịch và chạy được.
+
+Cách đây khá lâu, mình có đem đoạn mã đơn giản bên dưới hỏi một vài đồng nghiệp làm Java, từ các bạn Junior mới vào nghề đến những Senior kinh nghiệm. Điều đáng ngạc nhiên là tất cả đều khẳng định: "Đoạn code này hoàn toàn ổn, chắc chắn biên dịch và chạy được."
 
 ```java
 byte b = 1;
 b = b * 2;
 ```
 
-Thật ra thì đoạn mã trên không thể biên dịch được.
+Thực tế thì, đoạn mã trên không thể biên dịch được.
 
 Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
-Nhìn vào đoạn mã thì thấy `b` được khai báo kiểu `byte` và gán giá trị `1`, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu `byte` trong Java từ -128 đến 127.
+Nhìn vào đoạn mã thì thấy biến `b` được khai báo kiểu `byte` và gán giá trị `1`, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu `byte` từ -128 đến 127.
 
 Dòng mã tiếp theo gán `b = b * 2`, lúc này biểu thức `b * 2` sẽ có giá trị là `1 * 2 = 2`, thuộc tầm trị [-128, 127] nên hoàn toàn có thể gán được lại cho b. Từ đây các bạn trả lời như đinh đóng cột đoạn mã trên biên dịch và chạy được là cái chắc :D
 

@@ -2,11 +2,25 @@
 title: "Alan Turing"
 date: 2017-07-17T19:01:54+07:00
 lastmod: 2017-07-17T19:01:54+07:00
+draft: false
+keywords: []
+description: "Alan Turing"
 tags: ["alanturing", "enigma"]
 categories: []
+author: ""
+
+# You can also close(false) or open(true) something for this content.
+# P.S. comment can only be closed
+comment: true
+toc: false
+autoCollapseToc: false
+# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
+contentCopyright: false
+reward: false
+mathjax: false
 ---
 
-Ngồi đợi con học, ghi chép đôi dòng về Alan Turing.
+Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.
 
 {{<figure title="Alan Turing" src="/images/posts/alan_turing.jpg">}}
 

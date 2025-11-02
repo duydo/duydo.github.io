@@ -1,5 +1,0 @@
-{{- $src := (index .Params 0) -}}
-{{- $url := printf "https://speakerdeck.com/oembed.json?url=%s" $src -}}
-{{- $json := getJSON $url -}}
-<p>{{ $json.html | safeHTML }}</p>
-<p><a href="{{$src}}" target="_blank">{{$src}}</a></p>

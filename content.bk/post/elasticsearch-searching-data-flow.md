@@ -2,11 +2,21 @@
 title: "Understanding Elasticsearch searching data flow"
 date: 2023-01-11T22:32:29+07:00
 lastmod: 2023-01-11T22:32:29+07:00
+draft: false
 tags: ["elasticsearch", "engineering"]
 series: ["Elasticsearch Basic Data Flows"]
-cover:
-    image: "images/posts/es-searching-data-flow.png" # image path/url
-    caption: "Elasticsearch Searching Data Flow" # display caption under cover
+
+
+
+# Uncomment to pin article to front page
+# weight: 1
+# You can also close(false) or open(true) something for this content.
+# P.S. comment can only be closed
+# Uncomment to add to the homepage's dropdown menu; weight = order of article
+# menu:
+#   main:
+#     parent: "docs"
+#     weight: 1
 ---
 
 **Search** is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including 
@@ -15,7 +25,7 @@ full-text searches, geo searches, range searches, scripted searches, and aggrega
 How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.
 
-{{<figure caption="Elasticsearch Searching Data Flow" src="/images/posts/es-searching-data-flow.png">}}
+{{<figure title="Elasticsearch Searching Data Flow" src="/images/posts/es-searching-data-flow.png">}}
 
 <!--more-->
 

@@ -1,0 +1,83 @@
+baseURL: "https://duydo.me/"
+title: Duy Do
+theme: PaperMod
+enableRobotsTXT: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+pagination:
+  pagerSize: 5
+
+permalinks:
+  section:
+    posts: /posts/
+
+params:
+  env: production
+  title: Duy Do
+  description: "Duy Do's thoughts on software engineering"
+  keywords:
+   - Duy Do
+   - duydo
+   - software engineering
+   - computer science
+   - python
+   - java
+   - jvm
+   - programming
+   - optimization
+   - algorithms
+   - mathematics
+   - math
+
+  author: Duy Do
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "Jan 2, 2006"
+  defaultTheme: light # dark, light
+  ShowPostNavLinks: true
+  UseHugoToc: true
+  comments: true
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+socialIcons:
+  - name: x
+    url: "https://x.com/duydo"
+  - name: github
+    url: "https://github.com/duydo"
+
+analytics:
+  google:
+    SiteVerificationTag: "G-MWQHCX1NZ9"
+  
+menu:
+  main:
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 5
+    # - identifier: about
+    #   name: About
+    #   url: /about/
+    #   weight: 10
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 20
+   
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+
+cover:
+  hiddenInSingle: true

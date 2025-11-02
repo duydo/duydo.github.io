@@ -2,11 +2,24 @@
 title: "An algorithm for finding right-truncatable prime numbers"
 date: 2019-08-01T12:10:30+07:00
 lastmod: 2019-08-06T12:10:30+07:00
+draft: false
 keywords: ["algorithms", "right-truncatable-prime", "prime", "python"]
+description: ""
 tags: ["algorithms", "right-truncatable-prime", "prime", "python"]
+categories: []
+
+# You can also close(false) or open(true) something for this content.
+# P.S. comment can only be closed
+comment: true
+toc: false
+autoCollapseToc: false
+# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
+contentCopyright: false
+reward: false
+mathjax: true
 ---
 
-Inspired from my status on Facebook:
+Inspired from [my status](https://www.facebook.com/doquocduy/posts/10212275741143230) on Facebook:
 
 > The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.
 
@@ -25,7 +38,6 @@ Suppose *p(k)* is the prime, satisfies the characteristics of right-truncatable 
 \\[p(k) = \overline {a(1)a(2)...a(k)}\\]
 
 Removes one digit from right to left of the number p(i), with i = 1..k, we get:
-
 \\[p(k-1) = \overline {a(1)a(2)...a(k-1)}\\]
 \\[p(k-2) = \overline {a(1)a(2)...a(k-2)}\\]
 \\[...\\]
