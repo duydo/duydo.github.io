@@ -13,6 +13,8 @@ My contribution efforts have primarily focused on solving real-world challenges 
 
 - EVM (Elasticsearch Version Manager): Providing developers with a crucial tool for easily managing and testing multiple Elasticsearch versions.
 
+- Tutorials/Community Answers
+
 This recognition isn't just a badge; it validates the importance of building tools and sharing knowledge that directly addresses the needs of a specific user base.
 
 As a long-time member and founder of the Elasticsearch community in Vietnam, I am motivated to continue this journey. My goal remains to publish deep-dive analysis and develop practical open-source tools that help Java and Python engineers build more reliable and high-performance data systems.

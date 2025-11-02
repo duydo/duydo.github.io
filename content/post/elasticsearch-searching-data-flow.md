@@ -14,8 +14,8 @@ full-text searches, geo searches, range searches, scripted searches, and aggrega
 
 How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
 operations.
-
-{{<figure caption="Elasticsearch Searching Data Flow" src="/images/posts/es-searching-data-flow.png">}}
+<!-- 
+{{<figure caption="Elasticsearch Searching Data Flow" src="/images/posts/es-searching-data-flow.png">}} -->
 
 <!--more-->
 
