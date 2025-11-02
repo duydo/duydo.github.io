@@ -21,34 +21,14 @@
       <description>&lt;p&gt;&lt;strong&gt;Search&lt;/strong&gt; is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p&gt;
 &lt;p&gt;How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
-operations.&lt;/p&gt;
-
-
-
-
-&lt;figure class=&#34;align-center&#34;&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://duydo.me/images/posts/es-searching-data-flow.png&#34;
-         alt=&#34;Elasticsearch Searching Data Flow&#34;/&gt;&lt;figcaption&gt;
-            &lt;p&gt;Elasticsearch Searching Data Flow&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;</description>
+operations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch deleting data flow</title>
       <link>https://duydo.me/post/elasticsearch-deleting-data-flow/</link>
       <pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate>
       <guid>https://duydo.me/post/elasticsearch-deleting-data-flow/</guid>
-      <description>&lt;p&gt;How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p&gt;
-
-
-
-
-&lt;figure class=&#34;align-center&#34;&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://duydo.me/images/posts/es-deleting-data-flow.png&#34;
-         alt=&#34;Elasticsearch Deleting Data Flow&#34;/&gt;&lt;figcaption&gt;
-            &lt;p&gt;Elasticsearch Deleting Data Flow&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;</description>
+      <description>&lt;p&gt;How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch indexing data flow</title>
