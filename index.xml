@@ -1,464 +1,181 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Duy Do</title><link>http://duydo.me/</link><description>Recent content on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Wed, 11 Jan 2023 22:32:29 +0700</lastBuildDate><atom:link href="http://duydo.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Elasticsearch searching data flow</title><link>http://duydo.me/understanding-elasticsearch-searching-data-flow/</link><pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-searching-data-flow/</guid><description>&lt;p>&lt;strong>Search&lt;/strong> is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
-full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p>
-&lt;p>How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
-operations.&lt;/p>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-searching-data-flow.png" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/es-searching-data-flow.png" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Elasticsearch Searching Data Flow&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>Elasticsearch executes searches in phases known informally as &lt;strong>scatter&lt;/strong>, &lt;strong>search&lt;/strong>, &lt;strong>gather&lt;/strong>, and &lt;strong>merge&lt;/strong>.&lt;/p>
-&lt;h3 id="phase-1-scatter">Phase 1: Scatter&lt;/h3>
-&lt;p>The client makes a search request to the cluster, a coordinator node in the cluster takes the request to
-process. Based on the index&amp;rsquo;s information, the coordinator node routes the search request to all data nodes
-which contain index&amp;rsquo;s data.&lt;/p>
-&lt;h3 id="phase-2-search">Phase 2: Search&lt;/h3>
-&lt;p>Each data node, which received the search request in &amp;ldquo;Phase 1&amp;rdquo;, parses the request to check if any query clauses in
-search query needs to be applied &lt;em>text analysis process&lt;/em>. If &lt;code>yes&lt;/code>, the text analysis processing gets started. Finally, the data node
-executes the search request on every segment of the index&amp;rsquo;s shards.&lt;/p>
-&lt;h3 id="phase-3-gather--merge">Phase 3: Gather &amp;amp; Merge&lt;/h3>
-&lt;p>The coordinator node in &amp;ldquo;Phase 1&amp;rdquo; gathers the search results from all data nodes that it routed the search request to.
-After the gathering processing is done, the merging processing gets started. It merges, ranks and sorts the search
-results then returning them back to the client.&lt;/p></description></item><item><title>Understanding Elasticsearch deleting data flow</title><link>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</link><pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid><description>&lt;p>How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es-deleting-data-flow.png" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/es-deleting-data-flow.png" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Elasticsearch Deleting Data Flow&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to delete a document from the cluster, a coordinator node in the cluster takes the request to
-process.&lt;/p>
-&lt;p>&lt;strong>Step 2&lt;/strong>: Based on shard information and the document ID, the coordinator node routes the delete request to a data node
-which contains primary shard that stored the document.&lt;/p>
-&lt;p>&lt;strong>Step 3&lt;/strong>: The data node doesn&amp;rsquo;t delete the document immediately, it marks the document as deleted then adding it to
-the memory buffer and appending it to the transaction log. At this time, the document is unsearchable.&lt;/p>
-&lt;p>When the buffer fills up, the changes are written to a segment and the buffer is clear. In the meantime, the
-transaction log still keeps the deleted documents until it gets too big, a full commit is performed. The changes are flushed to
-disk, the document is deleted permanently.&lt;/p>
-&lt;p>If replication is enabled for the index, the replication data process gets started. This data node sends the delete request
-to a data node which contains replicas shards of the index. The whole deleting process here will be done on that node to
-delete the document from the replica shards completely.&lt;/p></description></item><item><title>Understanding Elasticsearch indexing data flow</title><link>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</link><pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate><guid>http://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid><description>&lt;p>When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
-data structure that supports full-text searches efficiently and very fast.&lt;/p>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/es_index_operations.png" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/es_index_operations.png" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Elasticsearch Indexing Data Flow&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>The above diagram shows the data flow when a document is indexed into a Elasticsearch cluster. It includes following basic steps:&lt;/p>
-&lt;p>&lt;strong>Step 1&lt;/strong>: The client makes a request to put a document into the cluster, a coordinator node in the cluster takes the request to
-process.&lt;/p>
-&lt;p>&lt;strong>Step 2&lt;/strong>: The coordinator node uses the &lt;code>pipeline&lt;/code> parameter in the indexing request to check if the document needs to
-be enriched or transformed before routing to a data node for further processing.&lt;/p>
-&lt;p>If answer is &lt;code>No&lt;/code>, the document is routed to a data node in the cluster. If the answer is &lt;code>Yes&lt;/code>, the document is routed to an ingest node in the
-cluster to enrich the document. When the enriching process is done, the ingest node continues routing the enriched document to the data node.&lt;/p>
-&lt;p>Decision of which data node in the cluster will take the document to process further is based on index&amp;rsquo;s shard information and the hashing modulo formular:&lt;/p>
-&lt;p>&lt;code>shard = hash(routing) % number_of_shards&lt;/code>&lt;/p>
-&lt;p>&lt;strong>Step 3&lt;/strong>: The data node parses the document to a JSON object then checking if there is any &lt;code>text&lt;/code> values in the object.
-If the &lt;code>text&lt;/code> values are found, a text analysis process will be involved. It analyzes, breaks the text into more
-useful structural components. It also applies some processing to make the document more relevant to fulltext search.
-Finally, the document is added to a memory buffer and appended to the transaction log.&lt;/p>
-&lt;p>When the buffer fills up, the documents are written to a segment and then the buffer is clear. In the meantime, the
-transaction log still keeps the documents until it gets big enough, a full commit is performed. The documents is flushed to disk permanently,
-the old transaction log is deleted and the new one is created.&lt;/p>
-&lt;p>If the replication is enabled, the replication data process are triggered. This data node sends a replication request
-to a data node which contains replicas shards of the index. The whole indexing process here will be done on that node to
-create a copy of those documents.&lt;/p></description></item><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
-&lt;blockquote>
-&lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
-&lt;/blockquote>
-&lt;p>One of my friends gave a challenge:&lt;/p>
-&lt;blockquote>
-&lt;p>Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p>
-&lt;/blockquote>
-&lt;p>As promised him, I would solve this challenge.&lt;/p>
-&lt;p>In order to find out an algorithm, we try to do some math first.&lt;/p>
-&lt;p>Suppose &lt;em>p(k)&lt;/em> is the prime, satisfies the characteristics of right-truncatable prime, has k digits: &lt;em>a(1), a(2),&amp;hellip;,a(k)&lt;/em>, value of each digit is in set &lt;em>{0, 9}&lt;/em>:&lt;/p>
-&lt;p>\[p(k) = \overline {a(1)a(2)&amp;hellip;a(k)}\]&lt;/p>
-&lt;p>Removes one digit from right to left of the number p(i), with i = 1..k, we get:
-\[p(k-1) = \overline {a(1)a(2)&amp;hellip;a(k-1)}\]
-\[p(k-2) = \overline {a(1)a(2)&amp;hellip;a(k-2)}\]
-\[&amp;hellip;\]
-\[p(2) = \overline {a(1)a(2)}\]
-\[p(1) = \overline {a(1)}\]&lt;/p>
-&lt;p>&lt;em>p(1)&lt;/em> is prime number therefore the value of &lt;em>a(1)&lt;/em> must be 2, 3, 5 or 7.&lt;/p>
-&lt;p>Represent the &lt;em>p(k)&lt;/em> in base 10, we get:&lt;/p>
-&lt;p>\[p(k) = 10^{(k-1)}a(1) + 10^{(k-2)}a(2) +&amp;hellip;+ 10^1a(k-1) + a(k)\]&lt;/p>
-&lt;p>\[= 10(10^{(k-2)}a(1) + 10^{(k-3)}a(2)+&amp;hellip;+a(k-1)) + a(k)\]&lt;/p>
-&lt;p>The expression:
-\[10^{(k-2)}a(1) + 10^{(k-3)}a(2)+&amp;hellip;+a(k-1)\]
-is actually &lt;em>p(k-1)&lt;/em>, so we get:&lt;/p>
-&lt;p>\[p(k) = 10p(k-1) + a(k)\]&lt;/p>
-&lt;p>&lt;em>p(k)&lt;/em> is prime therefore &lt;em>a(k)&lt;/em> and &lt;em>10p(k-1)&lt;/em>, or 2&lt;em>5&lt;/em>p(k-1), must not have common divisors. This leads to value of &lt;em>a(k)&lt;/em> must be 1, 3, 7 or 9.&lt;/p>
-&lt;p>From above analysis we have an algorithm to find the largest right-truncatable prime:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Algorithm of Finding Largest Right-Truncatable Prime (Input: N)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(1) Let K = number of digits of N
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(2) Initialize A = {2, 3, 5, 7}, B = {1, 3, 7, 9}, MAX_PRIME
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(3) For i = 2, 3,... up to K:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Let P = empty list, this list stores primes are found for each i
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> With each a in A
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> With each b in B:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Calculate p = 10*a + b
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If p &amp;gt; n: Exit loop (3)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If p is prime:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Set MAX_PRIME = p
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Add p to P
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> If P is empty: Exit loop (3)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Else: Set A = P
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(4) Return MAX_PRIME
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In step (3), in order to check if a number is prime we can use different algorithms such as: Eratosthenes, Atkin, AKS and Miller-Rabin. I choose &lt;a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">Miller-Rabin&lt;/a> for testing large input number.&lt;/p>
-&lt;p>Below is a program I wrote in Python to implement the algorithm. The algorithm can be optimized for more efficient but I leave it for now as an exercise for whom is interested in.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> random &lt;span style="color:#f92672">import&lt;/span> randrange
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>__author__ &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;duydo&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">is_prime&lt;/span>(n):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;Check if n is prime using Miller-Robin test
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :param n: a number to test
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :return: True if n is prime, otherwise False
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">decompose&lt;/span>(p):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;p = 2^k * m&amp;#34;&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k, m &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, p
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> m &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#f92672">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> k, m
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">witness&lt;/span>(a, k, m, n):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#f92672">=&lt;/span> pow(a, m, n)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> r &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> xrange(k &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> r &lt;span style="color:#f92672">==&lt;/span> n &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#f92672">=&lt;/span> pow(r, &lt;span style="color:#ae81ff">2&lt;/span>, n)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> r &lt;span style="color:#f92672">==&lt;/span> n &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">miller_rabin&lt;/span>(n, t&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k, m &lt;span style="color:#f92672">=&lt;/span> decompose(n &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#75715e"># n - 1 = 2^k * m&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> _ &lt;span style="color:#f92672">in&lt;/span> xrange(t):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#f92672">=&lt;/span> randrange(&lt;span style="color:#ae81ff">2&lt;/span>, n &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> witness(a, k, m, n):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># n is even?&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> n &lt;span style="color:#f92672">&amp;amp;&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> miller_rabin(n)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">find_largest_right_truncatable_prime&lt;/span>(n):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;Returns largest right-truncatable prime less than or equals n.&amp;#34;&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">assert&lt;/span> n &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#f92672">=&lt;/span> len(str(n))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ak &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">7&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prime &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">None&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> xrange(&lt;span style="color:#ae81ff">2&lt;/span>, k &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#f92672">=&lt;/span> []
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> u &lt;span style="color:#f92672">in&lt;/span> a:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> v &lt;span style="color:#f92672">in&lt;/span> ak:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pk &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#f92672">*&lt;/span> u &lt;span style="color:#f92672">+&lt;/span> v
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> pk &lt;span style="color:#f92672">&amp;gt;&lt;/span> n:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> is_prime(pk):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prime &lt;span style="color:#f92672">=&lt;/span> pk
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r&lt;span style="color:#f92672">.&lt;/span>append(pk)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(r) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#f92672">=&lt;/span> r
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> max_prime
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#f92672">=&lt;/span> raw_input(&lt;span style="color:#e6db74">&amp;#39;Enter N: &amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rt_prime &lt;span style="color:#f92672">=&lt;/span> find_largest_right_truncatable_prime(int(n))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print &lt;span style="color:#e6db74">&amp;#39;Largest right-truncatable prime &amp;lt;= N:&amp;#39;&lt;/span>, rt_prime
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modifies above program a little bit, we can print out all right-truncatable prime numbers:&lt;/p>
-&lt;p>&lt;code>23, 29, 31, 37, 53, 59, 71, 73, 79, 233, 239, 293, 311, 313, 317, 373, 379, 593, 599, 719, 733, 739, 797, 2333, 2339, 2393, 2399, 2939, 3119, 3137, 3733, 3739, 3793, 3797, 5939, 7193, 7331, 7333, 7393, 23333, 23339, 23399, 23993, 29399, 31193, 31379, 37337, 37339, 37397, 59393, 59399, 71933, 73331, 73939, 233993, 239933, 293999, 373379, 373393, 593933, 593993, 719333, 739391, 739393, 739397, 739399, 2339933, 2399333, 2939999, 3733799, 5939333, 7393913, 7393931, 7393933, 23399339, 29399999, 37337999, 59393339, 73939133&lt;/code>&lt;/p>
-&lt;p>Happy coding &amp;lt;3.&lt;/p></description></item><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>&lt;p>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">byte&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> 1;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#f92672">=&lt;/span> b &lt;span style="color:#f92672">*&lt;/span> 2;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p>
-&lt;p>Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
-Nhìn vào đoạn mã thì thấy &lt;code>b&lt;/code> được khai báo kiểu &lt;code>byte&lt;/code> và gán giá trị &lt;code>1&lt;/code>, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu &lt;code>byte&lt;/code> trong Java từ -128 đến 127.&lt;/p>
-&lt;p>Dòng mã tiếp theo gán &lt;code>b = b * 2&lt;/code>, lúc này biểu thức &lt;code>b * 2&lt;/code> sẽ có giá trị là &lt;code>1 * 2 = 2&lt;/code>, thuộc tầm trị [-128, 127] nên hoàn toàn có thể gán được lại cho b. Từ đây các bạn trả lời như đinh đóng cột đoạn mã trên biên dịch và chạy được là cái chắc :D&lt;/p>
-&lt;p>Nhưng các bạn đã nhầm, thực ra mọi thứ không diễn ra như vậy, vấn đề nằm ở dòng mã thứ 2, &lt;code>b = b * 2&lt;/code>.&lt;/p>
-&lt;p>Khi thực hiện phép tính &lt;code>b * 2&lt;/code>, Java tự động chuyển kiểu của &lt;code>b&lt;/code> từ &lt;code>byte&lt;/code> thành &lt;code>int&lt;/code> để thực hiện phép * với 2, (2 là integer literal nên có kiểu int) và kết quả của &lt;code>b * 2&lt;/code> có kiểu &lt;code>int&lt;/code>. Tới đây thì ta đã rõ vì sao &lt;code>b = b * 2&lt;/code> không thực hiện được vì thằng mang kiểu &lt;code>int&lt;/code> thì không thể nào gán cho thằng mang kiểu &lt;code>byte&lt;/code> được.&lt;/p>
-&lt;p>Quá trình tự động chuyển kiểu dữ liệu như vậy gọi là &lt;strong>Type Promotion&lt;/strong>. Các bạn chỉ cần nhớ nguyên tắc chung khi thực hiện các biểu thức tính toán, Java sẽ tự động chuyển các kiểu dữ liệu của các toán hạng (operand) có tầm trị thấp sang kiểu dữ liệu của toán hạng có tầm trị cao hơn và kết quả của phép tính sẽ có kiểu dữ liệu của toán hạng có tầm trị cao nhất.&lt;/p>
-&lt;p>Cụ thể, các kiểu &lt;code>byte&lt;/code>, &lt;code>short&lt;/code> và &lt;code>char&lt;/code> sẽ được chuyển thành &lt;code>int&lt;/code> trước tiên, sau đó nếu toán hạng tiếp theo có kiểu &lt;code>long&lt;/code> thì toàn bộ biểu thức sẽ chuyển thành &lt;code>long&lt;/code>, cứ thế chuyển lên &lt;code>float&lt;/code> và cuối cùng là &lt;code>double&lt;/code>.&lt;/p>
-&lt;blockquote>
-&lt;p>byte, short, char =&amp;gt; int =&amp;gt; long =&amp;gt; float =&amp;gt; double&lt;/p>
-&lt;/blockquote>
-&lt;p>Chúc anh em code Java vui vẻ &amp;lt;3&lt;/p></description></item><item><title>Tầm quan trọng của việc đọc sách</title><link>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</link><pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate><guid>http://duydo.me/tam-quan-trong-cua-viec-doc-sach/</guid><description>&lt;p>Lâu nay muốn viết về tầm quan trọng của việc đọc sách để chia sẻ với mấy đứa cháu ở nhà cũng như để nhắc nhở bản thân mà lười quá chưa viết, hôm qua tình cờ đọc được &lt;a href="http://science-technology.vn/?p=5565">bài viết của giáo sư John Vu&lt;/a> về chủ đề này, thấy khá phù hợp với suy nghĩ của mình nên mình chia sẻ lại ở đây.&lt;/p>
-&lt;p>Ngày nay học sinh không đọc sách mà ưa thích các thiết bị điện tử. Ngay cả trong lớp của tôi, nhiều học sinh đều đặn nhìn vào điện thoại di động và laptop của họ để xem tin nhắn ngắn từ bạn bè hay tin tức từ Facebook.&lt;/p>
-&lt;p>Năm ngoái các khảo cứu của chính phủ Mĩ thấy rằng từ năm 1990, số phần trăm học sinh trung học là người đọc sách đã giảm từ 75% xuống 52%, và số phần trăm sinh viên đại học đã giảm từ 64% xuống 32%. Nhưng số phần trăm này che giấu một điều quan trọng: Phần lớn điều họ đọc là từ Google, Twitter, tin nhắn và Facebook, không phải văn học, lịch sử, hay thậm chí tiểu thuyết. Ngay cả một số người lớn cũng dừng đọc sách và báo chí. Điều họ đọc phần lớn là cái gì đó ngắn, dễ đọc và dễ quên thay vì cái gì đó có nghĩa. Một giáo sư than:&lt;/p>
-&lt;blockquote>
-&lt;p>Dường như chúng ta đang đi tới một thế hệ &amp;ldquo;không hiểu biết mới&amp;rdquo;. Những người này chỉ đọc lướt qua cái gì đó để cho họ có thể nói theo kiểu hội thoại hàng ngày nhưng không hiểu sâu về bất kì chủ đề nào họ đang nói tới.&lt;/p>
-&lt;/blockquote>
-&lt;p>Một nhà tâm lí có lần đã nói với tôi:&lt;/p>
-&lt;blockquote>
-&lt;p>Vấn đề là trẻ em không đọc sách vì bố mẹ chúng không đọc nữa. Anh nhìn vào mọi gia đình ngày nay và hỏi bao nhiêu bố mẹ đang đọc cùng con họ? Bao nhiêu người trong số họ đang đọc vì thích thú? Hay họ ưa thích TV, Netflix hay YouTube. Trẻ em lớn lên khi nhìn bố mẹ chúng, và bố mẹ vẫn hỏi tại sao con họ không đọc sách? Tại sao tri thức của chúng nông cạn thế? Tại sao chúng không nghĩ sâu sắc hơn? Tại sao chúng không có đủ kiên nhẫn? Tại sao chúng phát cáu dễ dàng? Câu trả lời là đơn giản: Vì não chúng đang phát triển với tốc độ của Internet và xung điện tử.&lt;/p>
-&lt;/blockquote>
-&lt;p>Trẻ em sẽ đọc nếu bố mẹ chúng đọc. Chúng sẽ đọc nhiều hơn vì bố mẹ chúng làm gương về hành vi đọc tốt. Nếu bố mẹ bao giờ cũng đọc sách cùng chúng khi chúng còn nhỏ, chúng sẽ phát triển thói quen đọc tốt khi chúng lớn lên. Khi tôi du hành ở Nhật Bản, tôi thấy mọi người ở đó đọc nhiều, gần như ở mọi nơi, trong ga tầu hoả, hay trong đường ngầm, và trong nhà hàng. Bạn tôi giải thích, nhiều gia đình Nhật Bản có qui tắc:&lt;/p>
-&lt;blockquote>
-&lt;p>Đọc sách đầu tiên, trước khi xem chương trình ti vi hay trò chơi video.&lt;/p>
-&lt;/blockquote>
-&lt;p>Yêu cầu đọc là quãng một giờ mỗi ngày cho trẻ em trường tiểu học hay một cuốn sách một tuần cho học sinh trung học. Với người Nhật Bản, là người lớn nghĩa là cảm thấy thoải mái với sách. Có lí trí nghĩa là đã đọc nhiều sách. Trong cuộc hội thoại điển hình, mọi người thường trích dẫn các cụm từ từ những tiểu thuyết nổi tiếng, biến cố lịch sử, hay thậm chí sách triết học v.v. Chúng tôi khuyến khích đọc bằng việc để nhiều sách ở nhà và đặt thời gian hàng ngày cho con cái đọc.&lt;/p>
-&lt;p>Một khảo cứu khác ở Đức cũng chỉ ra rằng có tương quan lớn giữa hành động và sự thường xuyên của bố mẹ với điều con cái đọc. Trong số các trẻ em là những người đọc thường xuyên, trên 72% bố mẹ chúng đã đặt thời gian mỗi ngày để đọc cùng chúng. Nhưng khảo cứu này đi xa hơn để đặt tương ứng giữa những học sinh đọc nhiều và thành công của họ trong trường. Kết quả là rõ ràng, 86% trẻ em là người đọc thường xuyên đã vào đại học khi so với 34% trẻ em không phải là người đọc thường xuyên. Nhưng khảo cứu này cũng thấy rằng hành vi đọc tốt không liên quan gì tới công nghệ. Máy đọc điện tử e-readers, máy tính bảng, laptop tất cả đều có khả năng chuyển giao tài liệu đọc tốt. Sách không chỉ là giấy mà có thể được đọc từ thiết bị điện tử nữa. Cho nên vấn đề không phải là liệu thiết bị điện tử có là nguy hiểm cho việc đọc không, mà nội dung của tài liệu đọc và thói quen đọc mới là cần thiết.&lt;/p>
-&lt;p>Một giáo sư tâm lí học có lần đã nói với tôi:&lt;/p>
-&lt;blockquote>
-&lt;p>Với mọi bằng chứng rõ ràng, điều bản chất với bố mẹ là đọc cho con cái họ khi chúng còn nhỏ vì đó là sự phát triển phần não mấu chốt của chúng và giáo dục tương lai của chúng. Anh không thể &amp;ldquo;khoán ngoài&amp;rdquo; giáo dục con anh cho người khác rồi phàn nàn rằng họ không giúp cho chúng. Giáo dục yêu cầu bố mẹ tham gia từ sớm, đặc biệt trong tuổi mấu chốt nhất từ bốn tới mười hai tuổi khi não chúng đang phát triển, và họ cần chắc con cái họ đọc sách.&lt;/p>
-&lt;/blockquote>
-&lt;p>Cách trẻ em đọc và điều chúng đọc sẽ xác định nhiều về thái độ của người lớn về thế giới bao quanh họ. Trong thời đại thông tin nơi mọi thứ đang xảy ra nhanh chóng, bạn cần có gốc rễ vững chắc hay tri thức sâu để duy trì viễn cảnh nhìn cuộc sống của bạn; bằng không bạn sẽ bị ảnh hưởng bởi nhiều thứ tới mức điều đó có thể đẩy bạn ra khỏi việc kiểm soát.&lt;/p></description></item><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Duy Do talked about Elasticsearch at Barcamp 2016&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>Mình không biết các ngành nghề khác như thế nào chứ riêng ngành kỹ thuật phần mềm như bọn mình đang làm thì kỹ năng mềm là kỹ năng cực kỳ quan trọng, ảnh hưởng rất lớn đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p>
-&lt;p>Ngoài kiến thức chuyên môn, các bạn sinh viên hay các bạn trẻ mới bước vào nghề hãy nghiêm túc trao dồi kỹ năng mềm cho thật tốt, đặc biệt là kỹ năng giao tiếp. Hãy lập cho mình một blog, viết bài chia sẻ những gì mình học được, những gì mình đã và đang làm, cố gắng đi dự hội thảo bổ ích, quan sát xem ngoài kia người ta đang làm gì, có gì hay ho để học hỏi không. Hãy mạnh dạn nói chuyện ở các hội thảo, để rèn luyện khả năng trình bày, giải thích cho người khác hiểu. Mình chỉ thật sự hiểu một chủ đề nào đó sâu sắc khi mình có thể giải thích cho người khác hiểu nó một cách dễ dàng, cụ Einstein từng nói:&lt;/p>
-&lt;blockquote>
-&lt;p>If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it well enough.&lt;/p>
-&lt;/blockquote>
-&lt;p>Khi chia sẻ các bạn đừng sợ người khác học hết kiến thức của mình, hãy cứ cho đi rồi các bạn sẽ được nhận lại còn nhiều hơn thế, không mất đi đâu cả. Cơ hội tốt ngoài kia rất nhiều, hãy tự tạo ra may mắn cho chính mình. Không tự nhiên mà may mắn nó tự tìm tới và rơi trúng vào ngay đầu mình được. May mắn chỉ thực sự đến với những ai chăm chỉ học hành tử tế, nghiêm túc với những gì mình đang làm.&lt;/p>
-&lt;p>Nói có sách mách có chứng 😀. Mình lập blog từ năm 2007, hay viết linh tinh mặc dù viết dở ẹc, thời kì đó mình học được rất nhiều. Những năm sau mình tự tin hơn xíu thì tham gia thảo luận, trình bày ở hội thảo, meetups, chia sẻ các bài nói chuyện. Đơn cử như cái chủ đề nho nhỏ về Elasticsearch mình nói ở Barcamp mấy năm trước không hiểu sao lại lọt tới tận các công ty ở Mỹ, Đức, UEA, Úc, Canada… nhờ nó mình đã có rất nhiều cơ hội việc làm tốt.&lt;/p>
-&lt;p>Các bạn sinh viên mới ra trường hãy tìm đọc cuốn &lt;a href="https://www.amazon.com/Soft-Skills-Software-Developers-Manual/dp/B0158SJ3EM/ref=sr_1_2?keywords=Soft+Skills%3A+The+software+developer%E2%80%99s+life+manual&amp;amp;qid=1567652157&amp;amp;s=gateway&amp;amp;sr=8-2">Soft Skills: The software developer&amp;rsquo;s life manual&lt;/a> của John Sonmez để học thêm về các kỹ năng mềm nếu muốn phát triển nghề nghiệp của mình một cách nghiêm túc nhé.&lt;/p></description></item><item><title>Interview at Elastic</title><link>http://duydo.me/interview-at-elastic/</link><pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate><guid>http://duydo.me/interview-at-elastic/</guid><description>&lt;p>Some months ago, I had an interview with &lt;a href="https://elastic.co">Elastic&lt;/a> for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p>
-&lt;p>The interview process is extremely thorough, all conversations were over the video call. It took two months, ten interviews with different engineers, two VPs of Engineers, and the last one is co-founder, Shay Banon.&lt;/p>
-&lt;p>The first conversation I had with the technical recruiter, she is very prompt and friendly. She tried to understand my background, my interests, my familiar with Elasticsearch and its ecosytems. The next five conversations I had with five engineers, they are extremely knowledgeable and enjoyable. The last three conversations with VPs and Shay were extremely interesting. We talked about development philosophies, the product vision, the culture, the people at Elastic and the country where you come from; Shay is excited to know many interesting things about your country. They care deeply about building a world class team and delivering outstanding products. I was very impressed the way they organize a distributed team with more than 300 employees in over 30 countries around the world.&lt;/p>
-&lt;p>The technical questions were not too difficult, I believe that you can answer most of those questions if you have solid background about software engineering, distributed systems and of course, about Elasticsearch stack. You don&amp;rsquo;t need to master all Elastic&amp;rsquo;s products to work as a support engineer, the people in your team will help you with the products you are not familliar with.&lt;/p>
-&lt;p>My interview was very smooth, I went in the final round with Shay, and got very positive feedback from him. I was holding in my hand a wonderful oppurtunity to work with the talented people at Elastic.&lt;/p>
-&lt;p>In meantime, there was an event happened to me. An investor from US came to me and asked me to do a startup with my friends to build an online platform, this was also a wonderful oppurtunity, wasn&amp;rsquo;t it? This made me think a lot, I had to make a choice: Elastic or my own business. After careful consideration, I chose to do my own business. I know a startup is not going to be easy and has a bundle of risks but it will be fun. Honestly, that was a tough decision I&amp;rsquo;ve ever made. I really love Elasticsearch and had a dream that one day I could work with Shay and his amazing team.&lt;/p>
-&lt;p>Although I don&amp;rsquo;t work for Elastic, I will still continue to contribute to Elasticsearch. The Elasticsearch community is amazing.&lt;/p>
-&lt;p>By the way, I want to send my big thanks to &lt;a href="https://twitter.com/warkolm">Mark Walkom&lt;/a>, who referred me to Elastic team :-)&lt;/p></description></item><item><title>Alan Turing</title><link>http://duydo.me/alan-turing/</link><pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate><guid>http://duydo.me/alan-turing/</guid><description>&lt;p>Ngồi đợi ông con học, ghi chép đôi dòng về Alan Turing.&lt;/p>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/alan_turing.jpg" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/alan_turing.jpg" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Alan Turing&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>Ắt hẳn ai học chuyên ngành máy tính cũng ít nhiều biết về Alan Turing. Ông là một nhà toán học, nhà mật mã học thiên tài người Anh, ông đã khai sinh ra ngành khoa học máy tính, đưa ra những lý thuyết đầu tiên về trí thông minh nhân tạo.&lt;/p>
-&lt;p>Trong chiến tranh thế giới lần 2, nhờ vào tài năng toán học cùng khả năng giải mã xuất chúng của mình Turing đã chế tạo ra được chiếc máy giải mã các thông điệp tình báo, chỉ thị quận sự mật của hải quân Đức được mã hóa bởi máy Enigma, giúp quân Đồng Minh đánh bại Hitler cứu được hàng triệu sinh mạng, góp phần làm cho cuộc chiến kết thúc sớm hơn dự tính.&lt;/p>
-&lt;p>Máy Enigma được người Đức chế tạo dùng để tạo mã hóa và giải mã các thông tin cơ mật, họ tin rằng nó là một chiếc máy siêu bảo mật không ai có thể thể phá được mật mã của họ, một kí tự bị mã hóa có khả năng cho ra tới 159 nghìn tỷ kết quả khác nhau khi giải mã. Giải mã được Enigma nhưng chính phủ Anh giữ bí mật, mãi đến 30 năm sau khi chiến tranh thế giới lần 2 kết thúc họ mới công bố và thừa nhận. Chi tiết về cuộc giải mã này được dựng thành bộ phim rất xuất xắc &amp;ldquo;The Imitation Game&amp;rdquo;, bạn nào tò mò có thể xem để hiểu thêm nhé.&lt;/p>
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/enigma.jpg" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/enigma.jpg" itemprop="contentUrl">&lt;/a>
-&lt;figcaption>&lt;h4>Enigma&lt;/h4>
-&lt;/figcaption>
-&lt;/figure>
-&lt;/div>
-&lt;p>Tài năng là thế nhưng cuộc đời của Turing là một bi kịch chỉ bởi…ông là người đồng tính. Ông bị cảnh sát Anh bắt vào năm 1952 vì đồng tính là &amp;ldquo;lăng nhục thuần phong mỹ tục&amp;rdquo;, họ buộc ông phải chọn một là ở tù hai là phải dùng thuốc &amp;ldquo;điều trị&amp;rdquo; giảm ham muốn tình dục, một hình thức thiến hóa học biến ông thành phụ nữ. Vì ở tù thì ông không thể nào tiếp tục công việc của mình nên ông đã chọn “điều trị” để ông được tiếp tục làm việc. Hàng ngày phải dùng thuốc điều trị khiến ông đau đớn ức chế, bế tắc, cơ thể thay đổi, vú phát triển to lên. Không chịu nổi điều này, ông đã kết liễu cuộc đời mình bằng chất độc Cyanua 2 năm sau đó, 1954, lúc ông 41 tuổi. Một cái kết buồn cho một tài năng xuất chúng của nhân loại.&lt;/p>
-&lt;p>Năm 2009, Thủ tướng Anh Gordon Brown chính thức xin lỗi vì cách hành xử khủng khiếp đối với ông. Năm 2012 nhân kỉ niệm 100 năm ngày sinh của Turing, các nhà khoa Anh đã yêu cầu chính phủ Anh hủy bản án bất công này đối với ông. Cuối năm 2013 Nữ Hoàng Elizabeth II đã chính thức đưa ra lệnh đặc xá sau 60 năm bị kết án vì đồng tính.&lt;/p>
-&lt;p>Mình rất thích câu nói nổi tiếng này của Alan Turing:&lt;/p>
-&lt;blockquote>
-&lt;p>Tầm nhìn ta thật ngắn mà đã thấy bao thứ để làm - Alan Turing&lt;/p>
-&lt;/blockquote></description></item><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p>
-&lt;h3 id="installation">Installation&lt;/h3>
-&lt;p>Just download the &lt;code>evm&lt;/code> script and make it executable.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo curl -o /usr/local/bin/evm https://raw.githubusercontent.com/duydo/evm/master/evm
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x /usr/local/bin/evm
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="usage">Usage&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm -h Print help information
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm -V Print version information
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm list List all installed ES versions
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm version Print the current activated ES version
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm install &amp;lt;version&amp;gt; Install a specific ES version
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm use &amp;lt;version&amp;gt; Use a specific ES version
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm remove &amp;lt;version&amp;gt; Remove a specific ES version &lt;span style="color:#66d9ef">if&lt;/span> available
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm which &lt;span style="color:#f92672">[&lt;/span>&amp;lt;version&amp;gt;&lt;span style="color:#f92672">]&lt;/span> Print path to installed ES version
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin list List all installed ES plugins
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin &amp;lt;install|remove&amp;gt; &amp;lt;plugin&amp;gt; Install or remove an ES plugin
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start &lt;span style="color:#f92672">[&lt;/span>-c &amp;lt;/path/to/config/dir&amp;gt;&lt;span style="color:#f92672">]&lt;/span> Start ES in the background with a specific config directory &lt;span style="color:#f92672">(&lt;/span>optional&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm stop Stop ES &lt;span style="color:#66d9ef">if&lt;/span> it is running
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm status Check &lt;span style="color:#66d9ef">if&lt;/span> ES is running
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>evm install 5.3.1 Install ES 5.3.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm use 5.3.1 Use ES 5.3.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start Start ES node with the default config directory
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm start -c /etc/elasticsearch Start ES node with /etc/elasticsearch config directory
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm status Print ES running status
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm stop Stop ES &lt;span style="color:#66d9ef">if&lt;/span> it is running
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin install x-pack Install the x-pack plugin
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>evm plugin remove x-pack Remove the x-pack plugin
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to build Elasticsearch Vietnamese Analysis Plugin</title><link>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid><description>&lt;p>Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p>
-&lt;h2 id="step-1-install-java-maven--git">Step 1: Install Java, Maven &amp;amp; Git&lt;/h2>
-&lt;p>The plugin is written in Java and built with Maven, so you have to install them first. Here is the instructions for installing &lt;a href="https://www.java.com/en/download/help/download_options.xml">Java&lt;/a>, &lt;a href="https://maven.apache.org/install.html">Maven&lt;/a> and &lt;a href="https://www.atlassian.com/git/tutorials/install-git">Git&lt;/a>.&lt;/p>
-&lt;p>If you are using Mac, just use these commands:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>brew cask install java
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install maven
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-build-the-vntokenizer">Step 2: Build the VnTokenizer&lt;/h2>
-&lt;p>The plugin is based on the VNTokenizer library, you have to build it before building the plugin&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/vn-nlp-libraries.git
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd vn-nlp-libraries/nlp-parent
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn install
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-build-the-plugin">Step 3: Build the plugin&lt;/h2>
-&lt;p>Clone the plugin&amp;rsquo;s source code:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/duydo/elasticsearch-analysis-vietnamese.git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Edit the &lt;code>elasticsearch-analysis-vietnamese/pom.xml&lt;/code> to change the version of Elasticsearch you want to build the plugin with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;project.build.java.version&amp;gt;&lt;/span>1.8&lt;span style="color:#f92672">&amp;lt;/project.build.java.version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;elasticsearch.version&amp;gt;&lt;/span>5.2.1&lt;span style="color:#f92672">&amp;lt;/elasticsearch.version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;lucene.version&amp;gt;&lt;/span>6.4.1&lt;span style="color:#f92672">&amp;lt;/lucene.version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Build the plugin:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd elasticsearch-analysis-vietnamese
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn package
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-install-the-plugin">Step 4: Install the plugin&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mvn clean package
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bin/elasticsearch-plugin install file:target/releases/elasticsearch-analysis-vietnamese-5.2.1.zip
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Solve your search and analytics problems with Elasticsearch</title><link>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</link><pubDate>Fri, 09 Dec 2016 08:07:09 +0700</pubDate><guid>http://duydo.me/solve-your-search-and-analytics-problems-with-elasticsearch/</guid><description>&lt;p>I gave a talk about Elasticsearch at Barcamp Saigon 2016. We&amp;rsquo;d discussed how to apply Elasticsearch to solve search and analytics problems, how Elasticsearch has been used at GitHub, Uber and Sentifi.&lt;/p>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
-&lt;/figure>
-&lt;/div>
-&lt;p>&lt;iframe id="talk_frame_370710" class="speakerdeck-iframe" src="//speakerdeck.com/player/9fa7022cc8da4e06be30f5e84ab03248" width="710" height="399" style="aspect-ratio:710/399; border:0; padding:0; margin:0; background:transparent;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen">&lt;/iframe>
-&lt;/p>
-&lt;p>&lt;a href="https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch" target="_blank">https://speakerdeck.com/duydo/solve-your-search-and-analytics-problems-with-elasticsearch&lt;/a>&lt;/p></description></item><item><title>How Elasticsearch cluster works</title><link>http://duydo.me/how-elasticsearch-cluster-works/</link><pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate><guid>http://duydo.me/how-elasticsearch-cluster-works/</guid><description>&lt;p>This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p>
-&lt;ul>
-&lt;li>How a node in cluster talks to others?&lt;/li>
-&lt;li>What happens when a node joins or leaves the cluster?&lt;/li>
-&lt;li>What happens when a node stops or has encountered a problem?&lt;/li>
-&lt;/ul>
-&lt;h2 id="a-cluster-of-nodes">A Cluster of Nodes&lt;/h2>
-&lt;p>When we start an instance of Elasticsearch, we are starting a &lt;em>node&lt;/em> and we have a &lt;em>cluster&lt;/em> with single node. We start another instance of Elasticsearch has same &lt;code>cluster.name&lt;/code> with the first instance and we have a cluster with two nodes. We can start more instances of Elasticsearch to form a cluster with number of nodes we want.&lt;/p>
-&lt;p>Every node in the cluster knows about the other nodes within the cluster, they talk to others directly using the native Elasticsearch language over &lt;a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">TCP&lt;/a>. This is known as a &lt;a href="http://en.wikipedia.org/wiki/Network_topology#Mesh">full connected mesh topology&lt;/a>:&lt;/p>
-&lt;p>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png" alt="full connected mesh topology">&lt;/p>
-&lt;p>&lt;em>Figure 1. Full connected mesh topology (source &lt;a href="https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png">https://upload.wikimedia.org/wikipedia/commons/3/3c/NetworkTopology-FullyConnected.png&lt;/a>)&lt;/em>&lt;/p>
-&lt;p>Besides that, the nodes are able to talk to external world using &lt;a href="http://www.json.org">JSON&lt;/a> &amp;ldquo;language&amp;rdquo; over &lt;a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP&lt;/a>.&lt;/p>
-&lt;p>So, we can say:&lt;/p>
-&lt;blockquote>
-&lt;p>Elasticsearch is &lt;a href="https://en.wikipedia.org/wiki/Peer-to-peer">peer-to-peer&lt;/a> based system, nodes communicate with others directly.&lt;/p>
-&lt;/blockquote>
-&lt;p>Each node in the cluster plays one or more roles; it can be a &lt;em>master&lt;/em> node, &lt;em>data&lt;/em> node, &lt;em>client&lt;/em> node, or &lt;em>tribe&lt;/em> node. Ech role has it own purpose.&lt;/p>
-&lt;p>&lt;strong>The master node&lt;/strong> is responsible for creating, deleting indices, adding the nodes or remove the nodes from the cluster. Each time a cluster state is changed, the master node broadcasts the changes to other nodes in the cluster. There is only one master node in the cluster at a time.&lt;/p>
-&lt;p>&lt;strong>The data node&lt;/strong> is responsible for holding the data in the shards and performing data related operations such as create, read, update, delete, search, and aggregations. We can have many data nodes in the cluster. If one of the data nodes stops, the cluster still operates and re-organizes the data on other nodes.&lt;/p>
-&lt;p>&lt;strong>The client node&lt;/strong> is responsible for routing the cluster-related requests to the master node and the data-related requests to the data nodes, it acts as a &amp;ldquo;smart &lt;a href="https://en.wikipedia.org/wiki/Router_(computing)">router&lt;/a>&amp;rdquo;. The client node does not hold any data, it also cannot become the master node.&lt;/p>
-&lt;p>&lt;img src="http://duydo.me/images/es_client_to_data_nodes.png" alt="es_client_to_data_nodes">
-&lt;em>Figure 2. The client node routes the data-related request to every data nodes in the cluster.&lt;/em>
-&lt;img src="http://duydo.me/images/es_client_to_master_node.png" alt="es_client_to_data_nodes">
-&lt;em>Figure 3. The client node routes the cluster-related request to the master node in the cluster.&lt;/em>&lt;/p>
-&lt;p>&lt;strong>The tribe node&lt;/strong> is special type of client node that is able to talk to multiple clusters to perform search and other operations.&lt;/p>
-&lt;p>&lt;strong>The ingest node&lt;/strong> is responsible for pre-processing documents before the actual indexing takes into account.&lt;/p>
-&lt;p>Now we know role of each node, next we look at what happens behind the sence when a node joins or leaves the cluster.&lt;/p>
-&lt;h2 id="add-a-node-to-the-cluster">Add a Node to the Cluster&lt;/h2>
-&lt;p>When we start a node, the node is starting to ping all the nodes in the cluster for finding the master node. Once the master is found, it will ask the master to join by sending a join request; the master accepts it as a new node of the cluster and then notify all the nodes in the cluster about presense of the new node, and finally the new node connects to all other nodes.&lt;/p>
-&lt;p>If the joined node is a data node, the master will reallocate the data evenly across the nodes.&lt;/p>
-&lt;h2 id="remove-a-node-from-the-cluster">Remove a Node from the Cluster&lt;/h2>
-&lt;p>If we stop a node or a node in the cluster is unresponsive in specific amout of time, the master node will remove it from the cluster and reallocate the data if the removed node is a data node.&lt;/p>
-&lt;p>You might be curious about how the master node knows if other nodes in the cluster are still alive. The master has a fault detection machanism, it pings all the other nodes in the cluster and verify that they are alive or not.&lt;/p>
-&lt;p>And about the master, what happens if it stops or has encountered a problem? Same the master node, each node in the cluster also have a fault detection machanism, it pings to master to verify if its still alive. If the master is not alive, other master-eligible nodes will be elected new master to replace the down one within seconds.&lt;/p>
-&lt;p>In the next post in this series, we will look at how Elasticsearc index data in a distributed maner.&lt;/p></description></item><item><title>Elasticsearch Consulting</title><link>http://duydo.me/consulting/</link><pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate><guid>http://duydo.me/consulting/</guid><description>&lt;p>With a decade of professional experience working with Elasticsearch and deep understanding of how it works internally, I&amp;rsquo;ve helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:&lt;/p>
-&lt;ul>
-&lt;li>Architect search applications based on your specific use case, data volume, growth needs and business requirements.&lt;/li>
-&lt;li>Optimize queries, index mapping and tune relevancy for existing Elasticsearch implementations.&lt;/li>
-&lt;li>Tune, scale Elasticsearch clusters to meet your needs.&lt;/li>
-&lt;li>Migrate legacy search engines to Elasticsearch.&lt;/li>
-&lt;li>Develop Elasticsearch plugins.&lt;/li>
-&lt;/ul>
-&lt;h2 id="what-customers-are-saying">What Customers Are Saying&lt;/h2>
-&lt;p>&lt;strong>Dang Phan&lt;/strong>, Product Manager at &lt;a href="https://www.go1.com/">GO1.com&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>Duy helped solve our problem. As our product is growing, we need a new scalable and high performance search service for our complex data structure. Duy helped to architect our Elasticsearch service in the best way, which has resulted in a much better service for our clients. Everyone was happy with the end result.&lt;/p>
-&lt;/blockquote>
-&lt;p>&lt;strong>Atul Signh&lt;/strong>, Founder &amp;amp; CEO at &lt;a href="https://theshelf.com">TheShelf.com&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>Duy is a perfect professional! He understands the inner workings of Elasticsearch system and was able to figure out our codebase and then make changes to it so that the performance was improved very quickly! He delivers on time and is always available and he always provides options for us to further improve the system.&lt;/p>
-&lt;/blockquote>
-&lt;p>&lt;strong>Nick Herford&lt;/strong>, Founder at &lt;a href="https://www.ultimatelysocial.com/">Ultimately Social&lt;/a>&lt;/p>
-&lt;blockquote>
-&lt;p>Outstanding performance by Duy. He&amp;rsquo;s the master of Elasticsearch. What&amp;rsquo;s more, he was very responsive, polite, professional and has perfect command of the English language. I wouldn&amp;rsquo;t hesitate one second to hire him again.&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="are-you-interested-in-my-consulting-service">Are you interested in my consulting service?&lt;/h2>
-&lt;p>Please send me an email to doquocduy [at] gmail [dot] com&lt;/p></description></item><item><title>Elasticsearch for Data Engineers</title><link>http://duydo.me/elasticsearch-for-data-engineers/</link><pubDate>Mon, 17 Oct 2016 18:26:39 +0700</pubDate><guid>http://duydo.me/elasticsearch-for-data-engineers/</guid><description>&lt;p>I gave a talk about Elasticsearch for Data Engineers at &lt;a href="https://sentifi.com">Sentifi&lt;/a>, it was only for beginners who are not familiar with Elasticsearch.&lt;/p>
-&lt;p>&lt;iframe id="talk_frame_359449" class="speakerdeck-iframe" src="//speakerdeck.com/player/970178bcd293418cb303b342fa7d77f5" width="710" height="399" style="aspect-ratio:710/399; border:0; padding:0; margin:0; background:transparent;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen">&lt;/iframe>
-&lt;/p>
-&lt;p>&lt;a href="https://speakerdeck.com/duydo/elasticsearch-for-data-engineers" target="_blank">https://speakerdeck.com/duydo/elasticsearch-for-data-engineers&lt;/a>&lt;/p></description></item><item><title>Celery - a Distributed Task Queue</title><link>http://duydo.me/celery-a-distributed-task-queue/</link><pubDate>Mon, 17 Oct 2016 08:28:45 +0700</pubDate><guid>http://duydo.me/celery-a-distributed-task-queue/</guid><description>&lt;p>I gave a talk about &lt;a href="http://www.celeryproject.org">Celery&lt;/a> when working at &lt;a href="http://sentifi.com">Sentifi&lt;/a>.&lt;/p>
-&lt;blockquote>
-&lt;p>Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well.
-The execution units, called tasks, are executed concurrently on a single or more worker servers using multiprocessing, &lt;code>Eventlet&lt;/code>, or &lt;code>gevent&lt;/code>. Tasks can execute asynchronously (in the background) or synchronously (wait until ready).
-Celery is used in production systems to process millions of tasks a day.&lt;/p>
-&lt;/blockquote>
-&lt;p>
-&lt;iframe
-style="width: 100%; height: 500px;"
-frameborder="0"
-marginwidth="0"
-marginheight="0"
-scrolling="no"
-src="http://www.slideshare.net/slideshow/embed_code/50704487?rel=0"
-allowfullscreen="true"
-webkitallowfullscreen="true"
-mozallowfullscreen="true">
-&lt;/iframe>
-&lt;/p></description></item><item><title>About</title><link>http://duydo.me/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://duydo.me/about/</guid><description>
-&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure class="right" itemprop="associatedMedia"
-itemscope itemtype="http://schema.org/ImageObject"
-style="max-width:300px" >
-&lt;div class="img">
-&lt;img itemprop="thumbnail" src="http://duydo.me/images/duydo.jpg" />
-&lt;/div>
-&lt;a href="http://duydo.me/images/duydo.jpg" itemprop="contentUrl">&lt;/a>
-&lt;/figure>
-&lt;/div>
-&lt;p>Duy Do is software engineer with solid background in both computer science and mathematics.
-His areas of interest include distributed systems, search engine, data processing, data analytics, machine learning and performance optimizations.&lt;/p>
-&lt;p>He is a co-founder of Krom, where he and his partners build the leading marketplace for influencers, connecting right brands with the right creators, enabling branded content that reaches the right audience and inspires actions.&lt;/p>
-&lt;p>He loves open sources and community building. You can find his open source softwares on &lt;a href="https://github.com/duydo">GitHub&lt;/a> or join &lt;a href="https://www.facebook.com/groups/elasticsearchvn/">Elasticsearch community for Vietnamese&lt;/a>, where he found.&lt;/p>
-&lt;p>You can also find him somewhere else on &lt;a href="https://twitter.com/duydo">Twitter&lt;/a> or the roads he drives with his beloved family on weekends.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Duy Do</title>
+    <link>https://duydo.me/</link>
+    <description>Recent content on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Apr 2023 21:08:04 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Honored to Be an Elastic Contributor</title>
+      <link>https://duydo.me/post/honored-to-be-an-elastic-contributor/</link>
+      <pubDate>Wed, 05 Apr 2023 21:08:04 +0700</pubDate>
+      <guid>https://duydo.me/post/honored-to-be-an-elastic-contributor/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m thrilled to share that I have been recognized as an Elastic Bronze Contributor for 2023. This achievement is a reflection of my commitment to the open-source community and a testament to the valuable work being done in the Elasticsearch ecosystem.&lt;/p&gt;
+&lt;p&gt;My contribution efforts have primarily focused on solving real-world challenges faced by developers in the Vietnamese market, particularly through my work on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Vietnamese Analysis Plugin: Ensuring robust and accurate search capabilities for complex Vietnamese language data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Elasticsearch searching data flow</title>
+      <link>https://duydo.me/post/elasticsearch-searching-data-flow/</link>
+      <pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate>
+      <guid>https://duydo.me/post/elasticsearch-searching-data-flow/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Search&lt;/strong&gt; is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
+full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p&gt;
+&lt;p&gt;How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
+operations.&lt;/p&gt;
+
+
+
+
+&lt;figure class=&#34;align-center&#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://duydo.me/images/posts/es-searching-data-flow.png&#34;
+         alt=&#34;Elasticsearch Searching Data Flow&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Elasticsearch Searching Data Flow&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Elasticsearch deleting data flow</title>
+      <link>https://duydo.me/post/elasticsearch-deleting-data-flow/</link>
+      <pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate>
+      <guid>https://duydo.me/post/elasticsearch-deleting-data-flow/</guid>
+      <description>&lt;p&gt;How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p&gt;
+
+
+
+
+&lt;figure class=&#34;align-center&#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://duydo.me/images/posts/es-deleting-data-flow.png&#34;
+         alt=&#34;Elasticsearch Deleting Data Flow&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Elasticsearch Deleting Data Flow&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Elasticsearch indexing data flow</title>
+      <link>https://duydo.me/post/elasticsearch-indexing-data-flow/</link>
+      <pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate>
+      <guid>https://duydo.me/post/elasticsearch-indexing-data-flow/</guid>
+      <description>&lt;p&gt;When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
+data structure that supports full-text searches efficiently and very fast.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An algorithm for finding right-truncatable prime numbers</title>
+      <link>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</guid>
+      <description>&lt;p&gt;Inspired from my status on Facebook:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;One of my friends gave a challenge:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As promised him, I would solve this challenge.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Type Promotion</title>
+      <link>https://duydo.me/post/java_type_promotion/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      <guid>https://duydo.me/post/java_type_promotion/</guid>
+      <description>&lt;p&gt;Cách đây cũng khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, các bạn đều bảo rằng đoạn mã này không có vấn đề, biên dịch và chạy được.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p&gt;
+&lt;p&gt;Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
+Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo kiểu &lt;code&gt;byte&lt;/code&gt; và gán giá trị &lt;code&gt;1&lt;/code&gt;, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu &lt;code&gt;byte&lt;/code&gt; trong Java từ -128 đến 127.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kỹ năng mềm</title>
+      <link>https://duydo.me/post/ky-nang-mem/</link>
+      <pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate>
+      <guid>https://duydo.me/post/ky-nang-mem/</guid>
+      <description>&lt;p&gt;Mình không biết các ngành nghề khác thế nào, chứ riêng với ngành kỹ thuật phần mềm của chúng ta, kỹ năng mềm (soft skills) là yếu tố cực kỳ quan trọng, ảnh hưởng trực tiếp đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p&gt;
+&lt;p&gt;Ngoài kiến thức chuyên môn, các bạn sinh viên hay các bạn mới vào nghề hãy nghiêm túc trau dồi kỹ năng mềm cho thật tốt, đặc biệt là kỹ năng giao tiếp. Thực tế cho thấy, khả năng giao tiếp, trình bày, và hợp tác ảnh hưởng trực tiếp đến hiệu suất công việc, khả năng lãnh đạo và tầm ảnh hưởng của bạn trong tổ chức.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interview at Elastic</title>
+      <link>https://duydo.me/post/interview_at_elastic/</link>
+      <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
+      <guid>https://duydo.me/post/interview_at_elastic/</guid>
+      <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alan Turing</title>
+      <link>https://duydo.me/post/alan_turing/</link>
+      <pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate>
+      <guid>https://duydo.me/post/alan_turing/</guid>
+      <description>&lt;p&gt;Ngồi đợi con học, ghi chép đôi dòng về Alan Turing.&lt;/p&gt;
+
+
+
+
+&lt;figure class=&#34;align-center&#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://duydo.me/images/posts/alan_turing.jpg&#34;/&gt;&lt;figcaption&gt;
+            Alan Turing
+        &lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>EVM - Elasticsearch Version Manager</title>
+      <link>https://duydo.me/post/evm_elasticsearch_version_manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      <guid>https://duydo.me/post/evm_elasticsearch_version_manager/</guid>
+      <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
+      <link>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</guid>
+      <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Elasticsearch cluster works</title>
+      <link>https://duydo.me/post/how_elasticsearch_cluster_works/</link>
+      <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
+      <guid>https://duydo.me/post/how_elasticsearch_cluster_works/</guid>
+      <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How a node in cluster talks to others?&lt;/li&gt;
+&lt;li&gt;What happens when a node joins or leaves the cluster?&lt;/li&gt;
+&lt;li&gt;What happens when a node stops or has encountered a problem?&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Elasticsearch Consulting</title>
+      <link>https://duydo.me/consulting/</link>
+      <pubDate>Tue, 18 Oct 2016 16:54:21 +0700</pubDate>
+      <guid>https://duydo.me/consulting/</guid>
+      <description>&lt;p&gt;With a decade of professional experience working with Elasticsearch and deep understanding of how it works internally, I&amp;rsquo;ve helped many customers successfully with Elasticsearch-based solutions. I offer followings consulting services:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Architect search applications based on your specific use case, data volume, growth needs and business requirements.&lt;/li&gt;
+&lt;li&gt;Optimize queries, index mapping and tune relevancy for existing Elasticsearch implementations.&lt;/li&gt;
+&lt;li&gt;Tune, scale Elasticsearch clusters to meet your needs.&lt;/li&gt;
+&lt;li&gt;Migrate legacy search engines to Elasticsearch.&lt;/li&gt;
+&lt;li&gt;Develop Elasticsearch plugins.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-customers-are-saying&#34;&gt;What Customers Are Saying&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Dang Phan&lt;/strong&gt;, Product Manager at &lt;a href=&#34;https://www.go1.com/&#34;&gt;GO1.com&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Effective Persistence of Enums in Java: A Deep Dive into Safe and Scalable Design</title>
+      <link>https://duydo.me/post/effective_jpa/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      <guid>https://duydo.me/post/effective_jpa/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll use Wordpress as an example. We all know that every post in Wordpress blog system has a status with possible values: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;pending-review&lt;/code&gt;, &lt;code&gt;published&lt;/code&gt; and so on.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

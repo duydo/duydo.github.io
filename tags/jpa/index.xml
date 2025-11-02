@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Jpa on Duy Do</title>
+    <link>https://duydo.me/tags/jpa/</link>
+    <description>Recent content in Jpa on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 24 Jan 2010 08:17:50 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effective Persistence of Enums in Java: A Deep Dive into Safe and Scalable Design</title>
+      <link>https://duydo.me/post/effective_jpa/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      <guid>https://duydo.me/post/effective_jpa/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll use Wordpress as an example. We all know that every post in Wordpress blog system has a status with possible values: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;pending-review&lt;/code&gt;, &lt;code&gt;published&lt;/code&gt; and so on.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

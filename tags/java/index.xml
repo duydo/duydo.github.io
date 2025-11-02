@@ -1,3 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>java on Duy Do</title><link>http://duydo.me/tags/java/</link><description>Recent content in java on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Mon, 06 Aug 2018 18:51:46 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java: Type Promotion</title><link>http://duydo.me/java-type-promotion/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/java-type-promotion/</guid><description>Cách đây khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, tất cả các bạn đều bảo rằng đoạn mã này không có vấn đề gì, biên dịch và chạy được.
-byte b = 1; b = b * 2; Thật ra thì đoạn mã trên không thể biên dịch được.
-Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Java on Duy Do</title>
+    <link>https://duydo.me/tags/java/</link>
+    <description>Recent content in Java on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Aug 2018 18:51:46 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java: Type Promotion</title>
+      <link>https://duydo.me/post/java_type_promotion/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      <guid>https://duydo.me/post/java_type_promotion/</guid>
+      <description>&lt;p&gt;Cách đây cũng khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, các bạn đều bảo rằng đoạn mã này không có vấn đề, biên dịch và chạy được.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Thật ra thì đoạn mã trên không thể biên dịch được.&lt;/p&gt;
+&lt;p&gt;Trước tiên thử phân tích xem vì sao các bạn trả lời như vậy.
+Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo kiểu &lt;code&gt;byte&lt;/code&gt; và gán giá trị &lt;code&gt;1&lt;/code&gt;, khai báo này hoàn toàn hợp lệ vì tầm trị của kiểu &lt;code&gt;byte&lt;/code&gt; trong Java từ -128 đến 127.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Effective Persistence of Enums in Java: A Deep Dive into Safe and Scalable Design</title>
+      <link>https://duydo.me/post/effective_jpa/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      <guid>https://duydo.me/post/effective_jpa/</guid>
+      <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll use Wordpress as an example. We all know that every post in Wordpress blog system has a status with possible values: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;pending-review&lt;/code&gt;, &lt;code&gt;published&lt;/code&gt; and so on.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

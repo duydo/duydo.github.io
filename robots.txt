@@ -1,2 +1,3 @@
 User-agent: *
-Sitemap: http://duydo.me/sitemap.xml
+Disallow:
+Sitemap: https://duydo.me/sitemap.xml

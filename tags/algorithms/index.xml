@@ -1,9 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>algorithms on Duy Do</title><link>http://duydo.me/tags/algorithms/</link><description>Recent content in algorithms on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Thu, 01 Aug 2019 12:10:30 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/algorithms/index.xml" rel="self" type="application/rss+xml"/><item><title>An algorithm for finding right-truncatable prime numbers</title><link>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid><description>&lt;p>Inspired from &lt;a href="https://www.facebook.com/doquocduy/posts/10212275741143230">my status&lt;/a> on Facebook:&lt;/p>
-&lt;blockquote>
-&lt;p>The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p>
-&lt;/blockquote>
-&lt;p>One of my friends gave a challenge:&lt;/p>
-&lt;blockquote>
-&lt;p>Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p>
-&lt;/blockquote>
-&lt;p>As promised him, I would solve this challenge.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Algorithms on Duy Do</title>
+    <link>https://duydo.me/tags/algorithms/</link>
+    <description>Recent content in Algorithms on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Aug 2019 12:10:30 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An algorithm for finding right-truncatable prime numbers</title>
+      <link>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</guid>
+      <description>&lt;p&gt;Inspired from my status on Facebook:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;One of my friends gave a challenge:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you write a program reading a number N from keyboard then finding the nearest prime number to N that satisfies the characteristics of 73939133?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As promised him, I would solve this challenge.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

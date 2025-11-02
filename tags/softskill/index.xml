@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>softskill on Duy Do</title><link>http://duydo.me/tags/softskill/</link><description>Recent content in softskill on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Tue, 05 Sep 2017 09:41:07 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/softskill/index.xml" rel="self" type="application/rss+xml"/><item><title>Kỹ năng mềm</title><link>http://duydo.me/ky-nang-mem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/ky-nang-mem/</guid><description>&lt;link rel="stylesheet" href="http://duydo.me/css/hugo-easy-gallery.css" />
-&lt;div class="box">
-&lt;figure itemprop="associatedMedia"
- itemscope itemtype="http://schema.org/ImageObject" >
- &lt;div class="img">
- &lt;img itemprop="thumbnail" src="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" />
- &lt;/div>
- &lt;a href="http://duydo.me/images/posts/duydo_elastcicsearch_at_barcamp2016.jpg" itemprop="contentUrl">&lt;/a>
- &lt;figcaption>&lt;h4>Duy Do talked about Elasticsearch at Barcamp 2016&lt;/h4>
- &lt;/figcaption>
- &lt;/figure>
-&lt;/div>
-
-&lt;p>Mình không biết các ngành nghề khác như thế nào chứ riêng ngành kỹ thuật phần mềm như bọn mình đang làm thì kỹ năng mềm là kỹ năng cực kỳ quan trọng, ảnh hưởng rất lớn đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Softskill on Duy Do</title>
+    <link>https://duydo.me/tags/softskill/</link>
+    <description>Recent content in Softskill on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 05 Sep 2019 09:41:07 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/softskill/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kỹ năng mềm</title>
+      <link>https://duydo.me/post/ky-nang-mem/</link>
+      <pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate>
+      <guid>https://duydo.me/post/ky-nang-mem/</guid>
+      <description>&lt;p&gt;Mình không biết các ngành nghề khác thế nào, chứ riêng với ngành kỹ thuật phần mềm của chúng ta, kỹ năng mềm (soft skills) là yếu tố cực kỳ quan trọng, ảnh hưởng trực tiếp đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p&gt;
+&lt;p&gt;Ngoài kiến thức chuyên môn, các bạn sinh viên hay các bạn mới vào nghề hãy nghiêm túc trau dồi kỹ năng mềm cho thật tốt, đặc biệt là kỹ năng giao tiếp. Thực tế cho thấy, khả năng giao tiếp, trình bày, và hợp tác ảnh hưởng trực tiếp đến hiệu suất công việc, khả năng lãnh đạo và tầm ảnh hưởng của bạn trong tổ chức.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bash on Duy Do</title><link>http://duydo.me/tags/bash/</link><description>Recent content in bash on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>EVM - Elasticsearch Version Manager</title><link>http://duydo.me/evm-elasticsearch-version-manager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/evm-elasticsearch-version-manager/</guid><description>&lt;p>As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href="https://github.com/duydo/evm">&lt;strong>evm&lt;/strong>&lt;/a>. It allows me to install, remove, test multiple versions easily.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bash on Duy Do</title>
+    <link>https://duydo.me/tags/bash/</link>
+    <description>Recent content in Bash on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 20 May 2017 17:50:35 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EVM - Elasticsearch Version Manager</title>
+      <link>https://duydo.me/post/evm_elasticsearch_version_manager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      <guid>https://duydo.me/post/evm_elasticsearch_version_manager/</guid>
+      <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,1 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Duy Do</title><link>http://duydo.me/tags/</link><description>Recent content in Tags on Duy Do</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Duy Do</copyright><lastBuildDate>Wed, 11 Jan 2023 22:32:29 +0700</lastBuildDate><atom:link href="http://duydo.me/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>elasticsearch</title><link>http://duydo.me/tags/elasticsearch/</link><pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate><guid>http://duydo.me/tags/elasticsearch/</guid><description/></item><item><title>engineering</title><link>http://duydo.me/tags/engineering/</link><pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate><guid>http://duydo.me/tags/engineering/</guid><description/></item><item><title>algorithms</title><link>http://duydo.me/tags/algorithms/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/tags/algorithms/</guid><description/></item><item><title>prime</title><link>http://duydo.me/tags/prime/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/tags/prime/</guid><description/></item><item><title>python</title><link>http://duydo.me/tags/python/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/tags/python/</guid><description/></item><item><title>right-truncatable-prime</title><link>http://duydo.me/tags/right-truncatable-prime/</link><pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate><guid>http://duydo.me/tags/right-truncatable-prime/</guid><description/></item><item><title>java</title><link>http://duydo.me/tags/java/</link><pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate><guid>http://duydo.me/tags/java/</guid><description/></item><item><title>books</title><link>http://duydo.me/tags/books/</link><pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate><guid>http://duydo.me/tags/books/</guid><description/></item><item><title>reading</title><link>http://duydo.me/tags/reading/</link><pubDate>Mon, 06 Aug 2018 09:33:30 +0700</pubDate><guid>http://duydo.me/tags/reading/</guid><description/></item><item><title>kynangmem</title><link>http://duydo.me/tags/kynangmem/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/tags/kynangmem/</guid><description/></item><item><title>softskill</title><link>http://duydo.me/tags/softskill/</link><pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate><guid>http://duydo.me/tags/softskill/</guid><description/></item><item><title>elastic</title><link>http://duydo.me/tags/elastic/</link><pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate><guid>http://duydo.me/tags/elastic/</guid><description/></item><item><title>interview</title><link>http://duydo.me/tags/interview/</link><pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate><guid>http://duydo.me/tags/interview/</guid><description/></item><item><title>alanturing</title><link>http://duydo.me/tags/alanturing/</link><pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate><guid>http://duydo.me/tags/alanturing/</guid><description/></item><item><title>enigma</title><link>http://duydo.me/tags/enigma/</link><pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate><guid>http://duydo.me/tags/enigma/</guid><description/></item><item><title>bash</title><link>http://duydo.me/tags/bash/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/tags/bash/</guid><description/></item><item><title>shell</title><link>http://duydo.me/tags/shell/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/tags/shell/</guid><description/></item><item><title>versionmanager</title><link>http://duydo.me/tags/versionmanager/</link><pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate><guid>http://duydo.me/tags/versionmanager/</guid><description/></item><item><title>analysis</title><link>http://duydo.me/tags/analysis/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/tags/analysis/</guid><description/></item><item><title>vietnamese</title><link>http://duydo.me/tags/vietnamese/</link><pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate><guid>http://duydo.me/tags/vietnamese/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Duy Do</title>
+    <link>https://duydo.me/tags/</link>
+    <description>Recent content in Tags on Duy Do</description>
+    <image>
+      <title>Duy Do</title>
+      <url>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://duydo.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 13 Jan 2023 12:51:30 +0700</lastBuildDate>
+    <atom:link href="https://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://duydo.me/tags/elasticsearch/</link>
+      <pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate>
+      <guid>https://duydo.me/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Engineering</title>
+      <link>https://duydo.me/tags/engineering/</link>
+      <pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate>
+      <guid>https://duydo.me/tags/engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithms</title>
+      <link>https://duydo.me/tags/algorithms/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prime</title>
+      <link>https://duydo.me/tags/prime/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/tags/prime/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://duydo.me/tags/python/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Right-Truncatable-Prime</title>
+      <link>https://duydo.me/tags/right-truncatable-prime/</link>
+      <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
+      <guid>https://duydo.me/tags/right-truncatable-prime/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://duydo.me/tags/java/</link>
+      <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
+      <guid>https://duydo.me/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kynangmem</title>
+      <link>https://duydo.me/tags/kynangmem/</link>
+      <pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate>
+      <guid>https://duydo.me/tags/kynangmem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Softskill</title>
+      <link>https://duydo.me/tags/softskill/</link>
+      <pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate>
+      <guid>https://duydo.me/tags/softskill/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Elastic</title>
+      <link>https://duydo.me/tags/elastic/</link>
+      <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
+      <guid>https://duydo.me/tags/elastic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>https://duydo.me/tags/interview/</link>
+      <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
+      <guid>https://duydo.me/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alanturing</title>
+      <link>https://duydo.me/tags/alanturing/</link>
+      <pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate>
+      <guid>https://duydo.me/tags/alanturing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Enigma</title>
+      <link>https://duydo.me/tags/enigma/</link>
+      <pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate>
+      <guid>https://duydo.me/tags/enigma/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>https://duydo.me/tags/bash/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      <guid>https://duydo.me/tags/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shell</title>
+      <link>https://duydo.me/tags/shell/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      <guid>https://duydo.me/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Versionmanager</title>
+      <link>https://duydo.me/tags/versionmanager/</link>
+      <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
+      <guid>https://duydo.me/tags/versionmanager/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Analysis</title>
+      <link>https://duydo.me/tags/analysis/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://duydo.me/tags/analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vietnamese</title>
+      <link>https://duydo.me/tags/vietnamese/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://duydo.me/tags/vietnamese/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Informationretrieval</title>
+      <link>https://duydo.me/tags/informationretrieval/</link>
+      <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/informationretrieval/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Searchengine</title>
+      <link>https://duydo.me/tags/searchengine/</link>
+      <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/searchengine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jpa</title>
+      <link>https://duydo.me/tags/jpa/</link>
+      <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
+      <guid>https://duydo.me/tags/jpa/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
