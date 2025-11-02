@@ -43,16 +43,20 @@ params:
   showtoc: false
   tocopen: false
 
-socialIcons:
-  - name: x
-    url: "https://x.com/duydo"
-  - name: github
-    url: "https://github.com/duydo"
+  analytics:
+    google:
+      Tag: "G-MWQHCX1NZ9"
 
-analytics:
-  google:
-    SiteVerificationTag: "G-MWQHCX1NZ9"
   
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/duydo"
+    - name: github
+      url: "https://github.com/duydo"
+
+
+
 menu:
   main:
     - identifier: archives
