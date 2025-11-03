@@ -15,9 +15,9 @@
     <atom:link href="https://duydo.me/tags/searchengine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Elasticsearch cluster works</title>
-      <link>https://duydo.me/post/how_elasticsearch_cluster_works/</link>
+      <link>https://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
-      <guid>https://duydo.me/post/how_elasticsearch_cluster_works/</guid>
+      <guid>https://duydo.me/how-elasticsearch-cluster-works/</guid>
       <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How a node in cluster talks to others?&lt;/li&gt;

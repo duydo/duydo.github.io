@@ -15,9 +15,9 @@
     <atom:link href="https://duydo.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Honored to Be an Elastic Contributor</title>
-      <link>https://duydo.me/post/honored-to-be-an-elastic-contributor/</link>
+      <link>https://duydo.me/honored-to-be-an-elastic-contributor/</link>
       <pubDate>Wed, 05 Apr 2023 21:08:04 +0700</pubDate>
-      <guid>https://duydo.me/post/honored-to-be-an-elastic-contributor/</guid>
+      <guid>https://duydo.me/honored-to-be-an-elastic-contributor/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m thrilled to share that I have been recognized as an Elastic Bronze Contributor for 2023. This achievement is a reflection of my commitment to the open-source community and a testament to the valuable work being done in the Elasticsearch ecosystem.&lt;/p&gt;
 &lt;p&gt;My efforts have primarily focused on solving real-world challenges faced by developers in the Vietnamese market and beyond. My key areas of contribution include:&lt;/p&gt;
 &lt;ul&gt;
@@ -26,9 +26,9 @@
     </item>
     <item>
       <title>Understanding Elasticsearch searching data flow</title>
-      <link>https://duydo.me/post/elasticsearch-searching-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-searching-data-flow/</link>
       <pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-searching-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-searching-data-flow/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Search&lt;/strong&gt; is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p&gt;
 &lt;p&gt;How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
@@ -36,24 +36,24 @@ operations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch deleting data flow</title>
-      <link>https://duydo.me/post/elasticsearch-deleting-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-deleting-data-flow/</link>
       <pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-deleting-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid>
       <description>&lt;p&gt;How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch indexing data flow</title>
-      <link>https://duydo.me/post/elasticsearch-indexing-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-indexing-data-flow/</link>
       <pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-indexing-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid>
       <description>&lt;p&gt;When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p&gt;</description>
     </item>
     <item>
       <title>An algorithm for finding right-truncatable prime numbers</title>
-      <link>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</link>
+      <link>https://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</link>
       <pubDate>Thu, 01 Aug 2019 12:10:30 +0700</pubDate>
-      <guid>https://duydo.me/post/an_algorithm_for_finding_largest_right_truncatable_prime/</guid>
+      <guid>https://duydo.me/an-algorithm-for-finding-right-truncatable-prime-numbers/</guid>
       <description>&lt;p&gt;Inspired from my status on Facebook:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The prime number 73939133 is very special, if removing each digit from right to left of that number we get another prime numbers: 7393913, 739391, 73939, 7393, 739, 73 and 7.&lt;/p&gt;
@@ -66,9 +66,9 @@ data structure that supports full-text searches efficiently and very fast.&lt;/p
     </item>
     <item>
       <title>Java: Type Promotion</title>
-      <link>https://duydo.me/post/java_type_promotion/</link>
+      <link>https://duydo.me/java-type-promotion/</link>
       <pubDate>Mon, 06 Aug 2018 18:51:46 +0700</pubDate>
-      <guid>https://duydo.me/post/java_type_promotion/</guid>
+      <guid>https://duydo.me/java-type-promotion/</guid>
       <description>&lt;p&gt;Cách đây cũng khá lâu mình đem đoạn mã đơn giản bên dưới hỏi một số bạn làm Java, cả juniors và seniors, các bạn đều bảo rằng đoạn mã này không có vấn đề, biên dịch và chạy được.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -78,24 +78,24 @@ Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo
     </item>
     <item>
       <title>Kỹ năng mềm</title>
-      <link>https://duydo.me/post/ky-nang-mem/</link>
+      <link>https://duydo.me/ky-nang-mem/</link>
       <pubDate>Tue, 05 Sep 2017 09:41:07 +0700</pubDate>
-      <guid>https://duydo.me/post/ky-nang-mem/</guid>
+      <guid>https://duydo.me/ky-nang-mem/</guid>
       <description>&lt;p&gt;Mình không biết các ngành nghề khác thế nào, chứ riêng với ngành kỹ thuật phần mềm của chúng ta, kỹ năng mềm (soft skills) là yếu tố cực kỳ quan trọng, ảnh hưởng trực tiếp đến sự thăng tiến và thành công trong sự nghiệp.&lt;/p&gt;
 &lt;p&gt;Ngoài kiến thức chuyên môn, các bạn sinh viên hay các bạn mới vào nghề hãy nghiêm túc trau dồi kỹ năng mềm cho thật tốt, đặc biệt là kỹ năng giao tiếp. Thực tế cho thấy, khả năng giao tiếp, trình bày, và hợp tác ảnh hưởng trực tiếp đến hiệu suất công việc, khả năng lãnh đạo và tầm ảnh hưởng của bạn trong tổ chức.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interview at Elastic</title>
-      <link>https://duydo.me/post/interview_at_elastic/</link>
+      <link>https://duydo.me/interview-at-elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
-      <guid>https://duydo.me/post/interview_at_elastic/</guid>
+      <guid>https://duydo.me/interview-at-elastic/</guid>
       <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Alan Turing</title>
-      <link>https://duydo.me/post/alan_turing/</link>
+      <link>https://duydo.me/alan-turing/</link>
       <pubDate>Mon, 17 Jul 2017 19:01:54 +0700</pubDate>
-      <guid>https://duydo.me/post/alan_turing/</guid>
+      <guid>https://duydo.me/alan-turing/</guid>
       <description>&lt;p&gt;Ngồi đợi con học, ghi chép đôi dòng về Alan Turing.&lt;/p&gt;
 
 
@@ -109,23 +109,23 @@ Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo
     </item>
     <item>
       <title>EVM - Elasticsearch Version Manager</title>
-      <link>https://duydo.me/post/evm_elasticsearch_version_manager/</link>
+      <link>https://duydo.me/evm-elasticsearch-version-manager/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      <guid>https://duydo.me/post/evm_elasticsearch_version_manager/</guid>
+      <guid>https://duydo.me/evm-elasticsearch-version-manager/</guid>
       <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
-      <link>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</link>
+      <link>https://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</guid>
+      <guid>https://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How Elasticsearch cluster works</title>
-      <link>https://duydo.me/post/how_elasticsearch_cluster_works/</link>
+      <link>https://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
-      <guid>https://duydo.me/post/how_elasticsearch_cluster_works/</guid>
+      <guid>https://duydo.me/how-elasticsearch-cluster-works/</guid>
       <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How a node in cluster talks to others?&lt;/li&gt;
@@ -151,9 +151,9 @@ Nhìn vào đoạn mã thì thấy &lt;code&gt;b&lt;/code&gt; được khai báo
     </item>
     <item>
       <title>Effective Persistence of Enums in Java: A Deep Dive into Safe and Scalable Design</title>
-      <link>https://duydo.me/post/effective_jpa/</link>
+      <link>https://duydo.me/effective-persistence-of-enums-in-java-a-deep-dive-into-safe-and-scalable-design/</link>
       <pubDate>Sun, 24 Jan 2010 08:17:50 +0700</pubDate>
-      <guid>https://duydo.me/post/effective_jpa/</guid>
+      <guid>https://duydo.me/effective-persistence-of-enums-in-java-a-deep-dive-into-safe-and-scalable-design/</guid>
       <description>&lt;p&gt;How to persist an enumeration effectively? Here is my experience.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ll use Wordpress as an example. We all know that every post in Wordpress blog system has a status with possible values: &lt;code&gt;draft&lt;/code&gt;, &lt;code&gt;pending-review&lt;/code&gt;, &lt;code&gt;published&lt;/code&gt; and so on.&lt;/p&gt;</description>
     </item>

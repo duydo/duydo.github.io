@@ -15,9 +15,9 @@
     <atom:link href="https://duydo.me/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Elasticsearch searching data flow</title>
-      <link>https://duydo.me/post/elasticsearch-searching-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-searching-data-flow/</link>
       <pubDate>Wed, 11 Jan 2023 22:32:29 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-searching-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-searching-data-flow/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Search&lt;/strong&gt; is a generic term for information retrieval. Elasticsearch provides various retrieval capabilities, including
 full-text searches, geo searches, range searches, scripted searches, and aggregations.&lt;/p&gt;
 &lt;p&gt;How does Elasticsearch execute a search query behind the scenes? The following diagram shows data flow for searching
@@ -25,45 +25,45 @@ operations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch deleting data flow</title>
-      <link>https://duydo.me/post/elasticsearch-deleting-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-deleting-data-flow/</link>
       <pubDate>Tue, 10 Jan 2023 12:51:30 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-deleting-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-deleting-data-flow/</guid>
       <description>&lt;p&gt;How is a document deleted from Elasticsearch? The following diagram shows data flow behinds the scene of deleting a single document.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Elasticsearch indexing data flow</title>
-      <link>https://duydo.me/post/elasticsearch-indexing-data-flow/</link>
+      <link>https://duydo.me/understanding-elasticsearch-indexing-data-flow/</link>
       <pubDate>Mon, 09 Jan 2023 07:52:35 +0700</pubDate>
-      <guid>https://duydo.me/post/elasticsearch-indexing-data-flow/</guid>
+      <guid>https://duydo.me/understanding-elasticsearch-indexing-data-flow/</guid>
       <description>&lt;p&gt;When a document is stored in Elasticsearch, it is indexed and fully searchable within 1 second. Elasticsearch uses an inverted index
 data structure that supports full-text searches efficiently and very fast.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Interview at Elastic</title>
-      <link>https://duydo.me/post/interview_at_elastic/</link>
+      <link>https://duydo.me/interview-at-elastic/</link>
       <pubDate>Thu, 20 Jul 2017 09:48:56 +0700</pubDate>
-      <guid>https://duydo.me/post/interview_at_elastic/</guid>
+      <guid>https://duydo.me/interview-at-elastic/</guid>
       <description>&lt;p&gt;Some months ago, I had an interview with &lt;a href=&#34;https://elastic.co&#34;&gt;Elastic&lt;/a&gt; for Java Software/Support Engineer position. The interview was an interesting experience I&amp;rsquo;ve ever had, Elastic is a brilliant company with great people and amazing culture.&lt;/p&gt;</description>
     </item>
     <item>
       <title>EVM - Elasticsearch Version Manager</title>
-      <link>https://duydo.me/post/evm_elasticsearch_version_manager/</link>
+      <link>https://duydo.me/evm-elasticsearch-version-manager/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      <guid>https://duydo.me/post/evm_elasticsearch_version_manager/</guid>
+      <guid>https://duydo.me/evm-elasticsearch-version-manager/</guid>
       <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to build Elasticsearch Vietnamese Analysis Plugin</title>
-      <link>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</link>
+      <link>https://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://duydo.me/post/how_to_build_vietnamese_analysis_plugin/</guid>
+      <guid>https://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;ve received many requests to build the Vietnamese Analysis plugin when a new version of Elasticsearch is released but sometimes I&amp;rsquo;m not available to do it immediately. In case of urgent, you can build the plugin yourself with following steps.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How Elasticsearch cluster works</title>
-      <link>https://duydo.me/post/how_elasticsearch_cluster_works/</link>
+      <link>https://duydo.me/how-elasticsearch-cluster-works/</link>
       <pubDate>Mon, 24 Oct 2016 11:16:00 +0700</pubDate>
-      <guid>https://duydo.me/post/how_elasticsearch_cluster_works/</guid>
+      <guid>https://duydo.me/how-elasticsearch-cluster-works/</guid>
       <description>&lt;p&gt;This post is part of a series covering the architecture of Elasticsearch based on my experience while working with it. In this post, we’ll be discussing how the cluster works, try to find answers for following questions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How a node in cluster talks to others?&lt;/li&gt;

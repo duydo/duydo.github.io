@@ -15,9 +15,9 @@
     <atom:link href="https://duydo.me/tags/versionmanager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EVM - Elasticsearch Version Manager</title>
-      <link>https://duydo.me/post/evm_elasticsearch_version_manager/</link>
+      <link>https://duydo.me/evm-elasticsearch-version-manager/</link>
       <pubDate>Sat, 20 May 2017 17:50:35 +0700</pubDate>
-      <guid>https://duydo.me/post/evm_elasticsearch_version_manager/</guid>
+      <guid>https://duydo.me/evm-elasticsearch-version-manager/</guid>
       <description>&lt;p&gt;As an Elasticsearch consultant, I often work with different versions of Elasticsearch. To make my developer life easier, I created &lt;a href=&#34;https://github.com/duydo/evm&#34;&gt;&lt;strong&gt;evm&lt;/strong&gt;&lt;/a&gt;. It allows me to install, remove, test multiple versions easily.&lt;/p&gt;</description>
     </item>
   </channel>
