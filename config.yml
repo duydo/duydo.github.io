@@ -11,8 +11,7 @@ pagination:
   pagerSize: 5
 
 permalinks:
-  section:
-    posts: /posts/
+  posts: "/:slug/"
 
 params:
   env: production

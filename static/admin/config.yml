@@ -8,7 +8,7 @@ public_folder: "/uploads"
 collections:
   - name: "blog" # Tên collection
     label: "Blog"
-    folder: "content/post" # Thư mục lưu trữ file markdown
+    folder: "content/posts" # Thư mục lưu trữ file markdown
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }

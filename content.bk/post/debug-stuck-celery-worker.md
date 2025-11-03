@@ -6,15 +6,6 @@ draft: true
 description: "Debug stuck Celery process"
 tags: ["celery", "python", "engineering"]
 
-# You can also close(false) or open(true) something for this content.
-# P.S. comment can only be closed
-comment: true
-toc: false
-autoCollapseToc: false
-# You can also define another contentCopyright. e.g. contentCopyright: "This is another copyright."
-contentCopyright: false
-reward: false
-mathjax: false
 ---
 
 ```sh
@@ -31,7 +22,7 @@ goku-worker                      RUNNING   pid 26738, uptime 11 days, 2:19:10
 ```sh
 $ sudo strace -p 26738 -c
 strace: Process 26738 attached
-^Cstrace: Process 26738 detached
+
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
  62.16    0.000023           1        25           epoll_wait
