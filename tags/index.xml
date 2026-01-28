@@ -11,8 +11,106 @@
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Jan 2023 12:51:30 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 10:03:00 +0700</lastBuildDate>
     <atom:link href="https://duydo.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Celery</title>
+      <link>https://duydo.me/tags/celery/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/celery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Celery-Worker</title>
+      <link>https://duydo.me/tags/celery-worker/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/celery-worker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>https://duydo.me/tags/debugging/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/debugging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed-Systems</title>
+      <link>https://duydo.me/tags/distributed-systems/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Epoll</title>
+      <link>https://duydo.me/tags/epoll/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/epoll/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Haproxy</title>
+      <link>https://duydo.me/tags/haproxy/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://duydo.me/tags/linux/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux-Kernel</title>
+      <link>https://duydo.me/tags/linux-kernel/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/linux-kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postmortem</title>
+      <link>https://duydo.me/tags/postmortem/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/postmortem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Production-Incident</title>
+      <link>https://duydo.me/tags/production-incident/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/production-incident/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rabbitmq</title>
+      <link>https://duydo.me/tags/rabbitmq/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sre</title>
+      <link>https://duydo.me/tags/sre/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/sre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System-Architecture</title>
+      <link>https://duydo.me/tags/system-architecture/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/system-architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tcp</title>
+      <link>https://duydo.me/tags/tcp/</link>
+      <pubDate>Wed, 28 Jan 2026 10:03:00 +0700</pubDate>
+      <guid>https://duydo.me/tags/tcp/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Elasticsearch</title>
       <link>https://duydo.me/tags/elasticsearch/</link>

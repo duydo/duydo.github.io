@@ -2,11 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://duydo.me/a-production-celery-worker-freeze-caused-by-epoll/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/celery/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/celery-worker/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/debugging/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/distributed-systems/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
     <loc>https://duydo.me/</loc>
-    <lastmod>2025-11-02T22:51:59+07:00</lastmod>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/epoll/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/haproxy/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/linux/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/linux-kernel/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/postmortem/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
   </url><url>
     <loc>https://duydo.me/posts/</loc>
-    <lastmod>2025-11-02T22:51:59+07:00</lastmod>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/production-incident/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/rabbitmq/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/sre/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/system-architecture/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
+  </url><url>
+    <loc>https://duydo.me/tags/tcp/</loc>
+    <lastmod>2026-01-28T10:03:00+07:00</lastmod>
   </url><url>
     <loc>https://duydo.me/honored-to-be-an-elastic-contributor/</loc>
     <lastmod>2023-04-05T21:08:04+07:00</lastmod>
@@ -15,9 +63,6 @@
     <lastmod>2023-01-13T12:51:30+07:00</lastmod>
   </url><url>
     <loc>https://duydo.me/tags/engineering/</loc>
-    <lastmod>2023-01-13T12:51:30+07:00</lastmod>
-  </url><url>
-    <loc>https://duydo.me/tags/</loc>
     <lastmod>2023-01-13T12:51:30+07:00</lastmod>
   </url><url>
     <loc>https://duydo.me/understanding-elasticsearch-searching-data-flow/</loc>
